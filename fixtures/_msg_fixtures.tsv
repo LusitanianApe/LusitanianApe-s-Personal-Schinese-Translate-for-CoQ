@@ -33,3 +33,67 @@ The snapjaw is stunned!
 # ── 名字槽：中文 / 英文 / 带色标 / 复数 ─────────────────────────────────
 You spot a dromad caravan.	你发现了一支驼人商队。
 Your mental attack does not affect the girshling.	
+
+# ── 「攻击未造成伤害」族（2026-10-17 用户实机 · 新存档）──
+# 用户 2026-10-17 实机截图（动词已被 ZhsVerbPatch 译成「失败」）
+鳄鱼失败 to deal damage with 她的 attack! [19]	鳄鱼用她的攻击未能造成伤害！[19]
+鳄鱼失败 to deal damage with 它的 attack! [10]	鳄鱼用它的攻击未能造成伤害！[10]
+# ★ 复数所有格「他们的」—— 清理正则必须含复数形
+鳄鱼失败 to deal damage with 他们的 attack! [3]	鳄鱼用他们的攻击未能造成伤害！[3]
+# 玩家形（整条字面量，既有规则）
+You fail to deal damage with your attack! [7]	你的攻击未能造成伤害！[7]
+# 英文原文形态（既有规则）
+盐跳虫 fails to deal damage with its attack! [10]	盐跳虫的攻击未能造成伤害！[10]
+
+# ── 「未命中」族（2026-10-17 · 同族第三例：`Does("miss")` 已被译）──
+# 无武器 · 无值
+鳄鱼未命中 you!	鳄鱼未命中你！
+# 无武器 · 带值
+鳄鱼未命中 you! [13 vs. 10]	鳄鱼未命中你！[13 vs. 10]
+# 有武器 · 带值（`Does("miss")` 已译的形态）
+鳄鱼未命中 you with 她的 咬! [13 vs. 10]	鳄鱼的咬没打中你！[13 vs. 10]
+鳄鱼未命中 you with 她的 咬!	鳄鱼的咬没打中你！
+
+# ── 「Does() 位已译、骨架仍在」同族第四~七例（2026-10-17 全量排查）──
+# LifeDrain::HandleEvent — base.Object.Does("resist")
+鳄鱼抵抗 your life drain!	鳄鱼抵抗了你的生命汲取！
+# Bed::AttemptSleep — ParentObject.Does("don't")
+鳄鱼不 seem to be working.	鳄鱼似乎没在运作。
+# ShortBlades_Hobble::FireEvent — GetVerb("find")（find→找到）
+鳄鱼找到 a weakness in your defenses.	鳄鱼找到了你的防御破绽。
+# Shield_Slam::Slam — TargetObject.Does("resist")
+鳄鱼抵抗 your shield slam.	鳄鱼抵抗了你的盾击。
+
+# ── 日志注记族 `Journal*Note::Reveal`（2026-10-17 用户实机 · 外层骨架没人接手）──
+# JournalVillageNote::Reveal（用户实机弹窗）
+You note this piece of information in the {{W|村落史 > Sharshiwar}} section of your journal.	你在日志的村落史 > Sharshiwar栏记下了这条信息。
+You note this piece of information in the 村落史 > Sharshiwar section of your journal.	你在日志的村落史 > Sharshiwar栏记下了这条信息。
+# JournalSultanNote::Reveal（同族）
+You note this piece of information in the {{W|Sultan Histories > 雷谢夫}} section of your journal.	你在日志的苏丹史 > 雷谢夫栏记下了这条信息。
+
+# ── 「不 penetrate 你的 armor」族（2026-10-17 用户实机 · 全角感叹号）──
+# 用户实机截图：★ 全角「！」—— F11 的规则要求半角 `!`，所以一直没命中
+火花蜱不 penetrate 你的 armor with 它的 电弧！[20]	火花蜱的电弧没能穿透你的护甲！[20]
+# 带武器无值
+火花蜱不 penetrate 你的 armor with 它的 电弧！	火花蜱的电弧没能穿透你的护甲！
+# 无武器带值
+火花蜱不 penetrate 你的 armor! [20]	火花蜱没能穿透你的护甲！[20]
+# 无武器无值（★ 旧规则用可选组 ⇒ 输出「！[]」，已拆成两条）
+火花蜱不 penetrate 你的 armor!	火花蜱没能穿透你的护甲！
+
+# ── `reels from the force of`（2026-10-17 用户实机）──
+# ★ `ZhsXDidYPatch.Phrases` 里那条是半成品（译文带省略号占位 + 结构不匹配）⇒ 改用规则
+# 用户实机截图
+无眼蟹 reels from the force of the 白化猿的 bludgeoning.	无眼蟹被白化猿的打击打得踉跄。
+# 同族（武器性状词不细分）
+无眼蟹 reels from the force of the 白化猿的 piercing.	无眼蟹被白化猿的打击打得踉跄。
+无眼蟹 reels from the force of the 白化猿的 slashing.	无眼蟹被白化猿的打击打得踉跄。
+
+# ── 补货消息（2026-10-17 用户实机 · 完成时助动词 `have` 被译成「有」）──
+#   反编译：`Messaging.XDidY(ParentObject, "have", "restocked " + its + " inventory", "!"…)`
+# 用户实机（`has`→「有」已去掉）
+Syshwushwaun, village tinker有补满了 他的货物!	Syshwushwaun, village tinker补满了他的货物！
+看守 Sishum有补满了他的货物!	看守 Sishum补满了他的货物！
+Taq, 驼人商人有补满了她的货物!	Taq, 驼人商人补满了她的货物！
+# 无空格形态
+Syshwushwaun, village tinker有补满了他的货物!	Syshwushwaun, village tinker补满了他的货物！

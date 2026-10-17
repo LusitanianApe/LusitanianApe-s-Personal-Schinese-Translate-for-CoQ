@@ -2,11 +2,14 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
-    <AssemblyName>decomp</AssemblyName>
+    <AssemblyName>ilkit</AssemblyName>
+    <RootNamespace>IlKit</RootNamespace>
     <Nullable>disable</Nullable>
     <ImplicitUsings>disable</ImplicitUsings>
-    <NoWarn>CS1701;CS1702;NU1701;CS0618;IL2000</NoWarn>
+    <!-- 反编译器包带来一些 NU1701 / 老的 XML 注释告警，与本工具无关 -->
+    <NoWarn>CS1701;CS1702;NU1701;CS0618;IL2000;CS0414</NoWarn>
   </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="ICSharpCode.Decompiler" Version="8.2.0.7535" />
   </ItemGroup>

@@ -72,7 +72,7 @@ TABLE = {
     "You don't have a tongue!": "你没有舌头！",
     "You have no inventory!": "你的物品栏是空的！",
     "You don't have any": "你没有",
-    "Your wish is my command!": "遵命！",
+    "Your wish is my command!": "你的愿望就是我的命令！",
     "Your bilge sphincter is missing.": "你的舱底括约肌缺失。",
     "Your healing is interrupted!": "你的治疗被打断了！",
     "Your heart rate slows again.": "你的心率重新慢了下来。",

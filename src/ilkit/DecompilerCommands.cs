@@ -15,20 +15,19 @@ using ICSharpCode.Decompiler.TypeSystem;
 //   decomp type  <类型全名>                 反编译整个类型
 //   decomp member <类型全名> <成员名片段>    只反编译匹配的成员
 //   decomp find  <字符串片段>               全程序集：哪些成员引用了这个字符串
-internal static class Program
+internal static class DecompilerCommands
 {
     // ★★ 2026-10-17：**改为可用环境变量 `COQ_DLL` 覆盖**（默认仍是 Steam 那份 lang 分支）。
     //   起因：双版本并存调研时，本工具**硬编码**只读 Steam 那份 ⇒ 拿它"对比两版类型"
     //   实际是**拿 lang 跟自己比** ⇒ 得出"两版类型完全一样"的假结论。
     //   ★ 判据：**工具的"输入"必须可见/可换** —— 否则对比类结论全是假的。
-    private static readonly string Asm =
-        Environment.GetEnvironmentVariable("COQ_DLL")
-        ?? @"D:\Steam\steamapps\common\Caves of Qud\CoQ_Data\Managed\Assembly-CSharp.dll";
+    /// <summary>目标程序集路径（由 `Program.Main` 注入：`--dll` / `ILKIT_DLL` / `COQ_MANAGED`）。</summary>
+    internal static string Asm;
 
     private static CSharpDecompiler _dec;
     private static ITypeDefinition[] _types;
 
-    private static int Main(string[] args)
+    internal static int Run(string[] args)
     {
         Console.OutputEncoding = System.Text.Encoding.UTF8;
         // ★★ 2.16.118：**强制 LF 行尾**。Windows 上 `Console.WriteLine` 默认发 CRLF，
@@ -38,7 +37,7 @@ internal static class Program
         Console.Out.NewLine = "\n";
         if (args.Length < 1)
         {
-            Console.Error.WriteLine("用法: decomp list|type|member|find|literals <参数…>");
+            Console.Error.WriteLine("用法: ilkit <list|type|member|find|literals|ldstr|il|sig|callsites|calls|branches|baseargs|diag> …");
             return 2;
         }
 
@@ -236,29 +235,56 @@ internal static class Program
         return 0;
     }
 
-    /// <summary>全程序集搜字符串字面量（在反编译输出里找）。</summary>
-    private static int Find(string[] frags)    {
-        int n = 0;
-        foreach (var t in _types)
+    /// <summary>
+    /// 全程序集搜字符串字面量：**扫 `ldstr`，不反编译**。
+    ///
+    /// ★ 为什么改（2026-10-18）：旧实现把**每个成员都反编译一遍**再在源码里 `IndexOf`
+    ///   ⇒ 全量反编译一个 20 MB 的程序集要几分钟，长字面量（带空格）看起来像"挂住"。
+    ///   实测同一程序集：反编译法 222.5s，IL 走法 2.4s（快约 100 倍）。
+    ///   另一个好处是**更准**：反编译产物里的引号串有猜出来的部分（插值串会被还原成源码形态），
+    ///   而 `ldstr` 指向的是二进制里真实存在的串。
+    ///
+    /// 用法：`ilkit find "You have struck" "some other phrase"`
+    /// </summary>
+    private static int Find(string[] frags)
         {
-            foreach (var m in t.Members)
+        int n = 0;
+        var seen = new HashSet<string>(StringComparer.Ordinal);
+        ForEachMethodIl((fullType, member, il) =>
+        {
+            string type = StripGeneratedTail(fullType);
+            foreach (var (off, op, kind, arg, end) in WalkIl(il))
             {
-                string code;
-                try { code = _dec.DecompileAsString(m.MetadataToken); }
-                catch { continue; }
+                if (op != 0x72 || kind != 9 || arg.Length != 4) continue;
+                string s = StringsAtToken(BitConverter.ToInt32(arg, 0));
+                if (s == null) continue;
                 bool hit = false;
                 foreach (var f in frags)
                 {
-                    if (code.IndexOf(f, StringComparison.OrdinalIgnoreCase) >= 0) { hit = true; break; }
+                    if (s.IndexOf(f, StringComparison.OrdinalIgnoreCase) >= 0) { hit = true; break; }
                 }
                 if (!hit) continue;
+                string key = type + "::" + member + "|" + s;
+                if (!seen.Add(key)) continue;
                 n++;
-                Console.WriteLine("=== " + t.FullName + "::" + m.Name);
-                Console.WriteLine(code.Length > 3000 ? code.Substring(0, 3000) + "\n…(截断)" : code);
+                Console.WriteLine("=== " + type + "::" + member);
+                Console.WriteLine("--- literal: " + Esc(s));
+                try
+                {
+                    var td = _types.FirstOrDefault(x => x.FullName == type);
+                    var md = td == null ? null : td.Members.FirstOrDefault(x => x.Name == member);
+                    if (md != null)
+                    {
+                        string code = _dec.DecompileAsString(md.MetadataToken);
+                        Console.WriteLine(code.Length > 3000
+                            ? code.Substring(0, 3000) + "\n…(truncated)" : code);
+                    }
+                }
+                catch { }
                 Console.WriteLine();
             }
-        }
-        Console.Error.WriteLine("共 " + n + " 个成员命中");
+        });
+        Console.Error.WriteLine("共 " + n + " 个命中（owner + 字面量去重）");
         return 0;
     }
 

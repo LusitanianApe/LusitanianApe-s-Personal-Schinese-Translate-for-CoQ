@@ -7,8 +7,8 @@
 - 不含游戏 API 文档导出（`Assembly-CSharp.xml`）
 - 不含游戏资源（`.assets` / 字体 / 图集）
 
-`src/decomp/` 是**自己写的 ILSpy 封装**（NuGet 依赖 `ICSharpCode.Decompiler`），
-它只在**使用者本机**对**使用者自己合法持有**的游戏程序集运行。
+`src/ilkit/` 是**自己写的 ILSpy 封装 + 元数据探针**（NuGet 依赖 `ICSharpCode.Decompiler`），
+它只在**使用者本机**对**使用者自己合法持有**的程序集运行。
 
 ## 译文数据
 

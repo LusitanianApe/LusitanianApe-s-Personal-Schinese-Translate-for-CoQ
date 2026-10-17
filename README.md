@@ -33,7 +33,7 @@
 ⑤ 都没有 ⇒ 运行时拼接 / Unity 资源 / 预制体默认值
 ```
 
-`src/decomp/` 就是第 ②③④ 步的工具。
+`src/ilkit/` 就是第 ②③④ 步的工具（一个 CLI：反编译 + `ldstr` 归属 + IL 反汇编 + 元数据探针）。
 
 ---
 
@@ -117,9 +117,22 @@ _zh_fragments.py  （源表，人维护）
 
 | 工程 | 作用 |
 |---|---|
-| `src/decomp/` | ILSpy 封装：`list` / `type` / `member` / `find`（NuGet `ICSharpCode.Decompiler`） |
+| `src/ilkit/` | ★ **一个 CLI 合并四个取证工具**（ICSharpCode.Decompiler + BCL 元数据）：<br>`list` / `type` / `member` / `find` / `literals` / `ldstr`（反编译族）<br>`il` / `il-find` / `field` / `asmref` / `sig`（IL 与元数据探针） |
 | `src/rulecheck/` | ★ 离线规则测试台（见上） |
 | `src/stablecheck/` | 对指定 `Managed` 目录**真编译**一遍；另有裸读 `TypeAttributes` 的模式（判断某类型在不在，别信反编译器的输出） |
+
+#### `ilkit` 速用
+
+```powershell
+ilkit --dll <程序集> list  Ascension           # 有哪些类型
+ilkit --dll <程序集> find  "You have finished"  # 这句字面量被谁引用（秒级，不反编译全量）
+ilkit --dll <程序集> il    XRL.World.Quest ShowFinishStepPopup   # IL 反汇编（操作数已解析）
+ilkit --dll <程序集> field XRL.UI.JournalScreen STR_LOCATIONS     # 静态字段读写点
+ilkit --dll <程序集> asmref ReadOnlySpan        # 这个类型到底属于哪个程序集
+```
+
+> `find` 的实现是**扫 `ldstr`**（ECMA-335 operand 表 + `#US` heap），不做全量反编译：
+> 同一个 20 MB 程序集，旧的反编译法 222.5 s，这条路 2.4 s，而且只收**二进制里真实存在**的串。
 
 ---
 

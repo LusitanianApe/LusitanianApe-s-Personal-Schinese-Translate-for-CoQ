@@ -50,6 +50,8 @@ internal static class RuleCheckProgram
         }
 
         string path = args[0];
+        if (Environment.GetEnvironmentVariable("RULECHECK_DEBUG_ARGS") == "1")
+            Console.WriteLine("args=[" + string.Join("|", args) + "]");
         bool residue = args.Contains("--residue");
         bool verbose = args.Contains("--verbose");
 
@@ -74,6 +76,78 @@ internal static class RuleCheckProgram
             string line = File.ReadAllText(path, Encoding.UTF8).Split('\n')[0].TrimEnd('\r');
             TraceRules(line);
             return 0;
+        }
+
+        // ── --call <Type>.<Method>：直接调**任意** `static string f(string)` 静态纯函数 ──
+        //   ★ 用途：某些补丁的翻译逻辑不在 `TranslateText` 里（例如 `ZhsWishMenuPatch.Translate`、
+        //     `ZhsSkillReqTable.Apply`）—— 有了这个模式，任何纯函数都能离线跑，
+        //     不必为了"测一下"临时改 harness。
+        int ci = Array.IndexOf(args, "--call");
+        if (ci >= 0 && ci + 1 < args.Length)
+        {
+            string full = args[ci + 1];
+            int dot = full.LastIndexOf('.');
+            if (dot <= 0) { Console.WriteLine("--call 需要 <全限定类型>.<方法>"); return 2; }
+            string typeName = full.Substring(0, dot), methodName = full.Substring(dot + 1);
+            Assembly asm0 = LoadDll();
+            if (asm0 == null) return 3;
+            Type t0 = asm0.GetType(typeName, false);
+            if (t0 == null) { Console.WriteLine("找不到类型 " + typeName); return 3; }
+            MethodInfo m0 = t0.GetMethod(methodName,
+                BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
+            if (m0 == null) { Console.WriteLine("找不到静态方法 " + methodName); return 3; }
+            Console.WriteLine("调用：" + typeName + "." + methodName);
+            Console.WriteLine("────────────────────────────────────────────────────────────");
+            int n0 = 0, ch0 = 0;
+            foreach (string raw in File.ReadAllLines(path, Encoding.UTF8))
+            {
+                if (raw.Length == 0 || raw.StartsWith("#")) continue;
+                n0++;
+                object ret;
+                try { ret = m0.Invoke(null, new object[] { raw }); }
+                catch (Exception e)
+                {
+                    Console.WriteLine("EX   " + raw + "\n     " + e.GetType().Name);
+                    continue;
+                }
+                string got = ret as string;
+                if (got == null) { Console.WriteLine("null " + raw); continue; }
+                if (got != raw) ch0++;
+                Console.WriteLine("     " + raw + "\n  →  " + got);
+            }
+            Console.WriteLine("────────────────────────────────────────────────────────────");
+            Console.WriteLine("样本 " + n0 + " · 有变化 " + ch0);
+            return 0;
+        }
+
+        // ── --pluralize <words.txt>：验证「裸 ID 补齐后到底渲染成什么」──
+        //   ★ 2026-10-17：`=N.pluralize:X=` / `=X.things:N=` 的输出由两段决定：
+        //       ① `Grammar.Pluralize(X)`（N>1 时变复数）—— **真游戏代码**，这里反射调用
+        //       ② 拿结果当**裸 ID** 查字符串表（我方 Strings.xml 里无 Context 的条目）
+        //   只补单数或只补复数 ⇒ 另一条会露英文。本模式把两段都跑真数据。
+        int pi = Array.IndexOf(args, "--pluralize");
+        if (Environment.GetEnvironmentVariable("RULECHECK_DEBUG_ARGS") == "1")
+            Console.WriteLine("PI=" + pi + " translateNull=" + (translate == null));
+        // ★ 两种写法都支持：`<words.txt> --pluralize`（开关式）与 `--pluralize <words.txt>`
+        if (pi >= 0)
+        {
+            string wf = (pi + 1 < args.Length) ? args[pi + 1] : path;
+            return PluralizeProbe(wf);
+        }
+
+        // ── --rulecover <语料>：**全量规则覆盖回放**（2026-10-17）──
+        //   对 `Rules` 里**每一张**正则，用整份 DLL 字面量语料跑一遍，统计命中数。
+        //   判据分两类（这是关键，否则会产出大量假阳性）：
+        //     · **纯 ASCII 锚点**规则 ⇒ 英文原文语料里**应当命中**；命中 0 ⇒ **可疑**
+        //       （要么锚点已被别的补丁改掉 —— fail/miss/hits 三例就是这样；
+        //         要么该消息是运行时拼接、语料里没有）
+        //     · **含汉字锚点**规则 ⇒ 是「镜像链路」（给已被译的形态用），
+        //       英文语料里 0 命中**完全正常** ⇒ 只统计、不报警
+        int rci = Array.IndexOf(args, "--rulecover");
+        if (rci >= 0)
+        {
+            string corpus = (rci + 1 < args.Length) ? args[rci + 1] : path;
+            return RuleCover(corpus);
         }
 
         if (translate == null) return 3;
@@ -208,6 +282,224 @@ internal static class RuleCheckProgram
                 Console.WriteLine("碎片表后：" + (after == input ? "（无变化）" : after));
             }
         }
+    }
+
+    /// <summary>
+    /// `--pluralize &lt;words.txt&gt;`：把 `=N.pluralize:X=` / `=X.things:N=` 的**两种形态**算出来。
+    /// 判据：单数形与复数形**都必须**有裸 ID，否则 N&gt;1 那条露英文。
+    /// </summary>
+    private static int PluralizeProbe(string path)
+    {
+        string xml = FindModFile("Strings.xml");
+        if (xml == null)
+        {
+            Console.WriteLine("找不到 mods\\QudZhsCookbook\\Strings.xml");
+            return 3;
+        }
+        var bare = new Dictionary<string, string>(StringComparer.Ordinal);
+        var doc = new System.Xml.XmlDocument();
+        doc.Load(xml);
+        System.Xml.XmlNodeList nodes = doc.SelectNodes("//string");
+        foreach (System.Xml.XmlNode n in nodes)
+        {
+            System.Xml.XmlElement el = n as System.Xml.XmlElement;
+            if (el == null) continue;
+            if (el.GetAttributeNode("Context") != null) continue;      // 只收裸 ID
+            string id = el.GetAttribute("ID");
+            if (string.IsNullOrEmpty(id)) continue;
+            bare[id] = el.InnerText;
+        }
+        Console.WriteLine("我方裸 ID：" + bare.Count + " 条（" + Path.GetFileName(xml) + "）");
+
+        MethodInfo pl = ResolveGamePluralize();
+        if (pl == null)
+        {
+            Console.WriteLine("找不到 XRL.Language.Grammar::Pluralize");
+            return 3;
+        }
+        Console.WriteLine("Grammar.Pluralize：**真游戏代码**（反射调用）✅");
+        Console.WriteLine();
+        Console.WriteLine("词".PadRight(18) + "复数形".PadRight(20) + "裸ID(单)".PadRight(10)
+            + "裸ID(复)".PadRight(10) + "N=1 →".PadRight(16) + "N=3 →");
+        Console.WriteLine(new string('─', 96));
+
+        int ok = 0, bad = 0;
+        var badWords = new List<string>();
+        foreach (string raw in File.ReadAllLines(path, Encoding.UTF8))
+        {
+            string w = raw.Trim();
+            if (w.Length == 0 || w.StartsWith("#")) continue;
+            string plural;
+            try { plural = (string)pl.Invoke(null, new object[] { w }); }
+            catch { plural = "?"; }
+            string s1, s2;
+            bare.TryGetValue(w, out s1);
+            bare.TryGetValue(plural, out s2);
+            bool good = s1 != null && s2 != null;
+            if (good) ok++; else { bad++; badWords.Add(w); }
+            Console.WriteLine(w.PadRight(18) + plural.PadRight(20)
+                + (s1 ?? "（缺）").PadRight(10) + (s2 ?? "（缺）").PadRight(10)
+                + ("1 " + (s1 ?? w)).PadRight(16) + ("3 " + (s2 ?? plural)));
+        }
+        Console.WriteLine(new string('─', 96));
+        Console.WriteLine("单复数两条都齐：" + ok + " · 缺：" + bad
+            + (bad > 0 ? "（" + string.Join(",", badWords.ToArray()) + "）" : ""));
+        return bad == 0 ? 0 : 1;
+    }
+
+    /// <summary>从当前目录往上找工作区里的模组文件（不写死路径）。</summary>
+    private static string FindModFile(string name)
+    {
+        string d = AppContext.BaseDirectory;
+        for (int i = 0; i < 8; i++)
+        {
+            if (d == null) break;
+            string p = Path.Combine(d, "mods", "QudZhsCookbook", name);
+            if (File.Exists(p)) return p;
+            d = Path.GetDirectoryName(d.TrimEnd(Path.DirectorySeparatorChar));
+        }
+        return null;
+    }
+
+    /// <summary>反射拿游戏里的 `XRL.Language.Grammar::Pluralize(string)`（真形态学）。</summary>
+    private static MethodInfo ResolveGamePluralize()
+    {
+        try
+        {
+            Assembly game = FindAsm("Assembly-CSharp");
+            if (game == null)
+            {
+                // ★ `Assembly-CSharp` 是**惰性加载**的：反射拿到我方 DLL 的类型不会触发它，
+                //   必须显式按名加载（Main 里注册的 Resolving 会把它指到游戏 Managed 目录）。
+                try
+                {
+                    game = AssemblyLoadContext.Default.LoadFromAssemblyName(
+                        new AssemblyName("Assembly-CSharp"));
+                }
+                catch { }
+            }
+            if (game == null)
+            {
+                LoadDll();
+                game = FindAsm("Assembly-CSharp");
+            }
+            if (game == null) return null;
+            Type g = game.GetType("XRL.Language.Grammar", false);
+            return g == null ? null : g.GetMethod("Pluralize", new[] { typeof(string) });
+        }
+        catch { return null; }
+    }
+
+    private static Assembly FindAsm(string simpleName)
+    {
+        foreach (Assembly a in AssemblyLoadContext.Default.Assemblies)
+            if (a.GetName().Name == simpleName) return a;
+        return null;
+    }
+
+    /// <summary>
+    /// `--rulecover &lt;语料&gt;`：全量规则覆盖回放。每条规则在整份语料上的命中数。
+    /// 产出 <c>_tools\_rulecover.tsv</c>（逐条）+ 控制台摘要。
+    /// </summary>
+    private static int RuleCover(string corpus)
+    {
+        Assembly asm = LoadDll();
+        if (asm == null) return 3;
+        Type t = asm.GetType("Nattens.QudZhsCookbook.ZhsCombatMsgPatch", false);
+        if (t == null) { Console.WriteLine("找不到 ZhsCombatMsgPatch"); return 3; }
+        FieldInfo f = t.GetField("Rules", BindingFlags.NonPublic | BindingFlags.Static);
+        if (f == null) { Console.WriteLine("找不到 Rules 字段"); return 3; }
+
+        var list = new List<Regex>();
+        var reps = new List<string>();
+        foreach (object kv in (System.Collections.IEnumerable)f.GetValue(null))
+        {
+            Type kvt = kv.GetType();
+            list.Add((Regex)kvt.GetProperty("Key").GetValue(kv, null));
+            reps.Add((string)kvt.GetProperty("Value").GetValue(kv, null));
+        }
+
+        string[] lines = File.ReadAllLines(corpus, Encoding.UTF8);
+        var corpusLines = new List<string>();
+        foreach (string l in lines)
+            if (l.Length > 0 && !l.StartsWith("#")) corpusLines.Add(l);
+        Console.WriteLine("语料：" + corpusLines.Count + " 条 · 规则：" + list.Count + " 条");
+        Console.WriteLine("（跑全量回放，可能要几十秒…）");
+
+        int cjkCount = 0, asciiCount = 0, asciiZero = 0, cjkZero = 0;
+        var rows = new List<string>();
+        var zeroAscii = new List<string>();
+        for (int i = 0; i < list.Count; i++)
+        {
+            Regex re = list[i];
+            string pat = re.ToString();
+            bool cjk = false;
+            foreach (char ch in pat)
+                if (ch >= '\u4e00' && ch <= '\u9fff') { cjk = true; break; }
+            int hits = 0;
+            foreach (string l in corpusLines)
+                if (re.IsMatch(l)) hits++;
+            if (cjk)
+            {
+                cjkCount++;
+                if (hits == 0) cjkZero++;
+            }
+            else
+            {
+                asciiCount++;
+                if (hits == 0)
+                {
+                    asciiZero++;
+                    string p = pat.Length > 110 ? pat.Substring(0, 110) + "…" : pat;
+                    zeroAscii.Add("#" + i + "\t" + hits + "\t" + p.Replace("\t", " "));
+                }
+            }
+            string row = "#" + i + "\t" + (cjk ? "ZH" : "EN") + "\t" + hits + "\t"
+                + pat.Replace("\t", " ").Replace("\n", "\\n") + "\t" + reps[i].Replace("\t", " ");
+            rows.Add(row);
+        }
+
+        string outp = FindToolFile("_rulecover.tsv");
+        if (outp != null)
+        {
+            File.WriteAllText(outp,
+                "idx\tkind\thits\tpattern\treplacement\n" + string.Join("\n", rows.ToArray()) + "\n",
+                new UTF8Encoding(false));
+        }
+
+        Console.WriteLine(new string('─', 72));
+        Console.WriteLine("纯 ASCII 锚点规则：" + asciiCount + " · 其中命中 0：" + asciiZero);
+        Console.WriteLine("含汉字锚点规则：" + cjkCount + " · 其中命中 0：" + cjkZero
+            + "（镜像链路，英文语料里 0 命中**正常**）");
+        Console.WriteLine();
+        if (zeroAscii.Count > 0)
+        {
+            Console.WriteLine("★★ 可疑：纯 ASCII 锚点但**在整份语料里一条都命中不了**（" + zeroAscii.Count + " 条）");
+            Console.WriteLine("   可能原因：① 锚点已被别的补丁改掉（fail/miss/hits 那种）");
+            Console.WriteLine("             ② 该消息是运行时拼接、字面量里没有");
+            Console.WriteLine("             ③ 规则写错 / 已废弃");
+            foreach (string z in zeroAscii) Console.WriteLine("   " + z);
+        }
+        else
+        {
+            Console.WriteLine("✅ 纯 ASCII 锚点规则**全部**在语料里有命中");
+        }
+        if (outp != null) Console.WriteLine("\n逐条清单：" + outp);
+        return 0;
+    }
+
+    /// <summary>在工具目录（`_tools`）里定位/命名输出文件。</summary>
+    private static string FindToolFile(string name)
+    {
+        string d = AppContext.BaseDirectory;
+        for (int i = 0; i < 8; i++)
+        {
+            if (d == null) break;
+            string tools = Path.Combine(d, "_tools");
+            if (Directory.Exists(tools)) return Path.Combine(tools, name);
+            d = Path.GetDirectoryName(d.TrimEnd(Path.DirectorySeparatorChar));
+        }
+        return null;
     }
 
     private static Assembly LoadDll()
