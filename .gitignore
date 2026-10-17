@@ -1,0 +1,14 @@
+# 构建产物
+bin/
+obj/
+dist/
+# 游戏反编译产物 / 游戏数据 —— 绝不上传（版权）
+census/
+_ref/
+*.dll
+*.pdb
+# 本地环境
+.vs/
+.idea/
+__pycache__/
+*.pyc

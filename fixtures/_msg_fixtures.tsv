@@ -1,0 +1,35 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# RuleCheck 测试样本（fixtures）—— 每行 `英文<TAB>期望中文`
+#   · 期望留空 ⇒ 只查"译完还剩英文没"
+#   · 以 # 开头是注释
+#
+# ★ 这份文件是**回归基线**：改了规则就跑一遍，命中数只准升不准降。
+# ★ 约束情况覆盖：单数/复数/带色标/无冠词/名字已汉化/名字仍英文/带 [N] 计数
+# ═══════════════════════════════════════════════════════════════════════════
+
+# ── 水之仪式（今天修的）──────────────────────────────────────────────────
+You share your water with Mayor Nuntu and begin the water ritual.	你与Mayor Nuntu分享了water，水之仪式就此开始。
+You share your 水 with Elder 伊鲁达德 and begin the water ritual.	你与Elder 伊鲁达德分享了水，水之仪式就此开始。
+You share your water.	你分享了自己的water。
+
+# ── 声望（Because they X 五种档位 × 大/小写）────────────────────────────
+Because they despise X, your reputation with Y decreased by 100 to -100.	
+Because they admire X, your reputation with Y increased by 100 to 100.	
+Because they love X, your reputation with Y increased by 50 to 50.	
+Because they dislike X, your reputation with Y decreased by 10 to 10.	
+Because they regard X, your reputation with Y increased by 1 to 1.	
+Your reputation with 卡库基亚 increased by 100 to 100.
+
+# ── 日志地点（今天改的两条出口）──────────────────────────────────────────
+You note the location of a dromad caravan in the {{W|Locations > Merchants}} section of your journal.	
+You note this piece of information in the {{W|Sultan Histories > 雷谢夫}} section of your journal.	
+
+# ── 战斗消息（约束：带 [N] / 复数 / 无冠词）────────────────────────────
+You hit (x4) for 10 damage with your steel long sword! [9]	
+The Issachari raider hits (x2) for 4 damage with her bronze dagger. [9]	
+You miss with your steel long sword! [9]	
+The snapjaw is stunned!	
+
+# ── 名字槽：中文 / 英文 / 带色标 / 复数 ─────────────────────────────────
+You spot a dromad caravan.	你发现了一支驼人商队。
+Your mental attack does not affect the girshling.	

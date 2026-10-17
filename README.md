@@ -1,2 +1,158 @@
-# LusitanianApe-s-Personal-Schinese-Translate-for-CoQ
-纯粹的史山
+# CoQ 汉化工具链（Caves of Qud localization toolkit）
+
+> 仓库：<https://github.com/LusitanianApe/LusitanianApe-s-Personal-Schinese-Translate-for-CoQ>
+> 作者：<https://github.com/LusitanianApe>
+> （`Schinese` 是 Steam 的简体中文语言代码，不是拼写错误）
+
+做《Caves of Qud》这类 **Unity + 自研字符串表 + 大量 C# 拼接消息** 的游戏汉化时，
+真正难的不是"翻译"，是 **找到每一句是从哪出来的、以及为什么改了没生效**。
+
+这个仓库是我们在做一个 10k+ 条目的简体中文模组时沉淀下来的**取证与验证工具**。
+不含游戏内容，不含反编译产物，只含脚本与判据。
+
+---
+
+## 一、核心模型：文本出口有三个，不是两个
+
+```
+① XML 数据侧        Base\*.xml + ExampleLanguage      → 覆盖文件即可
+② 字符串表          (Context, ID) 查表                  → <string> 覆盖
+③ C# 硬编码/拼接    `"A " + 槽 + " B."`                 → 只能挂钩子
+```
+
+第 ③ 类是最容易漏的，因为它**没有"原文"可以查表** —— 你手上只有拼接后的结果。
+本仓库一半的工具是为了对付它。
+
+### 定位一句英文的固定顺序
+
+```
+① 官方 Base / ExampleLanguage 搜整句     → 有 ⇒ 改 XML
+② DLL 搜整句字面量（utf8 + utf16 双搜）  → 有 ⇒ 硬编码
+③ DLL 搜**片段**                        → 有 ⇒ 拼接生成，要按句式写规则
+④ 反编译定位调用点                       → 看它读哪个字段/标签
+⑤ 都没有 ⇒ 运行时拼接 / Unity 资源 / 预制体默认值
+```
+
+`src/decomp/` 就是第 ②③④ 步的工具。
+
+---
+
+## 二、最有用的一个：离线规则测试台（`src/rulecheck/`）
+
+**不需要启动游戏**，把游戏里那份 IL 直接加载进控制台跑：
+
+```powershell
+$env:COQ_MANAGED = "C:\Program Files (x86)\Steam\steamapps\common\Caves of Qud\CoQ_Data\Managed"
+
+dotnet build src\rulecheck -c Release
+dotnet run -c Release --project src\rulecheck -- fixtures\_msg_fixtures.tsv
+dotnet run -c Release --project src\rulecheck -- fixtures\某一句.txt --trace
+```
+
+- 默认模式：每行 `英文<TAB>期望中文`，做**回归基线**
+- `--trace`：逐条规则报命中下标 —— "为什么这句没按预期翻"一眼看穿
+- `--residue`：只报**译完仍含拉丁字母**的，做漏译审计
+
+> 设计要点：用**反射**加载已编译的规则程序集，而不是把源码编进来 ——
+> 游戏程序集里的 `ReadOnlySpan` / `ZString` 是 mscorlib 版，
+> net8.0 下直接引源码会 `CS7069`；反射只解析用得到的方法。
+
+---
+
+## 三、工具清单
+
+### `tools/probe/` —— 普查（回答"这东西在哪、占多少"）
+
+| 脚本 | 作用 |
+|---|---|
+| `_fragments_probe.py` | 把 DLL 里可能显示给玩家的**英文碎片**全抄出来，按 owner 聚类 |
+| `_fragment_worklist.py` | 上一步的产物二次提纯：整句 / 短语 / 状态词 / 标识符嫌疑 四档 |
+| `_route_surface_status.py` | 我方各处规则计数 vs 外部基准，**报覆盖率必须带口径** |
+| `_naming_usage_census.py` | 命名模板用量分布（**模板是加权随机抽的**，见 `docs/METHOD.md`） |
+| `_naming_weight_detail.py` | 逐个命名样式打印各条概率 |
+| `_abilityname_census.py` | 能力名的**字面量首参**与译表做差集 |
+| `_authority_names.py` | 权威译名表反查（保证同一英文只有一种译法） |
+| `_liquid_parts_probe.py` | 液体 `<part Alt*>` 缺口普查 |
+| `_honorifics_census.py` | `Honorifics` / `Titles` 族普查（**数据侧字面量**，官方标了可译位） |
+| `_nl_entity_audit.py` | 检查文件里换行实体的写法是否与官方一致（防键错配） |
+
+### `tools/fragments/` —— 碎片字典全链路
+
+给"动态槽 + 固定英文碎片"这种句子用的：动态名字已汉化，碎片还留着英文。
+
+```
+_zh_fragments.py  （源表，人维护）
+      ↓ _gen_frag_table.py --write
+生成的 C# 表（按长度降序，等价于贪心最长匹配）
+      ↓ 挂在「消息定稿处」
+运行时把残留英文碎片替换掉
+```
+
+| 脚本 | 作用 |
+|---|---|
+| `_zh_fragments.py` | 源表（分 TABLE / INFINITIVE / STATE / COMBO …） |
+| `_gen_frag_table.py` | 生成 C# 表；`--write` 落盘 |
+| `_frag_selfcheck.py` | **离线自检**：用同一条正则语义跑样例 + 真实语料，含反例 |
+| `_frag_batch_gap.py` | ★ **批量差集**：DLL 候选 vs 现表 → 还缺哪些（分层过滤） |
+| `_frag_admit.py` / `_frag_reclass.py` | 三态分流：这些英文到底该进字符串表、还是碎片表、还是写规则 |
+| `_build_msg_corpus.py` | 从普查产物生成测试语料（**碎片与整句必须分开**，否则数字没法用） |
+
+### `tools/audit/` —— 收尾检查
+
+| 脚本 | 作用 |
+|---|---|
+| `validate_mod.py` | XML 可解析 / `(Context, ID)` 是否命中官方英文 / 键重复 |
+| `_count_baseline.py` | 各表条目数基线，`--check` 抓"改完没生效" |
+| `scan_residue.py` | 示例标记残留（`▶` 之类） |
+| `_check_dupkeys.py` | C# 字典重复键（`.cctor` 会**静默失效**） |
+
+### `tools/repair/` —— 可直接复用的修复器
+
+| 脚本 | 作用 |
+|---|---|
+| `_fix_naming_load.py` | 给命名样式批量补 `Load="Merge"` / `<templates Load="Replace">` |
+| `_fix_naming_templatevars.py` | 同上，补 `<templatevars Load="Replace">`（**同一个坑的第二次露面**） |
+
+### `src/` —— C# 工程
+
+| 工程 | 作用 |
+|---|---|
+| `src/decomp/` | ILSpy 封装：`list` / `type` / `member` / `find`（NuGet `ICSharpCode.Decompiler`） |
+| `src/rulecheck/` | ★ 离线规则测试台（见上） |
+| `src/stablecheck/` | 对指定 `Managed` 目录**真编译**一遍；另有裸读 `TypeAttributes` 的模式（判断某类型在不在，别信反编译器的输出） |
+
+---
+
+## 四、几条踩出来的判据（`docs/METHOD.md` 有全文）
+
+```
+① 「有译文」≠「生效」：判定"译没译"只看该处是不是中文，不看文件名出现在搜索结果里
+② 命名模板是**加权随机抽**的；`<templates>` 与 `<templatevars>` 都必须 Load="Replace"
+   否则官方英文条目从不被移除 ⇒ 中英 1/N 轮盘
+③ 前置片段（以空格结尾）不能加右词边界 —— 后面紧跟名字是正常的
+④ 碎片表若只挂消息栏，**弹窗是盲区**（弹窗不经过 MessageQueue）
+⑤ `Show(ID)` 的单 token 是**字符串表的键**，不是碎片；混在一起查会显得"永远补不完"
+⑥ 规则顺序：专用规则必须排在通配规则**之前**，否则被"短词抢先"
+```
+
+---
+
+## 五、环境
+
+```
+Python 3.10+（标准库为主；部分脚本用 lxml）
+.NET 8 SDK（C# 工程）
+Windows / PowerShell（脚本里有 pwsh 调用；核心逻辑跨平台）
+```
+
+`COQ_DIR`：游戏安装目录（默认指向 Steam 常见位置）
+`COQ_MANAGED`：`<游戏>\CoQ_Data\Managed`
+
+---
+
+## 六、版权
+
+**本仓库不含任何游戏反编译产物、游戏资源或游戏 API 文档。**
+详见 `NOTICE.md`。
+
+代码按 MIT 发布，见 `LICENSE`。

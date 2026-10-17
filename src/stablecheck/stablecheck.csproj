@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <AssemblyName>stablecheck</AssemblyName>
+    <RootNamespace>stablecheck</RootNamespace>
+    <NoWarn>CS0169;CS0649;NU1701;CS1701;CS0162</NoWarn>
+    <CoQManaged Condition="'$(CoQManaged)' == ''">$(COQ_MANAGED)</CoQManaged>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- ★ 用**游戏自带的** Roslyn（与 roslyntest 同一份，避免两套编译器口径不同） -->
+    <Reference Include="Microsoft.CodeAnalysis">
+      <HintPath>$(CoQManaged)\%(Filename)%(Extension)</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp">
+      <HintPath>$(CoQManaged)\%(Filename)%(Extension)</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
