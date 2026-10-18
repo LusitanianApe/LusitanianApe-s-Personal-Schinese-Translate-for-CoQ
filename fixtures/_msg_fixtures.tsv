@@ -36,8 +36,8 @@ Your mental attack does not affect the girshling.
 
 # ── 「攻击未造成伤害」族（2026-10-17 用户实机 · 新存档）──
 # 用户 2026-10-17 实机截图（动词已被 ZhsVerbPatch 译成「失败」）
-鳄鱼失败 to deal damage with 她的 attack! [19]	鳄鱼用她的攻击未能造成伤害！[19]
-鳄鱼失败 to deal damage with 它的 attack! [10]	鳄鱼用它的攻击未能造成伤害！[10]
+鳄鱼失败 to deal damage with 她的 attack! [19]	鳄鱼的攻击未能造成伤害！[19]
+鳄鱼失败 to deal damage with 它的 attack! [10]	鳄鱼的攻击未能造成伤害！[10]
 # ★ 复数所有格「他们的」—— 清理正则必须含复数形
 鳄鱼失败 to deal damage with 他们的 attack! [3]	鳄鱼用他们的攻击未能造成伤害！[3]
 # 玩家形（整条字面量，既有规则）
@@ -97,3 +97,13 @@ Syshwushwaun, village tinker有补满了 他的货物!	Syshwushwaun, village tin
 Taq, 驼人商人有补满了她的货物!	Taq, 驼人商人补满了她的货物！
 # 无空格形态
 Syshwushwaun, village tinker有补满了他的货物!	Syshwushwaun, village tinker补满了他的货物！
+What would you like to name?	你想取什么名字？
+There are no creatures in range.	范围内没有生物。
+You have no explosives to deploy!	你没有可部署的炸药！
+That name is already in use.	这个名字已被使用。
+You cannot do that while submerged.	在水下无法这么做。
+You can move things with your mind.	你可以用意念移动物体。
+You breathe corrosive gas.	你呼出腐蚀气体。
+You have an extra set of arms.	你多出一双手臂。
+You are a crystalline being.	你是一个晶体生命。
+You startle easily and engage your defense mechanisms.	你容易受惊，并会立刻启动防御机制。

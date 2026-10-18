@@ -1,0 +1,20 @@
+# 发布版要**撤掉**的探针（开发分支保留）
+#
+# 判据：只做诊断/写日志/采样，不参与正常汉化 ⇒ 去掉后玩家侧行为不变。
+# ⚠ `ZhsTrace` **不在**此列：它是多个功能补丁共用的日志工具（`_zhs_trace_on.txt` 才生效），
+#    删掉会让 `ZhsChineseProvider` 等编译失败。
+#
+# 每行一个**标识符**（文件名去掉 .cs，或挂载处用的类名；两者不同时都列）
+ZhsCookTrace
+ZhsJournalProbe
+ZhsMsgTrace
+ZhsPoolNameDiag
+ZhsPoolNameDiagPatch
+ZhsPopupRenderDiagPatch
+ZhsPronounTrace
+ZhsStrTableDiagPatch
+ZhsUnitProbe
+ZhsUntranslatedProbe
+ZhsXmlLoadProbe
+ZhsDiagProbe
+ZhsLevelTextTrace

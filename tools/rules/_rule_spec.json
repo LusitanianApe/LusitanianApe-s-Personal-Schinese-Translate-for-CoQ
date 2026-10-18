@@ -1,0 +1,95 @@
+{
+  "说明": "规则夹具：每条规则带 positive（必须命中）/ negative（必须不命中）。$1..$9 引用捕获组。draft=候选规则，active=已实装规则。memo=人工复核意见（写进复核表末列）。",
+  "rules": [
+    {
+      "id": "journal-mapnote-66",
+      "status": "draft",
+      "note": "#66：JournalMapNote::Reveal —— `in the {{W|PAGE > CAT}} section of your journal`",
+      "regex": "^You note the location of (.+?) in (?:the )?(?:\\{\\{W\\|)?(.+?)\\s*[>›]\\s*(.+?)(?:\\}\\})? section of (?:your|你的) journal\\.$",
+      "replacement": "你在日志的$2 › $3栏记下了$1的位置。",
+      "positives": [
+        "You note the location of 一支驼人商队 in the {{W|位置 › 商人}} section of your journal.",
+        "You note the location of Sithis，传奇蝎蚂的巢穴 in {{W|地点 › 巢穴}} section of your journal.",
+        "You note the location of Alailitara in 地点 › 聚落 section of 你的 journal."
+      ],
+      "negatives": [
+        "You note the location of the rusted gate.",
+        "You note this piece of information in the {{W|村落史 › Sharshiwar}} section of your journal.",
+        "You note the location of X in the 地点 › 巢穴 section of her journal."
+      ]
+    },
+    {
+      "id": "rep-decrease-67",
+      "status": "draft",
+      "note": "#67：声望下降句（带中文原因前缀）",
+      "regex": "^(.+?)，你的 reputation with (.+?) decreased by (\\d+) to (-?\\d+)\\.$",
+      "replacement": "$1，你与$2的声望下降了 $3，降至 $4。",
+      "positives": [
+        "因为他们鄙视看守 Qan，你的 reputation with 海胆 decreased by 100 to -600."
+      ],
+      "negatives": [
+        "Your reputation with 海胆 decreased by 100 to -600.",
+        "因为他们鄙视看守 Qan，你的 reputation with 海胆 increased by 100 to 600."
+      ]
+    },
+    {
+      "id": "rep-status-despised-67",
+      "status": "draft",
+      "note": "#67：`You are now despised by X.`（等级词单独成条，避免 `standing by` 误伤）",
+      "regex": "^You are now despised by (.+?)\\.$",
+      "replacement": "你如今被$1鄙视。",
+      "memo": "用户 2026-10-18：「你如今被海胆鄙视」",
+      "positives": [
+        "You are now despised by 海胆."
+      ],
+      "negatives": [
+        "You are now 海胆.",
+        "You are now standing by the gate.",
+        "You are now despised of 海胆."
+      ]
+    },
+    {
+      "id": "rep-status-liked-67",
+      "status": "draft",
+      "note": "#67：`You are now liked by X.`",
+      "regex": "^You are now liked by (.+?)\\.$",
+      "replacement": "你如今被$1喜爱。",
+      "memo": "用户 2026-10-18：「你如今被约帕喜爱」",
+      "positives": [
+        "You are now liked by 约帕."
+      ],
+      "negatives": [
+        "You are now liked.",
+        "You are now liked by."
+      ]
+    },
+    {
+      "id": "ritual-rep-69",
+      "status": "draft",
+      "note": "#69：水之仪式 —— `Your reputation with X is -50.`",
+      "regex": "^Your reputation with (.+?) is (-?\\d+)\\.$",
+      "replacement": "你与$1的声望为 $2。",
+      "positives": [
+        "Your reputation with 看守联盟 is -50.",
+        "Your reputation with 海胆 is 100."
+      ],
+      "negatives": [
+        "Your reputation with 海胆 decreased by 100 to -600."
+      ]
+    },
+    {
+      "id": "ritual-award-69",
+      "status": "draft",
+      "note": "#69：水之仪式 —— `X can award an additional N reputation.`",
+      "regex": "^(.+?) can award an additional (\\d+) reputation\\.$",
+      "replacement": "$1还能再给予 $2 点声望。",
+      "positives": [
+        "Qan can award an additional 100 reputation."
+      ],
+      "negatives": [
+        "Qan can award an additional 100.",
+        "Qan awarded an additional 100 reputation."
+      ]
+    }
+  ]
+}

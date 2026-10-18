@@ -258,6 +258,15 @@ TABLE = {
     "condition this does little": "这种情况下这没什么用",
     "is solid and has RenderLayer": "是实心的且有 RenderLayer",
     "no thermal insulation": "没有隔热层",
+
+    # ★ 2026-10-18（测试窗口 #21 / #49 / #53）：显示名/消息里的**部件参数与硬编码词**
+    #   · `deactivated`：`ArtificialIntelligence.HandleEvent` 的 `{{K|deactivated}}`
+    #   · `domesticated`：`IBondedCompanion` 的 Honorific（尾随空格一起吃，避免「家养 X」）
+    #   · `Barathrumite`：阵营形容词（`Factions.xml` 的 DisplayName 管不到）
+    "deactivated": "未激活",
+    "domesticated ": "家养",
+    "Barathrumite": "巴拉斯鲁米特",
+    "painting": "画作",
 }
 
 # ★ 2026-10-17 组合句组件（水之仪式家族）——取证见 _tools\_fill_combo_1017.py 头注

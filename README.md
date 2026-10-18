@@ -163,7 +163,43 @@ Windows / PowerShell（脚本里有 pwsh 调用；核心逻辑跨平台）
 
 ---
 
-## 六、版权
+## 六、规则夹具：松捕获 → 严校验 → 兜底不半译（`tools/rules/`）
+
+```powershell
+python tools\rules\rule_spec_check.py          # 机器跑一遍 → 生成人工复核表
+```
+
+- `_rule_spec.json`：每条规则带 `positives`（必须命中）/ `negatives`（必须不命中）
+- `_rule_review_table.md`：机器结果 + 空白的「人工意见」列，给人复核用
+- 判据：正例 `命中`=匹配上、`漏`=没匹配；反例 `未命中`=正确、`误伤`=匹配了
+
+它治的是「正则卡太死」和「正则放太松」两种病：
+先用**松捕获**认形状，再用**槽校验**收紧，最后给宽规则加**兜底负向断言**
+（宁可整句不译，也不半译）。
+
+## 六·补、批量离线查漏（`tools/audit/`）
+
+```powershell
+python tools\audit\_audit_popup_forms.py      # Popup / MessageQueue / Messaging 的句子形字面量
+python tools\audit\_audit_other_exits.py      # GetDescription / GetDisplayName / GetLevelText 的字面量
+python tools\audit\_triage68.py               # 缺口分诊：串表已覆盖 / 调试内部 / 需要规则
+```
+
+输出 `*_gaps.txt`（原文 → 译文对照），可直接当补译清单。
+实际用法：先跑审计拿缺口 → 分诊 → 写规则/补串表 → 复跑看数字下降。
+
+## 六·补2、发布分支与工作区整理（`tools/release/`、`tools/maintenance/`）
+
+```powershell
+python tools\release\release_branch.py --to-release   # 生成「无探针」发布版并装机
+python tools\release\release_branch.py --to-dev       # 切回开发版（带探针）
+python tools\maintenance\cleanup_workspace.py         # 备份留 5 删 5 留 1 + 清缓存（默认干跑）
+```
+
+适用于「Steam 创意工坊只能游戏内上传」的游戏：用**两个目录 + 不同 ID** 共存，
+开发版带诊断探针、发布版不带，靠 Release 脚本一键切换。
+
+## 七、版权
 
 **本仓库不含任何游戏反编译产物、游戏资源或游戏 API 文档。**
 详见 `NOTICE.md`。
