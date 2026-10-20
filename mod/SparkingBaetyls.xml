@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 由 SparkingBaetyls.xml 借译（Load="Merge" 增量覆盖）。
+     译文基准取自 210.20 补丁，机翻明显处已优化，译名以我们的术语表为准。 -->
+<sparkingbaetyls Load="Merge" Lang="zh-Hans" Encoding="utf-8">
+  <reward Name="MeleeWeapon" Description="一件强大的武器" />
+  <reward Name="Armor" Description="一件华丽的法衣" />
+  <reward Name="MissileWeapon" Description="一个炽热大炮" />
+  <reward Name="Artifact" Description="一个奇特的装置" />
+  <reward Name="AttributePoints" Description="增强实力" />
+  <reward Name="MutationPoints" Description="增强实力" />
+  <reward Name="SkillPoints" Description="提升实力" />
+  <reward Name="Reputation" Description="赫赫有名" />
+</sparkingbaetyls>

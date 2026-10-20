@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<objects Encoding="utf-8">
+  <object Name="Iopinax" Inherits="BaseAnimal">
+    <part Name="Render" DisplayName="{{M|小伊奥皮纳克斯}}" Tile="Creatures/sw_iopinax.bmp" RenderString="g" ColorString="&amp;w" DetailColor="y" />
+    <part Name="Description" Short="在卷毛之下，带斑点的皮肤凹坑——十二边形——接住广阔世界被滤过的亮光，把它朝自身反掷十二次，然后呼出一层柔光。光照亮三条细颈上的须，每条颈都探出一颗头去检视另外两颗，同时充当它那对钩角的杠杆。这头神羊沉默而严厉。" />
+    <part Name="Corpse" CorpseChance="0" CorpseBlueprint="Goat Corpse" />
+    <part Name="Brain" Wanders="false" />
+    <stat Name="Level" Value="4" />
+    <stat Name="AV" Value="15" />
+    <stat Name="Hitpoints" Value="30" />
+    <stat Name="Strength" sValue="18"></stat>
+    <stat Name="Agility" sValue="22"></stat>
+    <stat Name="Toughness" sValue="16"></stat>
+    <stat Name="HeatResistance" Value="80" />
+    <stat Name="ColdResistance" Value="80" />
+    <stat Name="AcidResistance" Value="80" />
+    <stat Name="ElectricResistance" Value="80"></stat>
+    <part Name="LightSource" Lit="true" Radius="3" />
+    <part Name="RefractLight" />
+    <inventoryobject Blueprint="Rock-Scarred Hoof" Number="2" />
+    <inventoryobject Blueprint="Goat_Horns" Number="1" />
+    <skill Name="Cudgel" />
+    <skill Name="Cudgel_ChargingStrike" />
+    <skill Name="Multiweapon_Fighting" />
+    <skill Name="Tactics_Charge" />
+    <skill Name="Endurance" />
+    <skill Name="Shield" />
+    <part Name="InhabitAchievement" AchievementID="ACH_INHABIT_GOAT" />
+    <part Name="ConversationScript" ConversationID="Goats" />
+    <tag Name="Pet"/>
+    <tag Name="StartingPet"/>
+    <part Name="Pettable" />
+    <tag Name="PetResponse" Value="bleats a cascade of soft tones,baaas a soft meadow's breeze of sound,bleats a joyful noise unto the world,baaas soothingly" />
+    <tag Name="Gender" Value="male" />
+    <tag Name="Species" Value="goat" />
+    <xtagGrammar Proper="true"></xtagGrammar>
+    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
+    <property Name="Story" Value="Freehold_Pet_Iopinax_Story" />
+  </object>
+  <object Name="Rock-Scarred Hoof" Inherits="NaturalWeapon">
+    <part Name="Render" DisplayName="布满岩石划痕的蹄" Tile="Creatures/natural-weapon-hoof1.bmp" ColorString="&amp;w"></part>
+    <part Name="MeleeWeapon" PenBonus="0" HitBonus="0" BaseDamage="2d2" Skill="Cudgel" Stat="Strength" Slot="Foot" />
+    <tag Name="UndesireableWeapon"/>
+  </object>
+</objects>

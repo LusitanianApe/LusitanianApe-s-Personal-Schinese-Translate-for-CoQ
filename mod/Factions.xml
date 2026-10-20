@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='utf-8'?>
+<factions Load="Merge" Lang="zh-Hans" Encoding="utf-8">
+  <faction Name="Prey" DisplayName="食草享乐者"/>
+  <faction Name="Joppa" DisplayName="约帕" FormatWithArticle="false"/>
+  <faction Name="Kyakukya" DisplayName="卡库基亚" FormatWithArticle="false"/>
+  <faction Name="Ezra" DisplayName="埃兹拉" FormatWithArticle="false"/>
+  <faction Name="Snapjaws" DisplayName="咬颚兽"/>
+  <faction Name="Baboons" DisplayName="狒狒"/>
+  <faction Name="Apes" DisplayName="猿"/>
+  <faction Name="Crabs" DisplayName="螃蟹"/>
+  <faction Name="Bears" DisplayName="熊"/>
+  <faction Name="Winged Mammals" DisplayName="有翼哺乳动物"/>
+  <faction Name="Birds" DisplayName="鸟"/>
+  <faction Name="Fish" DisplayName="鱼"/>
+  <faction Name="Insects" DisplayName="昆虫"/>
+  <faction Name="Swine" DisplayName="猪"/>
+  <faction Name="Unshelled Reptiles" DisplayName="无壳爬行动物"/>
+  <faction Name="Cannibals" DisplayName="食人族"/>
+  <faction Name="Arachnids" DisplayName="蛛形动物"/>
+  <faction Name="Cats" DisplayName="猫"/>
+  <faction Name="Dogs" DisplayName="狗"/>
+  <faction Name="Cragmensch" DisplayName="岩石人"/>
+  <faction Name="Mollusks" DisplayName="软体动物"/>
+  <faction Name="Tortoises" DisplayName="陆龟"/>
+  <faction Name="Robots" DisplayName="机器人"/>
+  <faction Name="Baetyls" DisplayName="贝提尔"/>
+  <faction Name="Dromad" DisplayName="驼人"/>
+  <faction Name="Entropic" DisplayName="高度熵化生物"/>
+  <faction Name="Antelopes" DisplayName="羚羊"/>
+  <faction Name="Worms" DisplayName="蠕虫"/>
+  <faction Name="Oozes" DisplayName="污泥"/>
+  <faction Name="Equines" DisplayName="马科动物"/>
+  <faction Name="Newly Sentient Beings" DisplayName="新觉醒的生物"/>
+  <faction Name="Goatfolk" DisplayName="羊人"/>
+  <faction Name="Hermits" DisplayName="隐士"/>
+  <faction Name="Frogs" DisplayName="青蛙"/>
+  <faction Name="Svardym" DisplayName="斯瓦德姆"/>
+  <faction Name="Naphtaali" DisplayName="纳夫塔利部落" FormatWithArticle="false"/>
+  <faction Name="Trolls" DisplayName="巨魔"/>
+  <faction Name="Issachari" DisplayName="伊萨查里部落" FormatWithArticle="false"/>
+  <faction Name="Strangers" DisplayName="神秘的陌生人"/>
+  <faction Name="Pariahs" DisplayName="被遗弃者"/>
+  <faction Name="Hindren" DisplayName="贝拉的后裔" FormatWithArticle="false"/>
+  <faction Name="Mopango" DisplayName="莫潘戈" FormatWithArticle="false"/>
+  <faction Name="Girsh" DisplayName="吉尔什" FormatWithArticle="false"/>
+  <faction Name="Barathrumites" DisplayName="巴拉斯鲁米特" FormatWithArticle="false" DefaultAddress="掘进者">
+    <!-- ★★ 2026-10-17（测试窗口 #15）：`DefaultAddress="delver"` 的本地化位。
+         官方 `Base\Factions.xml` 给 Barathrumites 填了 `DefaultAddress="delver"`，
+         我方覆盖**没抄** ⇒ `欢迎来到砂砾门，delver。` 原样英文。
+         译名「掘进者」：Qud 里 Barathrumites 对人类的称呼（delve = 深掘）；
+         ★ 术语表已登记（`_tools/术语表.md` 的 `delver` 条）。 -->
+    <!-- ★★ 2.16.88 新增：**称号（rank）的本地化位**
+         反编译取证：
+           · 官方 `Base\Factions.xml` —— 83 个 faction 里**只有 Barathrumites 有 rank**，共 4 个：
+               apprentice Standing=1 · journeyfriend Standing=2 · disciple Standing=3 · meyvn Standing=4
+           · 官方本体**不填 `DisplayName`**；而 `Base\ExampleLanguage\Factions.example.xml` L79 填了
+               `<rank Name="journeyfriend" DisplayName="▶journeyfriend" />`
+             ⇒ **`DisplayName` 就是本地化位**（官方只把它填成与 Name 相同）
+           · 拼装句出处：`XRL.World.Reputation::SetFactionRank`
+               `"You are promoted to the rank of " + …`（DLL 字面量 L10219 / L22457）
+         症状（用户截图）：`你被提升为rank of Journeyfriend。`
+           · 「你被提升为」= 我方规则译的
+           · `rank of X` = **硬编码拼接**，且 X（DisplayName）当时是英文
+         ⇒ 本条目补上 4 个 `DisplayName` ⇒ 变量部分变中文（拼装骨架仍待 2.16.88 的规则处理）
+         译名依据（全模组计数）：「学徒」×25 ·「门徒」×17 已是现成词；`journeyfriend` 新造「旅友」；
+           `meyvn` —— ★ **官方给了释义**（`Conversations.xml` 巴拉瑟鲁姆台词）：
+               `You are raised to Meyvn, =name=. **The one who understands.**`
+             ⇒ 意译为「**明者**」，并按 §9 惯例附原文 ⇒ `明者（meyvn）`
+             （现实语源：意第绪语 `meyvn` ← 希伯来语 `mevin`「理解者／行家」，同源英语 `maven`） -->
+    <rank Name="apprentice"    DisplayName="学徒" Standing="1" />
+    <rank Name="journeyfriend" DisplayName="旅友" Standing="2" />
+    <rank Name="disciple"      DisplayName="门徒" Standing="3" />
+    <rank Name="meyvn"         DisplayName="明者（meyvn）" Standing="4" />
+  </faction>
+  <faction Name="Consortium" DisplayName="植物联盟" FormatWithArticle="false"/>
+  <faction Name="Templar" DisplayName="普图斯圣殿骑士" FormatWithArticle="false"/>
+  <faction Name="Mechanimists" DisplayName="机械教派" FormatWithArticle="false"/>
+  <faction Name="Gyre Wights" DisplayName="环流（Gyre）幽灵" FormatWithArticle="false"/>
+  <faction Name="Mamon" DisplayName="玛蒙之子" FormatWithArticle="false"/>
+  <faction Name="Seekers" DisplayName="无眼之道追寻者" FormatWithArticle="false"/>
+  <faction Name="Wardens" DisplayName="看守联盟" FormatWithArticle="false"/>
+  <faction Name="Water" DisplayName="水领主"/>
+  <faction Name="Flowers" DisplayName="花"/>
+  <faction Name="Roots" DisplayName="根系"/>
+  <faction Name="Fungi" DisplayName="真菌"/>
+  <faction Name="Vines" DisplayName="藤蔓"/>
+  <faction Name="Urchins" DisplayName="海胆"/>
+  <faction Name="Succulents" DisplayName="多肉植物"/>
+  <faction Name="Trees" DisplayName="树木"/>
+  <faction Name="Merchants" DisplayName="商人公会" FormatWithArticle="false"/>
+  <faction Name="Farmers" DisplayName="农民公会" FormatWithArticle="false"/>
+  <faction Name="Resheph" DisplayName="盘羊教派" FormatWithArticle="false"/>
+  <faction Name="Daughters" DisplayName="流亡者之女" FormatWithArticle="false"/>
+  <faction Name="YdFreehold" DisplayName="伊德自由领居民" FormatWithArticle="false"/>
+  <faction Name="Chavvah" DisplayName="生命之树查瓦"/>
+  <faction Name="SultanCult1" FormatWithArticle="false"/>
+  <faction Name="SultanCult2" FormatWithArticle="false"/>
+  <faction Name="SultanCult3" FormatWithArticle="false"/>
+  <faction Name="SultanCult4" FormatWithArticle="false"/>
+  <faction Name="SultanCult5" FormatWithArticle="false"/>
+<!-- ★ 2026-10-17 水之仪式招牌菜文案（生成器 _tools\_fill_faction_recipe.py） -->
+  <faction Name="Kyakukya" Load="Merge">
+    <!-- 官方：RecipeText="Would you share the favorite dish of Kyakukya's villagers?" -->
+    <waterritual RecipeText="你愿意分享卡库基亚村民最拿手的那道菜吗？" />
+  </faction>
+  <faction Name="Ezra" Load="Merge">
+    <!-- 官方：RecipeText="Would you share the favorite dish of Ezra's villagers?" -->
+    <waterritual RecipeText="你愿意分享以斯拉村民最拿手的那道菜吗？" />
+  </faction>
+  <faction Name="Mopango" Load="Merge">
+    <!-- 官方：RecipeText="Would you share the favorite dish of the mopango?" -->
+    <waterritual RecipeText="你愿意分享莫潘戈人最拿手的那道菜吗？" />
+  </faction>
+  <faction Name="Barathrumites" Load="Merge">
+    <!-- 官方：RecipeText="What a... pungent smell. Would you teach me to cook the Barathrumites' favorite dish?" -->
+    <waterritual RecipeText="好……刺鼻的气味。你愿意教我做巴拉斯鲁米特最拿手的那道菜吗？" />
+  </faction>
+  <faction Name="YdFreehold" Load="Merge">
+    <!-- 官方：RecipeText="Would you share the favorite dish of the Yd Freehold's denizens?" -->
+    <waterritual RecipeText="你愿意分享伊德自由领居民最拿手的那道菜吗？" />
+  </faction>
+  <faction Name="Chavvah" Load="Merge">
+    <!-- 官方：RecipeText="Would you share the favorite dish of the entities of Chavvah?" -->
+    <waterritual RecipeText="你愿意分享查瓦众生最拿手的那道菜吗？" />
+  </faction>
+<!-- /水之仪式招牌菜文案 -->
+
+</factions>

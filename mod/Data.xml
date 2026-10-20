@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 由 ObjectBlueprints\Data.xml 借译生成的 Data.xml（Load="Merge" 增量覆盖）。
+     译文基准取自 210.20 补丁，机翻痕迹处已优化，译名以我们的术语表为准。 -->
+<objects Load="Merge" Lang="zh-Hans" Encoding="utf-8">
+  <object Name="BaseUnknown" Load="Merge">
+    <part Name="Render" DisplayName="奇异遗物" />
+    <part Name="Description" Short="尘土覆盖着这令人困惑的装置。" />
+  </object>
+  <object Name="UnknownGigantic" Load="Merge">
+    <part Name="SizeAdjective" Adjective="巨大" />
+    <part Name="Description" Short="尘埃覆盖了这巨大的装置。" />
+  </object>
+  <object Name="UnknownOddTrinket" Load="Merge">
+    <part Name="Render" DisplayName="奇异饰品" />
+    <part Name="Description" Short="光芒在这件小巧珍品的边缘闪烁。" />
+  </object>
+  <object Name="UnknownStrangeTubes" Load="Merge">
+    <part Name="Render" DisplayName="奇异管束" />
+    <part Name="Description" Short="未知用途的管子在焊接接头处散开。" />
+  </object>
+  <object Name="UnknownStrangeFurniture" Load="Merge">
+    <part Name="Render" DisplayName="奇异家具" />
+    <part Name="Description" Short="一个意图空洞的坐具，积满了灰尘，反射着微弱的光线。" />
+  </object>
+  <object Name="UnknownBizarreContraption" Load="Merge">
+    <part Name="Render" DisplayName="奇异装置" />
+    <part Name="Description" Short="旋钮和铆钉纵横交错于这台难以理解的机器之上。" />
+  </object>
+  <object Name="UnknownMed" Load="Merge">
+    <part Name="Render" DisplayName="管状物" />
+    <part Name="SizeAdjective" Adjective="小" />
+    <part Name="Description" Short="一种奇异的物质填充在玻璃管道中。" />
+  </object>
+  <object Name="UnknownStrangeMeat" Load="Merge">
+    <part Name="Render" DisplayName="奇异肉块" />
+    <part Name="Description" Short="一个未知的器官带着求生的绝望声声哀鸣。" />
+  </object>
+  <object Name="UnknownStrangePlant" Load="Merge">
+    <part Name="Render" DisplayName="奇异植物" />
+    <part Name="Description" Short="一片陌生的绿叶触须在叶片鞘中盘绕。" />
+  </object>
+  <object Name="UnknownPistol" Load="Merge">
+    <part Name="Render" DisplayName="手枪" />
+    <part Name="Description" Short="污点横跨这把未识别手枪的短枪管。" />
+  </object>
+  <object Name="UnknownRifle" Load="Merge">
+    <part Name="Render" DisplayName="步枪" />
+    <part Name="Description" Short="斑点遍布这把未知枪械的长枪管。" />
+  </object>
+  <object Name="UnknownCannon" Load="Merge">
+    <part Name="Render" DisplayName="火炮" />
+    <part Name="Description" Short="烟痕染黑了铁制瞄准具，并延伸到大炮的主要通道。" />
+  </object>
+  <object Name="UnknownBow" Load="Merge">
+    <part Name="Render" DisplayName="弓" />
+    <part Name="Description" Short="拉伸线连接着一把未知弓的箭扣。" />
+  </object>
+  <object Name="UnknownGrenade" Load="Merge">
+    <part Name="Render" DisplayName="手榴弹" />
+    <part Name="Description" Short="一枚爆炸装置被包裹在无法辨识的金属中。" />
+  </object>
+  <object Name="UnknownClub" Load="Merge">
+    <part Name="Render" DisplayName="棍棒" />
+    <part Name="Description" Short="一块融合材料制成的打击棒。" />
+  </object>
+  <object Name="UnknownKnife" Load="Merge">
+    <part Name="Render" DisplayName="匕首" />
+    <part Name="Description" Short="锋利的刃顶着一个奇异的柄。" />
+  </object>
+  <object Name="UnknownSword" Load="Merge">
+    <part Name="Render" DisplayName="剑" />
+    <part Name="Description" Short="一柄相当长的刃贯穿了一个奇异的剑柄。" />
+  </object>
+  <object Name="UnknownAxe" Load="Merge">
+    <part Name="Render" DisplayName="斧头" />
+    <part Name="Description" Short="刃口悬挂在沾满指纹的手柄上。" />
+  </object>
+  <object Name="UnknownShield" Load="Merge">
+    <part Name="Render" DisplayName="护盾" />
+    <part Name="Description" Short="由焊接的手柄操控的一块弯曲的、坚硬如爆炸表面材料制成的屏障。" />
+  </object>
+  <object Name="UnknownArmor" Load="Merge">
+    <part Name="Render" DisplayName="护甲" />
+    <part Name="Description" Short="一件形状独特的胸甲，来源不明，能够保护身体的重要部位。" />
+  </object>
+  <object Name="UnknownHelmet" Load="Merge">
+    <part Name="Render" DisplayName="头盔" />
+    <part Name="Description" Short="一种未知用途的头部装饰。" />
+  </object>
+  <object Name="UnknownMask" Load="Merge">
+    <part Name="Render" DisplayName="面具" />
+    <part Name="Description" Short="一张假面被精心塑形并以未知的目的缝制而成。" />
+  </object>
+  <object Name="UnknownGoggles" Load="Merge">
+    <part Name="Render" DisplayName="护目镜" />
+    <part Name="Description" Short="圆形的透镜由一条带子固定。" />
+  </object>
+  <object Name="UnknownGloves" Load="Merge">
+    <part Name="Render" DisplayName="手套" />
+    <part Name="Description" Short="奇怪的手套可以适应大多数手腕和手指。" />
+  </object>
+  <object Name="UnknownJewelry" Load="Merge">
+    <part Name="Render" DisplayName="珠宝" />
+    <part Name="Description" Short="一个圆形的项圈在无意间闪耀着光芒。" />
+  </object>
+  <object Name="UnknownCloak" Load="Merge">
+    <part Name="Render" DisplayName="斗篷" />
+    <part Name="Description" Short="某种织物被缝合到了未知的目的。" />
+  </object>
+  <object Name="UnknownBackpack" Load="Merge">
+    <part Name="Render" DisplayName="背包" />
+    <part Name="Description" Short="一个带有背带的袋子，用于携带物品。" />
+  </object>
+  <object Name="UnknownBoots" Load="Merge">
+    <part Name="Render" DisplayName="靴子" />
+    <part Name="Description" Short="长期使用的痕迹遍布这双鞋的表面。" />
+  </object>
+  <object Name="UnknownBottle" Load="Merge">
+    <part Name="Render" DisplayName="瓶子" />
+    <part Name="Description" Short="这是一件做工优良且不同寻常的容器。" />
+  </object>
+  <object Name="UnknownDataDisk" Load="Merge">
+    <part Name="Render" DisplayName="数据磁盘" />
+    <part Name="Description" Short="比特沉睡在矩形棺材中，直至被唤醒。" />
+  </object>
+  <object Name="UnknownTool" Load="Merge">
+    <part Name="Render" DisplayName="工具" />
+    <part Name="Description" Short="各种奇异部件组合成了一种工具。" />
+  </object>
+  <object Name="UnknownEmptyMed" Load="Merge">
+    <part Name="Render" DisplayName="管状生物" />
+    <part Name="Description" Short="空洞的空气压迫着玻璃管道。" />
+  </object>
+  <object Name="UnknownSmallMilkyTube" Load="Merge">
+    <part Name="Render" DisplayName="{{Y|乳白色}}管状物" />
+  </object>
+  <object Name="UnknownSmallSmokeyTube" Load="Merge">
+    <part Name="Render" DisplayName="{{K|烟熏}}管道" />
+  </object>
+  <object Name="UnknownSmallRoseyTube" Load="Merge">
+    <part Name="Render" DisplayName="{{R|玫瑰色}}管状生物" />
+  </object>
+  <object Name="UnknownSmallTurquoiseTube" Load="Merge">
+    <part Name="Render" DisplayName="{{C|青绿色}}管状物" />
+  </object>
+  <object Name="UnknownSmallCobaltTube" Load="Merge">
+    <part Name="Render" DisplayName="{{b|钴}}管" />
+  </object>
+  <object Name="UnknownSmallMossyTube" Load="Merge">
+    <part Name="Render" DisplayName="{{g|苔藓}}管" />
+  </object>
+  <object Name="UnknownSmallGoldFleckedTube" Load="Merge">
+    <part Name="Render" DisplayName="{{W|金色斑点}}管状物" />
+  </object>
+  <object Name="UnknownSmallMuddyTube" Load="Merge">
+    <part Name="Render" DisplayName="{{w|泥泞的}}管道" />
+  </object>
+  <object Name="UnknownSmallVioletTube" Load="Merge">
+    <part Name="Render" DisplayName="{{m|紫色}}管状物" />
+  </object>
+  <object Name="UnknownSmallPlatinumTube" Load="Merge">
+    <part Name="Render" DisplayName="{{y|铂金}}管道" />
+  </object>
+</objects>

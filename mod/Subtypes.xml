@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<subtypes Load="Merge" Lang="zh-Hans" Encoding="utf-8">
+  <!-- 出身/种姓与天职（由 _tools/gen_subtypes_xml.py 生成）。
+     ★ 层级必须与官方一致：Castes 有 <category> 层、Callings **没有**。
+       SubtypeFactory 在 class 首次出现时会自动建一个空 category 当
+       currentLoadingCategory；层级写错就会把真正的条目塞进那个空 category，
+       表现为「选完预设后还弹出天职选择」。-->
+  <class ID="Castes" ChargenTitle="选择种姓" SingularTitle="种姓" StatBoxDisplay="true">
+    <category Name="Ekuemekiyye" DisplayName="{{G|圣城埃库梅基耶的剧毒植物园}}">
+      <subtype Name="Horticulturist" DisplayName="园艺师" Gear="StartingGear_Horticulturist" Tile="creatures/caste_1.bmp" DetailColor="g"/>
+      <subtype Name="Priest of All Suns" DisplayName="众日之祭司" Gear="StartingGear_PriestOfAllSuns" Tile="creatures/caste_2.bmp" DetailColor="Y"/>
+      <subtype Name="Priest of All Moons" DisplayName="众月之祭司" Gear="StartingGear_PriestofAllMoons" Tile="creatures/caste_3.bmp" DetailColor="W"/>
+      <subtype Name="Syzygyrior" DisplayName="朔望武士" Gear="StartingGear_Syzygyrior" Tile="creatures/caste_4.bmp" DetailColor="g"/>
+    </category>
+    <category Name="Ibul" DisplayName="{{C|伊布尔覆冰生态城}}">
+      <subtype Name="Artifex" DisplayName="工匠" Gear="StartingGear_Artifex" Tile="creatures/caste_5.bmp" DetailColor="c"/>
+      <subtype Name="Consul" DisplayName="领事" Gear="StartingGear_Consul" Tile="creatures/caste_6.bmp" DetailColor="c"/>
+      <subtype Name="Praetorian" DisplayName="禁卫" Gear="StartingGear_Praetorian" Tile="creatures/caste_7.bmp" DetailColor="c"/>
+      <subtype Name="Eunuch" DisplayName="宦官" Gear="StartingGear_Eunuch" Tile="creatures/caste_8.bmp" DetailColor="c"/>
+    </category>
+    <category Name="Yawningmoon" DisplayName="{{R|哈欠之月的地壳臼炮团}}">
+      <subtype Name="Child of the Hearth" DisplayName="炉灶之子" Gear="StartingGear_ChildoftheHearth" Tile="creatures/caste_9.bmp" DetailColor="r"/>
+      <subtype Name="Child of the Wheel" DisplayName="车轮之子" Gear="StartingGear_ChildoftheWheel" Tile="creatures/caste_10.bmp" DetailColor="r"/>
+      <subtype Name="Child of the Deep" DisplayName="深渊之子" Gear="StartingGear_ChildoftheDeep" Tile="creatures/caste_11.bmp" DetailColor="r"/>
+      <subtype Name="Fuming God-Child" DisplayName="怒神之子" Gear="StartingGear_FumingGodChild" Tile="creatures/caste_12.bmp" DetailColor="r"/>
+    </category>
+  </class>
+  <class ID="Callings" ChargenTitle="选择天职" SingularTitle="天职">
+    <subtype Name="Apostle" DisplayName="使徒" Gear="StartingGear_Apostle" Tile="creatures/caste_13.bmp" DetailColor="m"/>
+    <subtype Name="Arconaut" DisplayName="方舟行者" Gear="StartingGear_Arconaut" Tile="creatures/caste_14.bmp" DetailColor="Y">
+      <extrainfo>起始带有随机杂物与器物</extrainfo>
+      <removeextrainfo>Starts with random junk and artifacts</removeextrainfo>
+    </subtype>
+    <subtype Name="Greybeard" DisplayName="灰须" Gear="StartingGear_Greybeard" Tile="creatures/caste_15.bmp" DetailColor="w"/>
+    <subtype Name="Gunslinger" DisplayName="快枪手" Gear="StartingGear_Gunslinger" Tile="creatures/caste_16.bmp" DetailColor="K"/>
+    <subtype Name="Marauder" DisplayName="掠袭者" Gear="StartingGear_Marauder" Tile="creatures/caste_17.bmp" DetailColor="r"/>
+    <subtype Name="Pilgrim" DisplayName="朝圣者" Gear="StartingGear_Pilgrim" Tile="creatures/caste-pilgrim.png" DetailColor="y"/>
+    <subtype Name="Nomad" DisplayName="游牧民" Gear="StartingGear_Nomad" Tile="creatures/caste_19.bmp" DetailColor="W">
+      <extrainfo>起始带一件{{B|回收服}}</extrainfo>
+      <removeextrainfo>Starts with a {{B|recycling suit}}</removeextrainfo>
+    </subtype>
+    <subtype Name="Scholar" DisplayName="学者" Class="ScholarSkills" Gear="StartingGear_Scholar" Tile="creatures/caste_20.bmp" DetailColor="C"/>
+    <subtype Name="Tinker" DisplayName="修补匠" Gear="StartingGear_Tinker" Tile="creatures/caste_21.bmp" DetailColor="c">
+      <extrainfo>起始带有若干随机器物与废料</extrainfo>
+      <removeextrainfo>Begins with a number of random artifacts and scrap</removeextrainfo>
+    </subtype>
+    <subtype Name="Warden" DisplayName="看守" Gear="StartingGear_Warden" Tile="creatures/caste_22.bmp" DetailColor="w"/>
+    <subtype Name="Water Merchant" DisplayName="水贩" Gear="StartingGear_WaterMerchant" Tile="creatures/caste_23.bmp" DetailColor="B">
+      <extrainfo>为贸易目的可进入许多聚落</extrainfo>
+      <extrainfo>起始带有交易货物</extrainfo>
+      <removeextrainfo>Allowed entrance to many settlements for purposes of trade</removeextrainfo>
+      <removeextrainfo>Starts with trade goods</removeextrainfo>
+    </subtype>
+    <subtype Name="Watervine Farmer" DisplayName="水藤农夫" Gear="StartingGear_WatervineFarmer" Tile="creatures/caste_24.bmp" DetailColor="y">
+      <extrainfo>起始带有随机烹饪材料</extrainfo>
+      <removeextrainfo>Starts with random cooking ingredients</removeextrainfo>
+    </subtype>
+  </class>
+</subtypes>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 由 Worlds.xml 借译（Load="Merge" 增量覆盖）。
+     译文基准取自 210.20 补丁，机翻明显处已优化，译名以我们的术语表为准。 -->
+<worlds Load="Merge" Lang="zh-Hans" Encoding="utf-8">
+</worlds>

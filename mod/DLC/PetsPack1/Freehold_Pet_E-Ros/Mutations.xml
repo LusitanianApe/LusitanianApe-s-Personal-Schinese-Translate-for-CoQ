@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mutations Encoding="utf-8" Hidden="true" ExcludeFromPool="true">
+    <category Name="Mental">
+        <mutation Name="ErosTeleportaion" DisplayName="传送至首领身边" Class="ErosTeleportation" Cost="1" BearerDescription="传送者" Tile="Mutations/teleportation.bmp">
+            <description>
+                <p>你传送到首领附近的某处。</p>
+            </description>
+            <leveltext>
+                <statline Name="Cooldown" DisplayName="冷却"/>
+            </leveltext>
+        </mutation>
+    </category>
+</mutations>

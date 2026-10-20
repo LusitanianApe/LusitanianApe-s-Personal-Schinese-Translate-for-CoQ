@@ -1,0 +1,330 @@
+// ─────────────────────────────────────────────────────────────────────────
+//  ZhsWindowSkipPatch —— 跳过「数据已就绪却仍要显示」的天职窗口
+//
+//  证据（探针 v3.1）：
+//      [setData] Subtype ← Marauder
+//      [shouldBeEnabled] QudSubtypeModule → True | Subtype=Marauder   ← 已就绪
+//      [nextWindow] → Chargen/ChooseSubtypes                          ← 仍被选中
+//
+//  机理：`assembleWindowDescriptors` 只在 InitModules 跑一次（早于预设数据写入），
+//        窗口的 `enabled` 标记从此陈旧、不再重算。
+//
+//  修法：Postfix `GetNextEnabledWindowDescriptor`，若选中的是天职窗口而天职
+//        数据已有效，就继续往后找下一个可用窗口。
+// ─────────────────────────────────────────────────────────────────────────
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Reflection;
+using HarmonyLib;
+using UnityEngine;
+
+namespace Nattens.QudZhsCookbook
+{
+    internal static class ZhsWindowSkipPatch
+    {
+        private const string Tag = "[QudZhsCookbook] ";
+        private static bool _applied;
+        private static int _diagCount;
+        private static int _skipDepth;
+        private static bool _manualChoice;
+        private static MethodInfo _advanceM;
+        private static string _logPath;
+
+        internal static void Diag(string msg)
+        {
+            try
+            {
+                if (_diagCount++ > 25) return;
+                if (_logPath == null)
+                {
+                    string home = Environment.GetFolderPath(
+                        Environment.SpecialFolder.UserProfile);
+                    _logPath = System.IO.Path.Combine(home, "AppData",
+                        "LocalLow", "Freehold Games", "CavesOfQud",
+                        "Mods", "QudZhsCookbook", "_zhs_windowskip.log");
+                }
+                System.IO.File.AppendAllText(_logPath,
+                    DateTime.Now.ToString("HH:mm:ss.fff") + "  " + msg + "\n");
+            }
+            catch { }
+        }
+
+        private static Type _descType;      // EmbarkBuilderModuleWindowDescriptor
+        private static FieldInfo _descEnabled;
+        private static FieldInfo _descViewID;
+        private static FieldInfo _descModule;
+
+        public static void TryApply()
+        {
+            if (_applied) return;
+            _applied = true;
+
+            Type ebt = FindType("XRL.CharacterBuilds.EmbarkBuilder");
+            Type dt = FindType("XRL.CharacterBuilds.EmbarkBuilderModuleWindowDescriptor");
+            if (ebt == null || dt == null)
+            {
+                Debug.LogError(Tag + "天职窗口跳过：找不到 EmbarkBuilder / Descriptor");
+                return;
+            }
+            _descType = dt;
+            _descEnabled = dt.GetField("enabled", BindingFlags.Public
+                                                | BindingFlags.NonPublic
+                                                | BindingFlags.Instance);
+            _descViewID = dt.GetField("viewID", BindingFlags.Public
+                                               | BindingFlags.NonPublic
+                                               | BindingFlags.Instance);
+            _descModule = dt.GetField("module", BindingFlags.Public
+                                               | BindingFlags.NonPublic
+                                               | BindingFlags.Instance);
+
+            MethodInfo target = null;
+            foreach (MethodInfo mi in ebt.GetMethods(BindingFlags.Public
+                                                      | BindingFlags.NonPublic
+                                                      | BindingFlags.Instance))
+            {
+                if (mi.Name == "GetNextEnabledWindowDescriptor") { target = mi; break; }
+            }
+            if (target == null)
+            {
+                Debug.LogError(Tag + "天职窗口跳过：找不到 GetNextEnabledWindowDescriptor");
+                return;
+            }
+
+            try
+            {
+                MethodInfo post = typeof(ZhsWindowSkipPatch).GetMethod(
+                    "Postfix", BindingFlags.NonPublic | BindingFlags.Static);
+                Harmony h = new Harmony("Nattens.QudZhsCookbook.windowskip");
+                h.Patch(target, postfix: new HarmonyMethod(post));
+                Debug.Log(Tag + "天职窗口跳过：已挂 GetNextEnabledWindowDescriptor");
+
+                // ★ 第二层：Postfix advance —— 直接纠正 activeWindow
+                foreach (MethodInfo mi in ebt.GetMethods(BindingFlags.Public
+                                                          | BindingFlags.NonPublic
+                                                          | BindingFlags.Instance))
+                {
+                    if (mi.Name == "advance")
+                    {
+                        _advanceM = mi;
+                        MethodInfo postAdv = typeof(ZhsWindowSkipPatch).GetMethod(
+                            "AdvancePostfix", BindingFlags.NonPublic | BindingFlags.Static);
+                        Harmony h2 = new Harmony("Nattens.QudZhsCookbook.windowskip.adv");
+                        h2.Patch(mi, postfix: new HarmonyMethod(postAdv));
+                        Debug.Log(Tag + "天职窗口跳过：已挂 EmbarkBuilder.advance");
+                    }
+                }
+
+                // ★ 闸门：玩家手工选天职时置位，避免抢跳
+                Type winT = FindType("XRL.CharacterBuilds.Qud.UI.QudSubtypeModuleWindow");
+                if (winT != null)
+                {
+                    foreach (MethodInfo mi in winT.GetMethods(BindingFlags.Public
+                                                               | BindingFlags.NonPublic
+                                                               | BindingFlags.Instance))
+                    {
+                        if (mi.Name != "onSelectSubtype") continue;
+                        MethodInfo preMan = typeof(ZhsWindowSkipPatch).GetMethod(
+                            "OnManualChoice", BindingFlags.NonPublic | BindingFlags.Static);
+                        Harmony h3 = new Harmony("Nattens.QudZhsCookbook.windowskip.man");
+                        h3.Patch(mi, prefix: new HarmonyMethod(preMan));
+                        Debug.Log(Tag + "天职窗口跳过：已挂 onSelectSubtype（手工选择闸门）");
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.LogError(Tag + "天职窗口跳过挂载失败：" + e.Message);
+            }
+        }
+
+        /// <summary>若选中天职窗口而天职数据已有效 → 继续往后找。</summary>
+        private static void Postfix(object __instance, object[] __args, ref object __result)
+        {
+            try
+            {
+                // ★ 先治本：把已就绪的天职窗口标记为不可用
+                DisableSettledSubtypeWindows(__instance);
+
+                string vid = ViewID(__result);
+                object mod0 = __result == null ? null : _descModule?.GetValue(__result);
+                object dat0 = mod0 == null ? null : Member(mod0, "data");
+                string sub0 = dat0 == null ? "(data=null)"
+                    : Convert.ToString(Member(dat0, "Subtype"));
+                Diag("[postfix] result=" + (__result == null ? "null"
+                        : __result.GetType().Name)
+                     + " viewID=" + (vid ?? "(null)")
+                     + " descViewID字段=" + (_descViewID != null)
+                     + " descModule字段=" + (_descModule != null)
+                     + " mod=" + (mod0 == null ? "(null)" : mod0.GetType().Name)
+                     + " Subtype=" + (sub0 ?? "(null)")
+                     + " isSubtypeWin=" + (vid != null && vid.IndexOf("ChooseSubtypes",
+                         StringComparison.Ordinal) >= 0));
+
+                if (__result == null) return;
+                if (!IsSubtypeWindow(__result)) return;
+                if (!SubtypeIsSettled(__result)) return;   // 数据还没设 → 保持原行为
+                Diag("[postfix] ★ 两个守卫都通过，开始往后找");
+
+                // 继续往后找下一个可用窗口
+                object descs = Member(__instance, "windowDescriptors");
+                if (!(descs is IList list)) return;
+
+                int start = list.IndexOf(__result);
+                if (start < 0) return;
+
+                bool editableOnly = false;
+                if (__args != null && __args.Length > 0 && __args[0] is bool b)
+                    editableOnly = b;
+
+                for (int i = start + 1; i < list.Count; i++)
+                {
+                    object d = list[i];
+                    if (d == null) continue;
+                    if (!Enabled(d)) continue;
+                    if (editableOnly)
+                    {
+                        object mod = _descModule?.GetValue(d);
+                        object se = Member(mod, "shouldBeEditable");
+                        try
+                        {
+                            MethodInfo m = mod?.GetType().GetMethod("shouldBeEditable",
+                                BindingFlags.Public | BindingFlags.NonPublic
+                                | BindingFlags.Instance);
+                            if (m != null && !(bool)m.Invoke(mod, null)) continue;
+                        }
+                        catch { }
+                    }
+                    __result = d;
+                    Diag("[postfix] ★★ 已改显示 " + (ViewID(d) ?? "?"));
+                    Debug.Log(Tag + "天职窗口跳过：数据已就绪，改显示 "
+                              + (ViewID(d) ?? "?"));
+                    return;
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.LogError(Tag + "天职窗口跳过判定出错（已忽略）：" + e.Message);
+            }
+        }
+
+
+        /// <summary>玩家手工点了天职 → 本次不抢跳。</summary>
+        private static void OnManualChoice()
+        {
+            _manualChoice = true;
+            Diag("[manual] 玩家手工选择天职，本次不抢跳");
+        }
+
+        /// <summary>推进结束后若仍停在天职窗口而数据已就绪 → 再推一次跳过。</summary>
+        private static void AdvancePostfix(object __instance)
+        {
+            try
+            {
+                DisableSettledSubtypeWindows(__instance);
+                if (_manualChoice) { _manualChoice = false; return; }
+                if (_skipDepth >= 3) return;
+
+                object aw = Member(__instance, "activeWindow");
+                if (aw == null) return;
+                if (!IsSubtypeWindow(aw)) return;
+                if (!SubtypeIsSettled(aw)) return;
+
+                _skipDepth++;
+                Diag("[advance-post] activeWindow 仍是天职窗口（数据已就绪）→ 再推进一次，depth="
+                     + _skipDepth);
+                try { _advanceM?.Invoke(__instance, new object[] { false, false, false }); }
+                catch (Exception e) { Diag("[advance-post] 再推进失败：" + e.Message); }
+                _skipDepth--;
+            }
+            catch (Exception e)
+            {
+                Diag("[advance-post] 出错（已忽略）：" + e.Message);
+            }
+        }
+
+
+        /// <summary>
+        /// ★ 第三层（终结层）：把「数据已就绪的天职窗口」描述符 enabled 置 false。
+        /// 这样游戏自己的 `if (desc.enabled && …)` 在**任何路径**都会跳过它，
+        /// 不必依赖抵消返回值或抢 advance。
+        /// </summary>
+        private static void DisableSettledSubtypeWindows(object builder)
+        {
+            try
+            {
+                object descs = Member(builder, "windowDescriptors");
+                if (!(descs is IEnumerable en)) return;
+                foreach (object d in en)
+                {
+                    if (d == null) continue;
+                    if (!IsSubtypeWindow(d)) continue;
+                    if (!Enabled(d)) continue;              // 已经是 false 就不用改
+                    if (!SubtypeIsSettled(d)) continue;     // 数据没就绪 → 不动
+                    _descEnabled?.SetValue(d, false);
+                    Diag("[disable] 已把天职窗口描述符 enabled 置 false（数据已就绪）");
+                }
+            }
+            catch (Exception e)
+            {
+                Diag("[disable] 出错（已忽略）：" + e.Message);
+            }
+        }
+
+        private static bool IsSubtypeWindow(object desc)
+        {
+            string vid = ViewID(desc);
+            return vid != null && vid.IndexOf("ChooseSubtypes", StringComparison.Ordinal) >= 0;
+        }
+
+        /// <summary>天职模块的 data.Subtype 是否已有有效值。</summary>
+        private static bool SubtypeIsSettled(object desc)
+        {
+            object mod = _descModule?.GetValue(desc);
+            if (mod == null) return false;
+            object data = Member(mod, "data");
+            if (data == null) return false;
+            string sub = Convert.ToString(Member(data, "Subtype"));
+            return !string.IsNullOrEmpty(sub);
+        }
+
+        private static bool Enabled(object desc)
+        {
+            try { return _descEnabled != null && (bool)_descEnabled.GetValue(desc); }
+            catch { return false; }
+        }
+
+        private static string ViewID(object desc)
+        {
+            try { return _descViewID?.GetValue(desc) as string; }
+            catch { return null; }
+        }
+
+        private static object Member(object o, string name)
+        {
+            if (o == null) return null;
+            for (Type t = o.GetType(); t != null; t = t.BaseType)
+            {
+                FieldInfo f = t.GetField(name, BindingFlags.Public
+                                              | BindingFlags.NonPublic
+                                              | BindingFlags.Instance);
+                if (f != null) return f.GetValue(o);
+                PropertyInfo p = t.GetProperty(name, BindingFlags.Public
+                                                     | BindingFlags.NonPublic
+                                                     | BindingFlags.Instance);
+                if (p != null) return p.GetValue(o, null);
+            }
+            return null;
+        }
+
+        private static Type FindType(string full)
+        {
+            foreach (Assembly asm in AppDomain.CurrentDomain.GetAssemblies())
+            {
+                try { Type t = asm.GetType(full, false); if (t != null) return t; }
+                catch { }
+            }
+            return null;
+        }
+    }
+}

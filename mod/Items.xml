@@ -1,0 +1,535 @@
+<?xml version='1.0' encoding='utf-8'?>
+<objects Lang="zh-Hans" Encoding="utf-8">
+
+  <object Name="FocalCookbook" Load="Merge">
+    <part Name="Render" DisplayName="食谱" />
+  </object>
+
+  
+  <object Name="Sonnet" Load="Merge">
+    <part Name="Render" DisplayName="{{Y|揉皱的纸页}}" />
+    <part Name="Description" Short="以盐秆纸浆制成的纸面上涂着颤抖的墨迹。它看上去被反复揉皱又摊平过许多次。" />
+  </object>
+
+  
+  <object Name="HeirloomsCatalog" Load="Merge">
+    <part Name="Render" DisplayName="{{W|卡德的传家宝（Heirlooms of Qud）}}" />
+  </object>
+
+  
+  <object Name="Slip Ring" Load="Merge">
+    <part Name="Render" DisplayName="滑环" />
+  </object>
+
+  <object Name="Leather Gloves" Load="Merge">
+    <part Name="Render" DisplayName="皮手套" />
+  </object>
+
+  <object Name="Portable Beehive" Load="Merge">
+    <part Name="Render" DisplayName="便携{{bee|蜂巢}}" />
+  </object>
+
+  <object Name="Ruin of House Isner" Load="Merge">
+    <part Name="Render" DisplayName="伊斯纳家族之殇（Ruin of House Isner）" />
+    <part Name="RulesDescription" Text="+1 自我&#10;此武器造成的暴击额外获得 +4 穿透掷骰加值。&#10;此武器用最后一发弹药射击时，该次射击完美瞄准并必定造成暴击。" />
+    <part Name="TakenAccomplishment" Gospel="在 =landmark.nearest= 附近的荒野深处，=name= 撞见一伙水爵在举行秘密仪式。因他们那叛意的眼神，=name= 用一把名家左轮逐一射杀了七位领主，并在他们堆叠的尸体上享用了一餐。" />
+  </object>
+
+
+  <!-- 小雕像描述模板（官方 `Random Figurine` 的 Short 是英文模板，我方漏覆盖） -->
+  <object Name="Random Figurine" Load="Merge">
+    <part Name="Description" Short="这尊由=material=雕成的小雕像，精细地刻画了=creature.a.name:withTitles|strip=：&#xA;&#xA;=creature.description.very.short=" />
+  </object>
+
+
+  <!-- Items.xml -->
+  <object Name="Inhibitor Cuff" Load="Merge">
+    <part Name="Description" Short="一只炮铜色的镣环，以不可动摇的力道扣紧，并发出幽微的和声，扰乱「灵能者」脑中的精微运作。" />
+    <part Name="Render" DisplayName="&amp;K抑制&amp;r镣&amp;K铐" />
+  </object>
+  <!-- Items.xml -->
+  <object Name="Psiamp Backpack" Load="Merge">
+    <part Name="Description" Short="这台沉重、笨拙、勉强可由单人背负的超能增幅装置，密布着电路，用以与佩戴者的神经图式产生精微共振，从而强行向「灵能者」的运作中注入额外力量。" />
+    <part Name="Render" DisplayName="&amp;K心&amp;C灵&amp;K增&amp;Cl幅&amp;K器&amp;C背&amp;K包" />
+  </object>
+  <!-- Items.xml -->
+  <object Name="Psiamp Helmet" Load="Merge">
+    <part Name="Description" Short="这顶笨重金属盔两侧的曲线波导，模仿了佩戴者脑深处边缘系统神经结构的形制，从而建立起共振，人为地把「灵能者」的能力超荷充能。" />
+    <part Name="Render" DisplayName="&amp;C心&amp;Y灵&amp;C增&amp;Y幅&amp;Cl器&amp;Y头&amp;C盔" />
+  </object>
+  <object Name="BaseNephilimLightCircle" Load="Merge">
+    <part Name="RulesDescription" Text="+1 所有变异等级&#10;+6 义体许可等级" />
+  </object>
+
+  <object Name="BlazeTonic" Load="Merge">
+    <part Name="RulesDescription" Text="持续：41-50 回合&#10;+100 热抗性&#10;你不会被冻住。&#10;你造成的热伤害提高 25%。&#10;-50 寒抗性&#10;+10 迅捷&#10;你无法被外部热源升温。&#10;你必须不断移动，否则会自燃并失去此补药的效果。" />
+    <part Name="TinkerItem" Ingredient="{{R|火蚁囊浆}}" />
+  </object>
+
+  <object Name="Camel Bladder" Load="Merge">
+    <part Name="RulesDescription" Text="穿戴时，此物品内的液体不计入你的负重。" />
+  </object>
+
+  <object Name="Gauge from the Great Machine" Load="Merge">
+    <part Name="RulesDescription" Text="「斥责」「威吓」与「威吓凝视」同时按困惑 10 级的效果造成困惑。" />
+  </object>
+
+  <object Name="Gear from the Great Machine" Load="Merge">
+    <part Name="RulesDescription" Text="被这面盾牌格挡的持握武器有 10% 概率被卸除。" />
+  </object>
+
+  <object Name="HulkHoneyTonic" Load="Merge">
+    <part Name="RulesDescription" Text="持续：41-50 回合&#10;+6 力量&#10;每级 +2 点临时生命值&#10;-25 移动速度&#10;你感觉不到疼痛。&#10;你免疫恐惧。&#10;每回合受到最大生命值 1% 的伤害（此伤害不会使你的生命值降到 1 点以下）" />
+    <part Name="TinkerItem" Ingredient="{{r|白化猿心脏}},{{r|巨猿心脏}}" />
+  </object>
+
+  <object Name="Leyline Puppeteers" Load="Merge">
+    <part Name="RulesDescription" Text="运作需要 1 德拉姆中子通量。&#10;每回合有极小概率消耗中子通量。&#10;+10 心灵微光" />
+  </object>
+
+  <object Name="LoveTonic" Load="Merge">
+    <part Name="RulesDescription" Text="你会在大约半天里格外多情，期间你会爱上你看到的第一样东西。&#10;若你把它注射给别人，对方会爱上你并跟随你 3000-3600 回合。对方每比你高一级，失败率增加 1%。" />
+    <part Name="TinkerItem" Ingredient="{{R|恋人的花蕾}}" />
+  </object>
+
+  <object Name="Magnetic Bottle" Load="Merge">
+    <part Name="RulesDescription" Text="通电时，可从任意来源向此容器安全注入中子通量，也可从此容器向其他合适的容器安全倒出中子通量。" />
+  </object>
+
+  <object Name="NectarTonic" Load="Merge">
+    <part Name="RulesDescription" Text="你获得一项随机属性的永久 +1 加值，或一个变异点。" />
+    <part Name="TinkerItem" Ingredient="{{C-C-c-m-m-c-C-C sequence|arsplice}}种子" />
+  </object>
+
+  <object Name="Night-Sight Interpolators" Load="Merge">
+    <part Name="RulesDescription" Text="赋予夜视。&#10;你可以看到视线中第一个遮挡物之后的两格。" />
+  </object>
+
+  <object Name="Otherpearl" Load="Merge">
+    <part Name="RulesDescription" Text="+40 心灵微光&#xA;你找到的物品来自其他维度的概率提高至五倍。" />
+    <part Name="TakenAccomplishment" Gospel="在 =year= 年 =month= 月，一名腐化官员被任命为一座金玻璃街道的璀璨城市的牧守。=spice:pronouns.subject.!random|capitalize= 下令禁止创作挽歌，=name= 因此被迫逃离。" />
+  </object>
+
+  <object Name="Precision Nanon Fingers" Load="Merge">
+    <part Name="RulesDescription" Text="你武器的百分比效果触发概率提高至三倍，包括暴击的基础概率。" />
+  </object>
+
+  <object Name="Psychic Meridian" Load="Merge">
+    <part Name="RulesDescription" Text="针对你的心智攻击失败时，攻击者会大出血。" />
+  </object>
+
+  <object Name="RelicTonic" Load="Merge">
+    <part Name="RulesDescription" Text="你获得一项随机属性的永久 +2 加值，或两个变异点。" />
+  </object>
+
+  <object Name="RubbergumTonic" Load="Merge">
+    <part Name="RulesDescription" Text="持续：41-50 回合&#10;+100 电抗性&#10;+25 寒抗性&#10;-1 护甲值&#10;对抗束缚的豁免 +5。&#10;对抗流血的豁免 -5。&#10;你受到的钝击伤害减半。&#10;你受到的坠落伤害减半。&#10;你无法被抓住。" />
+    <part Name="TinkerItem" Ingredient="{{r|橡胶树种子}}" />
+  </object>
+
+  <object Name="SalveTonic" Load="Merge">
+    <part Name="RulesDescription" Text="持续：5 回合&#10;每回合恢复每级 0.6 点生命值（最少 3 点）。" />
+    <part Name="TinkerItem" Ingredient="{{K|恐惧根茎球}}" />
+  </object>
+
+  <object Name="ShadeOilTonic" Load="Merge">
+    <part Name="RulesDescription" Text="持续：41-50 回合&#10;+8 闪避值&#10;每回合有 25% 概率脱离空间维度 1-3 回合。" />
+    <part Name="TinkerItem" Ingredient="{{B|虚空腺}}" />
+  </object>
+
+  <object Name="SkulkTonic" Load="Merge">
+    <part Name="RulesDescription" Text="持续：1001-1200 回合&#10;你在夜间与地下移动速度提高 25%，但在日光下降低 20%。&#10;夜间与地下 +3 敏捷，日光下 -3 敏捷&#10;你在黑暗中视物（半径 8）。&#10;你长出掘地爪。&#10;你受到的光系攻击伤害翻倍。" />
+    <part Name="TinkerItem" Ingredient="{{K|黑美洲豹}}大腿" />
+  </object>
+
+  <object Name="SkybearJetpack" Load="Merge">
+    <part Name="RulesDescription" Text="你可以激活此物品以开始冲刺。&#10;冲刺时，每当你朝某个方向移动，你会朝最近的敌人或障碍冲刺至多 20 格并发动一次攻击。&#10;每冲刺三格，你获得 +2 命中和 +2 穿透掷骰。" />
+    <part Name="TakenAccomplishment" Gospel="整个 =month= 月里，=name= 都靠着 =player.possessive= 的喷气背包 =spice:commonPhrases.ravaged.!random= 贝塞斯达·苏萨省，=spice:elements.entity@elements[random].ravaging.!random= 了 =mostHatedFaction.t= 与 =secondMostHatedFaction.t=。=player.Subjective= 因此被称为贝塞斯达的 =spice:commonPhrases.scourge.!random|capitalize=。" />
+  </object>
+
+  <object Name="SlogTrophy" Load="Merge">
+    <part Name="RulesDescription" Text="你受到的毒素伤害减半。" />
+  </object>
+
+  <object Name="SphynxSaltTonic" Load="Merge">
+    <part Name="RulesDescription" Text="持续：18-22 回合&#10;你免疫会造成困惑的攻击。&#10;你主动使用的心智变异冷却速度加倍。" />
+    <part Name="TinkerItem" Ingredient="{{crystalline|伊芙之晶}}" />
+  </object>
+
+  <object Name="Spring Boots" Load="Merge">
+    <part Name="RulesDescription" Text="只要你已穿戴此物品至少 100 回合，你就能以三倍移动速度疾跑。" />
+  </object>
+
+  <object Name="Stopsvaalinn" Load="Merge">
+    <part Name="RulesDescription" Text="+1 自我&#10;你可以激活此物品，在你面前造出一道力场。力场激活期间，机器人往往无法向你推进。" />
+    <part Name="TakenAccomplishment" Gospel="在 =landmark.nearest|title= 之战中，=name= 为征服咬颚兽而战。=player.Subjective= 挥舞圆盾时展现出何等的 =spice:commonPhrases.finesse.!random=，以至于它从此被称为 =this.refname=。" />
+  </object>
+
+  <object Name="Symbiotic Firefly" Load="Merge">
+    <part Name="RulesDescription" Text="在半径 4 内发出光亮。&#10;卸下后永久熄灭。" />
+  </object>
+
+  <object Name="TauDagger" Load="Merge">
+    <part Name="RulesDescription" Text="改为攻击心智护甲而非护甲值。" />
+  </object>
+
+  <object Name="TauHeadpiece" Load="Merge">
+    <part Name="RulesDescription" Text="赋予你「加速心智」：使用时刷新一项随机冷却。" />
+  </object>
+
+  <object Name="The Kesil Face" Load="Merge">
+    <part Name="RulesDescription" Text="+1 所有变异等级&#10;+6 义体许可等级" />
+  </object>
+
+  <object Name="Turbow" Load="Merge">
+    <part Name="RulesDescription" Text="此武器使其弹药的基础穿透提高 4。&#10;此武器使其弹药的伤害骰提高 4。&#10;此武器使其弹药的伤害加值提高 1。" />
+  </object>
+
+  <object Name="UbernostrumTonic" Load="Merge">
+    <part Name="RulesDescription" Text="持续：10 回合&#10;每回合恢复每级 0.6 点生命值（最少 3 点）。&#10;在第十回合结束时，清除所有短期生理减益，并再生至多一处断肢。" />
+    <part Name="TinkerItem" Ingredient="{{R|恋人的花蕾}}" />
+  </object>
+
+  <object Name="Vibro Blade" Load="Merge">
+    <part Name="RulesDescription" Text="充能时，此武器的穿透值等于防御者的护甲值。" />
+  </object>
+
+  <object Name="Vibro Dagger" Load="Merge">
+    <part Name="RulesDescription" Text="充能时，此武器的穿透值等于防御者的护甲值。" />
+  </object>
+
+  <object Name="Witchwood Bark" Load="Merge">
+    <part Name="RulesDescription" Text="食用后治疗并造成困惑。" />
+  </object>
+
+  <object Name="n-Pointed Asterisk" Load="Merge">
+    <part Name="RulesDescription" Text="此物品无需装备即可生效。&#10;" />
+  </object>
+
+  <object Name="AnchorSpikes" Load="Merge">
+    <part Name="Description" Short="尖端镶霜钢的棘刺被缝接在骨架上，绷紧时会刺穿皮肤与地面。" />
+  </object>
+
+  <object Name="AnomalyFumigator" Load="Merge">
+    <part Name="Description" Short="超因果电路激发时空结构，使其化为趋于常序的微粒。" />
+  </object>
+
+  <object Name="BeautifulVisage" Load="Merge">
+    <part Name="Description" Short="指令支配面部的重塑，使其成为能唤起旁观者潜藏欲望的容颜。" />
+  </object>
+
+  <object Name="BiodynamicPowerPlant" Load="Merge">
+    <part Name="Description" Short="一台微型涡轮从血液循环及其中的化学反应里汲取血动力。" />
+  </object>
+
+  <object Name="BiologicalIndexer" Load="Merge">
+    <part Name="Description" Short="一片微小的石墨烯阵列，将光学数据与有机生命体资料库进行比对处理。" />
+  </object>
+
+  <object Name="BionicArm" Load="Merge">
+    <part Name="Description" Short="一整条由石墨烯与中和泡沫制成的新手臂。其接驳柱静待接入。" />
+  </object>
+
+  <object Name="BionicHands" Load="Merge">
+    <part Name="Description" Short="一整双由石墨烯与中和泡沫制成的新手。其接驳柱静待接入。" />
+  </object>
+
+  <object Name="BionicHeart" Load="Merge">
+    <part Name="Description" Short="一具铬制装置，以平稳的波动推送血液，而非如尸身上长成的肌肉组织那般狂乱搏动。" />
+  </object>
+
+  <object Name="BionicLiver" Load="Merge">
+    <part Name="Description" Short="消化胆汁与碱液在玻璃腔室里翻搅，合成组织则滤除生物毒素。" />
+  </object>
+
+  <object Name="CarbideHandBones" Load="Merge">
+    <part Name="Description" Short="虚弱的胶原会被砸成碎片，蓝色碳化物却只是凹陷。" />
+  </object>
+
+  <object Name="CherubicVisage" Load="Merge">
+    <part Name="Description" Short="血肉的指令支配面部骨骼结构与丰盈组织的重塑，使其化为柔美如天使的容颜。借由这般奇迹术，栖身于崩落冰架怀抱中的古老伊布尔之民，脸颊泛红、神情淡漠地游荡在灯火通明的街巷间。" />
+  </object>
+
+  <object Name="CommunicationsInterlock" Load="Merge">
+    <part Name="Description" Short="借助多叉棒具与密码匣，使用者可对接所有可用的机器人端口。" />
+  </object>
+
+  <object Name="CrysteelHandBones" Load="Merge">
+    <part Name="Description" Short="虚弱的胶原会被砸成碎片，斑驳霜钢却只是凹陷。" />
+  </object>
+
+  <object Name="CustomVisage" Load="Merge">
+    <part Name="Description" Short="一丝不苟的建模软件与面部重塑指令，让宿主得以随心摹刻面容。" />
+  </object>
+
+  <object Name="DermalInsulation" Load="Merge">
+    <part Name="Description" Short="枕状玻璃纤维鳞片紧绕在一根支撑轴上。植入后，它们会舒展开来并充气，形成厚实的隔热外皮。" />
+  </object>
+
+  <object Name="DermalPlating" Load="Merge">
+    <part Name="Description" Short="薄片状碳化物的链连板片镶嵌成一张皮下薄板。" />
+  </object>
+
+  <object Name="DopamineSynth" Load="Merge">
+    <part Name="Description" Short="这枚微型药筒以极快的速度合成多巴胺，并淹没宿主脑中的神经通路。" />
+  </object>
+
+  <object Name="ElectromagneticSensor" Load="Merge">
+    <part Name="Description" Short="此传感器能看见机器之民在电磁场中造成的细微畸变。" />
+  </object>
+
+  <object Name="EquipmentRack" Load="Merge">
+    <part Name="Description" Short="碳化物安装杆撑起一座陀螺稳定架，专为额外行囊而设计。" />
+  </object>
+
+  <object Name="FireSuppressionSystem" Load="Merge">
+    <part Name="Description" Short="热激活凝胶储存在义体胶囊中；当宿主体温骤升时，会经由皮下橡胶软管喷洒而出。" />
+  </object>
+
+  <object Name="ForceModulator" Load="Merge">
+    <part Name="Description" Short="你身上最微小部分的发射频率，被同步到力场的标准频段。" />
+  </object>
+
+  <object Name="FulleriteHandBones" Load="Merge">
+    <part Name="Description" Short="虚弱的胶原会被砸成碎片，黑色富勒石却只是凹陷。" />
+  </object>
+
+  <object Name="GiantHands" Load="Merge">
+    <part Name="Description" Short="他们梦想了无数世代：「那双手必须长大」。在实验室柔和的光泽里，这梦想得以实现。" />
+  </object>
+
+  <object Name="GraftedMirrorArm" Load="Merge">
+    <part Name="Description" Short="一条塑钢臂自肩胛骨处分叉而出，并复制其血肉孪生肢体从神经传往肌肉的指令。" />
+  </object>
+
+  <object Name="GroundingShunts" Load="Merge">
+    <part Name="Description" Short="碳纤维自两片电皮接触垫中抽出。" />
+  </object>
+
+  <object Name="GunRack" Load="Merge">
+    <part Name="Description" Short="背挂式抛光铬枪架设有两个插槽，可让手枪架在两侧肩头。" />
+  </object>
+
+  <object Name="HighFidelityMatterRecompositer" Load="Merge">
+    <part Name="Description" Short="这具毫观尺度容器内的通量能折叠空间，其尺度恰好足以将人形大小的物体短距挪移。" />
+  </object>
+
+  <object Name="HighGradeDermalInsulation" Load="Merge">
+    <part Name="Description" Short="枕状中和泡沫鳞片紧绕在一根支撑轴上。植入后，它们会舒展开来并充气，形成厚实的隔热外皮。" />
+  </object>
+
+  <object Name="HolographicVisage" Load="Merge">
+    <part Name="Description" Short="乳剂在颊上铺开一片薄光，激光则唤起空想性错觉般的暖意。" />
+  </object>
+
+  <object Name="HyperElasticAnkleTendons" Load="Merge">
+    <part Name="Description" Short="成束的水凝胶绳索被并作一股。" />
+  </object>
+
+  <object Name="InflatableAxons" Load="Merge">
+    <part Name="Description" Short="纳米级支架撑开了那些束缚意志传导的薄纱般脑线。" />
+  </object>
+
+  <object Name="IntravenousPort" Load="Merge">
+    <part Name="Description" Short="三根导管自下方顶起，在皮肤上留下印痕。" />
+  </object>
+
+  <object Name="MagneticCore" Load="Merge">
+    <part Name="Description" Short="层压金属被束成同心球体，柔化磁涡并为近场感应供能。" />
+  </object>
+
+  <object Name="MatterRecompositer" Load="Merge">
+    <part Name="Description" Short="这具毫观尺度容器内的通量能折叠空间，其尺度恰好足以将人形大小的物体短距挪移。" />
+  </object>
+
+  <object Name="MedassistModule" Load="Merge">
+    <part Name="Description" Short="支架与气动给药器硬连至一台智能控制单元，由它裁定凝血剂与镇痛剂的剂量。" />
+  </object>
+
+  <object Name="MicromanipulatorArray" Load="Merge">
+    <part Name="Description" Short="十余具骨架与操作器自一副熔接于掌骨的金属托架上张开。" />
+  </object>
+
+  <object Name="MotorizedTreads" Load="Merge">
+    <part Name="Description" Short="三角履带裹住巨型齿轮的轮齿，齿轮转动以驱动行进。它们的人类已经逃走了。" />
+  </object>
+
+  <object Name="NavigationSystem" Load="Merge">
+    <part Name="Description" Short="地缘社会定位数据铺展在玻璃凸镜之上，其下衬以地理与当地风俗的图示。" />
+  </object>
+
+  <object Name="NocturnalApex" Load="Merge">
+    <part Name="Description" Short="圣城居民的代谢节律与其昼夜仪轨同步：白昼消化减缓，夜晚躯体则嗡鸣着活跃起来。" />
+  </object>
+
+  <object Name="OnboardRecoiler" Load="Merge">
+    <part Name="Description" Short="一枚地理空间核心配上了义体系绳。" />
+  </object>
+
+  <object Name="OpticalMultiscanner" Load="Merge">
+    <part Name="Description" Short="一片微小的石墨烯阵列，将光学数据与终极的本体论及现象学资料库进行比对处理。" />
+  </object>
+
+  <object Name="PalladiumElectrodeposits" Load="Merge">
+    <part Name="Description" Short="由钯溶解而来的离子尘，促进了运算电流的传输。" />
+  </object>
+
+  <object Name="ParabolicMuscularSubroutine" Load="Merge">
+    <part Name="Description" Short="神经束经如此编排，可依抛物计算尺的方式刺激臂部肌肉。" />
+  </object>
+
+  <object Name="PenetratingRadar" Load="Merge">
+    <part Name="Description" Short="皮相收发阵列组装出周遭环境一份极为精细的模型。" />
+  </object>
+
+  <object Name="Pentaceps" Load="Merge">
+    <part Name="Description" Short="膝关节的四束伸肌获得了一条合成第五束的助力。" />
+  </object>
+
+  <object Name="Phase-Adaptive Scope" Load="Merge">
+    <part Name="Description" Short="一枚四氙玻璃小凸镜以 Q 半径弯曲，用以校正跨维度视差。" />
+  </object>
+
+  <object Name="PhaseHarmonicModulator" Load="Merge">
+    <part Name="Description" Short="倒置的陀螺平衡着义体圆盘内控制单元的微观结构。在其内部，意志被转译为可执行代码。" />
+  </object>
+
+  <object Name="PneumaticPistons" Load="Merge">
+    <part Name="Description" Short="压缩气体将活塞杆推入撒满石墨粉的肌肉组织，使跃起的躯体翻腾而出。" />
+  </object>
+
+  <object Name="PrecisionForceLathe" Load="Merge">
+    <part Name="Description" Short="磁屏蔽主轴箱以动能悬浮维系住空间，力纺锤则将意志纺成物质。" />
+  </object>
+
+  <object Name="RapidReleaseFingerFlexors" Load="Merge">
+    <part Name="Description" Short="充满神经电荷的组织鞘传递意志的速度，超过了细胞生物学所能达到的极限。" />
+  </object>
+
+  <object Name="ReactiveCranialPlating" Load="Merge">
+    <part Name="Description" Short="碳化物板片被塑成颅骨形状，并与受击时膨胀的泡沫制成合金。" />
+  </object>
+
+  <object Name="ReactiveTraumaPlate" Load="Merge">
+    <part Name="Description" Short="一块贴合身形的塑钢护体板吸收冲击震荡，并崩解进入血流。" />
+  </object>
+
+  <object Name="Schemasoft2" Load="Merge">
+    <part Name="Description" Short="这枚芯片上编码着整整一类低阶古器的图纸。" />
+  </object>
+
+  <object Name="Schemasoft3" Load="Merge">
+    <part Name="Description" Short="这枚芯片上编码着整整一类中阶古器的图纸。" />
+  </object>
+
+  <object Name="Schemasoft4" Load="Merge">
+    <part Name="Description" Short="这枚芯片上编码着整整一类高阶古器的图纸。" />
+  </object>
+
+  <object Name="SecurityInterlock" Load="Merge">
+    <part Name="Description" Short="对应每一频谱上每一波长的槽纹钥匙，可开启每一道门户。" />
+  </object>
+
+  <object Name="SingleSkillsoft1" Load="Merge">
+    <part Name="Description" Short="这枚芯片上编码着某一特定技能的神经图式。" />
+  </object>
+
+  <object Name="SingleSkillsoft2" Load="Merge">
+    <part Name="Description" Short="这枚芯片上编码着某一特定技能的神经图式。" />
+  </object>
+
+  <object Name="SingleSkillsoft3" Load="Merge">
+    <part Name="Description" Short="这枚芯片上编码着某一特定技能的神经图式。" />
+  </object>
+
+  <object Name="SkinGlitter1" Load="Merge">
+    <part Name="Description" Short="一片分形格构的真皮贴饰，将内在的光辉导引至外在世界。" />
+  </object>
+
+  <object Name="SkinGlitter2" Load="Merge">
+    <part Name="Description" Short="一片分形格构的真皮贴饰，将内在的光辉导引至外在世界。" />
+  </object>
+
+  <object Name="SocialCoprocessor" Load="Merge">
+    <part Name="Description" Short="围绕一枚中央处理器，神经移植物接附到负责社交从容感与社交线索解读的脑叶上。" />
+  </object>
+
+  <object Name="StabilizerArmLocks" Load="Merge">
+    <part Name="Description" Short="铬制扣夹固定住臂部关节，以模仿亡者般的静止。" />
+  </object>
+
+  <object Name="StasisEntangler" Load="Merge">
+    <part Name="Description" Short="削薄的水晶晶面被排成矩阵并调定角度，将静止沿一张活顶点之图输送。" />
+  </object>
+
+  <object Name="StasisProjector" Load="Merge">
+    <part Name="Description" Short="水晶沿着静止的角度渐开。" />
+  </object>
+
+  <object Name="TechnologicalIndexer" Load="Merge">
+    <part Name="Description" Short="一片微小的石墨烯阵列，将光学数据与机器人生命体资料库进行比对处理。" />
+  </object>
+
+  <object Name="TibularHydrojets" Load="Merge">
+    <part Name="Description" Short="扁平导槽传导肌电力，推动躯体在水中穿行。" />
+  </object>
+
+  <object Name="TranslucentSkin" Load="Merge">
+    <part Name="Description" Short="轻薄透明的真皮将循环、肌肉与神经系统映成剪影般的浮雕。" />
+  </object>
+
+  <object Name="TransparentSkin" Load="Merge">
+    <part Name="Description" Short="新生的血肉如同幽灵之膜，丝毫不掩生命的机械构造。" />
+  </object>
+
+  <object Name="TreeSkillsoft" Load="Merge">
+    <part Name="Description" Short="这枚芯片上编码着某一特定技能树的神经图式。" />
+  </object>
+
+  <object Name="UltraElasticAnkleTendons" Load="Merge">
+    <part Name="Description" Short="中和泡沫绳索被扎成束，编作一根槽纹立柱。" />
+  </object>
+
+  <object Name="Cyclopean Prism" Load="Merge">
+    <part Name="TakenAccomplishment" Gospel="在基亚库基亚附近的丛林中游荡时，=name= 梦见 =player.subjective= 环绕着一颗暗星运行，并在其浩瀚的吸积盘中堆起了自我的砖石。自那时起，=name= 便随身带着一枚无星的三角棱镜。" />
+  </object>
+
+  <object Name="FungusFace" Load="Merge">
+    <part Name="EatenAccomplishment" Gospel="在 =month= 的 =day=，于 =landmark.nearest= 附近的一家酒馆里，=name= 遇见了一群腌鱼客，并受 =spice:elements.entity@elements[random].practices.!random= 的神启，烹煮并饱餐了 =this.refname=。" />
+  </object>
+
+  <object Name="GenericFace" Load="Merge">
+    <part Name="EatenAccomplishment" Gospel="在 =month= 的 =day=，于 =landmark.nearest= 附近的一家酒馆里，=name= 遇见了一群腌鱼客，并受 =spice:elements.entity@elements[random].practices.!random= 的神启，烹煮并饱餐了 =this.refname=。" />
+  </object>
+
+  <object Name="Kindrish" Load="Merge">
+    <part Name="TakenAccomplishment" Gospel="在 =terrain.t= 荒野深处的一家酒馆里，=name= 把 =player.possessive= 珍爱的 bracelet Kindrish 丢给了一个当地小偷。=name= 以 =spice:elements.entity@elements[random].murdermethods.!random= 杀死了那小偷，随即夺回了 =player.possessive= 珍视的传家宝。" />
+  </object>
+
+  <object Name="PlantFace" Load="Merge">
+    <part Name="EatenAccomplishment" Gospel="在 =month= 的 =day=，于 =landmark.nearest= 附近的一家酒馆里，=name= 遇见了一群腌鱼客，并受 =spice:elements.entity@elements[random].practices.!random= 的神启，烹煮并饱餐了 =this.refname=。" />
+  </object>
+
+  <object Name="Stasis Casque" Load="Merge">
+    <part Name="Render" DisplayName="凝滞头盔" />
+  </object>
+
+  <!-- ★★ 2026-10-17（测试窗口 #61）：能力名 `Quill Fling` 来自**蓝图标签**
+       `AbilityName`（官方 `ObjectBlueprints\Items.xml` 的 `Quills`，全库仅此一处）。
+       `XRL.World.Parts.Mutation.Quills::get_AbilityName` 读
+       `=blueprint.tag:AbilityName:Quill Fling=` ⇒ **数据侧即可译**，不必加补丁。
+       `Quills+2` / `Quills+3` 是 `Inherits="Quills"` 的变体，一并显式覆盖
+       （防「父蓝图先被实例化、再合并」的继承时序问题）。 -->
+  <object Name="Quills" Load="Merge">
+    <tag Name="AbilityName" Value="棘刺投掷" />
+  </object>
+
+  <object Name="Quills+2" Load="Merge">
+    <tag Name="AbilityName" Value="棘刺投掷" />
+  </object>
+
+  <object Name="Quills+3" Load="Merge">
+    <tag Name="AbilityName" Value="棘刺投掷" />
+  </object>
+
+</objects>

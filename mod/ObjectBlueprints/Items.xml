@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  赛博植入物（Cybernetics）汉化。
+
+  ★★ 关键教训（1.52.0 翻车实录）：
+     本文件里的 `<object>` 必须是**官方 object 的完整拷贝 + 只换显示文本**。
+     1.52.0 我只写了 <part Name="Description"> 与 <part Name="Render">，
+     丢了 `Inherits` / `CyberneticsBaseItem` / `CyberneticsPropertyModifier` /
+     `tag`，而加载器是**整体替换**该 object ⇒ 赛博模块判定「所选无效」。
+     ⇒ 与 210.20 的做法对齐：**完整结构照搬，只改文本**。
+
+  生成器：_tools\rebuild_cybernetics_full.py（可重跑）
+-->
+<objects Lang="zh-Hans" Encoding="utf-8">
+  <object Name="AirCurrentMicrosensor" Inherits="BaseCyberneticsEquipment_2point">
+    <part Name="Physics" Weight="0"/>
+    <part Name="Description" Short="在沸腾神海附近，海水撞击日岩并爆发成恶臭蒸汽，形成一个无尽的空间迷宫。在这里，视觉的作用逐渐减弱，而深海之子的新感官则逐渐增强。"/>
+    <part Name="Render" DisplayName="{{Y|深渊视界}}" Tile="Items/sw_aircurrent.bmp" ColorString="&amp;C" DetailColor="r"/>
+    <part Name="CyberneticsBaseItem" Slots="Body,Head" Cost="2" BehaviorDescription="楼梯和其他上下地图转换始终对你可见。"/>
+    <part Name="CyberneticsAirCurrentMicrosensor"/>
+    <tag Name="StartingCybernetic:Child of the Deep"/>
+    <tag Name="StartingCybernetic:Child of the Wheel"/>
+    <tag Name="StartingCybernetic:Child of the Hearth"/>
+    <tag Name="StartingCybernetic:Fuming God-Child"/>
+    <tag Name="SpecialArcologyText" Value="{{R|[Yawningmoon only]}}"/>
+  
+  </object>
+  <object Name="AnchorSpikes" Inherits="BaseCyberneticsEquipment_2point">
+    <part Name="Physics" Weight="1"/>
+    <part Name="Description" Short="尖刺的顶端镶嵌着{{crysteel|晶钢}}，它们被缝合在骨骼上，当肌肉紧绷时，这些尖刺会穿透皮肤并扎入地面。"/>
+    <part Name="Render" DisplayName="{{Y|锚定尖刺}}" Tile="Items/sw_cyber_anchor_spikes.bmp" ColorString="&amp;C" DetailColor="r"/>
+    <part Name="CyberneticsBaseItem" Slots="Feet" Cost="2" BehaviorDescription="你不能被物理手段强制移动。"/>
+    <part Name="CyberneticsAnchorSpikes"/>
+    <tag Name="CyberneticsOneOnly"/>    
+  
+  </object>
+  <object Name="AnomalyFumigator" Inherits="BaseCyberneticsEquipment_3point">
+    <part Name="Physics" Weight="1"/>
+    <part Name="Description" Short="准因果电路激发时空结构，产生规范粒子。"/>
+    <part Name="Render" DisplayName="{{Y|异常净化器}}" Tile="Items/sw_cyber_anomaly_fumigator.bmp" ColorString="&amp;C" DetailColor="r"/>
+    <part Name="CyberneticsBaseItem" Slots="Hands,Feet,Body,Back,Face,Arm,Head" Cost="3" BehaviorDescription="你每回合都会释放正常气体的云团。"/>
+    <part Name="CyberneticsAnomalyFumigator"/>
+    <tag Name="CyberneticsOneOnly"/>
+  
+  </object>
+  <object Name="BaseCathedra" Inherits="BaseCyberneticsEquipment_12point">
+    <part Name="Render" DisplayName="{{Y|圣座}}" Tile="Items/sw_cathedra.bmp" ColorString="&amp;c" DetailColor="r"/>
+    <part Name="Description" Short=""/>
+    <part Name="Physics" Weight="20"/>
+    <part Name="CyberneticsBaseItem" Slots="Back" Cost="12"/>
+    <part Name="CyberneticsStatModifier" Stats="MoveSpeed:-100;Hitpoints:50;Ego:3"/>    
+    <part Name="Metal"/>
+    <part Name="NoDamage"/>
+    <part Name="NoRust"/>
+    <tag Name="CyberneticsUsesEqSlot"/>
+    <tag Name="CyberneticsNoRemove"/>
+    <tag Name="CyberneticsOneOnly"/>
+    <tag Name="BaseObject" Value="*noinherit"/>
+  
+  </object>
+  <object Name="BeautifulVisage" Inherits="BaseCyberneticsEquipment_3point">
+    <part Name="Physics" Weight="1"/>
+    <part Name="Description" Short="指令要求将面容重塑为一种能激起旁观者潜在欲望的容貌。"/>
+    <part Name="Render" DisplayName="{{Y|美丽面容}}" Tile="Items/sw_beautiful.bmp" ColorString="&amp;C" DetailColor="r"/>
+    <part Name="CyberneticsBaseItem" Slots="Face" Cost="3" BehaviorDescription="+2 自我"/>
+    <part Name="CyberneticsStatModifier" Stats="Ego:2"/>
+    <part Name="ItemElements" Elements="jewels::4"/>
+  
+  </object>
+  <object Name="BiodynamicPowerPlant" Inherits="BaseCyberneticsEquipment_6point">
+    <part Name="Physics" Weight="2"/>
+    <part Name="Description" Short="微型涡轮机从血液循环和其中的化学反应中提取血能。"/>
+    <part Name="Render" DisplayName="{{Y|生物动力发电厂}}" Tile="Items/sw_cyber_biodynamic_power_plant.bmp" TileColor="&amp;r" DetailColor="C"/>
+    <part Name="CyberneticsBaseItem" Slots="Body" Cost="6" BehaviorDescription="每回合为装备的可访问车载电源系统的物品（如带有插孔改装的物品）提供5000单位的持续电量。"/>
+    <part Name="CyberneticsBiodynamicPowerPlant"/>
+    <part Name="ItemElements" Elements="circuitry::7"/>
+  
+  </object>
+  <object Name="BiologicalIndexer" Inherits="BaseCyberneticsEquipment_1point">
+    <part Name="Physics" Weight="0"/>
+    <part Name="Description" Short="一个微型石墨烯阵列，用于处理光学数据并与有机生命体数据库进行比对。"/>
+    <part Name="Render" DisplayName="{{Y|光学生物扫描仪}}" Tile="Items/sw_scanningmodule.bmp" TileColor="&amp;c" DetailColor="R"/>
+    <part Name="CyberneticsBaseItem" Slots="Face" Cost="1" BehaviorDescription="你可以访问生物生物的精确命中点、护甲和闪避值。"/>
+    <part Name="CyberneticsBiologicalIndexer"/>
+    <part Name="ItemElements" Elements="scholarship::3"/>
+    <tag Name="StartingCybernetic:General"/>
+  
+  </object>
+  <object Name="BionicArm" Inherits="BaseCyberneticsEquipment_3point">
+    <part Name="Physics" Weight="8"/>
+    <part Name="Description" Short="由石墨烯和中性泡沫制成的全新手臂。其连接柱等待激活。"/>
+    <part Name="Render" DisplayName="{{Y|生化臂}}" Tile="Items/sw_bionicarm.bmp" TileColor="&amp;r" DetailColor="C"/>
+    <part Name="CyberneticsBaseItem" Slots="Arm" Cost="3" BehaviorDescription="+2 力量"/>
+    <part Name="CyberneticsStatModifier" Stats="Strength:2"/>
+  
+  </object>
+  <object Name="BionicHands" Inherits="BaseCyberneticsEquipment_3point">
+    <part Name="Physics" Weight="5"/>
+    <part Name="Description" Short="一对全新的手，由石墨烯和中性泡沫制成。它们的接口等待激活。"/>
+    <part Name="Render" DisplayName="{{Y|仿生手}}" Tile="Items/sw_bionichands.bmp" TileColor="&amp;r" DetailColor="C"/>
+    <part Name="CyberneticsBaseItem" Slots="Hands" Cost="3" BehaviorDescription="+2 敏捷"/>
+    <part Name="CyberneticsStatModifier" Stats="Agility:2"/>    
+  
+  </object>
+  <object Name="BionicHeart" Inherits="BaseCyberneticsEquipment_3point">
+    <part Name="Physics" Weight="2"/>
+    <part Name="Description" Short="一个铬合金装置，能够平滑地泵送血液，而非尸体生长的肌肉组织那种狂乱的跳动。"/>
+    <part Name="Render" DisplayName="{{Y|仿生心脏}}" Tile="Items/sw_bionicheart.bmp" TileColor="&amp;r" DetailColor="C"/>
+    <part Name="CyberneticsBaseItem" Slots="Body" Cost="3" BehaviorDescription="+2 韧性"/>
+    <part Name="CyberneticsStatModifier" Stats="Toughness:2"/>
+    <part Name="CyberneticsEffectSuppressor" Effects="CardiacArrest"/>
+  
+  </object>
+  <object Name="BionicLiver" Inherits="BaseCyberneticsEquipment_3point">
+    <part Name="Physics" Weight="0"/>
+    <part Name="Description" Short="玻璃腔室中消化胆汁和碱性物质翻腾，而合成组织过滤出生物毒素。"/>
+    <part Name="Render" DisplayName="{{Y|生物肝脏}}" Tile="Items/sw_cyberliver.bmp" ColorString="&amp;C" DetailColor="r"/>
+    <part Name="CyberneticsBaseItem" Slots="Body" Cost="3" BehaviorDescription="你对毒和疾病免疫。"/>
+    <part Name="CyberneticsBionicLiver"/>
+  
+  </object>
+  <object Name="CarbideHandBones" Inherits="BaseCyberneticsEquipment_2point">
+    <part Name="Physics" Weight="15"/>
+    <part Name="Description" Short="蓝色碳化物只会留下凹痕，而脆弱的胶原蛋白早已粉碎成碎片。"/>
+    <part Name="Render" DisplayName="{{Y|碳化物手骨}}" Tile="Items/sw_carbidehand.bmp" TileColor="&amp;b" DetailColor="r"/>
+    <part Name="CyberneticsBaseItem" Slots="Hands" Cost="2" BehaviorDescription="你的拳头造成 2d3 伤害。"/>
+    <part Name="CyberneticsFistReplacement" FistObject="CarbideFist"/>
+    <tag Name="StartingCybernetic:General"/>
+    <part Name="ItemElements" Elements="might::3"/>
+  
+  </object>
+  <object Name="CherubicVisage" Inherits="BaseCyberneticsEquipment_1point">
+    <part Name="Physics" Weight="1"/>
+    <part Name="Description" Short="肉体指令重塑了脸部的骨骼结构和丰满的组织，使其变得柔软而天使般。通过这样的魔法，古老的伊布尔人，生活在坍塌冰架的怀抱中，在灯火通明的街道上漫无目的地漫步，脸颊红润。"/>
+    <part Name="Render" DisplayName="{{Y|天使般的面容}}" Tile="Items/sw_cherubic.bmp" ColorString="&amp;C" DetailColor="r"/>
+    <part Name="CyberneticsBaseItem" Slots="Face" Cost="1" BehaviorDescription="+1 自我"/>
+    <part Name="CyberneticsStatModifier" Stats="Ego:1"/>
+    <tag Name="StartingCybernetic:Artifex"/>
+    <tag Name="StartingCybernetic:Consul"/>
+    <tag Name="StartingCybernetic:Praetorian"/>
+    <tag Name="StartingCybernetic:Eunuch"/>
+    <tag Name="SpecialArcologyText" Value="{{C|[Ibul only]}}"/>
+  
+  </object>
+  <object Name="CommunicationsInterlock" Inherits="BaseCyberneticsEquipment_2point">
+    <part Name="Physics" Weight="1"/>
+    <part Name="Description" Short="通过多叉棍工具和密码盒，可以与所有可用的机器人端口进行交互。"/>
+    <part Name="Render" DisplayName="{{Y|通讯互锁装置}}" Tile="Items/sw_comminterlock.bmp" TileColor="&amp;r" DetailColor="C"/>
+    <part Name="CyberneticsBaseItem" Slots="Hands,Feet,Body,Back,Face,Arm,Head" Cost="2" BehaviorDescription="你斥责机器人时，如同你的等级高出了5级。"/>
+    <part Name="CyberneticsCommunicationsInterlock" Bonus="5"/>
+  
+  </object>
+  <object Name="CrysteelHandBones" Inherits="BaseCyberneticsEquipment_8point">
+    <part Name="Physics" Weight="9"/>
+    <part Name="Description" Short="斑驳的水晶钢只会留下凹痕，而脆弱的胶原蛋白早已粉碎成碎片。"/>
+    <part Name="Render" DisplayName="{{Y|水晶钢手骨}}" Tile="Items/sw_carbidehand.bmp" TileColor="&amp;G" DetailColor="r"/>
+    <part Name="CyberneticsBaseItem" Slots="Hands" Cost="8" BehaviorDescription="你的拳头造成 3d4 伤害。"/>
+    <part Name="CyberneticsFistReplacement" FistObject="CrysteelFist"/>
+    <part Name="ItemElements" Elements="might::8"/>
+  
+  </object>
+  <object Name="CustomVisage" Inherits="BaseCyberneticsEquipment_3point">
+    <part Name="Physics" Weight="0"/>
+    <part Name="Description" Short="精心设计的建模软件和面部重塑指令使宿主能够永久性地选择自己想要的面容，从而彻底淘汰面具。"/>
+    <part Name="Render" DisplayName="{{Y|定制面容}}" Tile="Items/sw_custom.bmp" TileColor="&amp;r" DetailColor="C"/>
+    <part Name="CyberneticsBaseItem" Slots="Face" Cost="3" BehaviorDescription="+300 与安装时选择的阵营的声望"/>
+    <part Name="CyberneticsCustomVisage"/>
+    <tag Name="CyberneticsDestroyOnRemoval"/>
+  
+  </object>
+  <object Name="DermalInsulation" Inherits="BaseCyberneticsEquipment_2point">
+    <part Name="Physics" Weight="3"/>
+    <part Name="Description" Short="柔软的玻璃纤维鳞片围绕支撑轴紧绷。安装后，它们会在皮肤下展开并膨胀。"/>
+    <part Name="Render" DisplayName="{{Y|皮肤绝缘层}}" Tile="Items/sw_dermalinsulation.bmp" ColorString="&amp;C" DetailColor="r"/>
+    <part Name="CyberneticsBaseItem" Slots="Body,Head,Back" Cost="2" BehaviorDescription="+6 耐热性 +6 耐寒性 +6 耐电性 +6 耐酸性"/>
+    <part Name="CyberneticsStatModifier" Stats="HeatResistance:6;ColdResistance:6;ElectricResistance:6;AcidResistance:6"/>
+    <tag Name="StartingCybernetic:General"/>
+    <tag Name="CyberneticsDestroyOnRemoval"/>
+  
+  </object>
+  <object Name="DermalPlating" Inherits="BaseCyberneticsEquipment_3point">
+    <part Name="Physics" Weight="10"/>
+    <part Name="Description" Short="薄片状碳化物相互连接，形成一层皮下护甲。"/>
+    <part Name="Render" DisplayName="{{Y|表皮护甲}}" Tile="Items/sw_dermalplating.bmp" ColorString="&amp;C" DetailColor="r"/>
+    <part Name="CyberneticsBaseItem" Slots="Body,Head,Back" Cost="3" BehaviorDescription="+1 AV"/>
+    <part Name="CyberneticsStatModifier" Stats="AV:1"/>
+  
+  </object>
+  <object Name="DopamineSynth" Inherits="BaseCyberneticsEquipment_3point">
+    <part Name="Description" Short="微型墨盒以极快的速度合成多巴胺，并使神经通路充满激励的愉悦。"/>
+    <part Name="Render" DisplayName="{{Y|多巴胺合成器}}" Tile="Items/sw_dopamine.bmp" ColorString="&amp;C" DetailColor="r"/>
+    <part Name="CyberneticsBaseItem" Slots="Head" Cost="3" BehaviorDescription="+2 意志力"/>
+    <part Name="CyberneticsStatModifier" Stats="Willpower:2"/>
+  
+  </object>
+  <object Name="ElectromagneticSensor" Inherits="BaseCyberneticsEquipment_1point">
+    <part Name="Physics" Weight="0"/>
+    <part Name="Description" Short="这种传感器可以检测到由机械族引起的电磁场微小扭曲。"/>
+    <part Name="Render" DisplayName="{{Y|电磁传感器}}" Tile="Items/sw_electromagsensor.bmp" TileColor="&amp;r" DetailColor="C"/>
+    <part Name="CyberneticsBaseItem" Slots="Head,Face,Back,Body,Feet,Arm,Hands" Cost="1" BehaviorDescription="你可以在不看到它们的情况下检测到附近的机器人。"/>
+    <part Name="CyberneticsElectromagneticSensor"/>
+    <part Name="ItemElements" Elements="circuitry::2"/>
+  
+  </object>
+  <object Name="EquipmentRack" Inherits="BaseCyberneticsEquipment_3point">
+    <part Name="Physics" Weight="0"/>
+    <part Name="Description" Short="碳化物安装杆支撑着一个陀螺仪设计的架子，用于额外的行李。"/>
+    <part Name="Render" DisplayName="{{Y|装备架}}" Tile="Items/sw_cyber_equipment_rack.bmp" ColorString="&amp;C" DetailColor="r"/>
+    <part Name="CyberneticsBaseItem" Slots="Body" Cost="3" BehaviorDescription="你获得了一个额外的背部装备槽。"/>
+    <part Name="CyberneticsEquipmentRack"/>
+    <tag Name="CyberneticsModifiesAnatomy"/>
+  
+  </object>
+  <object Name="FireSuppressionSystem" Inherits="BaseCyberneticsEquipment_2point">
+    <part Name="Physics" Weight="3"/>
+    <part Name="Description" Short="热激活凝胶储存在生化胶囊中，并通过皮下橡胶管分配。"/>
+    <part Name="Render" DisplayName="{{Y|灭火系统}}" Tile="Items/sw_cyber_fire_suppression_system.bmp" TileColor="&amp;r" DetailColor="C"/>
+    <part Name="CyberneticsBaseItem" Slots="Head,Body,Back" Cost="2" BehaviorDescription="每当你着火时，自动释放阻燃凝胶。"/>
+    <part Name="CyberneticsFireSuppressionSystem"/>
+    <tag Name="CyberneticsOneOnly"/>
+  
+  </object>
+  <object Name="ForceModulator" Inherits="BaseCyberneticsEquipment_1point">
+    <part Name="Physics" Weight="0"/>
+    <part Name="Description" Short="你最微小的部分所发出的频率已与标准力场发射频段同步。"/>
+    <part Name="Render" DisplayName="{{Y|力场调制器}}" Tile="Items/sw_comminterlock.bmp" ColorString="&amp;C" DetailColor="r"/>
+    <part Name="CyberneticsBaseItem" Slots="Hands,Feet,Body,Back,Face,Arm,Head" Cost="1" BehaviorDescription="你可以穿过力场。"/>
+    <part Name="CyberneticsForcefieldNullifier"/>
+  
+  </object>
+  <object Name="FulleriteHandBones" Inherits="BaseCyberneticsEquipment_4point">
+    <part Name="Physics" Weight="18"/>
+    <part Name="Description" Short="黑色富勒烯只会留下凹痕，而脆弱的胶原蛋白早已粉碎成碎片。"/>
+    <part Name="Render" DisplayName="{{Y|富勒烯手骨}}" Tile="Items/sw_carbidehand.bmp" TileColor="&amp;K" DetailColor="r"/>
+    <part Name="CyberneticsBaseItem" Slots="Hands" Cost="4" BehaviorDescription="你的拳头造成 2d4+1 点伤害。"/>
+    <part Name="CyberneticsFistReplacement" FistObject="FulleriteFist"/>
+    <part Name="ItemElements" Elements="might::5"/>
+  
+  </object>
+  <object Name="GiantHands" Inherits="BaseCyberneticsEquipment_3point">
+    <part Name="Physics" Weight="3"/>
+    <part Name="Description" Short="它们梦想了无数岁月，'巨手必须成长'。在实验室柔和的光辉中，这一梦想得以实现。"/>
+    <part Name="Render" DisplayName="{{Y|巨手}}" Tile="Items/sw_gianthands.bmp" ColorString="&amp;C" DetailColor="r"/>
+    <part Name="CyberneticsBaseItem" Slots="Hands" Cost="3" BehaviorDescription="你可以单手使用双手武器。"/>
+    <part Name="GiantHands" WorksOnSelf="false" WorksOnImplantee="true"/>
+  
+  </object>
+  <object Name="GraftedMirrorArm" Inherits="BaseCyberneticsEquipment_5point">
+		<part Name="Physics" Weight="8"/>
+		<part Name="Description" Short="一个塑料臂从肩胛骨分叉而出，复制了神经向其生长的孪生肌肉发出的指令。"/>
+		<part Name="Render" DisplayName="{{Y|移植镜像臂}}" Tile="Items/implant_grafted_mirror_arm.bmp" HFlip="true" TileColor="&amp;C" DetailColor="r"/>
+		<part Name="CyberneticsBaseItem" Slots="Arm" Cost="5" BehaviorDescription="你获得一个额外的投掷武器槽。当你执行投掷时，你会同时从所有投掷武器槽中投掷。"/>
+		<part Name="CyberneticsGraftedMirrorArm"/>
+    <part Name="ItemElements" Elements="glass::6"/>
+	
+  </object>
+  <object Name="GroundingShunts" Inherits="BaseCyberneticsEquipment_2point">
+    <part Name="Physics" Weight="1"/>
+    <part Name="Description" Short="碳纤维从两个电皮接触垫中伸出。"/>
+    <part Name="Render" DisplayName="{{Y|接地分流器}}" Tile="Items/sw_grounding_shunts.bmp" TileColor="&amp;r" DetailColor="C"/>
+    <part Name="CyberneticsBaseItem" Slots="Feet" Cost="2" BehaviorDescription="+50 耐电性"/>
+    <part Name="CyberneticsStatModifier" Stats="ElectricResistance:50"/>
+    <part Name="ItemElements" Elements="circuitry::3"/>
+  
+  </object>
+  <object Name="GunRack" Inherits="BaseCyberneticsEquipment_4point">
+    <part Name="Physics" Weight="20"/>
+    <part Name="Description" Short="后背安装的镀铬枪架有两个插槽，可以分别放置在两侧肩部的手枪，或者根据选择放置在单侧肩部的步枪。"/>
+    <part Name="Render" DisplayName="{{Y|枪架}}" Tile="Items/sw_gunrack.bmp" ColorString="&amp;C" DetailColor="r"/>
+    <part Name="CyberneticsBaseItem" Slots="Back" Cost="6" BehaviorDescription="你获得了一个额外的左右远程武器插槽。你不能在背部装备任何物品。"/>
+    <part Name="CyberneticsGunRack"/>
+    <part Name="Metal"/>
+    <part Name="NoDamage"/>
+    <part Name="NoRust"/>
+    <tag Name="CyberneticsUsesEqSlot"/>
+    <tag Name="RenderImplantGreyInEquipment"/>
+    <tag Name="CyberneticsModifiesAnatomy"/>
+  
+  </object>
+  <object Name="HighFidelityMatterRecompositer" Inherits="BaseCyberneticsEquipment_8point">
+    <part Name="Physics" Weight="5"/>
+    <part Name="Description" Short="这个微小罐内的通量能够在足够大的尺度上折叠空间，以便将附近的人体转移。非线性电路计算所有可能的结果，并排除那些将宿主转移到目标区域之外的情况。"/>
+    <part Name="Render" DisplayName="{{Y|高精度物质重组器}}" Tile="Items/sw_cyber_high_fidelity_matter_recompositer.bmp" ColorString="&amp;C" DetailColor="r"/>
+    <part Name="CyberneticsBaseItem" Slots="Body" Cost="8" BehaviorDescription="激活。冷却时间50。你将传送到地图上的任意已探索地点。"/>
+    <part Name="CyberneticsHighFidelityMatterRecompositer"/>
+    <part Name="ItemElements" Elements="travel::8"/>
+    <tag Name="CyberneticsOneOnly"/>
+  
+  </object>
+  <object Name="HighGradeDermalInsulation" Inherits="BaseCyberneticsEquipment_3point">
+    <part Name="Physics" Weight="3"/>
+    <part Name="Description" Short="柔软的中性泡沫鳞片围绕支撑轴紧绷。安装后，它们会在皮肤下展开并膨胀。"/>
+    <part Name="Render" DisplayName="{{Y|高级皮肤绝缘层}}" Tile="Items/sw_highgrade.bmp" ColorString="&amp;C" DetailColor="r"/>
+    <part Name="CyberneticsBaseItem" Slots="Body,Head,Back" Cost="3" BehaviorDescription="+9 耐热性 +9 耐寒性 +9 耐电性 +9 耐酸性"/>
+    <part Name="CyberneticsStatModifier" Stats="HeatResistance:9;ColdResistance:9;ElectricResistance:9;AcidResistance:9"/>
+    <tag Name="CyberneticsDestroyOnRemoval"/>
+  
+  </object>
+  <object Name="HolographicVisage" Inherits="BaseCyberneticsEquipment_6point">
+		<part Name="Physics" Weight="0"/>
+		<part Name="Description" Short="脸颊上的乳液光泽和激光光线唤起了拟人化的温暖感。"/>
+		<part Name="Render" DisplayName="{{Y|全息面容}}" Tile="Items/implant_holographic_visage.bmp" ColorString="&amp;B" TileColor="&amp;C" DetailColor="B"/>
+		<part Name="CyberneticsBaseItem" Slots="Face" Cost="6" BehaviorDescription="+200 与你安装此植入体时选择的派系的声望。你可以激活此植入体以更改所选派系。"/>
+		<part Name="CyberneticsHolographicVisage"/>
+		<tag Name="CyberneticsOneOnly"/>
+    <part Name="ItemElements" Elements="jewels::5"/>
+	
+  </object>
+  <object Name="HyperElasticAnkleTendons" Inherits="BaseCyberneticsEquipment_2point">
+    <part Name="Physics" Weight="1"/>
+    <part Name="Description" Short="水凝胶绳索捆绑成一条。"/>
+    <part Name="Render" DisplayName="{{Y|超弹性踝腱}}" Tile="Items/sw_hypertendons.bmp" ColorString="&amp;C" DetailColor="r"/>
+    <part Name="CyberneticsBaseItem" Slots="Feet" Cost="2" BehaviorDescription="+6 移动速度"/>
+    <part Name="CyberneticsStatModifier" Stats="MoveSpeed:-6"/>
+    <tag Name="StartingCybernetic:General"/>
+    <part Name="ItemElements" Elements="travel::3"/>
+  
+  </object>
+  <object Name="InflatableAxons" Inherits="BaseCyberneticsEquipment_2point">
+    <part Name="Physics" Weight="0"/>
+    <part Name="Description" Short="纳米支架膨胀了限制意志传导的蛛丝般脑线。"/>
+    <part Name="Render" DisplayName="{{Y|膨胀轴突}}" Tile="Items/sw_axions.bmp" TileColor="&amp;r" DetailColor="C"/>
+    <part Name="CyberneticsBaseItem" Slots="Head" Cost="2" BehaviorDescription="激活。冷却时间100。你在接下来的10轮内获得+40速度，然后在接下来的10轮内变得迟缓（-10速度）。"/>
+    <part Name="CyberneticsInflatableAxons" Bonus="40"/>
+    <tag Name="StartingCybernetic:General"/>
+    <tag Name="CyberneticsOneOnly"/>    
+  
+  </object>
+  <object Name="IntravenousPort" Inherits="BaseCyberneticsEquipment_3point">
+    <part Name="Description" Short="三根导管从皮肤下印出。"/>
+    <part Name="Render" DisplayName="{{Y|静脉端口}}" Tile="Items/sw_intravenous.bmp" ColorString="&amp;C" DetailColor="r"/>
+    <part Name="CyberneticsBaseItem" Slots="Hands,Feet,Body,Back,Face,Arm,Head" Cost="3" BehaviorDescription="药剂的效果持续时间延长一倍。"/>
+    <part Name="CyberneticsTonicDurationModifier" Percentage="100"/>
+    <part Name="ItemElements" Elements="salt::4"/>
+  
+  </object>
+  <object Name="MagneticCore" Inherits="BaseCyberneticsEquipment_4point">
+    <part Name="Physics" Weight="15"/>
+    <part Name="Description" Short="层压金属以同心球的形式包裹，减弱磁场涡流并为近地轨道提供动力。"/>
+    <part Name="Render" DisplayName="{{Y|磁性核心}}" Tile="Items/sw_magnetic_core.bmp" TileColor="&amp;r" DetailColor="C"/>
+    <part Name="CyberneticsBaseItem" Slots="Body" Cost="4" BehaviorDescription="你获得了一个额外的悬浮附近装备槽。"/>
+    <part Name="CyberneticsMagneticCore"/>
+  
+  </object>
+  <object Name="MatterRecompositer" Inherits="BaseCyberneticsEquipment_3point">
+    <part Name="Physics" Weight="5"/>
+    <part Name="Description" Short="这个微小容器内的通量可以在足够大的尺度上折叠空间，从而将附近的人体框架传送。"/>
+    <part Name="Render" DisplayName="{{Y|物质重组器}}" Tile="Items/sw_matter.bmp" ColorString="&amp;C" DetailColor="r"/>
+    <part Name="CyberneticsBaseItem" Slots="Body" Cost="3" BehaviorDescription="激活。冷却时间100。你传送到地图上的一个随机已探索位置。"/>    
+    <part Name="CyberneticsMatterRecompositer"/>
+    <part Name="ItemElements" Elements="travel::4"/>
+    <tag Name="CyberneticsOneOnly"/>
+  
+  </object>
+  <object Name="MedassistModule" Inherits="BaseCyberneticsEquipment_3point">
+    <part Name="Physics" Weight="1"/>
+    <part Name="Description" Short="支架和气动注射器硬连接到一个智能控制单元，该单元负责将变形染料注入静脉。"/>
+    <part Name="Render" DisplayName="{{Y|医疗辅助模块}}" Tile="Items/sw_cyber_medassist_module.bmp" TileColor="&amp;r" DetailColor="C"/>
+    <part Name="Inventory"/>
+    <part Name="CyberneticsBaseItem" Slots="Body,Back,Arm" Cost="3" BehaviorDescription="将注射器的行动成本降低80%。可以装载多达8个注射器，医疗辅助模块AI将在适当的时候（根据其判断）自动使用，无需消耗行动点数。"/>
+    <part Name="CyberneticsMedassistModule"/>
+    <part Name="ReduceEnergyCosts" ChargeUse="0" IncludeTypes="Medication" PercentageReduction="80" GenerateShortDescription="false" NameForStatus="ManualStentSystem"/>
+    <tag Name="CyberneticsOneOnly"/>
+  
+  </object>
+  <object Name="MicromanipulatorArray" Inherits="BaseCyberneticsEquipment_5point">
+    <part Name="Physics" Weight="2"/>
+    <part Name="Description" Short="一打机械臂和操作器从一个与掌骨融合的金属支架上展开。"/>
+    <part Name="Render" DisplayName="{{Y|微操作阵列}}" Tile="Items/sw_cyber_micromanipulator_array.bmp" TileColor="&amp;r" DetailColor="C"/>
+    <part Name="CyberneticsBaseItem" Slots="Hands" Cost="5" BehaviorDescription="你可以在战斗中以消耗一个回合的代价修理和改装。其他改装技能的动作成本减少40%。鉴定遗物时，如同你的智力提高了8点一样获得加成。从拆解遗物中回收零件的概率提高10%。"/>
+    <part Name="CyberneticsMicromanipulatorArray"/>
+    <part Name="ItemElements" Elements="scholarship::5"/>
+    <part Name="Toolbox" ChargeUse="0" WorksOnCarrier="false" TrackAsToolbox="false" UnpoweredInspectBonus="8" UnpoweredDisassembleBonus="10" ComputePowerFactor="1" NameForStatus="DiagnosticSensors"/>
+  
+  </object>
+  <object Name="MotorizedTreads" Inherits="BaseCyberneticsEquipment_4point">
+    <part Name="Physics" Weight="75"/>
+    <part Name="Description" Short="三角形履带包裹着巨大的齿轮的齿，齿轮转动以实现移动。人类已经摆脱了两足行走的限制。"/>
+    <part Name="Render" DisplayName="{{Y|机械履带}}" Tile="Items/sw_treads.bmp" ColorString="&amp;C" DetailColor="r"/>
+    <part Name="CyberneticsBaseItem" Slots="Feet" Cost="4" BehaviorDescription="+150 移动速度 对强制移动、击倒和束缚的豁免+4 你不能穿鞋。此植入物无法卸载。"/>
+    <part Name="CyberneticsMotorizedTreads"/>
+    <part Name="CyberneticsStatModifier" Stats="MoveSpeed:-150"/>
+    <part Name="SaveModifier" Vs="Move,Knockdown,Restraint" Amount="4" IsEMPSensitive="true" IsTechScannable="true" NameForStatus="DriveTrain" ShowInShortDescription="false"/>
+    <part Name="Metal"/>
+    <part Name="NoDamage"/>
+    <part Name="NoRust"/>
+    <part Name="ItemElements" Elements="travel::5"/>
+    <tag Name="CyberneticsNoRemove"/>
+    <tag Name="CyberneticsUsesEqSlot"/>
+    <tag Name="RenderImplantGreyInEquipment"/>
+    <tag Name="CyberneticsModifiesAnatomy"/>
+  
+  </object>
+  <object Name="NavigationSystem" Inherits="BaseCyberneticsEquipment_1point">
+    <part Name="Physics" Weight="0"/>
+    <part Name="Description" Short="地理社交定位数据被绘制在玻璃新月上，并叠加了取代地球表面的活土层的表示。"/>
+    <part Name="Render" DisplayName="{{Y|导航系统}}" Tile="Items/sw_cyber_navigation_system.bmp" ColorString="&amp;C" DetailColor="r"/>
+    <part Name="MultiNavigationBonus" ShowInShortDescription="false" Bonuses="Survival_RuinsSurvival:30:CompassBraceletApplied,*:10:CompassBraceletApplied" ChargeUse="0" NameForStatus="NavigationModule"/>
+    <part Name="CyberneticsBaseItem" Slots="Head,Arm,Hands,Body,Back" Cost="1" BehaviorDescription="你在废墟中迷路的几率减少了30%。在其他地形中迷路的几率减少了10%。这些效果不会与指南针手链的加成叠加。"/>
+    <part Name="ItemElements" Elements="travel::2"/>
+  
+  </object>
+  <object Name="NightVision" Inherits="BaseCyberneticsEquipment_2point">
+    <part Name="Physics" Weight="0"/>
+    <part Name="Description" Short="神经密集的视网膜散射入射辐射并弯曲光线，使虹膜变为翠绿色。"/>
+    <part Name="Render" DisplayName="{{Y|夜视}}" Tile="Items/night_vision_implant.bmp" TileColor="&amp;r" DetailColor="C"/>
+    <part Name="CyberneticsBaseItem" Slots="Face" Cost="2" BehaviorDescription="你获得了在黑暗中视物的能力。"/>
+    <part Name="CyberneticsNightVision"/>
+    <tag Name="StartingCybernetic:General"/>
+    <tag Name="CyberneticsOneOnly"/>
+  
+  </object>
+  <object Name="NocturnalApex" Inherits="BaseCyberneticsEquipment_2point">
+    <part Name="Physics" Weight="0"/>
+    <part Name="Description" Short="圣城居民的新陈代谢节奏与他们的昼夜仪式同步: 白天，在有凹槽的金字塔阴影下祈祷休息；夜晚，在有毒的园林中寻找祭品。"/>
+    <part Name="Render" DisplayName="{{Y|夜行顶点}}" Tile="Items/sw_nocturnal.bmp" TileColor="&amp;r" DetailColor="C"/>
+    <part Name="CyberneticsBaseItem" Slots="Head" Cost="2" BehaviorDescription="白天时自然恢复速度提高10%。每晚一次，你可以潜行，获得6点敏捷和10点移动速度，持续100回合。"/>
+    <part Name="CyberneticsNocturnalApex"/>
+    <tag Name="StartingCybernetic:Priest of All Suns"/>
+    <tag Name="StartingCybernetic:Priest of All Moons"/>
+    <tag Name="StartingCybernetic:Syzygyrior"/>
+    <tag Name="StartingCybernetic:Horticulturist"/>
+    <tag Name="CyberneticsOneOnly"/>
+    <tag Name="SpecialArcologyText" Value="{{G|[Ekuemekiyye only]}}"/>
+  
+  </object>
+  <object Name="OnboardRecoiler" Inherits="BaseCyberneticsEquipment_4point">
+    <part Name="Physics" Weight="1"/>
+    <part Name="Description" Short="一个地理空间核心装有生化系绳。"/>
+    <part Name="Render" DisplayName="{{Y|内置回弹器}}" Tile="Items/sw_cyber_onboard_recoiler.bmp" ColorString="&amp;C" DetailColor="r"/>
+    <part Name="ItemElements" Elements="travel::5"/>
+    <part Name="CyberneticsBaseItem" Slots="Hands,Feet,Body,Back,Face,Arm,Head" Cost="4" BehaviorDescription="你可以将这个植入物标记一个位置（冷却时间100）并回弹到该位置（冷却时间50）"/>
+    <part Name="CyberneticsOnboardRecoilerTeleporter" Sound="Sounds/Interact/sfx_interact_recoiler_activate"/>
+    <part Name="CyberneticsOnboardRecoilerImprinting" Sound="Sounds/Interact/sfx_interact_recoiler_location_imprint"/>
+  
+  </object>
+  <object Name="OpticalMultiscanner" Inherits="BaseCyberneticsEquipment_8point">
+    <part Name="Physics" Weight="0"/>
+    <part Name="Description" Short="一个微小的石墨烯阵列，用于处理光学数据并对照最终的本体论和现象学记录。"/>
+    <part Name="Render" DisplayName="{{Y|光学多扫描仪}}" Tile="Items/sw_multiscanner.bmp" TileColor="&amp;C" DetailColor="m"/>
+    <part Name="CyberneticsBaseItem" Slots="Face" Cost="8" BehaviorDescription="你能够获取机器人生物、有机生物和建筑的精确生命值、护甲值和闪避值。你自动识别遗物。楼梯和其他上下地图过渡始终对你可见。"/>
+    <part Name="CyberneticsAirCurrentMicrosensor"/>
+    <part Name="CyberneticsOpticalMultiscanner"/>
+    <part Name="CyberneticsPropertyModifier" Props="TechScannerEquipped:1;BioScannerEquipped:1;StructureScannerEquipped:1"/>
+    <part Name="ItemElements" Elements="scholarship::5"/>
+  
+  </object>
+  <object Name="PalladiumElectrodeposits" Inherits="BaseCyberneticsEquipment_3point">
+    <part Name="Physics" Weight="1"/>
+    <part Name="Description" Short="从钯溶解的离子尘埃有助于计算电流的传输。"/>
+    <part Name="Render" DisplayName="{{Y|钯电沉积物}}" Tile="Items/sw_electrodeposits.bmp" TileColor="&amp;C" DetailColor="r"/>
+    <part Name="Inventory"/>
+    <part Name="CyberneticsBaseItem" Slots="Head,Body,Back,Arm" Cost="3" BehaviorDescription="提供20单位的计算能力到本地晶格。+2 智力，如果植入头部。"/>
+    <part Name="CyberneticsPalladiumElectrodeposits"/>
+    <part Name="ItemElements" Elements="circuitry::4"/>
+    <tag Name="CyberneticsDestroyOnRemoval"/>
+    <tag Name="CyberneticsPreferredSlots" Value="Head"/>    
+  
+  </object>
+  <object Name="ParabolicMuscularSubroutine" Inherits="BaseCyberneticsEquipment_2point">
+    <part Name="Description" Short="神经束以特定方式排列，用于沿抛物线滑尺刺激手臂肌肉。"/>
+    <part Name="Render" DisplayName="{{Y|抛物线肌肉子程序}}" Tile="Items/sw_parabolic.bmp" ColorString="&amp;C" DetailColor="r"/>
+    <part Name="CyberneticsBaseItem" Slots="Arm" Cost="2" BehaviorDescription="你的投掷范围增加2。当你向投掷范围内目标投掷物品时，你的投掷准确率为100%。"/>
+    <part Name="CyberneticsPropertyModifier" Props="ThrowRangeBonus:2;ThrowToHitBonus:2;CloseThrowRangeAccuracyBonus:100"/>
+    <tag Name="StartingCybernetic:General"/>
+  
+  </object>
+  <object Name="PenetratingRadar" Inherits="BaseCyberneticsEquipment_6point">
+    <part Name="Physics" Weight="0"/>
+    <part Name="Description" Short="皮相位收发器阵列组装了一个极其详细的周围环境模型。"/>
+    <part Name="Render" DisplayName="{{Y|穿透雷达}}" Tile="Items/sw_cyber_penetrating_radar.bmp" TileColor="&amp;r" DetailColor="C"/>
+    <part Name="CyberneticsBaseItem" Slots="Body,Back,Head,Face,Arm" Cost="6" BehaviorDescription="你在周围10格范围内获得完全视野，仅被力场和时空异常阻挡。"/>
+    <part Name="CyberneticsPenetratingRadar"/>
+    <tag Name="CyberneticsOneOnly"/>
+  
+  </object>
+  <object Name="Pentaceps" Inherits="BaseCyberneticsEquipment_2point">
+    <part Name="Physics" Weight="10"/>
+    <part Name="Description" Short="四组膝关节伸肌得到了一个合成的第五肢的帮助。"/>
+    <part Name="Render" DisplayName="{{Y|五肢怪}}" Tile="Items/sw_pentacips.bmp" TileColor="&amp;r" DetailColor="C"/>
+    <part Name="CyberneticsBaseItem" Slots="Feet" Cost="2" BehaviorDescription="你的冲锋范围增加了4个格子。"/>
+    <part Name="CyberneticsPropertyModifier" Props="ChargeRangeModifier:4"/>
+    <tag Name="StartingCybernetic:General"/>
+  
+  </object>
+  <object Name="Phase-Adaptive Scope" Inherits="BaseCyberneticsEquipment_4point">
+		<part Name="Physics" Weight="0"/>
+		<part Name="Description" Short="一块小新氙四元玻璃被弯曲成Q半径，以补偿跨维度视差。"/>
+		<part Name="Render" DisplayName="{{Y|相位适应瞄准镜}}" Tile="Items/implant_phase_adaptive_scope.bmp" TileColor="&amp;r" DetailColor="C"/>
+		<part Name="CyberneticsBaseItem" Slots="Back" Cost="4" BehaviorDescription="当你发射远程武器或投掷物品时，你的弹道会改变相位，以穿过障碍物并到达目标。"/>
+		<part Name="CyberneticsPhaseAdaptiveScope"/>
+		<tag Name="CyberneticsOneOnly"/>
+	
+  </object>
+  <object Name="PhaseHarmonicModulator" Inherits="BaseCyberneticsEquipment_2point">
+    <part Name="Physics" Weight="1"/>
+    <part Name="Description" Short="倒置的顶端平衡了安装在仿生圆盘中的控制单元的微结构。内部，现实的相位被叠加并投射出去。"/>
+    <part Name="Render" DisplayName="{{Y|相位谐波调制器}}" Tile="Items/sw_cyber_phase_harmonic_modulator.bmp" ColorString="&amp;C" DetailColor="r"/>
+    <part Name="CyberneticsBaseItem" Slots="Hands,Feet,Body,Back,Face,Arm,Head" Cost="2" BehaviorDescription="你可以与同相和异相的物体及生物互动。"/>
+    <part Name="CyberneticsPhaseHarmonicModulator"/>
+    <tag Name="CyberneticsOneOnly"/>
+  
+  </object>
+  <object Name="PneumaticPistons" Inherits="BaseCyberneticsEquipment_2point">
+    <part Name="Physics" Weight="8"/>
+    <part Name="Description" Short="压缩气体驱动涂有石墨粉的肌肉活塞杆，使跳跃者腾空而起。"/>
+    <part Name="Render" DisplayName="{{Y|气动活塞}}" Tile="Items/sw_cyber_pneumatic_pistons.bmp" ColorString="&amp;c" DetailColor="C"/>
+    <part Name="CyberneticsBaseItem" Slots="Feet" Cost="2" BehaviorDescription="你的跳跃范围增加了4格。"/>
+    <part Name="CyberneticsPropertyModifier" Props="JumpRangeModifier:4"/>
+    <part Name="CyberneticsSyncJump"/>    
+  
+  </object>
+  <object Name="PrecisionForceLathe" Inherits="BaseCyberneticsEquipment_4point">
+		<part Name="Physics" Weight="0"/>
+		<part Name="Description" Short="磁屏蔽的主轴在动力主轴的旋转下将空间物质保持在动能悬浮状态，并将其磨尖至锋利。"/>
+		<part Name="Render" DisplayName="{{Y|精密力车床}}" Tile="Items/implant_precision_force_lathe.bmp" TileColor="&amp;c" DetailColor="C"/>
+		<part Name="CyberneticsBaseItem" Slots="Head,Arm,Body,Back" Cost="4" BehaviorDescription="你在空闲的手持或投掷武器槽中制造力场刀。如果你投掷了一把力场刀，另一把会立即在你的投掷武器槽中显现。力场刀造成1d8伤害，穿透值等于目标的护甲值，并且具有+6的投掷范围。力场刀在与你失去接触或被卸下后会消失。如果你安装了力场调制器植入物，力场刀可以穿过力场。"/>
+		<part Name="CyberneticsPrecisionForceLathe"/>
+		<tag Name="CyberneticsOneOnly"/>
+	
+  </object>
+  <object Name="RapidReleaseFingerFlexors" Inherits="BaseCyberneticsEquipment_2point">
+    <part Name="Physics" Weight="1"/>
+    <part Name="Description" Short="神经充电组织鞘传递意志的速度超过了细胞生物学所达到的水平。"/>
+    <part Name="Render" DisplayName="{{Y|快速释放指屈肌}}" Tile="Items/sw_flexors.bmp" TileColor="&amp;r" DetailColor="C"/>
+    <part Name="CyberneticsBaseItem" Slots="Hands" Cost="2" BehaviorDescription="你开手枪的速度提高了25%。"/>
+    <part Name="CyberneticsPropertyModifier" Props="PistolEnergyModifier:25"/>
+    <tag Name="StartingCybernetic:General"/>    
+  
+  </object>
+  <object Name="ReactiveCranialPlating" Inherits="BaseCyberneticsEquipment_2point">
+    <part Name="Physics" Weight="2"/>
+    <part Name="Description" Short="碳化物护板被塑形以贴合头骨，并与受冲击时膨胀的泡沫合金。"/>
+    <part Name="Render" DisplayName="{{Y|反应头骨护甲}}" Tile="Items/sw_cyber_reactive_cranial_plating.bmp" TileColor="&amp;r" DetailColor="C"/>
+    <part Name="CyberneticsBaseItem" Slots="Head" Cost="2" BehaviorDescription="你不会被动能效果致盲或击晕。"/>
+    <part Name="CyberneticsReactiveCranialPlating"/>
+  
+  </object>
+  <object Name="ReactiveTraumaPlate" Inherits="BaseCyberneticsEquipment_4point">
+    <part Name="Physics" Weight="4"/>
+    <part Name="Description" Short="一块贴合身体的塑钢护甲，能够吸收冲击并分解进入血液。"/>
+    <part Name="Render" DisplayName="{{Y|反应创伤板}}" Tile="Items/sw_cyber_reactive_trauma_plate.bmp" ColorString="&amp;C" DetailColor="r"/>
+    <part Name="CyberneticsBaseItem" Slots="Body" Cost="4" BehaviorDescription="中和一个会导致致命伤害或至少造成你最大生命值50%伤害的伤害来源。此植入物在此过程中会被摧毁。"/>
+    <part Name="LifeSaver" ChanceVsLethal="100" ChanceVsMaxHitpointsThreshold="100" MaxHitpointsThreshold="50" MaxUses="1" DestroyWhenUsedUp="true" ChargeUse="0" IsEMPSensitive="false" LethalMessage="=subject.Name's= =object.name= =object.verb:burst= outward, destroying =objpronouns.reflexive= to prevent potentially lethal damage." MaxHitpointsThresholdMessage="=subject.Name's= =object.name= =object.verb:burst= outward, destroying =objpronouns.reflexive= to prevent catastrophic damage." NameForStatus="TraumaInterventionSystem"/>
+  
+  </object>
+  <object Name="Schemasoft2" Inherits="BaseCyberneticsEquipment_2point">
+    <part Name="Physics" Weight="0"/>
+    <part Name="Description" Short="这个芯片上编码了一整类低级伪物的设计图。"/>
+    <part Name="Render" DisplayName="{{Y|斯凯马软体}}" Tile="Items/sw_schemasoft.bmp" ColorString="&amp;C" DetailColor="r"/>
+    <part Name="CyberneticsBaseItem" Slots="Head" Cost="2" BehaviorDescription="你获得了某一类遗物的所有图纸。"/>
+    <part Name="CyberneticsSchemasoft" MaxTier="3"/>
+    <tag Name="CyberneticsDestroyOnRemoval"/>
+    <part Name="ItemElements" Elements="scholarship::3"/>
+  
+  </object>
+  <object Name="Schemasoft3" Inherits="BaseCyberneticsEquipment_3point">
+    <part Name="Physics" Weight="0"/>
+    <part Name="Description" Short="这块芯片上编码了一整类中等级别的神器的设计图。"/>
+    <part Name="Render" DisplayName="{{Y|斯凯马软体}}" Tile="Items/sw_schemasoft.bmp" ColorString="&amp;C" DetailColor="r"/>
+    <part Name="CyberneticsBaseItem" Slots="Head" Cost="3" BehaviorDescription="你获得了某一类遗物的所有图纸。"/>
+    <part Name="CyberneticsSchemasoft" MaxTier="5"/>
+    <tag Name="CyberneticsDestroyOnRemoval"/>
+    <part Name="ItemElements" Elements="scholarship::4"/>
+  
+  </object>
+  <object Name="Schemasoft4" Inherits="BaseCyberneticsEquipment_4point">
+    <part Name="Physics" Weight="0"/>
+    <part Name="Description" Short="这芯片上编码了一整类高级神器的设计图。"/>
+    <part Name="Render" DisplayName="{{Y|斯凯马软体}}" Tile="Items/sw_schemasoft.bmp" ColorString="&amp;C" DetailColor="R"/>
+    <part Name="CyberneticsBaseItem" Slots="Head" Cost="4" BehaviorDescription="你获得了某一类遗物的所有图纸。"/>
+    <part Name="CyberneticsSchemasoft" MaxTier="7"/>
+    <part Name="ItemElements" Elements="scholarship::5"/>
+    <tag Name="CyberneticsDestroyOnRemoval"/>
+  
+  </object>
+  <object Name="SecurityInterlock" Inherits="BaseCyberneticsEquipment_3point">
+    <part Name="Physics" Weight="1"/>
+    <part Name="Description" Short="每种波长的凹槽钥匙允许通过每个门户。"/>
+    <part Name="Render" DisplayName="{{Y|安全联锁}}" Tile="Items/sw_security.bmp" ColorString="&amp;C" DetailColor="r"/>
+    <part Name="CyberneticsBaseItem" Slots="Hands,Feet,Body,Back,Face,Arm,Head" Cost="3" BehaviorDescription="你可以解锁任何门。"/>
+    <part Name="CyberneticsPropertyModifier" Props="DoorUnlocker:1"/>
+    <tag Name="CyberneticsDestroyOnRemoval"/>
+  
+  </object>
+  <object Name="SingleSkillsoft1" Inherits="BaseCyberneticsEquipment_1point">
+    <part Name="Physics" Weight="0"/>
+    <part Name="Description" Short="这种芯片编码了特定技能的神经模式。"/>
+    <part Name="Render" DisplayName="{{Y|技能软片}}" Tile="Items/sw_skillsoft.bmp" ColorString="&amp;C" DetailColor="r"/>
+    <part Name="CyberneticsBaseItem" Slots="Head" Cost="1" BehaviorDescription="你获得了一项技能，其消耗在0到50点SP之间。"/>
+    <part Name="CyberneticsSingleSkillsoft" MinCost="0" MaxCost="50"/>
+    <part Name="ItemElements" Elements="scholarship::2"/>
+  
+  </object>
+  <object Name="SingleSkillsoft2" Inherits="BaseCyberneticsEquipment_2point">
+    <part Name="Physics" Weight="0"/>
+    <part Name="Description" Short="这种芯片编码了特定技能的神经模式。"/>
+    <part Name="Render" DisplayName="{{Y|技能软片}}" Tile="Items/sw_skillsoft.bmp" ColorString="&amp;C" DetailColor="r"/>
+    <part Name="CyberneticsBaseItem" Slots="Head" Cost="2" BehaviorDescription="你获得了一项技能，其消耗介于51到150点SP之间。"/>
+    <part Name="CyberneticsSingleSkillsoft" MinCost="51" MaxCost="150"/>
+    <part Name="ItemElements" Elements="scholarship::3"/>
+  
+  </object>
+  <object Name="SingleSkillsoft3" Inherits="BaseCyberneticsEquipment_3point">
+    <part Name="Physics" Weight="0"/>
+    <part Name="Description" Short="这种芯片编码了特定技能的神经模式。"/>
+    <part Name="Render" DisplayName="{{Y|技能软片}}" Tile="Items/sw_skillsoft.bmp" ColorString="&amp;C" DetailColor="r"/>
+    <part Name="CyberneticsBaseItem" Slots="Head" Cost="3" BehaviorDescription="你获得了一项技能，其消耗大于151 SP。"/>
+    <part Name="CyberneticsSingleSkillsoft" MinCost="151" MaxCost="999"/>
+    <part Name="ItemElements" Elements="scholarship::4"/>
+  
+  </object>
+  <object Name="SkinGlitter1" Inherits="BaseCyberneticsEquipment_1point">
+    <part Name="Physics" Weight="0"/>
+    <part Name="Description" Short="一种分形晶格的皮肤贴片将内在的光辉传导到外部世界。"/>
+    <part Name="Render" DisplayName="{{Y|皮肤闪光}}" Tile="Items/sw_skin_glitter.bmp" TileColor="&amp;m" DetailColor="C"/>
+    <part Name="CyberneticsBaseItem" Slots="Face,Arm,Head,Hands,Feet" Cost="1" BehaviorDescription="+8% 反射光基攻击的几率"/>
+    <part Name="CyberneticsRefractLight" Chance="8"/>
+    <xtagGrammar massNoun="true"/>
+    <part Name="ItemElements" Elements="glass::2"/>
+  
+  </object>
+  <object Name="SkinGlitter2" Inherits="BaseCyberneticsEquipment_2point">
+    <part Name="Physics" Weight="0"/>
+    <part Name="Description" Short="一种分形晶格的皮肤贴片将内在的光辉传导到外部世界。"/>
+    <part Name="Render" DisplayName="{{Y|皮肤闪光}}" Tile="Items/sw_skin_glitter.bmp" TileColor="&amp;m" DetailColor="C"/>
+    <part Name="CyberneticsBaseItem" Slots="Back,Body" Cost="2" BehaviorDescription="+16% 反射光基攻击的几率"/>
+    <part Name="CyberneticsRefractLight" Chance="16"/>
+    <xtagGrammar massNoun="true"/>
+    <part Name="ItemElements" Elements="glass::3"/>
+  
+  </object>
+  <object Name="SocialCoprocessor" Inherits="BaseCyberneticsEquipment_8point">
+		<part Name="Physics" Weight="0"/>
+		<part Name="Description" Short="围绕中央处理器，神经移植连接到负责社交温暖感的大脑区域。"/>
+		<part Name="Render" DisplayName="{{Y|社会协处理器}}" Tile="Items/sw_social_coprocessor.bmp" TileColor="&amp;r" DetailColor="C"/>
+		<part Name="CyberneticsBaseItem" Slots="Head" Cost="8" BehaviorDescription="每当你与新的生物进行水之仪式时，你将额外获得25点声望。如果你在首次治疗某个生物之后安装此植入物，你下次治疗它们时将获得25点声望。水之仪式的声望消耗减少20%。你可以多劝化一个生物。本地晶格上的计算能力会增强此植入物的效果。"/>
+		<part Name="CyberneticsSocialCoprocessor"/>
+		<tag Name="CyberneticsDestroyOnRemoval"/>
+		<tag Name="CyberneticsOneOnly"/>
+	
+  </object>
+  <object Name="StabilizerArmLocks" Inherits="BaseCyberneticsEquipment_2point">
+    <part Name="Physics" Weight="5"/>
+    <part Name="Description" Short="铬合金夹具固定臂关节，模拟非生命的静止状态。"/>
+    <part Name="Render" DisplayName="{{Y|稳定器臂锁}}" Tile="Items/sw_armlocks.bmp" TileColor="&amp;r" DetailColor="C"/>
+    <part Name="CyberneticsBaseItem" Slots="Arm" Cost="2" BehaviorDescription="为了确定你使用远程攻击的准确性，你的敏捷被视为提高了6点。"/>
+    <part Name="CyberneticsPropertyModifier" Props="MissileWeaponAccuracyBonus:3"/>
+    <tag Name="StartingCybernetic:General"/>    
+  
+  </object>
+  <object Name="StasisEntangler" Inherits="BaseCyberneticsEquipment_8point">
+		<part Name="Physics" Weight="3"/>
+		<part Name="Description" Short="剃平的水晶面以矩阵排列并倾斜，将静止状态通过活化顶点的网络传递。"/>
+		<part Name="Render" DisplayName="{{Y|静止缠绕器}}" Tile="Items/implant_stasis_entangler.bmp" TileColor="&amp;r" DetailColor="C"/>
+		<part Name="CyberneticsBaseItem" Slots="Feet,Back,Body" Cost="8" BehaviorDescription="激活。冷却时间200。你选择视线内的一个生物。所有其他生物将被置于静止领域15回合。"/>
+		<part Name="CyberneticsStasisEntangler"/>
+    <part Name="ItemElements" Elements="time::8"/>
+		<tag Name="CyberneticsOneOnly"/>
+	
+  </object>
+  <object Name="StasisProjector" Inherits="BaseCyberneticsEquipment_6point">
+    <part Name="Physics" Weight="1"/>
+    <part Name="Description" Short="晶体沿着静止的角度内卷。"/>
+    <part Name="Render" DisplayName="{{Y|静止投影仪}}" Tile="Items/sw_stasis_projector.bmp" TileColor="&amp;r" DetailColor="C"/>
+    <part Name="CyberneticsBaseItem" Slots="Head,Arm,Hands,Body,Back" Cost="6" BehaviorDescription="激活。冷却时间100。生成最多6个连续的静止力场方块，持续约5回合。"/>
+    <part Name="CyberneticsStasisProjector"/>
+    <part Name="ItemElements" Elements="time::7"/>
+  
+  </object>
+  <object Name="TechnologicalIndexer" Inherits="BaseCyberneticsEquipment_1point">
+    <part Name="Physics" Weight="0"/>
+    <part Name="Description" Short="一种微型石墨烯阵列，用于处理光学数据并与机器人生命体和人工制品的数据库进行比对。"/>
+    <part Name="Render" DisplayName="{{Y|光学技术扫描仪}}" Tile="Items/sw_scanningmodule.bmp" TileColor="&amp;r" DetailColor="C"/>
+    <part Name="CyberneticsBaseItem" Slots="Face" Cost="1" BehaviorDescription="你可以获取到机械生物的确切命中点、护甲值和闪避值，并且能够自动识别遗物。"/>
+    <part Name="CyberneticsTechIndexer"/>
+    <part Name="ItemElements" Elements="scholarship::2"/>
+    <tag Name="StartingCybernetic:General"/>
+  
+  </object>
+  <object Name="TibularHydrojets" Inherits="BaseCyberneticsEquipment_1point">
+    <part Name="Render" DisplayName="{{Y|管状水射流}}" Tile="Items/sw_tibular_hydrojets.bmp" ColorString="&amp;C" DetailColor="r"/>
+    <part Name="Physics" Weight="1"/>
+    <part Name="Description" Short="植物滑道传导肌电力量，推动身体穿过水面。"/>
+    <part Name="CyberneticsBaseItem" Slots="Feet" Cost="1" BehaviorDescription="+200 游泳移动速度"/>
+    <part Name="CyberneticsTibularHydrojets"/>
+    <tag Name="CyberneticsDestroyOnRemoval"/>    
+  
+  </object>
+  <object Name="TranslucentSkin" Inherits="BaseCyberneticsEquipment_2point">
+    <part Name="Physics" Weight="5"/>
+    <part Name="Description" Short="半透明的皮肤将循环系统、肌肉和神经网络的轮廓清晰地展现出来。"/>
+    <part Name="Render" DisplayName="{{Y|半透明皮肤}}" Tile="Items/sw_transparent.bmp" ColorString="&amp;C" DetailColor="r"/>
+    <part Name="CyberneticsBaseItem" Slots="Body,Back" Cost="2" BehaviorDescription="+2 DV"/>
+    <part Name="CyberneticsStatModifier" Stats="DV:2"/>
+    <tag Name="StartingCybernetic:General"/>
+    <part Name="ItemElements" Elements="glass::3"/>
+  
+  </object>
+  <object Name="TransparentSkin" Inherits="BaseCyberneticsEquipment_3point">
+    <part Name="Physics" Weight="5"/>
+    <part Name="Description" Short="新生的肉体如同幽灵般的薄膜，丝毫不能遮掩生命机制的运作。"/>
+    <part Name="Render" DisplayName="{{Y|透明皮肤}}" Tile="Items/sw_transparent.bmp" TileColor="&amp;C" DetailColor="R"/>
+    <part Name="CyberneticsBaseItem" Slots="Body,Back" Cost="3" BehaviorDescription="+3 DV"/>
+    <part Name="CyberneticsStatModifier" Stats="DV:3"/>
+    <part Name="ItemElements" Elements="glass::4"/>
+  
+  </object>
+  <object Name="TreeSkillsoft" Inherits="BaseCyberneticsEquipment_3point">
+    <part Name="Physics" Weight="0"/>
+    <part Name="Description" Short="这芯片上编码了特定技能树的神经模式。"/>
+    <part Name="Render" DisplayName="{{Y|技能软片}}" Tile="Items/sw_skillsoft.bmp" ColorString="&amp;C" DetailColor="R"/>
+    <part Name="CyberneticsBaseItem" Slots="Head" Cost="8" BehaviorDescription="你获得了访问整个技能树的权限。"/>
+    <part Name="CyberneticsTreeSkillsoft"/>
+    <part Name="ItemElements" Elements="scholarship::8"/>
+  
+  </object>
+  <object Name="UltraElasticAnkleTendons" Inherits="BaseCyberneticsEquipment_3point">
+    <part Name="Physics" Weight="1"/>
+    <part Name="Description" Short="Neutrafoam绳索被绑成束，形成一个凹槽柱。"/>
+    <part Name="Render" DisplayName="{{Y|超弹性踝腱}}" Tile="Items/sw_ultratendons.bmp" ColorString="&amp;C" DetailColor="r"/>
+    <part Name="CyberneticsBaseItem" Slots="Feet" Cost="3" BehaviorDescription="+10 移动速度"/>
+    <part Name="CyberneticsStatModifier" Stats="MoveSpeed:-10"/>    
+  
+  </object>
+  <object Name="Stinger Confusion" Inherits="Stinger">
+    <!-- 变体名（官方 VariantName 标签机制）——后缀 "(Confusing Venom)" 就是它 -->
+    <tag Name="VariantName" Value="毒刺（致幻毒液）" />
+    <part Name="Render" DetailColor="B" />
+  </object>
+  <object Name="Stinger Paralysis" Inherits="Stinger">
+    <!-- 变体名（官方 VariantName 标签机制）——后缀 "(Confusing Venom)" 就是它 -->
+    <tag Name="VariantName" Value="毒刺（麻痹毒液）" />
+    <part Name="Render" DetailColor="M" />
+  </object>
+  <object Name="Stinger Poison" Inherits="Stinger">
+    <!-- 变体名（官方 VariantName 标签机制）——后缀 "(Confusing Venom)" 就是它 -->
+    <tag Name="VariantName" Value="毒刺（剧毒毒液）" />
+    <part Name="Render" DetailColor="G" />
+  </object>
+</objects>

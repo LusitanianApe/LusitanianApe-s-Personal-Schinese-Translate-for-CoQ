@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<conversations Encoding="utf-8">
+<conversation ID="Gloaming">
+  <node ID="Start">
+    <text>{{emote|*hoot* *hoot*}}
+
+=MARKOVSENTENCE|weirdify=
+
+{{emote|*hoot*}}
+    </text>
+    <choice GotoID="End">...</choice>
+  </node>
+</conversation>
+</conversations>

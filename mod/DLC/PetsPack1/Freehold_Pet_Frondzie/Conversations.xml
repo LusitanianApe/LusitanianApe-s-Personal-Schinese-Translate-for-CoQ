@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<conversations Encoding="utf-8">
+  <conversation ID="Frondzie">
+    <node ID="Start">
+      <text>
+        <text>那包里有没有头巾？我发过誓要替你扛头巾的。</text>
+        <text>头儿，我能当队长吗？给藤蔓一个面子！</text>
+        <text>观众不好伺候啊？也许下一批素不相识的人会更喜欢我的笑话。</text>
+        <text>嘿，行路人，路行得怎么样？</text>
+        <text>在莫格拉伊巡逻，简直让人盼着来一场真正的严冬！</text>
+        <text>我会成为史上最经典的藤蔓之一，你等着瞧。</text>
+        <text>头儿，我们该去看看还有没有别的聚落需要帮忙！我的段子需要新素材。</text>
+        <text>哎，来吧，动动腿！或者你下面长的是什么来着，我忘了。</text>
+        <text>我一讲笑话，人群就涌过来！然后通常就是一顿乱捶。</text>
+        <text>虚空行者？我跟她可不熟！</text>
+        <text>你觉得我们能说服普图斯圣殿骑士，说「被回收者之血」就是戈耳戈塔底下那玩意儿吗？不如叫「黏浆中的战争贩子」，对吧？</text>
+        <text>诶嘿。</text>
+      </text>
+      <choice GotoID="Joke">给我讲个笑话，Frondzie。</choice>
+      <choice GotoID="End">活下去，喝足水，有趣的藤蔓。</choice>
+    </node>
+
+    <node ID="Joke">
+      <text>
+        <text>讲笑话我在行！我比起植物学家更像逗乐家。</text>
+        <text>要是我不用词讲笑话，那算不算植物哑剧？</text>
+        <text>我昨晚把《铬色颂歌》从头跑了一遍，天哪，我的叶子累坏了！</text>
+        <text>我拿了一件古怪器物给几个熊人看，结果真把他们绕晕了。</text>
+        <text>听说戈耳戈塔的垃圾水得慢慢习惯，可我哪有资格说淤泥的坏话？</text>
+        <text>我本来想去莫格拉伊，可那地方太吓人了。</text>
+        <text>大人物要是破了产，那就是「无水」了。</text>
+        <text>什么东西黑白相间又浑身是红？被你戳过之后的沉眠兽！</text>
+        <text>普图斯圣殿骑士和吉尔什有什么区别？一个是作为对我们无知之罪的过重惩罚而被送到卡德的邪恶流涎群体意识，另一个是吉尔什！诶嘿！</text>
+        <text>我曾爱上一块招牌。那场分手我早有预感：字就写在墙上。</text>
+        <text>如果结社成员用羊人皮做了一顶帐幕，他就是「帐幕看守」。要是他拿它当据点，跟另一个帐幕居民长期开战，那就是「帐幕看守的帐幕战窝」。</text>
+        <text>我妈跟我抱怨机械教徒有多无礼。我说妈！为「高跷同类」哭泣有什么用！</text>
+        <text>千万别跟高跷看守动手。那叫被百万次震慑压垮。</text>
+        <text>普图斯圣殿骑士最好的地方是什么？卖他们的装备！</text>
+        <text>我不懂我朋友为什么不喜欢帕克斯·克兰克。他可是个有趣的家伙！</text>
+      </text>
+      <choice GotoID="Joke">再来一个！</choice>
+      <choice GotoID="Repeat">这个你已经讲过了。</choice>
+      <choice GotoID="End">我觉得够了。活下去，喝足水。</choice>
+    </node>
+
+    <node ID="Repeat">
+      <text>
+        <text>没有啦，跟上次稍微不同。我在打磨它。</text>
+        <text>你是要我把每一条都程序化生成一遍吗？</text>
+        <text>我觉得你听得越多就越觉得好笑。</text>
+        <text>怎么？你从没吃过两顿一样的饭？我猜那挺怪。我不吃饭。我是植物。</text>
+        <text>等我终于有了新段子，你会格外高兴的！</text>
+        <text>哎，我还指望你忘了呢。</text>
+      </text>
+      <choice GotoID="Joke">好，再讲一个。</choice>
+      <choice GotoID="End">活下去，喝足水，有趣的藤蔓。</choice>
+    </node>
+  </conversation>
+</conversations>

@@ -1,0 +1,602 @@
+<?xml version='1.0' encoding='utf-8'?>
+<objects Load="Merge" Lang="zh-Hans" Encoding="utf-8">
+  <object Name="BaseSedimentaryRock" Load="Merge">
+    <part Name="Render" DisplayName="[岩石墙]"/>
+  </object>
+  <object Name="BaseMetamorphicRock" Load="Merge">
+    <part Name="Render" DisplayName="[岩石墙]"/>
+  </object>
+  <object Name="BasePlantWall" Load="Merge">
+    <part Name="Render" DisplayName="[植物墙]"/>
+  </object>
+  <object Name="BaseMushroomWall" Load="Merge">
+    <part Name="Render" DisplayName="蘑菇肉"/>
+    <part Name="Description" Short="孢子丰富的黏液在笼状的子实体上闪烁，修剪得像树篱一样，符合家居的有序角度。"/>
+  </object>
+  <object Name="Shale" Load="Merge">
+    <part Name="Render" DisplayName="页岩"/>
+    <part Name="Description" Short="黏土和石英被晒干并粉碎成红岩，这种岩石已经被山民开采了数千年之久。"/>
+  </object>
+  <object Name="Sandstone" Load="Merge">
+    <part Name="Render" DisplayName="砂岩"/>
+    <part Name="Description" Short="岩石被侵蚀成沙，沙被风吹入湖泊，湖泊被泥沙掩埋，而泥沙又将沙压成岩石。大地重新排列。"/>
+  </object>
+  <object Name="Limestone" Load="Merge">
+    <part Name="Render" DisplayName="石灰岩"/>
+    <part Name="Description" Short="无脊椎生物的肉体被吸干，历经数百万年的流血。青绿色的岩石是一座墓地。"/>
+  </object>
+  <object Name="Marl" Load="Merge">
+    <part Name="Render" DisplayName="泥灰岩"/>
+    <part Name="Description" Short="湖泊生态系统，铸于富含石灰的泥浆中，以白垩般的光芒展示了它们百万年的往事。"/>
+  </object>
+  <object Name="Halite" Load="Merge">
+    <part Name="Render" DisplayName="岩盐"/>
+    <part Name="Description" Short="深红云彩结晶成形： 内外相嵌的立方体。莫格拉伊为何要将这形态藏于阳光之下？"/>
+  </object>
+  <object Name="Gypsum" Load="Merge">
+    <part Name="Render" DisplayName="石膏"/>
+    <part Name="Description" Short="烧灼的水晶金在无数水洞的地板上投射出几何阴影。"/>
+  </object>
+  <object Name="Black Shale" Load="Merge">
+    <part Name="Render" DisplayName="黑页岩"/>
+    <part Name="Description" Short="黑色石块矗立着，纪念那些在黏土下消亡并腐化成黄铁矿的蜗牛城市。"/>
+  </object>
+  <object Name="Coral Rag" Load="Merge">
+    <part Name="Render" DisplayName="珊瑚碎片"/>
+    <part Name="Description" Short="珊瑚礁曾是年轻海洋中的生态高楼。如今，它们变成了青绿色的陵墓，表面被酸性海水侵蚀成粗糙的伤痕。"/>
+  </object>
+  <object Name="Oolite" Load="Merge">
+    <part Name="Render" DisplayName="鲕粒灰岩"/>
+    <part Name="Description" Short="石质蛋在珍珠般的平面片上孵化。从未有幼虫孵化；它们被磨成尘土。"/>
+  </object>
+  <object Name="Serpentinite" Load="Merge">
+    <part Name="Render" DisplayName="蛇纹石"/>
+    <part Name="Description" Short="地表生物们未知的是地下世界的产房，在那里，超镁铁质岩石被羊水浸润，诞生为世界之蛇。"/>
+  </object>
+  <object Name="Slate" Load="Merge">
+    <part Name="Render" DisplayName="板岩"/>
+    <part Name="Description" Short="火山灰在其地底茧中孕育并裂变为灰色石块。学者们推测其颜色代表纯粹的以太。"/>
+  </object>
+  <object Name="Quartzite" Load="Merge">
+    <part Name="Render" DisplayName="石英岩"/>
+    <part Name="Description" Short="红蓝相间的斑驳水晶马赛克是崩塌世界板块的变质残余。新世界正在努力诞生。"/>
+  </object>
+  <object Name="Marble" Load="Merge">
+    <part Name="Render" DisplayName="大理石墙"/>
+    <part Name="Description" Short="蜗牛和珊瑚在地质压力下被碾碎，形成杂质的条带，并在理想平面上抛光。"/>
+  </object>
+  <object Name="Star Orchid Marble" Load="Merge">
+    <part Name="Render" DisplayName="星兰大理石墙"/>
+    <part Name="Description" Short="来自外世界的硬壳生物从行星碎片中被采集，燃烧于它们掠夺者飞船的紫红色尾焰之中，最终在星际弹弓再入大气层时被碾碎融合。"/>
+  </object>
+  <object Name="Black Marble" Load="Merge">
+    <part Name="Render" DisplayName="黑色大理石"/>
+    <part Name="Description" Short="世界虚空在星球最深处被神秘的石工分隔。其上淡白色花纹的图案蕴含深意，但无人能解。"/>
+  </object>
+  <object Name="Polished Black Marble" Load="Merge">
+    <part Name="Render" DisplayName="抛光黑大理石"/>
+    <part Name="Description" Short="世界虚空在星球最深处被神秘的石工分隔。其上淡白色花纹的图案蕴含深意，但无人能解。"/>
+  </object>
+  <object Name="Granite" Load="Merge">
+    <part Name="Render" DisplayName="花岗岩"/>
+    <part Name="Description" Short="长石及其同类岩石混合而成，表面布满静态纹理。裂纹预示着未来将形成的卵石。"/>
+  </object>
+  <object Name="Mudroot" Load="Merge">
+    <part Name="Render" DisplayName="缠结泥根"/>
+    <part Name="Description" Short="纤维植物的脉络交织成团，包裹着压实的泥土，渗出浑浊的血水。"/>
+  </object>
+  <object Name="Basalt" Load="Merge">
+    <part Name="Render" DisplayName="玄武岩"/>
+    <part Name="Description" Short="熔岩流的痕迹清晰可见，形成了一道道小石脊横贯整块巨石。那些小小的暗洞曾是溶解气体的喷发口。"/>
+  </object>
+  <object Name="GodshroomWall" Load="Merge">
+    <part Name="Render" DisplayName="蘑菇肉"/>
+  </object>
+  <object Name="MushroomWall-Red" Load="Merge">
+    <part Name="Render" DisplayName="蘑菇肉"/>
+  </object>
+  <object Name="MushroomWall-White" Load="Merge">
+    <part Name="Render" DisplayName="蘑菇肉"/>
+  </object>
+  <object Name="PlantWall" Load="Merge">
+    <part Name="Render" DisplayName="植物物质"/>
+    <part Name="Description" Short="时间和机遇——自然的两只手——将根、茎和叶编织成了一道纤维坝。"/>
+  </object>
+  <object Name="AgateWall" Load="Merge">
+    <part Name="Render" DisplayName="含有{{K|玛瑙}}矿脉的页岩墙"/>
+    <part Name="Description" Short="黏土和石英被烘干并粉碎成红岩，这种岩石已被山民开采了数千年。整块石头上布满了闪亮的黑色条纹。"/>
+  </object>
+  <object Name="TopazWall" Load="Merge">
+    <part Name="Render" DisplayName="含{{W|黄玉}}矿脉的页岩墙"/>
+    <part Name="Description" Short="黏土和石英被晒干并粉碎成红岩，这种岩石已被山民开采了数千年之久。整块石头上布满了闪耀的金色条纹。"/>
+  </object>
+  <object Name="JasperWall" Load="Merge">
+    <part Name="Render" DisplayName="含{{R|红玉髓}}矿脉的页岩墙"/>
+    <part Name="Description" Short="黏土和石英被晒干并粉碎成红色岩石，这种岩石已被山民开采了数千年。整块石头上布满了闪亮的红色条纹。"/>
+  </object>
+  <object Name="AmethystWall" Load="Merge">
+    <part Name="Render" DisplayName="含{{M|紫水晶}}矿脉的页岩墙"/>
+    <part Name="Description" Short="黏土和石英被晒干并粉碎成红色岩石，这种岩石已被山民开采了数千年之久。整块石头上穿插着闪耀的紫色条纹。"/>
+  </object>
+  <object Name="SapphireWall" Load="Merge">
+    <part Name="Render" DisplayName="含{{B|蓝宝石}}沉积的页岩墙"/>
+    <part Name="Description" Short="黏土和石英被晒干并粉碎成红色岩石，这种岩石已被山民开采了数千年。整块石头上穿插着闪亮的蓝色条纹。"/>
+  </object>
+  <object Name="EmeraldWall" Load="Merge">
+    <part Name="Render" DisplayName="含{{G|绿宝石}}沉积的页岩墙"/>
+    <part Name="Description" Short="黏土和石英被晒干并粉碎成红色岩石，这种岩石已被山民开采了数千年之久。整块石头上布满了闪亮的绿色条纹。"/>
+  </object>
+  <object Name="PeridotWall" Load="Merge">
+    <part Name="Render" DisplayName="含{{peridot|橄榄石}}矿脉的陨铁墙"/>
+    <part Name="Description" Short="黏土和石英被晒干并粉碎成红岩，这种岩石已经被山民开采了数千年之久。整块石头上布满了闪耀的绿色和金色条纹。"/>
+  </object>
+  <object Name="Fulcrete" Load="Merge">
+    <part Name="Render" DisplayName="富勒岩"/>
+    <part Name="Description" Short="碳砾石岛散布在沥青海洋中，从水平面升起，朝向空气剃刀的虚空。时间和压力在盆地刻下了细线般的沟壑。"/>
+  </object>
+  <object Name="EbonFulcrete" Load="Merge">
+    <part Name="Description" Short="黑色的碳砾岛屿点缀在沥青的海洋中，从水平面升起，向着空气的虚空延伸。时间和压力在盆地中刻下了细线般的沟壑。"/>
+    <part Name="Render" DisplayName="黑曜碳岩"/>
+  </object>
+  <object Name="MetalWall" Load="Merge">
+    <part Name="Render" DisplayName="金属墙"/>
+    <part Name="Description" Short="金属板以菱形图案锁定并焊接封闭。表面部分被烧焦和划伤。"/>
+  </object>
+  <object Name="RustedMetalWall" Load="Merge">
+    <part Name="Render" DisplayName="锈蚀金属墙"/>
+    <part Name="Description" Short="金属板以菱形图案锁定并焊接封闭。表面部分被烧焦和划伤。"/>
+  </object>
+  <object Name="CrysteelPlatedWall" Load="Merge">
+    <part Name="Render" DisplayName="晶钢板剪力墙"/>
+    <part Name="Description" Short="纵向填充的抛光晶钢板由富勒混凝土梁支撑。生命的声音在这空旷的空间中回荡。"/>
+  </object>
+  <object Name="Foamcrete" Load="Merge">
+    <part Name="Render" DisplayName="泡沫混凝土"/>
+    <part Name="Description" Short="墙上的裂缝是压缩泡沫混凝土六边形膨胀模式的化石。"/>
+  </object>
+  <object Name="Verdigris" Load="Merge">
+    <part Name="Render" DisplayName="斑驳铬墙"/>
+    <part Name="Description" Short="毒水苔藓照亮了金属表面，吸引着醉酒的黄铜虫。"/>
+  </object>
+  <object Name="Concrete" Load="Merge">
+    <part Name="Render" DisplayName="混凝土墙"/>
+    <part Name="Description" Short="平滑的灰色石块隐藏了其内部的砾石和水泥血浆。它上面有污迹。"/>
+  </object>
+  <object Name="PigskinWall" Load="Merge">
+    <part Name="Render" DisplayName="猪皮墙"/>
+    <part Name="Description" Short="一片粉嫩且毛茸茸的皮肤被拉伸并鞣制，用以覆盖其守护者。"/>
+  </object>
+  <object Name="WoodWall" Load="Merge">
+    <part Name="Render" DisplayName="盐茎墙"/>
+    <part Name="Description" Short="这里是几根剥皮的苍白盐茎，用泥浆粘合在一起。"/>
+  </object>
+  <object Name="BrinestalkWall" Load="Merge">
+    <part Name="Render" DisplayName="盐茎墙"/>
+    <part Name="Description" Short="这里是几根剥皮的苍白盐茎，用泥浆粘合在一起。"/>
+  </object>
+  <object Name="BurntWood" Load="Merge">
+    <part Name="Render" DisplayName="焦黑木"/>
+    <part Name="Description" Short="天火袭击将树皮烧成了黑色，在余晖中闪耀。"/>
+  </object>
+  <object Name="CanvasWall" Load="Merge">
+    <part Name="Render" DisplayName="画布"/>
+    <part Name="Description" Short="大地加速生长的亚麻以简单的方格图案编织，并悬挂在木桩上"/>
+  </object>
+  <object Name="ThatchedWall" Load="Merge">
+    <part Name="Render" DisplayName="茅草墙"/>
+    <part Name="Description" Short="水藤和盐茎秸秆被成批排列并倾斜，以引导盐渣。"/>
+  </object>
+  <object Name="WornWoodWall" Load="Merge">
+    <part Name="Render" DisplayName="风化木墙"/>
+    <part Name="Description" Short="这里是几根剥皮的苍白盐茎，用泥浆粘合在一起。"/>
+  </object>
+  <object Name="WornWoodWall with Mask" Load="Merge">
+    <part Name="Render" DisplayName="挂着面具的风化木墙"/>
+    <part Name="Description" Short="这里是几根剥皮的柳黄盐杆，用泥浆粘合在一起。墙上钉着四颗钉子，挂着一张破旧的蛾翼面具；其锈蚀的叶片由纳米编织物勾织而成，并拉伸在一个硬线框架上。曾经窥视的眼睛和呼吸的嘴巴现在已被树脂填满。"/>
+  </object>
+  <object Name="BrickWall" Load="Merge">
+    <part Name="Render" DisplayName="砖墙"/>
+    <part Name="Description" Short="烧制的黏土锭横向排列，形成屏障。每块砖都带有时间的斑驳痕迹，窑炉温度不均造成的瑕疵，以及其诞生泥浆中的菌类。"/>
+  </object>
+  <object Name="CyberWall" Load="Merge">
+    <part Name="Render" DisplayName="四氙玻璃墙"/>
+    <part Name="Description" Short="棱柱玻璃的凹槽柱子将视野分割成千上万的破碎景象。"/>
+  </object>
+  <object Name="MachineWallHotTubing" Load="Merge">
+    <part Name="Render" DisplayName="机械墙"/>
+    <part Name="Description" Short="真空管如同褶皱带上的河流般穿过电路拓扑结构。热气涌动，将黄铜和硅片广袤之地笼罩在一片红光之中。"/>
+  </object>
+  <object Name="MachineWallColdTubing" Load="Merge">
+    <part Name="Render" DisplayName="机械墙"/>
+    <part Name="Description" Short="真空管如同褶皱带上的河流般穿过电路拓扑结构。冷气在黄铜和硅片的广阔区域中涌动，散发着青色的光芒。"/>
+  </object>
+  <object Name="MachineWallEmptyTubing" Load="Merge">
+    <part Name="Render" DisplayName="机械墙"/>
+    <part Name="Description" Short="真空管如同褶皱带上的河流般穿行于电路拓扑之中。"/>
+  </object>
+  <object Name="GlassWall" Load="Merge">
+    <part Name="Render" DisplayName="玻璃墙"/>
+    <part Name="Description" Short="沙子被碾碎烧制并塑形为透明的板。"/>
+  </object>
+  <object Name="TintedGlassWall" Load="Merge">
+    <part Name="Render" DisplayName="彩玻璃墙"/>
+    <part Name="Description" Short="沙子被粉碎、上色并塑形为烟熏状的玻璃板。"/>
+  </object>
+  <object Name="SpindleGlassWall" Load="Merge">
+    <part Name="Render" DisplayName="闪烁玻璃墙"/>
+    <part Name="Description" Short="来自纺锤通道内部的天青色光芒如同银河盘上的星辰或电路板上的二极管般在玻璃上闪烁。这光芒赋予了玻璃神性。"/>
+  </object>
+  <object Name="Burnished Azzurum" Load="Merge">
+    <part Name="Render" DisplayName="抛光阿祖鲁姆"/>
+    <part Name="Description" Short="青色光芒穿透玻璃般的外壳，仿佛天空被结晶成六角棱柱的丛林。吞噬者们从它的岩浆诞生地挖掘出来，并将其堆砌成小丘，以供奉纺锤。"/>
+  </object>
+  <object Name="Petal-Strewn WoodWall" Load="Merge">
+    <part Name="Render" DisplayName="花瓣散落的盐茎墙"/>
+    <part Name="Description" Short="这里是几根剥皮的淡黄色盐茎，用泥巴粘合，上面散落着花瓣。"/>
+  </object>
+  <object Name="BrinestalkStakes" Load="Merge">
+    <part Name="Render" DisplayName="盐茎桩"/>
+    <part Name="Description" Short="几根削尖的淡黄色盐茎被钉入了地面。"/>
+  </object>
+  <object Name="BrinestalkArrowslit" Load="Merge">
+    <part Name="Render" DisplayName="箭孔"/>
+    <part Name="Description" Short="几根削尖的淡盐茎被插入地面。缝隙不够宽，无法挤过。"/>
+  </object>
+  <object Name="WoodFence" Load="Merge">
+    <part Name="Render" DisplayName="木栅栏"/>
+    <part Name="Description" Short="螺旋纹路横穿插入地面的狗刺木桩。"/>
+  </object>
+  <object Name="IronFence" Load="Merge">
+    <part Name="Render" DisplayName="锻铁围栏"/>
+    <part Name="Description" Short="岁月侵蚀的铁栅栏排列在两根水平横梁之间。"/>
+  </object>
+  <object Name="BrinestalkFence" Load="Merge">
+    <part Name="Render" DisplayName="盐茎篱笆"/>
+    <part Name="Description" Short="盐迹波纹在插入地中的盐茎栅栏上交错。"/>
+  </object>
+  <object Name="HolographicShaleWall" Load="Merge">
+    <part Name="Render" DisplayName="全息页岩"/>
+    <part Name="Description" Short="光线在视差中被塑造成页岩墙的幻象： 黏土和石英经过干燥和粉碎，形成了千百年来山民开采的红岩。"/>
+  </object>
+  <object Name="HoloMarble" Load="Merge">
+    <part Name="Render" DisplayName="大理石墙"/>
+    <part Name="Description" Short="光线在大理石墙上雕刻出错视效果： 蜗牛和珊瑚在地质压力下被碾碎，绘制成杂质的条带，并沿着理想平面抛光。"/>
+  </object>
+  <object Name="HolographicLowSandstoneWall" Load="Merge">
+    <part Name="Render" DisplayName="全息砂岩"/>
+    <part Name="Description" Short="光线在视差中被塑造成砂岩墙的幻象： 岩石侵蚀成沙，沙吹成湖泊，湖泊被泥土掩埋，泥土将沙压成岩石。大地重新排列。"/>
+  </object>
+  <object Name="HolographicThatchedWall" Load="Merge">
+    <part Name="Render" DisplayName="全息茅草墙"/>
+    <part Name="Description" Short="光芒闪烁，通过视差效果营造出茅草墙的幻象： 水藤和盐茎稻草条分批排列，角度巧妙地引导盐渣。"/>
+  </object>
+  <object Name="HalfWall" Load="Merge">
+    <part Name="Render" DisplayName="低墙"/>
+    <part Name="Description" Short="古老的石墙被修建到腰部高度，可以防止物品滑落，但不足以遮挡视线。"/>
+  </object>
+  <object Name="LowSandstoneWall" Load="Merge">
+    <part Name="Description" Short="一道低矮的实心砂岩墙。"/>
+  </object>
+  <object Name="HalfWall_Aquamarine" Load="Merge">
+    <part Name="Render" DisplayName="低矮海蓝壁"/>
+  </object>
+  <object Name="WalltrapNormalityGas" Load="Merge">
+    <part Name="Render" DisplayName="六角残留通风口"/>
+    <part Name="Description" Short="常规凝结物覆盖了从褪色铬柱中切割出的垂直通风口。"/>
+  </object>
+  <object Name="WalltrapDefoliant" Load="Merge">
+    <part Name="Render" DisplayName="覆满苔藓微粒的通风口"/>
+    <part Name="Description" Short="早已枯死的苔藓被金色黎明的气流吹散成微粒，粘附在锈迹斑斑的铬合金通风口上。"/>
+  </object>
+  <object Name="WalltrapFungicide" Load="Merge">
+    <part Name="Render" DisplayName="带有霉菌微粒的通风口"/>
+    <part Name="Description" Short="早已死亡并被紫红色雨淋蚀成微粒的霉菌残渣，粘附在斑驳的铬合金通风口上。"/>
+  </object>
+  <object Name="WalltrapFireCrematory" Load="Merge">
+    <part Name="Render" DisplayName="蒸汽喷口"/>
+    <part Name="Description" Short="一缕缕蒸汽从被烟炱染黑的铬柱上切割出的垂直喷口中盘旋而出。"/>
+  </object>
+  <object Name="CryochamberWallBroken" Load="Merge">
+    <part Name="Render" DisplayName="霜冻柱"/>
+    <part Name="Description" Short="冰冷的露珠装饰着大理石柱上切开的铬合金裙板侧通风口。"/>
+  </object>
+  <object Name="BaseForcefield" Load="Merge">
+    <part Name="Render" DisplayName="[力场]"/>
+    <part Name="Description" Short="潜能被极化成青色六边形网格，并与操控者绑定。足够大的物体被阻挡，但轻小物体可以顺风穿过。"/>
+  </object>
+  <object Name="ForceBarrier" Load="Merge">
+    <part Name="Render" DisplayName="力场屏障"/>
+    <part Name="Description" Short="潜能极化成猩红六角网格，并与调度者绑定。除非分子被列入白名单，否则物体无法穿透。"/>
+  </object>
+  <object Name="SixDayStiltWall1" Load="Merge">
+    <part Name="Render" DisplayName="混凝土墙"/>
+  </object>
+  <object Name="SixDayStiltWall2" Load="Merge">
+    <part Name="Render" DisplayName="大理石墙"/>
+  </object>
+  <object Name="SixDayStiltPillarWall1" Load="Merge">
+    <part Name="Render" DisplayName="凹槽大理石柱"/>
+  </object>
+  <object Name="SixDayStiltPillarWall2" Load="Merge">
+    <part Name="Render" DisplayName="凹槽大理石柱"/>
+  </object>
+  <object Name="Relief" Load="Merge">
+    <part Name="Render" DisplayName="[墙壁]"/>
+  </object>
+  <object Name="Relief1" Load="Merge">
+    <part Name="Description" Short="这是一块精雕细琢的高浮雕，由珍贵的天蓝色大理石制成。它描绘了圣洁的融合，正如父亲谢赫纳向寺庙高级祭司所讲述的那样。在我们宇宙的黎明时期，银色父神们带着冷漠的心灵漫游于无尽的太空中。在那里，在宇宙最寒冷的角落，他们发现了美丽与铬光的化身——卡萨菲斯肯斯。他们共同从她的赤裸子宫中创造了机器，以栖息于百个世界。在这幅场景中，父神们首次接近她的光辉。他们由占据显要位置的谢赫纳带领。"/>
+  </object>
+  <object Name="Relief2" Load="Merge">
+    <part Name="Description" Short="这是一幅用稀有的天蓝色大理石精心雕刻的高浮雕。它描绘了《色谱颂歌》中吟唱的启蒙场景。圣结之后，银父们将卡萨费森斯的等离子金属塑造成适合凡人居住的建筑。他们将尖塔建在山上，拱门横跨河流。在这里，谢赫纳监督着建设，向东凝视着祂那崭新而闪耀的世界。"/>
+  </object>
+  <object Name="Relief11" Load="Merge">
+    <part Name="Render" DisplayName="大理石浮雕： 神圣联结"/>
+  </object>
+  <object Name="Relief12" Load="Merge">
+    <part Name="Render" DisplayName="大理石浮雕： 神圣联结"/>
+  </object>
+  <object Name="Relief13" Load="Merge">
+    <part Name="Render" DisplayName="大理石浮雕： 神圣联结"/>
+  </object>
+  <object Name="Relief14" Load="Merge">
+    <part Name="Render" DisplayName="大理石浮雕： 神圣联结"/>
+  </object>
+  <object Name="Relief15" Load="Merge">
+    <part Name="Render" DisplayName="大理石浮雕： 神圣联结"/>
+  </object>
+  <object Name="Relief16" Load="Merge">
+    <part Name="Render" DisplayName="大理石浮雕： 神圣联结"/>
+  </object>
+  <object Name="Relief17" Load="Merge">
+    <part Name="Render" DisplayName="大理石浮雕： 神圣联结"/>
+  </object>
+  <object Name="Relief21" Load="Merge">
+    <part Name="Render" DisplayName="大理石教诲浮雕"/>
+  </object>
+  <object Name="Relief22" Load="Merge">
+    <part Name="Render" DisplayName="大理石教诲浮雕"/>
+  </object>
+  <object Name="Relief23" Load="Merge">
+    <part Name="Render" DisplayName="大理石教诲浮雕"/>
+  </object>
+  <object Name="Relief24" Load="Merge">
+    <part Name="Render" DisplayName="大理石教诲浮雕"/>
+  </object>
+  <object Name="Relief25" Load="Merge">
+    <part Name="Render" DisplayName="大理石教诲浮雕"/>
+  </object>
+  <object Name="Relief26" Load="Merge">
+    <part Name="Render" DisplayName="大理石教诲浮雕"/>
+  </object>
+  <object Name="Relief27" Load="Merge">
+    <part Name="Render" DisplayName="大理石教诲浮雕"/>
+  </object>
+  <object Name="FulcreteWithSquareWave" Load="Merge">
+    <part Name="Render" DisplayName="方波纹富勒克里特"/>
+    <part Name="Description" Short="用整体颜料染色的富勒克里特呈现出斑驳的色彩。其表面刻有规律的几何图案，引导视线横扫平面。"/>
+  </object>
+  <object Name="CatacombWall" Load="Merge">
+    <part Name="Render" DisplayName="压缩骨墙"/>
+    <part Name="Description" Short="人类形态的骨骼形状被重新排列以完美镶嵌。圆形头骨需要用尺骨结节填充其序列中的空隙。这世界的边界呈米白色，充满了存在感。"/>
+  </object>
+  <object Name="ColumbariumWall" Load="Merge">
+    <part Name="Render" DisplayName="精美雕刻的大理石"/>
+    <part Name="Description" Short="整个世界以浮雕的形式展现，模拟着灰梦食者的多彩生活。棕榈叶将金字塔托向星空，生命之水从酒罐边缘倾泻而下。"/>
+  </object>
+  <object Name="CryptWall" Load="Merge">
+    <part Name="Render" DisplayName="雕花大理石"/>
+    <part Name="Description" Short="整个世界以三维镂空的形式交织，仿若灰梦食者多姿多彩生活的幻象。棕榈叶托起金字塔直指星空，生命之水从酒罐边缘倾泻而下。"/>
+  </object>
+  <object Name="BaseSultanWall" Load="Merge">
+    <part Name="Render" DisplayName="[仪式苏丹墙]"/>
+    <part Name="Description" Short="苏丹墙"/>
+  </object>
+  <object Name="BaseInnerSultanWall" Load="Merge">
+    <part Name="Description" Short="苏丹墙"/>
+  </object>
+  <object Name="SultanWall_Period1" Load="Merge">
+    <part Name="Render" DisplayName="来自=sultan:1=苏丹国的雕凿石墙"/>
+    <part Name="Description" Short="巨大的古老石块被堆砌、敲凿并雕刻成=sultan:1=时代流行的长弧形。自那以后，这个项目吸引了众多合作者，他们的印记随处可见： 这里，有破坏者的痕迹；那里，时间的细笔轻抚。"/>
+  </object>
+  <object Name="SultanWall_Period2" Load="Merge">
+    <part Name="Render" DisplayName="来自=sultan:2=苏丹国的雕刻石"/>
+    <part Name="Description" Short="巨大的古老石块被堆砌、敲凿并雕刻成=sultan:2=时代的风格。自那以后，这个项目吸引了众多合作者，他们的痕迹随处可见： 这里，有破坏者的涂鸦留下的空白；那里，时间的笔触轻轻拂过。"/>
+  </object>
+  <object Name="SultanWall_Period3" Load="Merge">
+    <part Name="Render" DisplayName="来自=sultan:3=苏丹国的雕石"/>
+    <part Name="Description" Short="巨大的古老石块被堆砌、敲打并雕刻成=sultan:3=时代的风格。自那以后，这个项目吸引了许多合作者，他们的痕迹随处可见： 这里有被破坏者留下的空白，那里有时光温柔的笔触。"/>
+  </object>
+  <object Name="SultanWall_Period4" Load="Merge">
+    <part Name="Render" DisplayName="来自苏丹国 =sultan:4= 的雕刻石墙"/>
+    <part Name="Description" Short="巨大的古老石块被堆砌、敲打并雕刻成 =sultan:4= 时代的风格。自那以后，这个项目吸引了许多合作者，他们的痕迹随处可见： 这里有被破坏者的涂鸦留下的空白，那里有时光之笔轻柔的痕迹。"/>
+  </object>
+  <object Name="SultanWall_Period5" Load="Merge">
+    <part Name="Render" DisplayName="来自=sultan:5=苏丹国的雕凿石墙"/>
+    <part Name="Description" Short="巨大的古老石块被堆砌、敲打并雕刻成=sultan:5=时代的风格。自那以后，这个项目吸引了许多合作者，他们的痕迹随处可见： 这里是破坏者的空白印记；那里是时间轻柔的笔触。"/>
+  </object>
+  <object Name="SultanWall_Period6" Load="Merge">
+    <part Name="Render" DisplayName="来自雷斯费普苏丹国的雕刻石"/>
+    <part Name="Description" Short="巨大的古老石块被堆砌、敲打并雕刻成雷斯费普时代的风格。自那时起，这个项目吸引了许多合作者，他们的痕迹随处可见： 这里有被破坏者留下的空白，那里有时光温柔的痕迹。"/>
+  </object>
+  <object Name="SultanWall_Ornate_Period5" Load="Merge">
+    <part Name="Render" DisplayName="来自=sultan:5=苏丹国的雕凿石墙"/>
+    <part Name="Description" Short="巨大的古老石块被堆砌、敲打并雕刻成=sultan:5=时代的风格。自那以后，这个项目吸引了许多合作者，他们的痕迹随处可见： 这里是破坏者的空白印记；那里是时间轻柔的笔触。"/>
+  </object>
+  <object Name="InnerSultanWall_Period1" Load="Merge">
+    <part Name="Render" DisplayName="来自*苏丹1名*苏丹国的镀金大理石"/>
+    <part Name="Description" Short="珍贵的石料从梦幻大地的深处被拖出，以独眼巨人般的设计堆叠，并雕刻成千朵绽放的花朵。无湿的空气保存了镀金，但时间已磨平了它的棱角。"/>
+  </object>
+  <object Name="InnerSultanWall_Period2" Load="Merge">
+    <part Name="Render" DisplayName="来自=sultan:2=苏丹国的镀金大理石"/>
+    <part Name="Description" Short="珍贵的石料从梦幻大地的深处被拖出，以独眼巨人般的设计堆叠，并雕刻成千朵绽放的花朵。无湿的空气保存了镀金，但时间已磨平了它的棱角。"/>
+  </object>
+  <object Name="InnerSultanWall_Period3" Load="Merge">
+    <part Name="Render" DisplayName="来自=sultan:3=苏丹国的镀金大理石"/>
+    <part Name="Description" Short="珍贵的石料从梦幻大地的深处被拖出，以独眼巨人般的设计堆叠，并雕刻成千朵绽放的花朵。无湿的空气保存了镀金，但时间已磨平了它的棱角。"/>
+  </object>
+  <object Name="InnerSultanWall_Period4" Load="Merge">
+    <part Name="Render" DisplayName="来自=sultan:4=苏丹国的镀金大理石"/>
+    <part Name="Description" Short="珍贵的石料从梦幻大地的深处被拖出，以独眼巨人般的设计堆叠，并雕刻成千朵绽放的花朵。无湿的空气保存了镀金，但时间已磨平了它的棱角。"/>
+  </object>
+  <object Name="InnerSultanWall_Period5" Load="Merge">
+    <part Name="Render" DisplayName="来自苏丹国 =sultan:5= 的镀金大理石"/>
+    <part Name="Description" Short="珍贵的石料从梦幻大地的深处被拖出，以独眼巨人般的设计堆叠，并雕刻成千朵绽放的花朵。无湿的空气保存了镀金，但时间已磨平了它的棱角。"/>
+  </object>
+  <object Name="InnerSultanWall_Period6" Load="Merge">
+    <part Name="Render" DisplayName="来自雷谢夫苏丹国的镀金大理石"/>
+    <part Name="Description" Short="帷幔般的纹理由高浮雕中的圆形饰物冻结在大理石上。帝国的镀金墙壁风格华丽，但仍比早期苏丹的镀金更为克制。"/>
+  </object>
+  <object Name="BaseMuralWall" Load="Merge">
+    <part Name="Render" DisplayName="[壁画墙]"/>
+    <part Name="Description" Short="苏丹墙"/>
+  </object>
+  <object Name="BaseMuralLeftend" Load="Merge">
+    <part Name="Render" DisplayName="壁画端帽"/>
+    <part Name="Description" Short="来自早期地球的石料将生命之艺固定于此。"/>
+  </object>
+  <object Name="BaseMuralCenter" Load="Merge">
+    <part Name="Render" DisplayName="壁画中隔墙"/>
+    <part Name="Description" Short="从早期地球开采的石料分隔了生命之艺术。"/>
+  </object>
+  <object Name="BaseMuralRightend" Load="Merge">
+    <part Name="Render" DisplayName="壁画端帽"/>
+    <part Name="Description" Short="来自早期地球的石料将生命之艺固定于此。"/>
+  </object>
+  <object Name="Mural Leftend Period 6" Load="Merge">
+    <part Name="Description" Short="来自远古地球的黑色大理石将生命之艺凝聚其中"/>
+  </object>
+  <object Name="Mural Center Period 6" Load="Merge">
+    <part Name="Description" Short="从早期地球开采的黑色大理石划分了生命的艺术。"/>
+  </object>
+  <object Name="Mural Rightend Period 6" Load="Merge">
+    <part Name="Description" Short="来自远古地球的黑色大理石将生命之艺凝聚其中"/>
+  </object>
+  <object Name="SultanMuralWall" Load="Merge">
+    <part Name="Render" DisplayName="[苏丹壁画]"/>
+    <part Name="Description" Short="黑色大理石被磨成一个拱形的虚空画布，然后被遗弃，令人对可能存在的事物产生惊叹。"/>
+  </object>
+  <object Name="SultanMuralWall1" Load="Merge">
+    <part Name="Render" DisplayName="[苏丹壁画]"/>
+  </object>
+  <object Name="SultanMuralWall2" Load="Merge">
+    <part Name="Render" DisplayName="[苏丹壁画]"/>
+  </object>
+  <object Name="SultanMuralWallOutside2" Load="Merge">
+    <part Name="Render" DisplayName="[苏丹壁画]"/>
+  </object>
+  <object Name="SultanMuralWallOutside2Preserved" Load="Merge">
+    <part Name="Render" DisplayName="[苏丹壁画]"/>
+  </object>
+  <object Name="SultanMuralWall3" Load="Merge">
+    <part Name="Render" DisplayName="[苏丹壁画]"/>
+  </object>
+  <object Name="SultanMuralWallOutside3" Load="Merge">
+    <part Name="Render" DisplayName="[苏丹壁画]"/>
+  </object>
+  <object Name="SultanMuralWall4" Load="Merge">
+    <part Name="Render" DisplayName="[苏丹壁画]"/>
+  </object>
+  <object Name="SultanMuralWallOutside4" Load="Merge">
+    <part Name="Render" DisplayName="[苏丹壁画]"/>
+  </object>
+  <object Name="SultanMuralWall5" Load="Merge">
+    <part Name="Render" DisplayName="[苏丹壁画]"/>
+  </object>
+  <object Name="SultanMuralWall6" Load="Merge">
+    <part Name="Render" DisplayName="[苏丹壁画]"/>
+  </object>
+  <object Name="GolemInteriorWall" Load="Merge">
+    <part Name="Render" DisplayName="电激发黏土、金属装甲和组织"/>
+    <part Name="Description" Short="一层湿润的组织覆盖在电激发黏土和焊接的金属板上。透明薄膜下，电路网格闪烁着金色的光芒。"/>
+  </object>
+  <object Name="GolemInteriorWall Endcap" Load="Merge">
+    <part Name="Render" DisplayName="内墙"/>
+  </object>
+  <object Name="MechInteriorContainer" Load="Merge">
+    <part Name="Description" Short="一个巨大的储存柜嵌入了金属肋骨结构中。磁悬浮的架子分隔了内部空间。"/>
+    <part Name="Render" DisplayName="储物舱口"/>
+  </object>
+  <object Name="BaseNephilimWall" Load="Merge">
+    <part Name="Render" DisplayName="奈非利姆墙"/>
+    <part Name="Description" Short="无"/>
+  </object>
+  <object Name="BaseNephilimWall_Agolgot" Load="Merge">
+    <part Name="Render" DisplayName="阿戈尔戈特分泌的树脂层"/>
+    <part Name="Description" Short="山状的油性清漆流苏被塑形以贴合地面轮廓，勾勒出一条星兰小径。整个区域覆盖着干涸的死亡污泥。"/>
+  </object>
+  <object Name="BaseNephilimWall_Bethsaida" Load="Merge">
+    <part Name="Render" DisplayName="贝撒赛德分泌的树脂层"/>
+    <part Name="Description" Short="油性壳漆形成的山状条带贴合地面轮廓，勾勒出一条星兰路径。整个区域覆盖着分叉的神经。"/>
+  </object>
+  <object Name="BaseNephilimWall_Rermadon" Load="Merge">
+    <part Name="Render" DisplayName="由瑞玛顿分泌的树脂层"/>
+    <part Name="Description" Short="油性壳状的山形条带被塑形以贴合地面轮廓，勾勒出一条星兰路径。整个区域覆盖着固化的星辉气体。"/>
+  </object>
+  <object Name="BaseNephilimWall_QasQon" Load="Merge">
+    <part Name="Render" DisplayName="Qas和Qon分泌的树脂层"/>
+    <part Name="Description" Short="山状的油性漆条沿着地面轮廓塑形，勾勒出一条星兰路径。整个部分以固化的梦境气体垂直上釉。"/>
+  </object>
+  <object Name="BaseNephilimWall_Shug'rith" Load="Merge">
+    <part Name="Render" DisplayName="Shug'ruith 分泌的树脂层"/>
+    <part Name="Description" Short="油性的壳状山形条带被塑造成地板轮廓，勾勒出一条星兰小径。整个部分覆盖着页岩碎片和尘土。"/>
+  </object>
+  <object Name="BaseNephilimWall_Shug'rithSpawn" Load="Merge">
+    <part Name="Render" DisplayName="由舒格鲁斯后代分泌的树脂层"/>
+    <part Name="Description" Short="倾斜的油性壳状流苏贴合地面轮廓，勾勒出一条星兰小径。整个区域覆盖着页岩碎片和尘土。"/>
+  </object>
+  <object Name="Rubble" Load="Merge">
+    <part Name="Render" DisplayName="碎石堆"/>
+    <part Name="Description" Short="不规则的石块堆积在一起。在其表面，秩序的痕迹零星地穿透熵之堆： 一尊雕像的手指，日晷的针，一块电路板。"/>
+  </object>
+  <object Name="Rubble Grey" Load="Merge">
+    <part Name="Render" DisplayName="碎石堆"/>
+  </object>
+  <object Name="Wax Block" Load="Merge">
+    <part Name="Render" DisplayName="蜡块"/>
+    <part Name="Description" Short="这是一种由黏性棕榈汁液冷却后形成的大型块状物。"/>
+  </object>
+  <object Name="CrystalWall" Load="Merge">
+    <part Name="Render" DisplayName="大型六角晶体"/>
+    <part Name="Description" Short="量子混乱冷却并排列成一座高耸的六边形。地气泡和其他时间的奇特性被冻结在石英琥珀中，存在被月光从虚无的车床上削下。"/>
+  </object>
+  <object Name="SmallHexCrystal" Load="Merge">
+    <part Name="Render" DisplayName="六角晶体"/>
+    <part Name="Description" Short="苔藓环绕着快速生长的石英那微小的月光脸庞。当熵摧毁秩序时，它会在更小的尺度上重新组装。"/>
+  </object>
+  <object Name="ChavvahTrunk" Load="Merge">
+    <part Name="Render" DisplayName="水晶树干"/>
+    <part Name="Description" Short="石英物质以放射状习性覆盖在一层软石之上，其下是一层死去的水晶，滴着静电树脂，散发着心灵的承诺。"/>
+  </object>
+  <object Name="Chavvah Taproot" Load="Merge">
+    <part Name="Render" DisplayName="水晶根茎"/>
+    <part Name="Description" Short="细小的水晶芽被纯粹的自我重量压成粗壮而均匀的瞬时思维转换器。情感和记忆在其上升过程中结晶化。"/>
+  </object>
+  <object Name="CryochamberPlaque" Load="Merge">
+    <part Name="Render" DisplayName="铬牌"/>
+    <part Name="Description" Short="快速铬的闪耀表面在变幻的折射图案中游动。当光线聚焦时，符文开始显现。"/>
+  </object>
+  <object Name="GritGate Mainframe Tape Drive" Load="Merge">
+    <part Name="Render" DisplayName="真空柱磁带驱动器"/>
+    <part Name="Description" Short="磁带绕着轮子卷动，被送入一个驱动头，该驱动头刻写并探查，将数据从第三维度中压出再迅速带回。"/>
+  </object>
+  <object Name="GritGate Mainframe Status Panel" Load="Merge">
+    <part Name="Render" DisplayName="主控状态面板"/>
+    <part Name="Description" Short="黄铜和铬合金的二极管在田野上闪烁成环流（Gyre）。"/>
+  </object>
+  <object Name="GritGate Mainframe Monitor 1" Load="Merge">
+    <part Name="Render" DisplayName="主控显示器"/>
+    <part Name="Description" Short="扫描线在阴极琥珀色中勾勒出新月。"/>
+  </object>
+  <object Name="GritGate Mainframe Monitor 2" Load="Merge">
+    <part Name="Render" DisplayName="主控面板"/>
+    <part Name="Description" Short="弹簧泡沫键在机器与人类的挑逗互动中轻柔地抵住手指。"/>
+  </object>
+  <object Name="Crematory Mainframe Monitor 1" Load="Merge">
+    <part Name="Render" DisplayName="主控显示器"/>
+    <part Name="Description" Short="扫描线在阴极琥珀色中勾勒出新月。"/>
+  </object>
+  <object Name="Crematory Mainframe Status Panel" Load="Merge">
+    <part Name="Render" DisplayName="主控状态面板"/>
+    <part Name="Description" Short="黄铜和铬合金的二极管在田野上闪烁成环流（Gyre）。"/>
+  </object>
+</objects>

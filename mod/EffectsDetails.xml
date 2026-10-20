@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates Encoding="utf-8">
+    <template ID="Effect.AdrenalControl2Boosted.Details"><p>+<stat Name="QuicknessBonus" /> 迅捷</p><p>+<stat Name="MutationBonus" Unit="级" /> 到肉体突变</p></template>
+    <template ID="Effect.AnemoneEffect.Details"><switch Name="DamageBonus"><case Value="0" /><default><p>额外的 <stat Name="DamageBonus" /> 出血伤害/回合。</p></default></switch><saveline Name="BleedingSave" HideValue="0" /></template>
+    <template ID="Effect.AshPoison.Details"><p><stat Name="Damage" /> 伤害/回合。</p></template>
+    <template ID="Effect.Asleep.Details"><switch Name="UsesSleepMode"><case Value="true"><p>处于节能模式。</p></case><default><p>失去意识。</p></default></switch><p>-12 DV。</p><p>攻击者的穿透掷骰 +4。</p><switch Name="UsesSleepMode"><case Value="true"><p>若受到伤害，将带着眩晕恢复正常运作。</p></case><default><p>若受到伤害，醒来时会眩晕。</p></default></switch></template>
+    <template ID="Effect.AxonsDeflated.Details"><p><stat Name="QuicknessPenalty" Filters="signed" /> 迅捷</p></template>
+    <template ID="Effect.AxonsInflated.Details"><p><stat Name="QuicknessBonus" Filters="signed" /> 迅捷</p><p>很快就会变得迟钝。</p></template>
+    <!-- todo:jason -->
+    <template ID="Effect.BasiliskPoison.Details"><p>每回合 -1d6 移动速度，持续 14–18 回合。</p><p>[合计：<stat Name="MovementDebuff" Filters="signed" /> 移动速度]</p></template>
+    <template ID="Effect.Beguiled.Details"><p>被另一生物魅惑，正跟随着它。</p><switch Name="HitpointBonus"><case Value="0" /><default><p><stat Name="HitpointBonus" Filters="signed" /> 生命值。</p></default></switch></template>
+    <template ID="Effect.Berserk.Details"><p>用斧类时有 100% 概率截肢。</p></template>
+    <template ID="Effect.Blaze_Tonic.Details"><p>+100 耐热</p><p>无法被冻结。</p><p>造成的热伤害 +25%。</p><p>-50 耐寒</p><switch Name="IsTrueKin"><case Value="true"><p>+20 迅捷</p></case><default><p>+10 迅捷</p></default></switch><p>体温无法被外部热源升高。</p><p>必须不停移动，否则会自燃并失去该补剂的效果。</p></template>
+    <template ID="Effect.Blind.Details"><p>看不见。</p></template>
+    <template ID="Effect.BlinkingTicSickness.Details"><p>战斗中每回合有小概率随机传送到附近的一处地点。</p></template>
+    <template ID="Effect.BoostStatistic.Details"><p><stat Name="Bonus" Filters="signed" /><gametext>=stat.title=</gametext></p></template>
+    <template ID="Effect.BoostedImmunity.Details"><saveline Name="DiseaseOnsetSave" Type="Disease Onset" /></template>
+    <template ID="Effect.Broken.Details"><p>无法装备或使用。</p></template>
+    <template ID="Effect.Budding.Details"><p>很快会生成一个克隆体。</p></template>
+    <template ID="Effect.Burning.Details"><p><stat Name="BurningDamage" /> 伤害/回合。</p></template>
+    <template ID="Effect.Burrowed.Details"><p>正在地下穿行。</p></template>
+    <template ID="Effect.CoatedInPlasma.Details"><p>-100 耐热</p><p>-100 耐寒</p><p>-100 耐电</p><p>体温不会被动回到环境温度</p><p>拍打或翻滚等灭火动作的效果只有 25%</p><p>清除液体涂层</p></template>
+    <template ID="Effect.Confused.Details"><p>行动呈半随机。</p><p><stat Name="DVChange" Filters="signed" /> DV</p><p><stat Name="MAChange" Filters="signed" /> MA</p><switch Name="MentalChange"><case Value="0" /><default><p><stat Name="MentalChange" Filters="signed" /> 到所有精神属性</p></default></switch></template>
+    <template ID="Effect.ContainedAcidEating.Details"><switch Name="HasValidVolume"><case Value="true"><p>正被酸液溶解。</p><p>每回合受到 <stat Name="MinDamage" />-<stat Name="MaxDamage" /> 伤害/回合。</p></case><default><p>无伤害。</p></default></switch></template>
+    <template ID="Effect.CorpseThethered.Details"><p>当前所在的格子不受「安息之钟」鸣响传送的影响。</p></template>
+    <template ID="Effect.Crackling.Details"><p>电磁不稳定。</p></template>
+    <template ID="Effect.Dashing.Details"><p>朝某方向移动时会冲向最近的障碍物。</p></template>
+    <template ID="Effect.Dazed.Details"><p>-4 敏捷</p><p>-4 智力</p><p>-10 移动速度</p></template>
+    <template ID="Effect.Disguised.Details"><switch Name="Appearance"><case Value=""><p>外貌是另一生物的样子。</p></case><default><p>外貌为 <stat Name="Appearance"/>。</p></default></switch></template>
+    <template ID="Effect.Disoriented.Details"><p><stat Name="DVChange" Filters="signed" /> DV</p><p><stat Name="MAChange" Filters="signed" /> MA</p></template>
+    <template ID="Effect.Distracted.Details"><p>有一个诱饵物件作为 <gametext>=subject.its=</gametext> 目标。</p></template>
+    <template ID="Effect.Dominated.Details"><p>处于他人的控制之下。</p></template>
+    <template ID="Effect.Dominating.Details"><p>该生物没有反应。</p><p>DV 归零。</p></template>
+    <template ID="Effect.Ecstatic.Details"><p>+10 迅捷</p></template>
+    <template ID="Effect.ElectromagneticPulsed.Details"><p>已停用（若为机器人）。</p><p>无法激活（若为器物）。</p></template>
+    <template ID="Effect.Emboldened.Details"><p><stat Name="Bonus" Filters="signed" /><gametext>=stat.title=</gametext></p></template>
+    <template ID="Effect.EmptyTheClips.Details"><p>手枪射击速度加倍。</p></template>
+    <template ID="Effect.Exhausted.Details"><p>无法行动。</p></template>
+    <template ID="Effect.FungalSporeInfection.Details"><p>皮肤脱屑、发痒。那里是不是长了什么？</p></template>
+    <template ID="Effect.Glotrot.Details"><switch Name="TongueRotting"><case Value="true"><p>舌头正在烂掉。</p><p>进食或饮水时开始出血。</p></case><default><p>舌头已经烂掉了。</p><p>不能说话。</p></default></switch></template>
+    <template ID="Effect.GlotrotOnset.Details"><p>喉咙疼痛，舌头肿胀。</p></template>
+    <template ID="Effect.Inspired.Details"><p>下次你通过挑选食材烹饪时，可从三种动态生成的效果中择一施加。你会为所选效果生成一份食谱。</p></template>
+    <template ID="Effect.Ironshank.Details"><p>腿骨正在关节处融合。</p><p><stat Name="MoveSpeedChange" Filters="signed" /> 移动速度</p><p><stat Name="AVChange" Filters="signed" /> AV</p><p>会持续失去移动速度并获得 AV，直到移动速度惩罚达到 -80。</p></template>
+    <template ID="Effect.IronshankOnset.Details"><p>双腿关节疼痛。</p></template>
+    <template ID="Effect.Lovesick.Details"><p>-6 智力</p><p>-6 意志</p><p>-5 移动速度</p></template>
+    <template ID="Effect.MemberOfPsychicBattle.Details"><p>正与敌人陷入灵能交战。（<stat Name="Turns" Unit="回合" /> 剩余）</p><switch Name="BloodyNose"><case Value="true"><p>鼻子在流血。</p></case></switch></template>
+    <template ID="Effect.Metamorphed.Details"><p>正在变成另一生物的模样。</p></template>
+    <template ID="Effect.Monochrome.Details"><p>只能看见单一颜色的明暗。</p></template>
+    <template ID="Effect.MonochromeOnset.Details"><p>视力模糊。</p></template>
+    <template ID="Effect.Phased.Details"><p>除非对方也处于相位态，否则无法与生物和物件进行物理互动。</p><p>可以穿过固体。</p></template>
+    <template ID="Effect.Rebuked.Details"><p>被另一生物斥退，只好服从。</p></template>
+    <template ID="Effect.WakingDream.Details"><p>以此生物身份升一级即可安然醒来。</p><p>死亡或放弃角色则会在不安中醒来。</p></template>
+</templates>

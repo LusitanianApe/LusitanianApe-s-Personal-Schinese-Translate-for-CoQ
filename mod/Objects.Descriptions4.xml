@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  物件描述（第四批：**官方有、我方此前完全没借入**的 32 条 Description.Short）。
+
+  ★ 来源：`_tools\diag_blueprint12d.py` 逐蓝图比对官方 ObjectBlueprints 与我方全部文件，
+     得出「官方有 Short、我方无 Short」的 112 个蓝图 ——
+     其中 **80 个的官方 Short 本身是空的**（抽象基类，靠 Inherits 继承），
+     真正有内容的是这 **32** 个。
+
+  ★ 写法（沿用前几批的规范）：
+     <objects> 默认**整块替换**该 object，所以**每个 <object> 上**都必须写 Load="Merge"；
+     只写 Description.Short 一个字段；DisplayName / Inherits / <stat> / <part> 一律不碰。
+     ⇒ 不写 DisplayName 是**刻意**的：这些名字已由其它文件或运行时补丁覆盖，
+        重复写会有覆盖既有译名的风险。
+
+  ★ 蓝图 Name 是**键**，逐字取自官方，未改一字。
+
+  生成器：_tools\gen_bp_short4.py（可重跑）
+-->
+<objects Load="Merge" Lang="zh-Hans" Encoding="utf-8">
+  <!-- Items.xml -->
+  <object Name="AirCurrentMicrosensor" Load="Merge">
+    <part Name="Description" Short="在「冒烟神海」附近，海水撞上日岩、喷腾出有毒的雾气，火山岩窟的迷宫就此构成一片无关尺度的空间，视觉的用处在此衰减。深层的子嗣们，自有新的感官代之而长。" />
+  </object>
+  <!-- Creatures.xml -->
+  <object Name="Bone Worm" Load="Merge">
+    <part Name="Description" Short="胶原气泡裹着它百节的身躯，压实的骨质从尾端蠕挤而出。" />
+  </object>
+  <!-- Creatures.xml -->
+  <object Name="Bone Worm Corpse" Load="Merge">
+    <part Name="Description" Short="一圈圈骨质的虫身被压碎了，静卧不动。边缘的小骨刺刮着地面。" />
+  </object>
+  <!-- HiddenObjects.xml -->
+  <object Name="Chiliad Creature Issachari" Load="Merge">
+    <part Name="Description" Short="风把一件带流苏的袍子与颈饰紧贴在人形之上。布面上的刺绣与盐滩及星切天穹的花纹押着韵。" />
+  </object>
+  <!-- ZoneTerrain.xml -->
+  <object Name="CyanMarbleWalkway" Load="Merge">
+    <part Name="Description" Short="大理石的矩形铺成镶嵌的路面。" />
+  </object>
+  <!-- Creatures.xml -->
+  <object Name="FaundrenVillager" Load="Merge">
+    <part Name="Description" Short="=pronouns.Subjective=与同龄的幼鹿一同嬉戏、玩耍；=pronouns.possessive=那副清瘦而筋腱分明的身架，与=pronouns.possessive=成年监护者紧绷的肌肉形成对照。成年的欣德伦既畏惧又审慎，幼鹿却以惊叹注视着一切新奇之物。" />
+  </object>
+  <!-- Items.xml -->
+  <object Name="Ghostly Flames" Load="Merge">
+    <part Name="Description" Short="水晶般的火焰噼啪作响，舔舐着波光摇曳的空气。" />
+  </object>
+  <!-- Creatures.xml -->
+  <object Name="Girshworm" Load="Merge">
+    <part Name="Description" Short="沿着=pronouns.possessive=外食道的硬管，肾管一路鼓动、颤响。=pronouns.Possessive=刚毛湿漉漉的，像吸水的根；=pronouns.possessive=体节则按月亮的节拍推拉。" />
+  </object>
+  <!-- Creatures.xml -->
+  <object Name="Glowfish" Load="Merge">
+    <part Name="Description" Short="发光的碎点在水面下穿梭。" />
+  </object>
+  <!-- Creatures.xml -->
+  <object Name="Knollworm" Load="Merge">
+    <part Name="Description" Short="一条粗厚的绳状躯体由多毛的体节组成，顶端是一只尖锥形的喙，用来凿穿页岩。" />
+  </object>
+  <!-- Creatures.xml -->
+  <object Name="Knollworm Corpse" Load="Merge">
+    <part Name="Description" Short="一圈圈静止、海绵般的虫身混着破碎的喙，细小的刚毛刮着地面。" />
+  </object>
+  <!-- Items.xml -->
+  <object Name="Leather Gloves" Load="Merge">
+    <part Name="Description" Short="一位第一百代的峡谷人，照着一只从古老石灰墙里戳出来的骨骼之手，把山羊皮裁成了那个形状。" />
+  </object>
+  <!-- Widgets.xml -->
+  <object Name="PistonPressElement" Load="Merge">
+    <part Name="Description" Short="这座巨管铬面上被撕出的细小划痕反着光——那是当年金属把骨头碾成格状屈服之处。" />
+  </object>
+  <!-- Creatures.xml -->
+  <object Name="Plated Knollworm" Load="Merge">
+    <part Name="Description" Short="=pronouns.Subjective=分泌出虫胶，在页岩的压力下硬化成甲板。其内，一条粗厚的绳状躯体由多毛的体节组成，顶端是一只尖锥形的喙，用来凿穿岩石。" />
+  </object>
+  <!-- Items.xml -->
+  <object Name="Portable Beehive" Load="Merge">
+    <part Name="Description" Short="蜜蜂在背挂式的板条架上爬行。另有几只在不远处穿梭。" />
+  </object>
+  <!-- Items.xml -->
+  <object Name="Ruin of House Isner" Load="Merge">
+    <part Name="Description" Short="这把以黄铜与铬打造的手枪，工艺美得令人屏息：王木的握把让手掌不由自主地合拢成无缝的一握，击锤按拇指微寸贴合，准星则让目光如丝滑般顺着枪管溜下去。通体刻着枯萎的常春藤，枪口上印着一吻之血。" />
+</object>
+  <!-- Creatures.xml -->
+  <object Name="Seedsprout Worm" Load="Merge">
+    <part Name="Description" Short="叶片裹着它百节的身躯，鞭状的根质从尾端蠕挤而出。" />
+  </object>
+  <!-- Creatures.xml -->
+  <object Name="Segmented Mirthworm" Load="Merge">
+    <part Name="Description" Short="一节节银亮的虫质桶身颤动、裂成两半，停顿片刻，再把这道工序排泄着重来一遍。" />
+  </object>
+  <!-- Items.xml -->
+  <object Name="Slip Ring" Load="Merge">
+    <part Name="Description" Short="滑腻的油脂物覆满这只金属圆环表面呈六角排列的细孔。上面有一个按压式注油盖。" />
+  </object>
+  <!-- Items.xml -->
+  <object Name="Steel Butcher Knife" Load="Merge">
+    <part Name="Description" Short="一片宽阔而明亮的刀身上，涂着内脏。" />
+  </object>
+  <!-- Creatures.xml -->
+  <object Name="Waveform Worm" Load="Merge">
+    <part Name="Description" Short="体节状的肉环连成一线，挤在一道波形上。当每秒万亿次的随机涨落之一令宇宙的织料泛起波纹时，这虫便把自己对准某种相长干涉的图式，被推着向前滑去。" />
+  </object>
+  <!-- Creatures.xml -->
+  <object Name="Worm of the Earth" Load="Merge">
+    <part Name="Description" Short="虫肉拖拽开来，成了另一个自己。在布满点斑的泥土、沉陷而无光的岩窟里——那是把化石人族蜂巢化的地方——一阵机器的嗡鸣覆盖了地幔的塌落，并激活了四处垃圾蛆虫的原初生物性。" />
+  </object>
+</objects>

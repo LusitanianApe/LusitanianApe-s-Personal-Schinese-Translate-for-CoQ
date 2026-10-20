@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<objects Encoding="utf-8">
+  <!-- 译文基准取自 210.20 前人汉化（_ref\机翻参考-210.20v5）。
+       本文件为 Load="Merge" 增量：只补 Walls.xml 里尚未汉化的对象。
+       已做确定性预处理：修正拼写错误槽 / 自造中文槽 / 双「的」/ 动词槽。 -->
+  <object Name="Wall" Load="Merge">
+    <part Name="Render" DisplayName="[墙壁]" />
+    <part Name="Description" Short="[墙壁]" />
+  </object>
+  <object Name="Walltrap" Load="Merge">
+    <part Name="Render" DisplayName="[陷阱墙]" />
+  </object>
+  <object Name="WalltrapFire" Load="Merge">
+    <part Name="Render" DisplayName="蒸汽喷口" />
+    <part Name="Description" Short="一缕缕蒸汽从铬合金柱上切割出的垂直通风口中盘旋而出。" />
+  </object>
+  <object Name="WalltrapAcid" Load="Merge">
+    <part Name="Render" DisplayName="喷气孔" />
+    <part Name="Description" Short="有毒的烟雾从被腐蚀的铬柱上切割出的垂直通风口中盘旋而出。" />
+  </object>
+  <object Name="WalltrapShock" Load="Merge">
+    <part Name="Render" DisplayName="电火花喷口" />
+    <part Name="Description" Short="从斑驳的铬柱中切割出的垂直喷口中飞溅出火花。" />
+  </object>
+  <object Name="WalltrapCrabs" Load="Merge">
+    <part Name="Render" DisplayName="划痕通风口" />
+    <part Name="Description" Short="细小的划痕标记着从褪色的铬合金上切割出的一排排侧向通风口。" />
+  </object>
+  <object Name="WalltrapClockworkBeetles" Load="Merge">
+    <part Name="Render" DisplayName="滴答声通风口" />
+    <part Name="Description" Short="细小的划痕标记着从褪色的铬合金上切割出的一排排侧向通风口。" />
+  </object>
+  <object Name="CryochamberWall" Load="Merge">
+    <part Name="Render" DisplayName="霜冻柱" />
+    <part Name="Description" Short="冰冷的雾气从大理石柱的铬合金腰线上横向开口中盘旋而出。" />
+  </object>
+  <object Name="Forcefield" Load="Merge">
+    <part Name="Render" DisplayName="力场" />
+  </object>
+  <object Name="Stasisfield" Load="Merge">
+    <part Name="Render" DisplayName="静滞力场" />
+    <part Name="Description" Short="一层模糊的薄膜隔离了一块时空区域，量子摩擦如此之大，以至于其内的生物被完全冻结。" />
+  </object>
+  <object Name="InteriorContainer" Load="Merge">
+    <part Name="Render" DisplayName="储物舱口" />
+    <part Name="Description" Short="地质肋骨中嵌入了一个宽敞的储物柜。磁悬浮货架分隔了空间。" />
+  </object>
+  <object Name="CryochamberPlaque" Load="Merge">
+    <part Name="Chat" Says="舱室空置：等待样本" />
+  </object>
+  <object Name="CryochamberPlaqueRhinox" Load="Merge">
+    <part Name="Chat" Says="样本：犀牛" />
+  </object>
+  <object Name="CryochamberPlaqueSkybear" Load="Merge">
+    <part Name="Chat" Says="样本：萨德·阿穆斯，天熊，萨鲁姆的冠军" />
+  </object>
+  <object Name="CryochamberPlaqueSpider" Load="Merge">
+    <part Name="Chat" Says="样本：相位蛛" />
+  </object>
+  <object Name="CryochamberPlaqueYempris" Load="Merge">
+    <part Name="Chat" Says="样本：耶姆普里斯·菲" />
+  </object>
+</objects>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  物件名与描述（第一批：存档里频次最高的 object）。
+
+  ★ 为什么用这份文件：
+     物件**名**已由 Scripts/ZhsNameDisplayPatch.cs 的运行时字典覆盖；
+     但**描述**（=look= 查看、message log 的一部分）此前几乎空白。
+     官方 Items.xml 有 823 条描述、Creatures.xml 有 492 条，我方原覆盖 < 1%。
+
+  ★ 写法（官方规范）：
+     <objects> 默认**整块替换**该 object，所以**每个 <object> 上**必须写
+     Load="Merge"；只写 DisplayName / Description.Short 两个字段，
+     Inherits / <stat> / <tag> / <part> 一律不碰。
+
+  生成器：_tools/build_batch1.py（可重跑）
+-->
+<objects Load="Merge" Lang="zh-Hans" Encoding="utf-8">
+  <object Name="Bite" Load="Merge">
+    <part Name="Render" DisplayName="咬" />
+  </object>
+  <object Name="Stinger" Load="Merge">
+    <part Name="Render" DisplayName="尾刺" />
+    <part Name="Description" Short="尾端的倒钩上凝着一颗毒露之珠。" />
+  </object>
+  <object Name="Snapjaw" Load="Merge">
+    <part Name="Render" DisplayName="咬颚兽" />
+    <part Name="Description" Short="一簇簇毛皮裹着绷紧在结实肌肉上的皮肤。=pronouns.subjective=直立着，但=pronouns.subjective=随时准备伏下四肢。=pronouns.Possessive=口鼻龇起，=pronouns.possessive=耳朵抽动。=pronouns.Subjective=吠叫起来，=pronou…（全文见 XML）" />
+  </object>
+  <object Name="Goatfolk" Load="Merge">
+    <part Name="Render" DisplayName="羊人" />
+    <part Name="Description" Short="一条烤蛙皮编成的辫子紧绷在=pronouns.possessive=鼓胀的胸肌上，把一只挎包系在=pronouns.possessive=腰胯。=pronouns.Possessive=蹄子上沾着无法归类的血污，唾沫从=pronouns.possessive=咩叫的嘴里飞进一簇乱蓬蓬的下巴胡须。" />
+  </object>
+  <object Name="Battle Axe" Load="Merge">
+    <part Name="Render" DisplayName="战斧" />
+    <part Name="Description" Short="湿皮革缠着木柄，直到刃口那段精钢。" />
+  </object>
+  <object Name="Long Sword" Load="Merge">
+    <part Name="Render" DisplayName="长剑" />
+    <part Name="Description" Short="锋利的青铜剑身上划痕交错，剑柄裹着皮革。" />
+  </object>
+  <object Name="Dagger" Load="Merge">
+    <part Name="Render" DisplayName="匕首" />
+    <part Name="Description" Short="青铜磨成尖，柄上缠着皮革。" />
+  </object>
+  <object Name="Mamon" Load="Merge">
+    <part Name="Description" Short="马蒙比=pronouns.possessive=同胞高出将近一个头，肩膀也更宽。大簇沾血打结的毛发——有些还编成辫子——从=pronouns.possessive=头顶与下巴垂挂下来，一顶破烂的绯红头巾挂在=pronouns.possessive=巨角中的一只上。=pronouns.possessive=裸露的胸膛上，…（全文见 XML）" />
+  </object>
+  <object Name="Horns" Load="Merge">
+    <part Name="Render" DisplayName="角" />
+    <part Name="Description" Short="一对骨质突起刻着沟槽，向上对称收拢。" />
+  </object>
+  <object Name="Boar" Load="Merge">
+    <part Name="Render" DisplayName="野猪" />
+    <part Name="Description" Short="比起=pronouns.possessive=猪亲戚，狂野的时光缩短了=pronouns.possessive=耳朵、把犬齿顶穿了下颌，还给=pronouns.objective=披上一身粗毛外套。=pronouns.Subjective=在地里拱找珠宝。" />
+  </object>
+  <object Name="Beak" Load="Merge">
+    <part Name="Render" DisplayName="喙" />
+    <part Name="Description" Short="一件理羽的器具以画师的角度从颅骨上弯出。" />
+  </object>
+  <object Name="Voider" Load="Merge">
+    <part Name="Render" DisplayName="虚空行者" />
+    <part Name="Description" Short="焦躁的腿在=pronouns.objective=周围腾出的虚空里长得更长，刨弄着矿质的泥土。一滴胃液在=pronouns.possessive=胃球里晃荡，驱动=pronouns.possessive=对当地地脉的本能旋转。" />
+  </object>
+  <object Name="Leech" Load="Merge">
+    <part Name="Render" DisplayName="水蛭" />
+    <part Name="Description" Short="网状斑点布满=pronouns.possessive=黏滑的虫背，吸盘像铃铛一样把空气掐出一阵血的刺痒。" />
+  </object>
+  <object Name="Kindrish" Load="Merge">
+    <part Name="Render" DisplayName="金德里什" />
+    <part Name="Description" Short="古老护符上的野猪牙串珠已被岁月磨成秃头。" />
+  </object>
+  <object Name="Flowers" Load="Merge">
+    <part Name="Render" DisplayName="花" />
+    <part Name="Description" Short="它们是花瓣围成的方舟，满载花蜜的秘密。" />
+  </object>
+  <object Name="Dromad" Load="Merge">
+    <part Name="Render" DisplayName="驼人" />
+    <part Name="Description" Short="刺青墨水在=pronouns.possessive=长颈的垂囊上，点染出骆驼族千种纹样中的一种。=pronouns.Possessive=耳朵上排着镀金的环，睫毛像水藤叶一样顺着=pronouns.possessive=脸垂落。=pronouns.possessive=背上，一峰饱满健康的脂肪把=pronouns.po…（全文见 XML）" />
+  </object>
+  <object Name="Tonic" Load="Merge">
+    <part Name="Description" Short="一支玻璃管配一根注射针，把补剂直接送进血液。" />
+  </object>
+  <object Name="Security Card" Load="Merge">
+    <part Name="Description" Short="一张编码的纸金属矩形，可以从锁具的读卡槽里滑过。" />
+  </object>
+  <object Name="Scorpiock" Load="Merge">
+    <part Name="Render" DisplayName="蝎鸡" />
+    <part Name="Description" Short="盐粒静静地滞留在=pronouns.possessive=甲壳的凹口与上方的空气里。在身后，=pronouns.possessive=尾刺盘卷着，透出一股和谐的德性。" />
+  </object>
+  <object Name="Madpole" Load="Merge">
+    <part Name="Render" DisplayName="狂鲵" />
+    <part Name="Description" Short="这条金黄色大鱼鼓胀的下颌排满凶恶的刃状利齿。你战栗地想象，这疯鲶有朝一日会变成何种可怖的两栖魔物。" />
+  </object>
+  <object Name="Goat" Load="Merge">
+    <part Name="Render" DisplayName="山羊" />
+    <part Name="Description" Short="=pronouns.Possessive=卷曲的角上刻着岁月风化的纹路，=pronouns.subjective=满不在乎地反刍着，也不管=pronouns.possessive=打结的胡须里沾了些什么。" />
+  </object>
+  <object Name="Croc" Load="Merge">
+    <part Name="Render" DisplayName="鳄鱼" />
+    <part Name="Description" Short="=pronouns.Possessive=斑驳开裂的鳞甲看上去像刻满记号的石头。" />
+  </object>
+  <object Name="Wings" Load="Merge">
+    <part Name="Render" DisplayName="翅膀" />
+    <part Name="Description" Short="宽大的翼膜扑打着风。" />
+  </object>
+  <object Name="Steel Long Sword" Load="Merge">
+    <part Name="Render" DisplayName="钢制长剑" />
+    <part Name="Description" Short="一柄精钢长剑。" />
+  </object>
+  <object Name="Steel Dagger" Load="Merge">
+    <part Name="Render" DisplayName="钢制匕首" />
+    <part Name="Description" Short="一把精钢匕首。" />
+  </object>
+  <object Name="Club" Load="Merge">
+    <part Name="Render" DisplayName="短棒" />
+    <part Name="Description" Short="一根粗制的短棒。" />
+  </object>
+  <object Name="Bat" Load="Merge">
+    <part Name="Render" DisplayName="蝙蝠" />
+    <part Name="Description" Short="它裹在薄膜般的翅里。" />
+  </object>
+  <object Name="Glowpad" Load="Merge">
+    <part Name="Render" DisplayName="光垫" />
+    <part Name="Description" Short="一片叶盘透过发光的叶脉闪烁微光。" />
+  </object>
+  <object Name="SmallBoulder" Load="Merge">
+    <part Name="Render" DisplayName="圆石" />
+    <part Name="Description" Short="一块小圆石。" />
+  </object>
+  <object Name="High-Powered Magnet" Load="Merge">
+    <part Name="Render" DisplayName="强力磁石" />
+    <part Name="Description" Short="一块强力磁石。" />
+  </object>
+  <object Name="Glowfish Corpse" Load="Merge">
+    <part Name="Render" DisplayName="光鱼尸体" />
+    <part Name="Description" Short="暗淡的光点缀在鳞片上。" />
+  </object>
+  <object Name="Ice frog corpse" Load="Merge">
+    <part Name="Render" DisplayName="冰蛙尸体" />
+    <part Name="Description" Short="湿漉漉的蛙皮紧贴在地面上。" />
+  </object>
+</objects>

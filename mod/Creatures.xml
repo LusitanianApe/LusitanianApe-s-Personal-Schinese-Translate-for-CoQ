@@ -1,0 +1,300 @@
+<?xml version='1.0' encoding='utf-8'?>
+<objects Lang="zh-Hans" Encoding="utf-8">
+
+  <object Name="Knollworm" Load="Merge">
+    <part Name="Render" DisplayName="冢虫（Knollworm）" />
+  </object>
+  <object Name="Knollworm Corpse" Load="Merge">
+    <part Name="Render" DisplayName="冢虫尸骸（Knollworm Corpse）" />
+  </object>
+  <object Name="Plated Knollworm" Load="Merge">
+    <part Name="Render" DisplayName="甲壳冢虫（Plated Knollworm）" />
+  </object>
+
+  <object Name="Seedsprout Worm" Load="Merge">
+    <part Name="Render" DisplayName="苗芽虫（Seedsprout Worm）" />
+  </object>
+  <object Name="Seedsprout Worm Corpse" Load="Merge">
+    <part Name="Render" DisplayName="苗芽虫尸骸（Seedsprout Worm Corpse）" />
+  </object>
+
+  <object Name="Segmented Mirthworm" Load="Merge">
+    <part Name="Render" DisplayName="{{w|环节欢蠕虫（Segmented Mirthworm）}}" />
+  </object>
+  <object Name="SegmentedMirthworm_Corpse" Load="Merge">
+    <part Name="Render" DisplayName="环节欢蠕虫尸骸（Segmented Mirthworm Corpse）" />
+  </object>
+
+  <object Name="Worm of the Earth" Load="Merge">
+    <part Name="Render" DisplayName="土中虫（Worm of the Earth）" />
+  </object>
+  <object Name="Earthworm Corpse" Load="Merge">
+    <part Name="Render" DisplayName="蚯蚓尸骸" />
+  </object>
+
+  <object Name="Girshworm" Load="Merge">
+    <part Name="Render" DisplayName="格尔什虫（Girshworm）" />
+  </object>
+
+  <object Name="Waveform Worm" Load="Merge">
+    <part Name="Render" DisplayName="波形虫（Waveform Worm）" />
+  </object>
+
+  <object Name="Bone Worm" Load="Merge">
+    <part Name="Render" DisplayName="骨虫（Bone Worm）" />
+  </object>
+  <object Name="Bone Worm Corpse" Load="Merge">
+    <part Name="Render" DisplayName="骨虫尸骸（Bone Worm Corpse）" />
+  </object>
+
+  <object Name="Worms Cherub" Load="Merge">
+    <part Name="Render" DisplayName="蠕虫天使（Worms Cherub）" />
+  </object>
+  <object Name="Mechanical Worms Cherub" Load="Merge">
+    <part Name="Render" DisplayName="机械蠕虫天使（Mechanical Worms Cherub）" />
+  </object>
+  <object Name="Worm Golem" Load="Merge">
+    <part Name="Render" DisplayName="蠕虫魔像（Worm Golem）" />
+  </object>
+
+  <object Name="Rank Fangs" Load="Merge">
+    <part Name="RulesDescription" Text="命中时有 5% 概率使目标中毒&#10;命中时有 5% 概率使目标染病&#10;命中时有 5% 概率使目标生锈" />
+  </object>
+
+  <object Name="Scrapbot Mechanimist" Load="Merge">
+    <part Name="RulesDescription" Text="{{y|被机械师教团改写}}" />
+  </object>
+
+  <object Name="VehicleTemplarMech" Load="Merge">
+    <part Name="RulesDescription" Text="此生物不会自然恢复，必须修理。" />
+  </object>
+
+  <object Name="Zigzag Fangs" Load="Merge">
+    <part Name="RulesDescription" Text="命中时有 15% 概率使目标困惑" />
+  </object>
+
+  <object Name="Gelatinous Antiprism" Load="Merge">
+    <part Name="EngulfingClones" Description="它是负向的你。" />
+  </object>
+
+  <object Name="Graftek" Load="Merge">
+    <part Name="Render" DisplayName="{{C|格拉夫泰克}}" />
+  </object>
+
+  <object Name="Graftek_Tendril" Load="Merge">
+    <part Name="Render" DisplayName="卷须" />
+  </object>
+
+  <object Name="Mindrone" Load="Merge">
+    <part Name="Render" DisplayName="心智雄蜂" />
+  </object>
+
+  <object Name="Mindrone_Zap" Load="Merge">
+    <part Name="Render" DisplayName="抽打触须" />
+  </object>
+
+  <object Name="Skittering Sentry" Load="Merge">
+    <part Name="Render" DisplayName="疾窜哨兵" />
+  </object>
+
+  <object Name="Urn Porter" Load="Merge">
+    <part Name="Render" DisplayName="陶瓮拂尘" />
+  </object>
+
+  <object Name="Warden 1-FF" Load="Merge">
+    <part Name="Render" DisplayName="1-FF" />
+  </object>
+
+<!-- ★ 2026-10-17 Honorifics/Titles 汉化（官方 ▶ 可译位） -->
+  <object Name="AoygNoLonger" Load="Merge">
+    <part Name="Titles" Primary="宇宙林中的普托侍者" />
+  </object>
+  <object Name="Asphodel" Load="Merge">
+    <part Name="Titles" Primary="奥蒙波奇伯爵" />
+  </object>
+  <object Name="BaseNephal" Load="Merge">
+    <part Name="Honorifics" Ordinary="吉尔什" />
+  </object>
+  <object Name="ElderBob" Load="Merge">
+    <part Name="Honorifics" Primary="长老" />
+  </object>
+  <object Name="Erah" Load="Merge">
+    <part Name="Honorifics" Primary="酿苹果酒人" />
+  </object>
+  <object Name="Haddas" Load="Merge">
+    <part Name="Honorifics" Primary="村长" />
+  </object>
+  <object Name="Hamilcrab" Load="Merge">
+    <part Name="Titles" Ordinary="独眼商人" />
+  </object>
+  <object Name="High Priest Eschelstadt" Load="Merge">
+    <part Name="Titles" Primary="高跷大祭司" />
+  </object>
+  <object Name="Lulihart" Load="Merge">
+    <part Name="Titles" Ordinary="贝拉后裔贱民" />
+  </object>
+  <object Name="Mayor Nuntu" Load="Merge">
+    <part Name="Honorifics" Primary="村长" />
+  </object>
+  <object Name="Neelahind" Load="Merge">
+    <part Name="Honorifics" Primary="看守" />
+  </object>
+  <object Name="Oboroqoru" Load="Merge">
+    <part Name="Titles" Primary="猿神" />
+  </object>
+  <object Name="Phinae Hoshaiah" Load="Merge">
+    <part Name="Titles" Primary="岩石大祭司" />
+  </object>
+  <object Name="Skybear" Load="Merge">
+    <part Name="Titles" Primary="天熊" />
+  </object>
+  <object Name="Tam" Load="Merge">
+    <part Name="Titles" Ordinary="驼人商人" />
+  </object>
+  <object Name="Tszappur" Load="Merge">
+    <part Name="Titles" Primary="盘羊门徒" />
+  </object>
+  <object Name="Une" Load="Merge">
+    <part Name="Honorifics" Primary="看守" />
+  </object>
+  <object Name="Warden 1-FF" Load="Merge">
+    <part Name="Honorifics" Primary="看守" />
+    <part Name="Titles" Ordinary="重编程养护者" />
+  </object>
+  <object Name="Warden Esthers" Load="Merge">
+    <part Name="Honorifics" Primary="看守" />
+  </object>
+  <object Name="Warden Indrix" Load="Merge">
+    <part Name="Honorifics" Primary="看守" />
+    <part Name="Titles" Primary="羊人贱民" />
+  </object>
+  <object Name="Warden Yrame" Load="Merge">
+    <part Name="Honorifics" Primary="看守" />
+  </object>
+<!-- /Honorifics/Titles 汉化 -->
+
+
+<!-- ★ SecretObject 自然景观（生成器 _tools\_gen_secret_objects.py） -->
+  <object Name="acidLichen" Load="Merge">
+    <part Name="Render" DisplayName="巨型{{G|酸液}}渗泉" />
+    <part Name="SecretObject" text="一处巨型{{G|酸液}}渗泉" message="你发现了一处巨型{{G|酸液}}渗泉。" />
+  </object>
+  <object Name="acidLichen Minor" Load="Merge">
+    <part Name="Render" DisplayName="{{G|酸液}}渗泉" />
+    <part Name="SecretObject" text="一处{{G|酸液}}渗泉" message="你发现了一处{{G|酸液}}渗泉。" />
+  </object>
+  <object Name="asphaltLichen" Load="Merge">
+    <part Name="Render" DisplayName="巨型{{K|沥青}}渗泉" />
+    <part Name="SecretObject" text="一处巨型{{K|沥青}}渗泉" message="你发现了一处巨型{{K|沥青}}渗泉。" />
+  </object>
+  <object Name="asphaltLichen Minor" Load="Merge">
+    <part Name="Render" DisplayName="{{K|沥青}}渗泉" />
+    <part Name="SecretObject" text="一处{{K|沥青}}渗泉" message="你发现了一处{{K|沥青}}渗泉。" />
+  </object>
+  <object Name="ciderLichen" Load="Merge">
+    <part Name="Render" DisplayName="巨型{{R|苹果酒}}渗泉" />
+    <part Name="SecretObject" text="一处巨型{{R|苹果酒}}渗泉" message="你发现了一处巨型{{R|苹果酒}}渗泉。" />
+  </object>
+  <object Name="ciderLichen Minor" Load="Merge">
+    <part Name="Render" DisplayName="{{R|苹果酒}}渗泉" />
+    <part Name="SecretObject" text="一处{{R|苹果酒}}渗泉" message="你发现了一处{{R|苹果酒}}渗泉。" />
+  </object>
+  <object Name="gelLichen" Load="Merge">
+    <part Name="Render" DisplayName="巨型{{Y|凝胶}}渗泉" />
+    <part Name="SecretObject" text="一处巨型{{Y|凝胶}}渗泉" message="你发现了一处巨型{{Y|凝胶}}渗泉。" />
+  </object>
+  <object Name="gelLichen Minor" Load="Merge">
+    <part Name="Render" DisplayName="{{Y|凝胶}}渗泉" />
+    <part Name="SecretObject" text="一处{{Y|凝胶}}渗泉" message="你发现了一处{{Y|凝胶}}渗泉。" />
+  </object>
+  <object Name="honeyLichen" Load="Merge">
+    <part Name="Render" DisplayName="巨型{{w|蜂蜜}}渗泉" />
+    <part Name="SecretObject" text="一处巨型{{w|蜂蜜}}渗泉" message="你发现了一处巨型{{w|蜂蜜}}渗泉。" />
+  </object>
+  <object Name="honeyLichen Minor" Load="Merge">
+    <part Name="Render" DisplayName="{{w|蜂蜜}}渗泉" />
+    <part Name="SecretObject" text="一处{{w|蜂蜜}}渗泉" message="你发现了一处{{w|蜂蜜}}渗泉。" />
+  </object>
+  <object Name="inkLichen" Load="Merge">
+    <part Name="Render" DisplayName="巨型{{K|墨}}渗泉" />
+    <part Name="SecretObject" text="一处巨型{{K|墨}}渗泉" message="你发现了一处巨型{{K|墨}}渗泉。" />
+  </object>
+  <object Name="inkLichen Minor" Load="Merge">
+    <part Name="Render" DisplayName="{{K|墨}}渗泉" />
+    <part Name="SecretObject" text="一处{{K|墨}}渗泉" message="你发现了一处{{K|墨}}渗泉。" />
+  </object>
+  <object Name="lavaLichen" Load="Merge">
+    <part Name="Render" DisplayName="巨型{{lava|熔岩}}渗泉" />
+    <part Name="SecretObject" text="一处巨型{{lava|熔岩}}渗泉" message="你发现了一处巨型{{lava|熔岩}}渗泉。" />
+  </object>
+  <object Name="lavaLichen Minor" Load="Merge">
+    <part Name="Render" DisplayName="{{lava|熔岩}}渗泉" />
+    <part Name="SecretObject" text="一处{{lava|熔岩}}渗泉" message="你发现了一处{{lava|熔岩}}渗泉。" />
+  </object>
+  <object Name="oilLichen" Load="Merge">
+    <part Name="Render" DisplayName="巨型{{K|油}}渗泉" />
+    <part Name="SecretObject" text="一处巨型{{K|油}}渗泉" message="你发现了一处巨型{{K|油}}渗泉。" />
+  </object>
+  <object Name="oilLichen Minor" Load="Merge">
+    <part Name="Render" DisplayName="{{K|油}}渗泉" />
+    <part Name="SecretObject" text="一处{{K|油}}渗泉" message="你发现了一处{{K|油}}渗泉。" />
+  </object>
+  <object Name="saltLichen" Load="Merge">
+    <part Name="Render" DisplayName="巨型{{Y|盐}}渗泉" />
+    <part Name="SecretObject" text="一处巨型{{Y|盐}}渗泉" message="你发现了一处巨型{{Y|盐}}渗泉。" />
+  </object>
+  <object Name="saltLichen Minor" Load="Merge">
+    <part Name="Render" DisplayName="{{Y|盐}}渗泉" />
+    <part Name="SecretObject" text="一处{{Y|盐}}渗泉" message="你发现了一处{{Y|盐}}渗泉。" />
+  </object>
+  <object Name="sapLichen" Load="Merge">
+    <part Name="Render" DisplayName="巨型{{W|树液}}渗泉" />
+    <part Name="SecretObject" text="一处巨型{{W|树液}}渗泉" message="你发现了一处巨型{{W|树液}}渗泉。" />
+  </object>
+  <object Name="sapLichen Minor" Load="Merge">
+    <part Name="Render" DisplayName="{{W|树液}}渗泉" />
+    <part Name="SecretObject" text="一处{{W|树液}}渗泉" message="你发现了一处{{W|树液}}渗泉。" />
+  </object>
+  <object Name="slimeLichen" Load="Merge">
+    <part Name="Render" DisplayName="巨型{{g|黏液}}渗泉" />
+    <part Name="SecretObject" text="一处巨型{{g|黏液}}渗泉" message="你发现了一处巨型{{g|黏液}}渗泉。" />
+  </object>
+  <object Name="slimeLichen Minor" Load="Merge">
+    <part Name="Render" DisplayName="{{g|黏液}}渗泉" />
+    <part Name="SecretObject" text="一处{{g|黏液}}渗泉" message="你发现了一处{{g|黏液}}渗泉。" />
+  </object>
+  <object Name="waterLichen" Load="Merge">
+    <part Name="Render" DisplayName="巨型{{B|清水}}渗泉" />
+    <part Name="SecretObject" text="一处巨型{{B|清水}}渗泉" message="你发现了一处巨型{{B|清水}}渗泉。" />
+  </object>
+  <object Name="waterLichen Minor" Load="Merge">
+    <part Name="Render" DisplayName="{{B|清水}}渗泉" />
+    <part Name="SecretObject" text="一处{{B|清水}}渗泉" message="你发现了一处{{B|清水}}渗泉。" />
+  </object>
+  <object Name="waxLichen" Load="Merge">
+    <part Name="Render" DisplayName="巨型{{Y|蜡}}渗泉" />
+    <part Name="SecretObject" text="一处巨型{{Y|蜡}}渗泉" message="你发现了一处巨型{{Y|蜡}}渗泉。" />
+  </object>
+  <object Name="waxLichen Minor" Load="Merge">
+    <part Name="Render" DisplayName="{{Y|蜡}}渗泉" />
+    <part Name="SecretObject" text="一处{{Y|蜡}}渗泉" message="你发现了一处{{Y|蜡}}渗泉。" />
+  </object>
+  <object Name="wineLichen" Load="Merge">
+    <part Name="Render" DisplayName="巨型{{m|葡萄酒}}渗泉" />
+    <part Name="SecretObject" text="一处巨型{{m|葡萄酒}}渗泉" message="你发现了一处巨型{{m|葡萄酒}}渗泉。" />
+  </object>
+  <object Name="wineLichen Minor" Load="Merge">
+    <part Name="Render" DisplayName="{{m|葡萄酒}}渗泉" />
+    <part Name="SecretObject" text="一处{{m|葡萄酒}}渗泉" message="你发现了一处{{m|葡萄酒}}渗泉。" />
+  </object>
+  <!-- /SecretObject -->
+
+  <!-- #59：Barathrum 的头衔与声望原因（数据侧；格式 faction,feeling,reason） -->
+  <object Name="Barathrum" Load="Merge">
+    <part Name="Render" DisplayName="巴拉瑟鲁姆" />
+    <part Name="Epithets" Primary="老者" />
+    <tag Name="staticFaction1" Value=",friend,发明了巴拉瑟鲁姆钟" />
+    <tag Name="staticFaction2" Value=",friend,发明了星盘" />
+    <tag Name="staticFaction3" Value="Templar,hate,成为他们正统教义的反例" />
+  </object>
+</objects>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  玩家行动文本（成就 / 传记）——数据型模板。
+  来源：Base\ObjectBlueprints\Items.xml 的 TakenAccomplishment / EatenAccomplishment 部件。
+    Text      = 成就列表里那行（"你寻回了…"）
+    Hagiograph = 苏丹史/传记里的史诗腔叙述
+  占位符（=this.refname= / =name= / =this.an= / =player.possessive=）必须原样保留。
+-->
+<objects Lang="zh-Hans" Encoding="utf-8">
+
+<object Name="Ruin of House Isner" Load="Merge">
+<part Name="TakenAccomplishment" Text="你寻回了那把杰作手枪与传颂复仇的史诗——=this.refname=。" Hagiograph="枪手苏丹=name=以一柄杰作左轮逐一诛杀伊斯纳家族的七位领主，并在他们堆叠的尸首上设宴。" />
+</object>
+
+<object Name="Stopsvaalinn" Load="Merge">
+<part Name="TakenAccomplishment" Text="你寻回了伊什家族失落的神盾——=this.refname=。" Hagiograph="且听：=name=如何从一只卑贱的咬颚兽爪中夺回传说中的神盾=this.refname=，并声称自己是伊什的萨阿德后裔！" />
+</object>
+
+<object Name="Kindrish" Load="Merge">
+<part Name="TakenAccomplishment" Text="你寻回了欣德伦的祖传手镯——=this.refname=。" Hagiograph="=player.possessive=非凡机巧令=name=得以寻回=this.refname=——欣德伦的祖传手镯，并因此获授大母鹿之名号。" />
+</object>
+
+<object Name="SkybearJetpack" Load="Merge">
+<part Name="TakenAccomplishment" Text="天熊再度翱翔！你从冰封往昔的爪牙中寻回了=this.refname=。" Hagiograph="地底湿热的气息化开了天熊的化石，并告知我们这样一个真相：=name=即萨阿德·阿穆斯，萨阿德·阿穆斯即=name=。" />
+</object>
+
+<object Name="Cyclopean Prism" Load="Merge">
+<part Name="TakenAccomplishment" Text="你将=this.refname=的黑玻璃紧握在手中。" Hagiograph="不凋的=name=啊！在由=player.possessive=自身梦境质料铸成、手持黑玻璃的神苏丹面前战栗吧！" />
+</object>
+
+<object Name="Otherpearl" Load="Merge">
+<part Name="TakenAccomplishment" Text="你握紧=this.refname=，将现实的明镜披在身上。" Hagiograph="呜呼！当=name=为那无名少女欧多克西亚吟诵挽歌时，我们的心都化作了恒星残骸！" />
+</object>
+
+<object Name="GenericFace" Load="Merge">
+<part Name="EatenAccomplishment" Text="你吃下了=this.an=。" Hagiograph="败者当哭！=name=在甲虫之月的光下饱食了=this.an=。" />
+</object>
+
+<object Name="PlantFace" Load="Merge">
+<part Name="EatenAccomplishment" Text="你吃下了=this.an=。" Hagiograph="败者当哭！=name=在甲虫之月的光下饱食了=this.an=。" />
+</object>
+
+<object Name="FungusFace" Load="Merge">
+<part Name="EatenAccomplishment" Text="你吃下了=this.an=。" Hagiograph="败者当哭！=name=在甲虫之月的光下饱食了=this.an=。" />
+</object>
+
+</objects>

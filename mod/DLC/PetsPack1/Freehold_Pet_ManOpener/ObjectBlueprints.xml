@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<objects Encoding="utf-8">
+  <object Name="Man Opener" Inherits="BaseInsect">
+    <part Name="Render" DisplayName="{{M|Man Opener}}" Tile="creatures/sw_man_opener.bmp" RenderString="I" ColorString="&amp;w" DetailColor="W"></part>
+    <part Name="Corpse" CorpseChance="0" />
+    <stat Name="Level" Value="2" />
+    <stat Name="AV" Value="5" />
+    <stat Name="Hitpoints" Value="50" />
+    <stat Name="Ego" sValue="12" />
+    <stat Name="Agility" sValue="12" />
+    <stat Name="Intelligence" sValue="12" />
+    <part Name="Brain" Hostile="false" Wanders="true" Hibernating="false" Factions="Prey-100,Insects-25" />
+    <part Name="Description" Short="虽然如今几近灭绝，但在短短几十年里，坑甲虫曾是任何匪帮堡垒或杀人洞穴的必备配件。凭着一对有关节的角，一只意志坚定的坑甲虫极擅长它最爱的活动：剥掉护甲，享用里面的东西。=pronouns.Subjective==verb:are:afterpronoun=忠诚得暴烈，也=verb:are:afterpronoun=深情，Man Opener 是同类中的典范。=pronouns.Subjective==verb:wander:afterpronoun=于卡德，寻找一位新主人，或至少一个朋友。" />
+    <part Name="ConversationScript" ConversationID="ManOpener" />
+    <skill Name="Axe_Expertise" />
+    <skill Name="Axe_Cleave" />
+    <skill Name="Axe_Dismember" />
+    <inventoryobject Blueprint="ManOpenersManOpeners" />
+    <property Name="Story" Value="Freehold_Pet_ManOpener_Story" />
+    <property Name="Role" Value="Brute" />
+    <tag Name="PetResponse" Value="pushes her head against your hand,gives you an affectionate croak,nuzzles your side,prances in place,turns in a happy circle,chitters happily,gives you a playful shove,croaks for more" />
+    <tag Name="Pet"/>
+    <tag Name="StartingPet"/>
+    <tag Name="Gender" Value="female" />
+    <xtagGrammar Proper="true" />
+    <tag Name="Species" Value="beetle" />
+    <part Name="Pettable" />
+    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
+  </object>
+
+  <object Name="ManOpenersManOpeners" Inherits="NaturalWeapon">
+    <part Name="Render" DisplayName="开膛手甲虫" />
+    <part Name="MeleeWeapon" Slot="Face" MaxStrengthBonus="9999" BaseDamage="2d2" Skill="Axe" />
+    <tag Name="Gender" Value="plural" />
+  </object>
+</objects>

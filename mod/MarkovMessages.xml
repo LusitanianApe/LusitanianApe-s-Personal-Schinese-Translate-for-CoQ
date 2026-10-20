@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  马尔科夫书籍的消息与历史叙述文本（玩家行动文本 / 成就 / 传记）。
+  来源：Base\ExampleLanguage\Strings.example.xml 中 Context 以 MarkovBook 开头的 9 条。
+
+  这 4 条是**玩家行动文本**（存档实证出现过）：
+    MarkovBook Accomplishment text        You read =title=.
+    MarkovBook Accomplishment mural text  In the month of =month= of =year=, =name= penned the influential book, =title=.
+    MarkovBook Accomplishment gospel text At a remote library near =landmark.nearest=, =name= met with blind scribes…
+    MarkovBook Popup Legible Excerpt      You read one of the few legible excerpts from =title|color:Y=: "=sentence="
+
+  另外 3 条是书名装饰模板（见任务1：装饰步骤不幂等，会叠出 ": Unabridged: Unabridged"）。
+  这里译成中文后，装饰会变成「：未删节版」这类；C# 侧的 StripDecorations 已同步加入中文模式，
+  所以中文装饰同样会被循环剥掉、不会再叠加。
+
+  占位符（=title= / =name= / =month= / =year= / =landmark.nearest= / =volume.roman= /
+  =edition.ordinal.digits= / =note= / =sentence= 与 =title|color:Y=）必须原样保留。
+  按风格约定：书名本身不带书名号，故此处叙述里用冒号引出不加《》。
+-->
+<strings Lang="zh-Hans" Encoding="utf-8">
+
+  <string Context="MarkovBook Popup Legible Excerpt" ID="You read one of the few legible excerpts from =title|color:Y=:&#xA;&#xA;&quot;=sentence=&quot;">你从=title|color:Y=中读到了少数尚可辨认的片段：&#xA;&#xA;“=sentence=”</string>
+
+  <string Context="MarkovBook Accomplishment text" ID="You read =title=.">你读完了=title=。</string>
+
+  <string Context="MarkovBook Accomplishment mural text" ID="In the month of =month= of =year=, =name= penned the influential book, =title=.">=year=年=month=，=name=写下了那部影响深远的著作：=title=。</string>
+
+  <string Context="MarkovBook Accomplishment gospel text" ID="At a remote library near =landmark.nearest=, =name= met with a group of blind scribes and together they penned the beloved codex =title=.">在=landmark.nearest=附近一座偏远的藏书室里，=name=与一群盲眼抄写员相会，共同撰写了那部备受珍爱的典籍：=title=。</string>
+
+  <string Context="MarkovBook Long Book, Prefix Editor's Note" ID="{{C|Editor's note:}} =note=&#xA;&#xA;">{{C|编者按：}}=note=&#xA;&#xA;</string>
+
+  <string Context="MarkovBook Long Book, Prefix Author's Note" ID="{{C|Author's note:}} =note=&#xA;&#xA;">{{C|作者按：}}=note=&#xA;&#xA;</string>
+
+  <string Context="MarkovBook Decorate Title - (Volume #Roman)" ID="=title=, Vol. =volume.roman=">=title=，第=volume.roman=卷</string>
+
+  <string Context="MarkovBook Decorate Title - (Unabridged)" ID="=title=: Unabridged">=title=：未删节版</string>
+
+  <string Context="MarkovBook Decorate Title - (n'th edition)" ID="=title=, =edition.ordinal.digits= Edition">=title=，第=edition.ordinal.digits=版</string>
+
+</strings>

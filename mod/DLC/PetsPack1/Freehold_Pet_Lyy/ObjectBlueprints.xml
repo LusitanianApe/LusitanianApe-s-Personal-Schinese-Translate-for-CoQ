@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<objects Encoding="utf-8">
+  <object Name="Lyy" Inherits="BaseReptile">
+    <part Name="Render" DisplayName="{{M|Lyy}}" Tile="Creatures/sw_lyy.bmp" RenderString="f" ColorString="&amp;G" DetailColor="W" />
+    <part Name="Description" Short="湿润的开心果色皮肤在他小小的鼻孔周围起伏，像被洪水围困的迷你丘陵。他舒适地蹲在细枝般的小腿上，星亮的眼睛望着广阔世界。他周围的地面被蹼足的墨色印迹打湿；这个带斑点的小家伙，是从想象之国里迸出来的。"></part>
+    <part Name="ConversationScript" ConversationID="Lyy" />
+    <stat Name="Level" Value="1"></stat>
+    <stat Name="AV" Value="2"></stat>
+    <stat Name="Agility" sValue="28"></stat>
+    <stat Name="Hitpoints" Value="50"></stat>
+    <part Name="Preacher" Book="LyyRibbits" Prefix="Lyy croaks, {{W|'" Frozen="Lyy ribbits inaudibly, encased in ice." inOrder="false" ChatWait="600"></part>
+    <part Name="LeaksFluid" Liquid="ink" Drams="1-2" Frequency="1000-4000" MessageVerb="secrete" />
+    <tag Name="PetResponse" Value="croaks" />
+    <part Name="Pettable" />
+    <tag Name="Pet"/>
+    <tag Name="StartingPet"/>
+    <xtagGrammar Proper="true"></xtagGrammar>
+    <tag Name="Gender" Value="male" />
+    <property Name="Story" Value="Freehold_Pet_Lyy_Story" />
+    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
+    <tag Name="NoCombat"></tag>
+  </object>
+</objects>

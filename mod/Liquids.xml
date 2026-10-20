@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  液体翻译（27 种全量）。
+  * 颜色/着色器包裹从本体值提取后原样套到中文上 —— 命名着色器（cider / putrid / slimy /
+    neutronic / sunslag / brainbrine / cloning / lava / nervous / radiant）标识符不得改动。
+  * 生活常见液体（水、盐水、油、蜂蜜、凝胶、墨汁、血、酒…）不括注英文原文；
+    游戏专有与学科术语（愈素、原生汤、日渣、脑卤、暖静电、中子流）括注。
+  * circulatoryLossNoun/Term 与 slipperyMessage 也在可译范围内（前者是流血/渗液类词，
+    后者含 =subject.Does:slip= 占位符，必须原样保留）。
+-->
+<liquids Lang="zh-Hans" Encoding="utf-8">
+
+<liquid Name="Acid">
+<displayName>{{G|酸}}</displayName>
+<adjective>{{G|酸性的}}</adjective>
+<waterRitualName>酸</waterRitualName>
+<smearedAdjective>{{G|酸性的}}</smearedAdjective>
+<smearedName>{{G|沾满酸液的}}</smearedName>
+<stainedName>{{G|酸}}</stainedName>
+</liquid>
+
+<liquid Name="Asphalt">
+<displayName>{{K|沥青}}</displayName>
+<adjective>{{K|焦油般的}}</adjective>
+<waterRitualName>焦油</waterRitualName>
+<smearedAdjective>{{K|焦油般的}}</smearedAdjective>
+<smearedName>{{K|沾满焦油的}}</smearedName>
+<stainedName>{{K|焦油}}</stainedName>
+</liquid>
+
+<liquid Name="Algae">
+<displayName>{{g|藻}}</displayName>
+<adjective>{{g|富藻的}}</adjective>
+<waterRitualName>藻</waterRitualName>
+<smearedAdjective>{{g|富藻的}}</smearedAdjective>
+<smearedName>{{g|覆盖着藻的}}</smearedName>
+<stainedName>{{g|藻}}</stainedName>
+</liquid>
+
+<liquid Name="Blood">
+<displayName>{{r|血}}</displayName>
+<adjective>{{r|血染的}}</adjective>
+<waterRitualName>血</waterRitualName>
+<smearedAdjective>{{r|血染的}}</smearedAdjective>
+<smearedName>{{r|沾血的}}</smearedName>
+<stainedName>{{r|血}}</stainedName>
+<circulatoryLossNoun>流血</circulatoryLossNoun>
+<circulatoryLossTerm>流血</circulatoryLossTerm>
+</liquid>
+
+<liquid Name="BrainBrine">
+<displayName>{{brainbrine|脑卤（brain brine）}}</displayName>
+<adjective>{{nervous|令人神经紧绷的}}</adjective>
+<waterRitualName>脑卤</waterRitualName>
+<smearedAdjective>{{nervous|令人神经紧绷的}}</smearedAdjective>
+<smearedName>{{nervous|令人神经紧绷的}}</smearedName>
+<stainedName>{{brainbrine|脑卤渍}}</stainedName>
+</liquid>
+
+<liquid Name="Cider">
+<displayName>{{cider|苹果酒}}</displayName>
+<adjective>{{cider|加香料的}}</adjective>
+<waterRitualName>苹果酒</waterRitualName>
+<smearedAdjective>{{cider|芳香的}}</smearedAdjective>
+<smearedName>{{cider|芳香的}}</smearedName>
+<stainedName>{{cider|苹果酒}}</stainedName>
+</liquid>
+
+<liquid Name="CloningDraught">
+<displayName>{{cloning|克隆药剂}}</displayName>
+<adjective>{{cloning|均质的}}</adjective>
+<waterRitualName>药剂</waterRitualName>
+<smearedAdjective>{{cloning|均质的}}</smearedAdjective>
+<smearedName>{{cloning|均质的}}</smearedName>
+<stainedName>{{cloning|克隆药剂渍}}</stainedName>
+<!-- ★ 2.16.56：官方 Base 这条是**裸的** `<part Name="CloningBehaviors" />`，
+     文本只存在于 `ExampleLanguage\Liquids.example.xml`（本地化层）⇒ 不补就永远英文。
+     句源 = 模板 DrinkMessage（去掉模板的待翻译标记）。 -->
+<part Name="CloningBehaviors" DrinkMessage="你说不清自己是什么滋味。" />
+</liquid>
+
+<liquid Name="Convalessence">
+<displayName>{{C|愈素（convalessence）}}</displayName>
+<adjective>{{C|发光的}}</adjective>
+<waterRitualName>愈素</waterRitualName>
+<smearedAdjective>{{C|发光的}}</smearedAdjective>
+<smearedName>{{C|发光的}}</smearedName>
+<stainedName>{{C|愈素}}</stainedName>
+</liquid>
+
+<liquid Name="Gel">
+<displayName>{{Y|凝胶}}</displayName>
+<adjective>{{Y|油腻的}}</adjective>
+<waterRitualName>凝胶</waterRitualName>
+<smearedAdjective>{{Y|油腻的}}</smearedAdjective>
+<smearedName>{{Y|油腻的}}</smearedName>
+<stainedName>{{Y|凝胶}}</stainedName>
+<slipperyMessage>{{Y|=subject.Does:slip=在凝胶上！}}</slipperyMessage>
+</liquid>
+
+<liquid Name="GreenGoo">
+<displayName>{{G|绿黏浆}}</displayName>
+<adjective>{{G|黏糊糊的}}</adjective>
+<waterRitualName>黏浆</waterRitualName>
+<smearedAdjective>{{G|黏糊糊的}}</smearedAdjective>
+<smearedName>{{G|黏糊糊的}}</smearedName>
+<stainedName>{{G|黏浆}}</stainedName>
+<circulatoryLossNoun>渗液</circulatoryLossNoun>
+<circulatoryLossTerm>渗液</circulatoryLossTerm>
+</liquid>
+
+<liquid Name="Honey">
+<displayName>{{w|蜂蜜}}</displayName>
+<adjective>{{w|蜜一般的}}</adjective>
+<waterRitualName>蜂蜜</waterRitualName>
+<smearedAdjective>{{w|黏稠的}}</smearedAdjective>
+<smearedName>{{w|黏稠的}}</smearedName>
+<stainedName>{{w|蜂蜜}}</stainedName>
+</liquid>
+
+<liquid Name="Ink">
+<displayName>{{K|墨汁}}</displayName>
+<adjective>{{K|墨黑的}}</adjective>
+<waterRitualName>墨汁</waterRitualName>
+<smearedAdjective>{{K|墨黑的}}</smearedAdjective>
+<smearedName>{{K|墨黑的}}</smearedName>
+<stainedName>{{K|墨汁}}</stainedName>
+<slipperyMessage>{{K|=subject.Does:slip=在墨汁上！}}</slipperyMessage>
+</liquid>
+
+<liquid Name="Lava">
+<displayName>{{lava|岩浆}}</displayName>
+<adjective>{{lava|岩浆般的}}</adjective>
+<waterRitualName>岩浆</waterRitualName>
+<smearedAdjective>{{lava|岩浆般的}}</smearedAdjective>
+<smearedName>{{lava|覆满岩浆的}}</smearedName>
+<stainedName>{{lava|岩浆}}</stainedName>
+</liquid>
+
+<liquid Name="NeutronFlux">
+<displayName>{{neutronic|中子}}{{Y|流}}</displayName>
+<adjective>{{neutronic|中子的}}</adjective>
+<waterRitualName>中子流（neutron flux）</waterRitualName>
+<smearedAdjective>{{neutronic|中子的}}</smearedAdjective>
+<smearedName>{{neutronic|中性的}}</smearedName>
+<stainedName>{{neutronic|中子流渍}}</stainedName>
+<circulatoryLossNoun>中子泄漏</circulatoryLossNoun>
+<circulatoryLossTerm>中子泄漏</circulatoryLossTerm>
+</liquid>
+
+<liquid Name="Oil">
+<displayName>{{K|油}}</displayName>
+<adjective>{{K|油滑的}}</adjective>
+<waterRitualName>油</waterRitualName>
+<smearedAdjective>{{K|油滑的}}</smearedAdjective>
+<smearedName>{{K|油滑的}}</smearedName>
+<stainedName>{{K|油}}</stainedName>
+<slipperyMessage>{{C|=subject.Does:slip=在油上！}}</slipperyMessage>
+</liquid>
+
+<liquid Name="Ooze">
+<displayName>{{K|黑淤泥}}</displayName>
+<adjective>{{K|渗着泥浆的}}</adjective>
+<waterRitualName>淤泥</waterRitualName>
+<smearedAdjective>{{K|渗着泥浆的}}</smearedAdjective>
+<smearedName>{{K|渗着泥浆的}}</smearedName>
+<stainedName>{{K|淤泥}}</stainedName>
+<circulatoryLossNoun>渗液</circulatoryLossNoun>
+<circulatoryLossTerm>渗液</circulatoryLossTerm>
+</liquid>
+
+<liquid Name="PrimordialSoup">
+<displayName>{{c|原生汤（primordial soup）}}</displayName>
+<adjective>{{c|汤状的}}</adjective>
+<waterRitualName>汤</waterRitualName>
+<smearedAdjective>{{c|汤状的}}</smearedAdjective>
+<smearedName>{{c|汤状的}}</smearedName>
+<stainedName>{{c|汤渍}}</stainedName>
+</liquid>
+
+<liquid Name="Putrescence">
+<displayName>{{putrid|腐液}}</displayName>
+<adjective>{{putrid|腐烂的}}</adjective>
+<waterRitualName>腐液</waterRitualName>
+<smearedAdjective>{{putrid|腐烂的}}</smearedAdjective>
+<smearedName>{{putrid|腐烂的}}</smearedName>
+<stainedName>{{putrid|腐液}}</stainedName>
+</liquid>
+
+<liquid Name="Salt">
+<displayName>{{Y|盐}}</displayName>
+<adjective>{{Y|咸的}}</adjective>
+<waterRitualName>盐</waterRitualName>
+<smearedAdjective>{{Y|咸的}}</smearedAdjective>
+<smearedName>{{Y|结满盐的}}</smearedName>
+<stainedName>{{Y|盐}}</stainedName>
+</liquid>
+
+<liquid Name="Sap">
+<displayName>{{W|树液}}</displayName>
+<adjective>{{W|含糖的}}</adjective>
+<waterRitualName>树液</waterRitualName>
+<smearedAdjective>{{W|多汁的}}</smearedAdjective>
+<smearedName>{{W|多汁的}}</smearedName>
+<stainedName>{{W|树液}}</stainedName>
+</liquid>
+
+<liquid Name="Slime">
+<displayName>{{slimy|黏液}}</displayName>
+<adjective>{{slimy|黏滑的}}</adjective>
+<smearedAdjective>{{slimy|黏滑的}}</smearedAdjective>
+<smearedName>{{slimy|黏滑的}}</smearedName>
+<stainedName>{{g|黏液}}</stainedName>
+<circulatoryLossNoun>渗液</circulatoryLossNoun>
+<circulatoryLossTerm>渗液</circulatoryLossTerm>
+<slipperyMessage>{{slimy|=subject.Does:slip=在黏液上！}}</slipperyMessage>
+</liquid>
+
+<liquid Name="Sludge">
+<displayName>{{w|褐色污泥}}</displayName>
+<adjective>{{w|泥泞的}}</adjective>
+<waterRitualName>污泥</waterRitualName>
+<smearedAdjective>{{w|泥泞的}}</smearedAdjective>
+<smearedName>{{w|泥泞的}}</smearedName>
+<stainedName>{{w|污泥}}</stainedName>
+<circulatoryLossNoun>渗液</circulatoryLossNoun>
+<circulatoryLossTerm>渗液</circulatoryLossTerm>
+</liquid>
+
+<liquid Name="Sunslag">
+<displayName>{{sunslag|日渣（sunslag）}}</displayName>
+<adjective>{{radiant|光芒四射的}}</adjective>
+<waterRitualName>日渣</waterRitualName>
+<smearedAdjective>{{radiant|光芒四射的}}</smearedAdjective>
+<smearedName>{{radiant|光芒四射的}}</smearedName>
+<stainedName>{{sunslag|日渣}}</stainedName>
+<!-- ★ 2.16.56：`SunSlagOnDrink` 的全部文本同样只在本地化模板里
+     （官方 Base 只有 `<part Name="SunSlagOnDrink">` 的数值部分）。
+     句源 = 模板；`{{rules|=boost=}}` 与 `=player.*=` 槽**原样保留**。 -->
+<part Name="SunSlagOnDrink">
+<tooMuchMessage>光亮灼烧你的口腔，但你已无法被激得更高。</tooMuchMessage>
+<noStatMessage>光亮灼烧你的口腔。</noStatMessage>
+<boostedMessage>光亮灼烧你的口腔，并鼓舞了你。
+
+你的迅捷永久提高 {{rules|=boost=}}。</boostedMessage>
+<accomplishmentText>你喝下了钯礁的明亮乳浆，因而变得迅捷。</accomplishmentText>
+<muralText>看哪，=player.name=劈开城邦的骸骨，饮下它们的骨髓！愿你迅捷，我们的萨德，凭那城邦的命脉！</muralText>
+<gospelText>行经=terrain.t=时，=player.name=在=landmark.nearest=的一间酒馆落脚。在那里=player.subjective=赢下一场赌局，得意地饮下一德拉姆日渣。=player.Subjective==player.verb:were=因而迅捷，以无从追踪的速度离开了酒馆。</gospelText>
+</part>
+</liquid>
+
+<liquid Name="Water">
+<displayName>{{B|水}}</displayName>
+<adjective>{{Y|稀释的}}</adjective>
+<waterRitualName>水</waterRitualName>
+<smearedAdjective>{{B|湿的}}</smearedAdjective>
+<smearedName>{{B|湿的}}</smearedName>
+<stainedName>{{B|水}}</stainedName>
+<slipperyMessage>{{C|=subject.Does:slip=在冰上！}}</slipperyMessage>
+</liquid>
+
+<liquid Name="Wax">
+<displayName>{{Y|熔蜡}}</displayName>
+<adjective>{{Y|蜡质的}}</adjective>
+<waterRitualName>蜡</waterRitualName>
+<smearedAdjective>{{Y|蜡质的}}</smearedAdjective>
+<smearedName>{{Y|蜡质的}}</smearedName>
+<stainedName>{{Y|蜡}}</stainedName>
+</liquid>
+
+<liquid Name="Wine">
+<displayName>{{m|酒}}</displayName>
+<adjective>{{m|醇厚的}}</adjective>
+<waterRitualName>酒</waterRitualName>
+<smearedAdjective>{{m|醇厚的}}</smearedAdjective>
+<smearedName>{{m|醇厚的}}</smearedName>
+<stainedName>{{m|酒}}</stainedName>
+</liquid>
+
+<liquid Name="WarmStatic">
+<displayName>{{Y|暖静电（warm static）}}</displayName>
+<adjective>{{Y|熵增的}}</adjective>
+<waterRitualName>暖静电</waterRitualName>
+<smearedAdjective>{{Y|熵增的}}</smearedAdjective>
+<smearedName>{{Y|熵增的}}</smearedName>
+<stainedName>{{Y|暖静电}}</stainedName>
+</liquid>
+
+<!-- ★ 2026-10-17 缺口补齐（生成器 _tools\_fill_gaps_1017.py） -->
+  <!-- Water：官方 AltNameWhenPure = {{B|fresh water}} -->
+  <liquid Name="Water" Load="Merge">
+    <part Name="AltNameWhenPure" Alt="{{B|淡水}}" />
+  </liquid>
+  <!-- Water：官方 AltSmearedAdjectiveWhenMixed = {{Y|dilute}} -->
+  <liquid Name="Water" Load="Merge">
+    <part Name="AltSmearedAdjectiveWhenMixed" Alt="{{Y|稀释的}}" />
+  </liquid>
+  <!-- Water：官方 AltSmearedAdjectiveWhenSecondaryTo = {{B|wet}} -->
+  <liquid Name="Water" Load="Merge">
+    <part Name="AltSmearedAdjectiveWhenSecondaryTo" Alt="{{B|湿的}}" />
+  </liquid>
+  <!-- Salt：官方 AltAdjectiveWhenPurityBelow = {{w|brackish}} -->
+  <liquid Name="Salt" Load="Merge">
+    <part Name="AltAdjectiveWhenPurityBelow" Alt="{{w|微咸的}}" />
+  </liquid>
+<!-- /缺口补齐 -->
+
+</liquids>

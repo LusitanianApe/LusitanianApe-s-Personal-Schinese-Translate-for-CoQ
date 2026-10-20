@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  物件名与描述（第三批：存档里频次最高的剩余 object）。
+
+  ★ 只写 DisplayName / Description.Short；每个 <object> 上都必须写
+     Load="Merge"（<objects> 默认整块替换该 object）。
+  ★ DisplayName 里的 {{color|…}} 着色标记原样保留。
+  ★ 中文不需要英语动词变位，故译文里省略 =pronouns.*= / =verb:*=。
+
+  生成器：_tools/build_batch3.py（可重跑）
+-->
+<objects Load="Merge" Lang="zh-Hans" Encoding="utf-8">
+  <object Name="Ghostly Flames" Load="Merge">
+    <part Name="Render" DisplayName="{{ghostly|幽}} {{fiery|焰}}" />
+    <part Name="Description" Short="晶状的火焰噼啪作响，舔舐着颤动的空气。" />
+  </object>
+  <object Name="Icy Vapor" Load="Merge">
+    <part Name="Render" DisplayName="{{cryogenic|寒}}雾" />
+    <part Name="Description" Short="冰晶的微粒如细小的圆环绸带般飘飞。" />
+  </object>
+  <object Name="Spectacles" Load="Merge">
+    <part Name="Render" DisplayName="眼镜" />
+    <part Name="Description" Short="两片杏仁形的玻璃嵌在金属丝框里，把世界的棱角重新磨利。" />
+  </object>
+  <object Name="Chem Cell" Load="Merge">
+    <part Name="Render" DisplayName="{{c|化学电池}}" />
+    <part Name="Description" Short="小桶之内，液态盐把离子送往阴极，生出火花。" />
+  </object>
+  <object Name="Chitinous Puma" Load="Merge">
+    <part Name="Render" DisplayName="甲壳美洲狮" />
+    <part Name="Description" Short="一片片坚硬的菌板撑起了这头猫背上的毛皮平面，宛如长满草甸的台地。它们彼此摩擦的声音，像草叶一样沙沙。" />
+  </object>
+  <object Name="Stopsvaalinn" Load="Merge">
+    <part Name="Render" DisplayName="{{R-r-K-y-Y sequence|斯托普斯瓦林}}" />
+    <part Name="Description" Short="层层积年的锈给了这面古老而扁平的星盾以立体感。它的正面绘着一个古老家族的纹章——绯红底色上缀着白色的符文。" />
+  </object>
+  <object Name="Dawnglider" Load="Merge">
+    <part Name="Render" DisplayName="曙光滑翔者" />
+    <part Name="Description" Short="皮革般的翅膀从=pronouns.possessive=闪烁的光晕里扑开烟雾，=pronouns.possessive= S 形的身躯在气流的波上起伏。=pronouns.Possessive=羽饰明亮，带着红玉髓吐息灼过的痕迹。" />
+  </object>
+  <object Name="Slumberling" Load="Merge">
+    <part Name="Render" DisplayName="沉眠兽" />
+    <part Name="Description" Short="你差点把它当成一块巨石，随后才看出=pronouns.possessive=皮上的一道褶皱——=pronouns.subjective=正缓缓吐出一口冬眠般的气息。你忽然明白了养猪人中间那句老话：永远提防大石头。" />
+  </object>
+  <object Name="Templar" Load="Merge">
+    <part Name="Description" Short="油亮刷净的锁甲挂在=pronouns.possessive=歪斜的脊背与突出的下颌上。=pronouns.possessive=纠缠的血统把=pronouns.possessive=虹膜里的颜色也一并抽走了，而=pronouns.possessive=湿润红润的嘴唇接住光，又把它甩回一抹锋利的冷笑上。" />
+  </object>
+  <object Name="Girshling" Load="Merge">
+    <part Name="Render" DisplayName="吉尔什灵" />
+    <part Name="Description" Short="星兰的唾液积在=pronouns.possessive=獠牙尖端，滴落在苍白的腿状物上。=pronouns.Subjective=在某种早已失落于时空之外的极乐震慑中颤抖，=pronouns.subjective=发出一声骄傲而刺耳的哀鸣。" />
+  </object>
+  <object Name="Cragmensch" Load="Merge">
+    <part Name="Render" DisplayName="岩人" />
+    <part Name="Description" Short="碳与硅同为四价这类念头，在丛林小村的浓稠谷风里窒息了。那位人类采集者——他攀上盘根错节的小丘，惊叹地眺望地平线，辨认出山壁上正在搅动的花岗岩碎屑，以祖传的恐惧琢磨岩石自身被赋予活动力是为了征收什么代价——他不可能知道，早在「很久以前」，诡辩家们就把化学的奇迹铭刻进了数据盘。那些奇迹对他来说，就是神物的密码。" />
+  </object>
+  <object Name="Carapace" Load="Merge">
+    <part Name="Render" DisplayName="甲壳" />
+    <part Name="Description" Short="厚实成片的骨质弯成了主人的形状。" />
+  </object>
+  <object Name="Book" Load="Merge">
+    <part Name="Description" Short="山羊皮犊纸上脆挺的书页被装订成一部抄本。" />
+  </object>
+  <object Name="Carbide Arrow" Load="Merge">
+    <part Name="Render" DisplayName="{{b|碳化物}}箭" />
+    <part Name="Description" Short="一根窄箭杆，尾端缀着鸟羽，前端安着碳化物箭头。" />
+  </object>
+  <object Name="Phial" Load="Merge">
+    <part Name="Render" DisplayName="小瓶" />
+    <part Name="Description" Short="一截短短的玻璃管，用来盛放贵重液体，转动时会闪光。" />
+  </object>
+  <object Name="Quills" Load="Merge">
+    <part Name="Render" DisplayName="棘刺" />
+    <part Name="Description" Short="成百上千的化石毛刺为躯体披上一层护甲。" />
+  </object>
+  <object Name="NightVision" Load="Merge">
+    <part Name="Render" DisplayName="{{Y|夜视}}" />
+    <part Name="Description" Short="布满神经的视网膜散射入射辐射、弯折光线，于是虹膜泛起玉色。" />
+  </object>
+  <object Name="Sandals" Load="Merge">
+    <part Name="Render" DisplayName="凉鞋" />
+    <part Name="Description" Short="一双系带鞋，鞋底被砾石路磨出弯月般的裂纹。" />
+  </object>
+  <object Name="Hologram Bracelet" Load="Merge">
+    <part Name="Render" DisplayName="{{hologram|全息}}手镯" />
+    <part Name="Description" Short="手镯的搭扣上有一颗明亮的钴蓝按钮。⏎「你以为这就是真正的=name=？它就是。」" />
+  </object>
+  <object Name="FungusPuffer" Load="Merge">
+    <part Name="Render" DisplayName="{{Y|沉思 puff}}" />
+  </object>
+  <object Name="DromadTrader" Load="Merge">
+    <part Name="Render" DisplayName="驼人商人" />
+  </object>
+  <object Name="acidLichen" Load="Merge">
+    <part Name="Render" DisplayName="巨型{{G|酸}}草" />
+  </object>
+  <object Name="ciderLichen" Load="Merge">
+    <part Name="Render" DisplayName="巨型{{R|苹果酒}}草" />
+  </object>
+  <object Name="gelLichen" Load="Merge">
+    <part Name="Render" DisplayName="巨型{{Y|凝胶}}草" />
+  </object>
+  <object Name="Corpus" Load="Merge">
+    <part Name="Render" DisplayName="{{W|科利伊斯医典}}" />
+  </object>
+  <object Name="Scrap 00" Load="Merge">
+    <part Name="Render" DisplayName="腐蚀的电路板" />
+  </object>
+</objects>

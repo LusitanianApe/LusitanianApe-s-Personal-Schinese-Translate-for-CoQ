@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<objects Encoding="utf-8">
+  <object Name="Uthabatafah" Inherits="BaseAnimal">
+    <part Name="Render" DisplayName="{{M|Uthabatafah}}" Tile="Creatures/sw_tiny_rhinox.bmp" RenderString="L" ColorString="&amp;y" DetailColor="Y" />    
+    <part Name="Brain" Wanders="false" Hostile="True"></part>
+    <stat Name="Level" Value="6"></stat>
+    <stat Name="Strength" sValue="10"></stat>
+    <stat Name="Agility" sValue="16"></stat>
+    <stat Name="Toughness" sValue="17"></stat>
+    <stat Name="Intelligence" sValue="8"></stat>
+    <stat Name="Willpower" sValue="10"></stat>
+    <stat Name="Ego" sValue="10"></stat>
+    <stat Name="AV" Value="4"></stat>
+    <stat Name="Hitpoints" Value="25"></stat>
+    <stat Name="HeatResistance" Value="20"></stat>
+    <stat Name="ColdResistance" Value="20"></stat>
+    <stat Name="AcidResistance" Value="20"></stat>
+    <stat Name="ElectricResistance" Value="20"></stat>
+    <inventoryobject Blueprint="Tiny Rhinox Hoof" Number="2"></inventoryobject>
+    <part Name="Description" Short="小蹄子以熟练的怒意拍打地面，三只小角朝天空拱起，凶悍地缩成迷你尺寸。他那石板鳞片般的小身体上，是一整座由伤疤蚀刻而成的花丝迷宫；看着像细心的宝石匠的手笔，其实是上百场小规模冲突和一次无端缩小的结果。那里，是美洲狮的爪在它被顶穿、撞上双桉树干之前划出的微小螺旋。那里，是看守长矛留下的极小三角——那位看守被压成一团血肉喂了虫。一把命运扳手夺走了 Uthabatafah 的兽性统治，但它是否也回赠了他什么？透过那无谓的狂怒，以新的尺度存在于世，是否正把他以他从前无法想象的方式与他人系在一起？"></part>
+    <skill Name="Cudgel"></skill>
+    <skill Name="Cudgel_ChargingStrike"></skill>    
+    <skill Name="Multiweapon_Fighting"></skill>
+    <skill Name="Tactics"></skill>
+    <property Name="Role" Value="Tank"></property>
+    <mutation Name="MultiHorns" Level="1"></mutation>
+    <tag Name="HasLittleHorns"/>
+    <part Name="ConversationScript" ConversationID="Uthabatafah"></part>
+    <tag Name="Pet"/>
+    <tag Name="StartingPet"/>
+    <part Name="Pettable" />
+    <tag Name="SpecialPetResponse" Value="{{M|Uthabatafah}}'s fury subsides, and he nuzzles up against you." />
+    <tag Name="PetResponse" Value="nuzzles you" />    
+    <tag Name="Gender" Value="male" />
+    <xtagGrammar Proper="true"></xtagGrammar>
+    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit"></tag>    
+    <property Name="Story" Value="Freehold_Pet_Uthabatafah_Story" />
+  </object>
+  <object Name="Tiny Rhinox Hoof" Inherits="NaturalWeapon">
+    <part Name="Render" DisplayName="小蹄子"></part>
+    <part Name="MeleeWeapon" PenBonus="0" HitBonus="0" MaxStrengthBonus="10" BaseDamage="1d2" Skill="Cudgel" Stat="Strength" Slot="Foot"></part>
+    <tag Name="UndesireableWeapon"/>
+  </object>
+</objects>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  玩家代词集汉化。
+
+  ★ 为什么需要它（实证）：
+     `=subject.itself=`               → PronounSet.Reflexive            = "yourself"
+     `=object.the.name:itsPossessor=` → PronounSet.PossessiveAdjective  = "your"
+     `=subject.Does:X=`（玩家主语）    → PronounSet.Subjective           = "you"
+     官方 `PronounSets.xml` 里 `player` 那一套全是英文，且我们原先**没有覆盖** ⇒
+     模板里凡保留 `=…itself=` / `:itsPossessor=` 的句子都会夹英文代词。
+     （实例：`用your waterskin的清水浇在yourself身上。`）
+
+  ★ 写法要点：
+     · `Name` 是键，**保持与官方逐字一致**（`player` / `plural/player`）
+     · 只写 5 个显示字段；不写 `Plural`（那是逻辑字段）
+     · 根上只写 `Lang`/`Encoding`，靠 Lang 的默认优先级排在 base 之后
+     · 不设 `EnableSelection` 等根属性（避免覆盖官方的行为开关）
+
+  生成器：_tools/build_pronounsets.py（可重跑）
+-->
+<pronounsets Lang="zh-Hans" Encoding="utf-8">
+  <pronounset Name="player"
+              Subjective="你"
+              Objective="你"
+              PossessiveAdjective="你的"
+              SubstantivePossessive="你的"
+              Reflexive="你自己" />
+  <pronounset Name="plural/player"
+              Subjective="你们"
+              Objective="你们"
+              PossessiveAdjective="你们的"
+              SubstantivePossessive="你们的"
+              Reflexive="你们自己" />
+</pronounsets>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<objects Encoding="utf-8">
+  <object Name="Esbear" Inherits="BaseHumanoid">
+    <part Name="Render" DisplayName="{{M|Esbear}}" Tile="creatures/sw_esbear.bmp" RenderString="b" ColorString="&amp;r" TileColor="&amp;Y" DetailColor="r"/>
+    <part Name="Description" Short="虽是双足行走、身着长袍凉鞋，这却不是乌尔希布人。既无棘刺，也谈不上什么技术专长，这位熊类同伴的才能在于=pronouns.possessive=那股莫名的自我之力。力量在=pronouns.possessive=眼中闪耀，尽管并无多少真正的智识。" />
+    <part Name="Corpse" CorpseChance="0" CorpseBlueprint="Bear Corpse" />
+    <part Name="Brain" Wanders="false"/>
+    <property Name="Role" Value="Skirmisher" />
+    <mutation Name="SunderMind" Level="1"></mutation>
+    <mutation Name="MentalMirror" Level="1"></mutation>
+    <part Name="RandomMutations" Mental="1" MentalLevel="1" />
+    <stat Name="Level" Value="3" />
+    <stat Name="AV" Value="4" />
+    <stat Name="Hitpoints" Value="60" />
+    <stat Name="Strength" sValue="18" />
+    <stat Name="Toughness" sValue="20" />
+    <stat Name="Willpower" sValue="20" />
+    <stat Name="Ego" sValue="16" />
+    <stat Name="Agility" sValue="16" />
+    <stat Name="Intelligence" sValue="10" />
+    <stat Name="HeatResistance" Value="10" />
+    <stat Name="ColdResistance" Value="10" />
+    <part Name="ConversationScript" ConversationID="Esbear" />
+    <inventoryobject Blueprint="Sandals" />
+    <inventoryobject Blueprint="Cloth Robe" />		
+    <tag Name="PetResponse" Value="pets you back,hums,sneezes,yawns,falls briefly asleep,snuffles your arm,rests a paw gently upon your face" />
+    <part Name="Pettable" />
+    <tag Name="Pet"/>
+    <tag Name="StartingPet" />
+    <property Name="Story" Value="Freehold_Pet_Esbear_Story" />
+    <tag Name="NoXP"></tag>
+    <tag Name="Gender" Value="male" />		
+    <xtagGrammar Proper="true" />
+		<tag Name="Species" Value="bear" />
+    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
+  </object>
+</objects>

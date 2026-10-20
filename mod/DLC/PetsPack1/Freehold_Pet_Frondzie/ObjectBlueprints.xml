@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<objects Encoding="utf-8">
+  <object Name="Frondzie" Inherits="MutatedVine">
+    <part Name="Render" DisplayName="{{M|Frondzie}}" Tile="creatures/sw_pet_vine.bmp" ColorString="&amp;g" DetailColor="G" />
+    <part Name="Description" Short="他像一条油滑的毛虫，靠着无数小叶挪动前行，一路蹭着走，永远在为自己那套滑不留手的俏皮话寻找配得上它的听众。"></part>
+    <part Name="ConversationScript" ConversationID="Frondzie" />
+    <stat Name="Level" Value="2"></stat>
+    <stat Name="AV" Value="4"></stat>
+    <stat Name="Hitpoints" Value="90"></stat>
+    <stat Name="HeatResistance" Value="10" />
+    <stat Name="ColdResistance" Value="10" />
+    <stat Name="AcidResistance" Value="10" />
+    <stat Name="ElectricResistance" Value="10" />
+    <part Name="PetFrondzie"></part>
+    <part Name="Pettable" />    
+    <tag Name="SpecialPetResponse" Value="{{M|Frondzie}} says, 'Yowza! That was the pet of the month!'" />
+    <tag Name="Pet"/>
+    <tag Name="StartingPet"/>
+    <xtagGrammar Proper="true"></xtagGrammar>
+    <tag Name="PronounSet" Value="xe/xem/xyr" />
+    <property Name="Story" Value="Freehold_Pet_Frondzie_Story" />
+    <inventoryobject Blueprint="Slap Stick" Number="2"></inventoryobject>
+    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
+  </object>
+  <object Name="Slap Stick" Inherits="NaturalWeapon">
+    <part Name="Render" DisplayName="拍击棍" />
+    <part Name="Description" Short="这片长而锋利的叶子被改造过，用来接手外交谈崩之后的事。" />
+    <part Name="MeleeWeapon" PenBonus="0" BaseDamage="1d4" Skill="LongBlades" Stat="Strength" Slot="Hand" />
+    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
+  </object>
+</objects>

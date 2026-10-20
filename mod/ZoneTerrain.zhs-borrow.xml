@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<objects Encoding="utf-8">
+  <!-- 译文基准取自 210.20 前人汉化（_ref\机翻参考-210.20v5）。
+       本文件为 Load="Merge" 增量：只补 ZoneTerrain.xml 里尚未汉化的对象。
+       已做确定性预处理：修正拼写错误槽 / 自造中文槽 / 双「的」/ 动词槽。 -->
+  <object Name="Plant" Load="Merge">
+    <part Name="Render" DisplayName="[植物]" />
+  </object>
+  <object Name="Fracti" Load="Merge">
+    <part Name="Render" DisplayName="分形棘丛" />
+    <part Name="Description" Short="一种特别多刺的皮亚诺植物群落。" />
+  </object>
+  <object Name="Yempuris" Load="Merge">
+    <part Name="Render" DisplayName="耶姆普里斯菲" />
+    <part Name="Description" Short="绿色的小叶泡泡排列成快速生长的晶格环。生长的速度如同魔法般迅速；这里捕捉到了植物世界坚定而不断前进的意志，速度达到了百万倍。" />
+  </object>
+  <object Name="Fungus" Load="Merge">
+    <part Name="Render" DisplayName="[真菌]" />
+  </object>
+  <object Name="Crystal" Load="Merge">
+    <part Name="Render" DisplayName="[水晶]" />
+  </object>
+  <object Name="PaintedFlowers" Load="Merge">
+    <part Name="Render" DisplayName="盐石小径" />
+  </object>
+  <object Name="StiltTile" Load="Merge">
+    <part Name="Render" DisplayName="白色瓷砖" />
+  </object>
+  <object Name="Bridge" Load="Merge">
+    <part Name="Render" DisplayName="桥" />
+    <part Name="Description" Short="砖块矩形铺成的小径" />
+  </object>
+  <object Name="Stairs" Load="Merge">
+    <part Name="Render" DisplayName="楼梯" />
+  </object>
+  <object Name="StairsUp" Load="Merge">
+    <part Name="Render" DisplayName="上楼梯" />
+    <part Name="Description" Short="上升的楼梯上绽放着尘埃之花。" />
+  </object>
+  <object Name="StairsDown" Load="Merge">
+    <part Name="Render" DisplayName="下楼梯" />
+    <part Name="Description" Short="光线从下降的楼梯上逐渐消失。" />
+  </object>
+  <object Name="OpenShaft2" Load="Merge">
+    <part Name="Render" DisplayName="深坑" />
+    <part Name="Description" Short="黑暗从空旷的空间中涌出。" />
+  </object>
+  <object Name="Pit" Load="Merge">
+    <part Name="Render" DisplayName="开阔空间" />
+    <part Name="Description" Short="空间中没有固体障碍物。" />
+  </object>
+  <object Name="TombShaft" Load="Merge">
+    <part Name="Render" DisplayName="深坑" />
+    <part Name="Description" Short="黑暗从空旷的空间中涌出。" />
+  </object>
+  <object Name="CyanMarbleWalkway" Load="Merge">
+    <part Name="Description" Short="大理石的矩形铺成镶嵌的路面。" />
+  </object>
+</objects>

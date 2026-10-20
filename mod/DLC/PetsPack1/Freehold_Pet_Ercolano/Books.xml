@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<books Encoding="utf-8">
+  <book ID="Freehold_Pet_Ercolano_Story" Title="{{W|家具符号学}}" Format="Auto" Margins="1,2,2,2">
+    <page>{{w|门}}
+
+* 名字是拟声的，取自它们打开时发出的声音（「吱————呀」）
+* 对双向性有古怪的执念
+* 「虚掩」的双关和敲门的笑话
+* 被不公正地塞满了变化与过渡的隐喻包袱，其实它们只是站在那儿
+
+{{w|墙}}
+
+* 边界感清晰
+* 像撬锁工具一样，用处常取决于尺寸
+* 想象里面可能住着什么，既有趣（又有产出）
+
+{{w|桌}}
+
+* 自然界的役马
+* 我们「收藏」妄想的徽记（本是为把事情办成而设，却远更擅长让东西堆在上面）
+* 容许一个本体论上的下层空间
+* 「桌腿」
+
+{{w|椅}}
+
+* 在变动不居的世界里邀你静下来
+* 它们让你变矮
+* 形式追随功能
+* 也是「腿」
+    </page>
+  </book>
+  <book ID="ErcolanoSitSayings" Title="ErcolanoSitSayings">
+    <page>呜。</page>
+    <page>噢噢！</page>
+    <page>这就对了。</page>
+    <page>嘿。</page>
+    <page>呜。</page>
+    <page>呜————。</page>
+    <page>歇着吧，朋友。</page>
+    <page>噢————。</page>
+    <page>嘿嘿。</page>
+    <page>凤……凤尾绿咬鹃！</page>
+  </book>
+</books>

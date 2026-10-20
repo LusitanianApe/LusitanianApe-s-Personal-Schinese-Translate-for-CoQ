@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  物件名与描述（第二批：存档里出现过的生物）。
+
+  ★ 只写 DisplayName / Description.Short；每个 <object> 上都必须写
+     Load="Merge"（<objects> 默认整块替换该 object）。
+     Inherits / <stat> / <tag> / <part> 一律不碰。
+
+  ★ 保留 =pronouns.*= / =verb:*= 占位符原样：
+     它们是官方语法，第一遍替换 =pronouns.=，第二遍替换 =verb:。
+
+  生成器：_tools/build_batch2.py（可重跑）
+-->
+<objects Load="Merge" Lang="zh-Hans" Encoding="utf-8">
+  <object Name="Glowfish" Load="Merge">
+    <part Name="Render" DisplayName="光鱼" />
+    <part Name="Description" Short="水面之下，点点荧光穿梭游弋。" />
+  </object>
+  <object Name="Dawnglider Corpse" Load="Merge">
+    <part Name="Render" DisplayName="曙光滑翔者尸体" />
+    <part Name="Description" Short="碎裂的鳞片与烧焦的羽毛平铺成整齐的嵌纹。" />
+  </object>
+  <object Name="Giant Beetle" Load="Merge">
+    <part Name="Render" DisplayName="巨型甲虫" />
+    <part Name="Description" Short="山羊大小的虫子背上，闪亮的黑色鞘翅轻轻颤动。" />
+  </object>
+  <object Name="Prism Perch" Load="Merge">
+    <part Name="Render" DisplayName="棱晶鲈" />
+    <part Name="Description" Short="一群乳白色的鱼旋成漩涡，没有眼睑的眼睛齐齐瞪出。" />
+  </object>
+  <object Name="Sprouting Orb" Load="Merge">
+    <part Name="Render" DisplayName="萌芽之球" />
+    <part Name="Description" Short="生命的绽放之环挣脱了它们的碳质球胎。" />
+  </object>
+  <object Name="Life Sap" Load="Merge">
+    <part Name="Render" DisplayName="命液" />
+    <part Name="Description" Short="它裹在薄膜般的翅里，举起一支血色的吸喙。" />
+  </object>
+  <object Name="Bloated Pearlfrog Corpse" Load="Merge">
+    <part Name="Render" DisplayName="肿胀的珍珠蛙尸体" />
+    <part Name="Description" Short="张开的脚掌与开裂的腿蜷在一具巨大的扁平身躯下。" />
+  </object>
+  <object Name="Snapjaw Corpse" Load="Merge">
+    <part Name="Render" DisplayName="咬颚兽尸体" />
+    <part Name="Description" Short="一堆湿毛与腐肉让地面稍稍隆起。" />
+  </object>
+  <object Name="Apothecary" Load="Merge">
+    <part Name="Render" DisplayName="药师" />
+    <part Name="Description" Short="研碎的细药草粉末沾在年迈的捣药指节上。" />
+  </object>
+  <object Name="BaseStatSap" Load="Merge">
+    <part Name="Render" DisplayName="属性液" />
+    <part Name="Description" Short="它裹在薄膜般的翅里，举起一支钻透组织的吸喙。" />
+  </object>
+  <object Name="Dog" Load="Merge">
+    <part Name="Render" DisplayName="野狗" />
+    <part Name="Description" Short="它是一团龇牙咧嘴的乱毛。" />
+  </object>
+  <object Name="Lagroot" Load="Merge">
+    <part Name="Render" DisplayName="迟根" />
+    <part Name="Description" Short="多刺的根须分叉成神经元的模样。它们的枝状块茎静候着绑缚。" />
+  </object>
+  <object Name="Woodsprog Corpse" Load="Merge">
+    <part Name="Render" DisplayName="林蛙尸体" />
+    <part Name="Description" Short="一堆湿叶、根缚与腐肉让地面稍稍隆起。" />
+  </object>
+  <object Name="Girshling Fangs" Load="Merge">
+    <part Name="Render" DisplayName="吉尔什灵獠牙" />
+    <part Name="Description" Short="一对钙化的尖桩被血统磨利，专为刺穿层层皮肉。" />
+  </object>
+  <object Name="Aloe Fugues" Load="Merge">
+    <part Name="Render" DisplayName="芦荟赋格" />
+    <part Name="Description" Short="斑驳的叶管呈莲座状铺开。它们都带着同样的瑕疵。" />
+  </object>
+  <object Name="GiantDragonfly" Load="Merge">
+    <part Name="Render" DisplayName="巨蜻蜓" />
+    <part Name="Description" Short="宽大的透明翅膀拍击空气，它悬停在原地嗡嗡作响。" />
+  </object>
+  <object Name="Scribe" Load="Merge">
+    <part Name="Render" DisplayName="书吏" />
+    <part Name="Description" Short="它的眼镜起雾了，双手沾满墨迹。" />
+  </object>
+  <object Name="Qudzu" Load="Merge">
+    <part Name="Render" DisplayName="{{r|库祖}}" />
+    <part Name="Description" Short="纠结的叶丛随气流摇摆，把吸干水分的锈屑洒在地上。" />
+  </object>
+  <object Name="Salamander" Load="Merge">
+    <part Name="Render" DisplayName="火蜥" />
+    <part Name="Description" Short="深红、珊瑚与柠檬色的卵形斑点像一串群岛散布在它的背颈上。" />
+  </object>
+  <object Name="Mechanimist Pilgrim" Load="Merge">
+    <part Name="Render" DisplayName="机械信徒朝圣者" />
+    <part Name="Description" Short="这位朝圣者一身谦卑的装束：朴素的罩袍、宽檐帽、天青色围巾、佝偻的背，还有疲惫的眼睛。" />
+  </object>
+  <object Name="Giant Centipede" Load="Merge">
+    <part Name="Render" DisplayName="巨蜈蚣" />
+    <part Name="Description" Short="数十条腿窸窣作响，把闪亮的身躯扭成 S 形，宛如一具巨人的脊椎。" />
+  </object>
+  <object Name="Irritable Palm" Load="Merge">
+    <part Name="Render" DisplayName="暴躁棕榈" />
+    <part Name="Description" Short="白云母般的叶丛在矿质的重压下低垂。凡靠近并遮蔽它阳光的东西，都要为这桩过错挨上一顿鞭打。" />
+  </object>
+  <object Name="Urchin Belcher" Load="Merge">
+    <part Name="Render" DisplayName="吐胆鱼" />
+    <part Name="Description" Short="海胆黏在它洞穴般大嘴的滑腻组织上，柔软的鳍拖着这具庞然鱼身在地面爬行。" />
+  </object>
+  <object Name="MechaPowerCore" Load="Merge">
+    <part Name="Render" DisplayName="机甲动力核心" />
+    <part Name="Description" Short="一笼灼热的热核洪流被半导体捆缚着。外壳上留有便于搬运的凹槽。" />
+  </object>
+  <object Name="Purple Jell" Load="Merge">
+    <part Name="Render" DisplayName="紫色凝胶" />
+    <part Name="Description" Short="滚烫的沸腾酒海在它内侧喷涌起泡沫，外侧则压满了溶解的叶片。" />
+  </object>
+  <object Name="Ice frog" Load="Merge">
+    <part Name="Render" DisplayName="冰蛙" />
+    <part Name="Description" Short="它吞咽着、颤抖着，从结霜的鼻孔里抖落一簇簇冰屑。" />
+  </object>
+  <object Name="Salthopper" Load="Merge">
+    <part Name="Render" DisplayName="盐跳虫" />
+    <part Name="Description" Short="一颗鼓眼头颅与一具日盐白色的拉长胸节，靠六条弹跳的腿蓄势跃入空中。" />
+  </object>
+  <object Name="Interdictor" Load="Merge">
+    <part Name="Render" DisplayName="阻断者" />
+    <part Name="Description" Short="它悬停在半空，冷冷地注视着下方。" />
+  </object>
+  <object Name="BaseGoat" Load="Merge">
+    <part Name="Render" DisplayName="山羊" />
+  </object>
+  <object Name="BaseSwine" Load="Merge">
+    <part Name="Render" DisplayName="猪" />
+  </object>
+  <object Name="BaseBaboon" Load="Merge">
+    <part Name="Render" DisplayName="狒狒" />
+    <part Name="Description" Short="湿漉漉的鼻孔在它下垂的口鼻根部翕动着。" />
+  </object>
+  <object Name="Qudzu_Frond" Load="Merge">
+    <part Name="Render" DisplayName="库祖叶" />
+  </object>
+</objects>

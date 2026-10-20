@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<conversations Encoding="utf-8">
+  <conversation ID="Ebenshabat">
+    <node ID="Start">
+      <text>
+        哈哈，朋友！
+      </text>
+      <choice GotoID="Muse">Ebenshabat，为我沉思吧。</choice>
+      <choice GotoID="Fight">朋友，你不参与战斗吗？</choice>
+      <choice GotoID="Recipe">你愿意教一道新菜谱吗？</choice>      
+      <choice GotoID="End">甜蜜的道别，朋友。</choice>
+    </node>
+    <node ID="Muse">
+      <text>
+        <text>朋友，是否存在另一根反向极性的纺锤？它不朝广阔天空向上钻，而是朝世界的中心钻去？</text>
+        <text>想想螃蟹，朋友。哦？就只做这件事。想想螃蟹。</text>
+        <text>圈环何其多啊，朋友，一环套一环，彼此嵌套。我的心智、我的躯体、住在我躯体裂缝里的小生灵、我的朋友们、我那片有毒的丛林家园。我的行星。它们的边界都不稳定，朋友。</text>
+        <text>汁水算是一种汤吗？</text>
+        <text>「反说」这个概念令我惊叹。我不把词语诞生到世上，而是从别人嘴里把它吞掉，永远囚禁起来。</text>
+        <text>看哪，朋友！一只光鸦！哈哈哈！万一那是真的呢？</text>
+        <text>求知的追求何其古怪！我坚持坐在同一棵星苹果树下，却拒绝在坐在那里时想同样的念头！</text>
+        <text>有个白胡子老头曾告诉我，我们的现实之所以为真，只因为它是一片虚构现实之云的近似。哈！</text>
+        <text>你若闭上眼，啃星苹果的声音就和丛林小径上踩碎落叶一模一样。只要那样专注，两种体验便合而为一。</text>
+        <text>朋友，你的心智从你的大脑里长出来，就像分形枝从根里长出来一样。</text>
+        <text>朋友，你可曾怀疑过你的意志只是幻觉，也许是一个决定论系统逃避现实的幻想？</text>
+        <text>我们就是食者所梦见的人吗？</text>
+        <text>我读到过一个生灵，他从自己背上种出了一个朋友。哈哈！</text>
+        <text>若你一分为二，你会送给自己什么温柔的礼物？</text>
+        <text>影子很长，朋友，而世界静止不动。</text>
+        <text>我确实很享受我们的交谈，朋友！</text>
+        <text>有时我假装在清点古往今来每一只咬颚兽。那个数目，你装得进脑子里吗？装得进心里吗？</text>
+        <text>慢下来，用手指抚过那大理石，朋友。</text>
+        <text>我曾听人说，山丘不过是石头随时间起伏的波形图上的脉冲。</text>
+        <text>那些必须永远在年轻人心智中诞生的东西，我们该管这一集合叫什么？</text>
+      </text>
+      <choice GotoID="Muse">再沉思些吧，朋友。</choice>
+      <choice GotoID="Fight">朋友，你不参与战斗吗？</choice>
+      <choice GotoID="Recipe">你愿意教一道新菜谱吗？</choice>
+      <choice GotoID="End">甜蜜的道别，朋友。</choice>
+    </node>
+    <node ID="Recipe">
+      <text>
+        哈哈哈，朋友！你得等果子熟透。
+      </text>
+      <choice GotoID="Muse">Ebenshabat，为我沉思吧。</choice>
+      <choice GotoID="Fight">朋友，你不参与战斗吗？</choice>
+      <choice GotoID="End">甜蜜的道别，朋友。</choice>
+    </node>
+    <node ID="Fight">
+      <text>
+        我不介意，朋友！
+      </text>
+      <choice GotoID="Muse">Ebenshabat，为我沉思吧。</choice>
+      <choice GotoID="Recipe">你愿意教一道新菜谱吗？</choice>
+      <choice GotoID="End">甜蜜的道别，朋友。</choice>
+    </node>
+  </conversation>
+</conversations>

@@ -1,0 +1,11 @@
+{
+    "ID": "LusitanianApe_QudZhsCookbook",
+    "Title": "L什么什么什么的个人汉化",
+    "Description": "简体中文汉化（含变异界面、技能、对话、苏丹史、随机书籍）。\n\n本模组采用 CC BY-NC-SA 4.0 许可（全文见包内 LICENSE）。\n部分译文借自社区汉化 210.20v5，来源与署名详见包内 THIRD_PARTY_NOTICES.md。\nQQ 群 806934700。",
+    "Version": "1.0.0.1",
+    "Author": "LusitanianApe",
+    "Tags": "Localization,Translation,Books",
+    "LoadAfter": [
+        "FreeholdGames_DLC_PetsPack1"
+    ]
+}

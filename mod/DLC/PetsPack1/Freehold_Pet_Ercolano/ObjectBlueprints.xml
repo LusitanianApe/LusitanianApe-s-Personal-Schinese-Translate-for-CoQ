@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<objects Encoding="utf-8">
+  <object Name="Ercolano" Inherits="BaseChair">
+    <part Name="Render" DisplayName="{{M|Ercolano}}" Tile="Items/sw_chair_rocking.bmp" ColorString="&amp;w" DetailColor="y" />
+    <part Name="Description" Short="一位隐秘的雕工把螺旋纹理的木料箍成「崇高之角」，共三处：头枕与两条摇杆。椅背长板上有一小段铭文，声称木料是从悬山某位埃米尔的宫苑林里偷来、走私过霍姆斯三角洲的。在那里，这位神秘的生客从木中做出一种朴素的美。可还施了别的什么工作台巫术？这椅子会自行摇动，它紧绷的摩擦尖叫，对肯听的人来说是一种新娘的语言。"></part>
+    <tag Name="BodyType" Value="RockingChair" />
+    <builder Name="Animated" ChanceOneIn="1" />
+    <part Name="ConversationScript" ConversationID="Ercolano" />
+    <stat Name="Level" Value="1"></stat>
+    <stat Name="AV" Value="8"></stat>
+    <stat Name="Hitpoints" Value="300"></stat>
+    <tag Name="PetResponse" Value="rocks gently" />
+    <part Name="Pettable" />
+    <tag Name="Pet" />
+    <tag Name="StartingPet" />
+    <part Name="Preacher" Book="ErcolanoSitSayings" Prefix="Ercolano says, {{W|'" Frozen="Ercolano mumbles inaudibly, encased in ice." inOrder="false" ChatWait="20"></part>
+    <part Name="PreachOnSit" />
+    <inventoryobject Blueprint="Quilted Shawl" />
+    <inventoryobject Blueprint="Crowfeather Pillow" />
+    <xtagGrammar Proper="true"></xtagGrammar>
+    <property Name="Story" Value="Freehold_Pet_Ercolano_Story" />
+    <tag Name="AnimatedInventoryPopulationTable" Value="ErcolanoInventory"/>
+    <tag Name="Gender" Value="nonspecific" />
+    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
+    <tag Name="NoCombat"></tag>
+    <tag Name="NoAnimatedNamePrefix"></tag>
+  </object>
+  <object Name="Crowfeather Pillow" Inherits="BaseArmor">
+    <part Name="Armor" AV="0" DV="0" Heat="10" Cold="10" WornOn="Body"></part>
+    <part Name="Render" DisplayName="{{m|鸦羽}}枕" RenderString="]" Tile="items/sw_cushion1.bmp" ColorString="&amp;Y" DetailColor="y"></part>
+    <part Name="Commerce" Value="4"></part>
+    <part Name="Description" Short="柔软的绒羽光鸦羽毛被塞进一只针织套里。"></part>
+    <part Name="Physics" Weight="1" Organic="true" Category="Clothes"></part>
+    <tag Name="Tier" Value="1"></tag>
+    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
+  </object>
+</objects>

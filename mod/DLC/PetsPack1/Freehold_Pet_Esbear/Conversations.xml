@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<conversations Encoding="utf-8">
+  <conversation ID="Esbear">
+    <node ID="Start">
+      <text>
+        <text>哦。是的，你好。</text>
+        <text>Oh.</text>
+        <text>嗯？哦。你好啊，朋友。</text>
+        <text>我在想星苹果。</text>
+        <text>我在考虑肉。</text>
+        <text>我在琢磨蜂蜜。</text>
+        <text>我实在很喜欢苹果玛茨。</text>
+        <text>也许我想要。一碗「那粥」。</text>
+        <text>香料苹果酒。正合适。不是吗？</text>
+        <text>玛拉赫汤。多加玛茨。请给我这个。</text>
+        <text>我们下次扎营时。要是有些苹果和蜂蜜就好了。你觉得呢？</text>
+        <text>你见过那只熊吗？住在静水里的那只。它非常害羞。但看着挺友善。</text>
+        <text>我最不喜欢的事。就是有虫子钻进你耳朵里。</text>
+        <text>呸！……哦！抱歉。我吃到一片叶子。不得不吐出来。</text>
+        <text>你有没有过。就是想走？往东和往南？</text>
+        <text>任凭心智多么精妙。谁抵挡得住？一顿美餐呢？</text>
+        <text>我们上顿饭到现在有阵子了，对吧？</text>
+        <text>我不喜欢。咬任何人。我是个求道者？求那「不咬之道」</text>
+        <text>旅行很好，但休息也很好。</text>
+        <text>说实话，我只在林子里方便——前提是我在林子里。我并不总在林子里。</text>
+        <text>我遇到的大多数灵能者都极不友善。真遗憾。我们本可以分享水和蜂蜜，那样一切就都好了。</text>
+        <text>我曾翻过一座山。以为会看到些什么。我从没见过的东西。翻过山顶之后。我失望地发现。山的另一面？与我才离开的那一面？惊人地相似。山到底有什么用？</text>
+      </text>
+      <choice GotoID="End">活下去，喝足水，Esbear。</choice>
+    </node>
+  </conversation>
+</conversations>

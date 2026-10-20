@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<objects>
+  <!-- ★ 官方定义在 `ObjectBlueprints/TutorialStaging.xml`。
+       新建此覆盖文件（此前我方没有）⇒ 补教学关那一只的显示名。
+       生成：_tools\_fix_last2.py -->
+  <object Name="TutorialClockworkBeetlePariah" Load="Merge">
+    <part Name="Render" DisplayName="发条甲虫及其族人的弃子" />
+  </object>
+</objects>

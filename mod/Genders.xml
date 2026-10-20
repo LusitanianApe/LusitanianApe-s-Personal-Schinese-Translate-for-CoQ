@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  性别词（Genders.xml）汉化。
+
+  ★ 为什么需要它：
+     `=pronouns.formalAddressTerm=` 是**直接呼语**（游戏里 24 处），例如
+       「Tell me, =pronouns.formalAddressTerm=, was it the picture of wonder…」
+     13 个性别的呼语都会进句子（man/woman/hartind/buck/my doe/person/friend…），
+     我方此前**没有这个文件** ⇒ 这些词全部夹英文。
+
+  ★ 覆盖机制（反编译 XRL.World.Gender::LoadGenderNode 实证）：
+       if (!Genders.TryGetValue(Name, out Value)) { … Genders.Add(Name, Value); }
+       GetAttribute("Subjective") → 非空才赋值；GetAttribute("FormalAddressTerm") → 同
+     ⇒ **逐字段增量覆盖**：只写要改的字段，其余保留官方英文值。
+     ⇒ 不需要 <removegender>（那是给「想删掉某个性别」用的）。
+
+  ★ 代词（Subjective 等）本身走 PronounSets.xml；这里一并给出中文，
+     使 Genders 自动复制出的代词集也是中文。
+
+  ★ 风格：保留设定词 —— hartind→哈廷德、elverson→埃尔弗森；
+     buck/my doe 是欣德伦对雄/雌的称呼，译作「雄鹿」「吾之母鹿」以存意象。
+     中文代词不区分性别，故 male/female/hartind/elverson 的代词基本相同。
+
+  生成器：_tools/build_genders.py（可重跑）
+-->
+<genders Lang="zh-Hans" Encoding="utf-8">
+  <gender Name="neuter"
+          Subjective="它"
+          Objective="它"
+          PossessiveAdjective="它的"
+          SubstantivePossessive="它的"
+          Reflexive="它自己" />
+
+  <gender Name="nonspecific"
+          Subjective="他"
+          Objective="他"
+          PossessiveAdjective="他的"
+          SubstantivePossessive="他的"
+          Reflexive="他自己" />
+
+  <gender Name="neuterperson"
+          Subjective="它"
+          Objective="它"
+          PossessiveAdjective="它的"
+          SubstantivePossessive="它的"
+          Reflexive="它自己" />
+
+  <gender Name="male"
+          Subjective="他"
+          Objective="他"
+          PossessiveAdjective="他的"
+          SubstantivePossessive="他的"
+          Reflexive="他自己"
+          PersonTerm="男人"
+          ImmaturePersonTerm="男孩"
+          FormalAddressTerm="朋友"
+          OffspringTerm="儿子"
+          SiblingTerm="兄弟"
+          ParentTerm="父亲" />
+
+  <gender Name="female"
+          Subjective="她"
+          Objective="她"
+          PossessiveAdjective="她的"
+          SubstantivePossessive="她的"
+          Reflexive="她自己"
+          PersonTerm="女人"
+          ImmaturePersonTerm="女孩"
+          FormalAddressTerm="朋友"
+          OffspringTerm="女儿"
+          SiblingTerm="姐妹"
+          ParentTerm="母亲" />
+
+  <gender Name="plural"
+          Subjective="他们"
+          Objective="他们"
+          PossessiveAdjective="他们的"
+          SubstantivePossessive="他们的"
+          Reflexive="他们自己"
+          PersonTerm="人们"
+          ImmaturePersonTerm="孩子们"
+          FormalAddressTerm="诸位"
+          OffspringTerm="孩子们"
+          SiblingTerm="同胞"
+          ParentTerm="双亲" />
+
+  <gender Name="collective"
+          Subjective="他们"
+          Objective="他们"
+          PossessiveAdjective="他们的"
+          SubstantivePossessive="他们的"
+          Reflexive="他们自己"
+          PersonTerm="人类"
+          ImmaturePersonTerm="孩子们"
+          FormalAddressTerm="诸位"
+          OffspringTerm="孩子们"
+          SiblingTerm="同胞"
+          ParentTerm="双亲" />
+
+  <gender Name="males"
+          Subjective="他们"
+          Objective="他们"
+          PossessiveAdjective="他们的"
+          SubstantivePossessive="他们的"
+          Reflexive="他们自己"
+          PersonTerm="男人们"
+          ImmaturePersonTerm="男孩们"
+          FormalAddressTerm="诸位"
+          OffspringTerm="儿子们"
+          SiblingTerm="兄弟们"
+          ParentTerm="父亲们" />
+
+  <gender Name="females"
+          Subjective="她们"
+          Objective="她们"
+          PossessiveAdjective="她们的"
+          SubstantivePossessive="她们的"
+          Reflexive="她们自己"
+          PersonTerm="女人们"
+          ImmaturePersonTerm="女孩们"
+          FormalAddressTerm="诸位"
+          OffspringTerm="女儿们"
+          SiblingTerm="姐妹们"
+          ParentTerm="母亲们" />
+
+  <gender Name="hindren male"
+          Subjective="他"
+          Objective="他"
+          PossessiveAdjective="他的"
+          SubstantivePossessive="他的"
+          Reflexive="他自己"
+          PersonTerm="男人"
+          ImmaturePersonTerm="幼鹿"
+          FormalAddressTerm="雄鹿"
+          OffspringTerm="儿子"
+          SiblingTerm="兄弟"
+          ParentTerm="父亲" />
+
+  <gender Name="hindren female"
+          Subjective="她"
+          Objective="她"
+          PossessiveAdjective="她的"
+          SubstantivePossessive="她的"
+          Reflexive="她自己"
+          PersonTerm="女人"
+          ImmaturePersonTerm="幼鹿"
+          FormalAddressTerm="吾之母鹿"
+          OffspringTerm="女儿"
+          SiblingTerm="姐妹"
+          ParentTerm="母亲" />
+
+  <gender Name="hartind"
+          Subjective="佢"
+          Objective="佢"
+          PossessiveAdjective="佢的"
+          SubstantivePossessive="佢的"
+          Reflexive="佢自己"
+          PersonTerm="哈廷德"
+          ImmaturePersonTerm="幼鹿"
+          FormalAddressTerm="哈廷德"
+          OffspringTerm="孩子"
+          SiblingTerm="同胞"
+          ParentTerm="双亲" />
+
+  <gender Name="elverson"
+          Subjective="佢"
+          Objective="佢"
+          PossessiveAdjective="佢的"
+          SubstantivePossessive="佢的"
+          Reflexive="佢自己"
+          PersonTerm="人"
+          ImmaturePersonTerm="孩子"
+          FormalAddressTerm="朋友"
+          OffspringTerm="孩子"
+          SiblingTerm="同胞"
+          ParentTerm="双亲" />
+
+</genders>

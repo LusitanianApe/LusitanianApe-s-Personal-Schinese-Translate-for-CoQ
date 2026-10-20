@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<populations Encoding="utf-8">
+  <population Name="ErcolanoInventory">
+    <group Name="Items" Style="pickeach">
+      <object Blueprint="Quilted Shawl"></object>
+      <object Blueprint="Crowfeather Pillow"></object>
+    </group>
+  </population>
+</populations>

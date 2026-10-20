@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<objects Encoding="utf-8">
+  <object Name="Gloaming" Inherits="BaseBird">
+    <part Name="Render" DisplayName="{{M|Gloaming}}" Tile="creatures/sw_bird_owl.bmp" RenderString="b" ColorString="&amp;K" DetailColor="y" />
+    <part Name="Description" Short="两只大眼睁开，像另一界的明亮湖岸。仅仅是看这一动作，就把你自己的目光困在它们的洋流里；你被拖过一列列幽影般的形体，淹死在它们的黑水之中，然后才浮回你所熟悉、能浮起你的世界的水面。此刻那只光滑覆羽的鸟对你看得见了，被远处的微光从背后照亮。当=pronouns.subjective=拍去=pronouns.possessive=翅上的影子时，它们似乎呈现出别的东西的形状。" />
+    <mutation Name="Wings" Level="10" />
+    <stat Name="Level" Value="99" />
+    <part Name="ConversationScript" ConversationID="Gloaming" />
+    <part Name="PetGloaming" />
+    <tag Name="Pet" />
+    <tag Name="StartingPet" />
+    <part Name="Pettable" />
+    <part Name="AITryKeepDistance" />
+    <tag Name="PetResponse" Value="hoots" />
+    <property Name="Story" Value="Freehold_Pet_Gloaming_Story" />
+    <part Name="CannotBeInfluenced" Messages="default::=subject.The==subject.name= =verb:are= insensible to your blandishments." />
+    <part Name="NoDamage" />
+    <tag Name="Nullphase" />
+    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
+    <tag Name="NoXP" />
+		<tag Name="NoCombat" />
+    <tag Name="Gender" Value="nonspecific" />
+    <xtagGrammar Proper="true" />
+  </object>
+</objects>

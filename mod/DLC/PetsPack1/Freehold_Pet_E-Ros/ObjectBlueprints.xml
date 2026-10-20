@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<objects Encoding="utf-8">
+  <object Name="E-Ros" Inherits="BaseRobot">
+    <part Name="Render" DisplayName="{{M|E-Ros}}" Tile="creatures/sw_eros.bmp" ColorString="&amp;c" DetailColor="R" />
+    <part Name="Description" Short="触角从=pronouns.possessive=宽大的锡质面孔上以恰到好处的角度张开，构成「爱之锥台」——一种在现象学上被证明能唤醒灵魂、使其充盈肉体的形状——而=pronouns.possessive=表情则是一册沟槽地图，读起来只像迟钝的渴望。"></part>
+    <part Name="ConversationScript" ConversationID="E-Ros" />
+    <stat Name="Level" Value="3"></stat>
+    <stat Name="AV" Value="4"></stat>
+    <stat Name="Willpower" sValue="14"></stat>
+    <stat Name="Agility" sValue="16"></stat>
+    <stat Name="Hitpoints" Value="50"></stat>
+    <part Name="Fetches" SniffMessage="=subject.The==subject.name= =verb:scan= the area for gifts." FetchMessage="=subject.The==subject.name= =verb:dart= off to grab "></part>
+    <part Name="Preacher" Book="ERosProclamations" Prefix="E-Ros says, {{W|'" Frozen="E-Ros mumbles inaudibly, encased in ice." inOrder="false" ChatWait="20"></part>
+    <part Name="PreachOnPartyCombat"></part>
+    <mutation Name="ForceWall" Level="6" />
+    <mutation Name="ErosTeleportation" Level="5"></mutation>
+    <inventoryobject Blueprint="E-Ros_LoveCudgel" Number="2"></inventoryobject>
+    <part Name="Pettable" />
+    <tag Name="PetResponse" Value="beams in delight" />
+    <tag Name="Pet"/>
+    <tag Name="StartingPet"/>
+    <xtagGrammar Proper="true"></xtagGrammar>
+    <property Name="Story" Value="Freehold_Pet_E-Ros_Story" />
+    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
+  </object>
+  <object Name="E-Ros_LoveCudgel" Inherits="NaturalWeapon">
+    <part Name="MeleeWeapon" BaseDamage="1d2" Skill="Cudgel" Stat="Strength" Slot="Hand" />
+    <part Name="Render" DisplayName="{{R|爱之}}{{c|棍}}" />
+    <part Name="Metal" />
+  </object>
+</objects>

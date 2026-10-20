@@ -1,0 +1,71 @@
+// ============================================================================
+//  可选方案：完全自定义 Part（"更彻底的部件接管"）
+//  ---------------------------------------------------------------------------
+//  为什么默认不启用：
+//    这个文件需要**准确知道** Part 的基类、事件 ID 与事件处理签名才能编译通过。
+//    而"编译失败"会让整个模组（含 XML）一起加载失败，所以在没有反编译确认前，
+//    默认让它保持 .disabled 后缀（游戏只编译 .cs，不会看这个文件）。
+//
+//  启用步骤：
+//    1. 用 ILSpy 打开 D:\Steam\steamapps\common\Caves of Qud\CoQ_Data\Managed\Assembly-CSharp.dll
+//    2. 查看一个现成的简单 Part（例如 XRL.World.Parts.Cookbook 本身，或 Render），确认：
+//         - 基类/接口（常见为 XRL.World.IPart，或 XRL.World.Effects... 等）
+//         - 事件处理入口（常见的写法是重写 WantEvent / HandleEvent，事件如 ObjectCreatedEvent、
+//           ObjectLoadedEvent、BeforeRenderEvent 等）
+//         - Part 是否需要 [Serializable]，以及父对象成员的名称（常见为 ParentObject）
+//    3. 按下面骨架把 TODO 处补全，去掉文件名末尾的 .disabled
+//    4. 在 Items.xml 里给食谱蓝图挂上这个部件：
+//         <object Name="BaseCookbook" Load="Merge">
+//           <part Name="ZhsCookbookName" />
+//         </object>
+//       （挂在 BaseCookbook 上，则 Generic/Focal 两系食谱都会带上它）
+//    5. 同时把 ZhsCookbookNaming.cs 里的 Harmony 补丁注释掉，避免两套机制互相覆盖。
+//
+//  这种方案的好处：不依赖游戏内部方法名，纯靠部件挂载，版本兼容性更好。
+// ============================================================================
+
+using System;
+using XRL.World;
+
+namespace Nattens.QudZhsCookbook
+{
+    // TODO: 依据 ILSpy 结果补全基类，例如：
+    //   [Serializable]
+    //   public class ZhsCookbookName : IPart
+    public class ZhsCookbookName /* : IPart */
+    {
+        // TODO: 依据实际 API 重写事件入口。CoQ 常见写法大致如下（仅供参照，务必以反编译为准）：
+        //
+        //   public override bool WantEvent(int ID, int cascade)
+        //   {
+        //       return base.WantEvent(ID, cascade) || ID == ObjectCreatedEvent.ID;
+        //   }
+        //
+        //   public override bool HandleEvent(ObjectCreatedEvent E)
+        //   {
+        //       ApplyChineseName();
+        //       return base.HandleEvent(E);
+        //   }
+
+        /// <summary>把中文书名写进父对象的显示名。逻辑与 Harmony 方案共用同一套反射工具。</summary>
+        public void ApplyChineseName()
+        {
+            try
+            {
+                // TODO: 换成真实的父对象取法（常见为 this.ParentObject）
+                object parent = null;
+                if (parent == null) return;
+
+                string title = ZhsTitleGenerator.NextTitle();
+                if (string.IsNullOrEmpty(title)) return;
+
+                // 复用 NameApplier 的反射写入（当前它接收的是"部件"，这里传父对象即可）
+                NameApplier.Apply(parent);
+            }
+            catch (Exception e)
+            {
+                UnityEngine.Debug.LogError("[QudZhsCookbook] 自定义 Part 命名异常：" + e);
+            }
+        }
+    }
+}

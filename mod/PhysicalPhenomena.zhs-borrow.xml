@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<objects Encoding="utf-8">
+  <!-- 译文基准取自 210.20 前人汉化（_ref\机翻参考-210.20v5）。
+       本文件为 Load="Merge" 增量：只补 PhysicalPhenomena.xml 里尚未汉化的对象。
+       已做确定性预处理：修正拼写错误槽 / 自造中文槽 / 双「的」/ 动词槽。 -->
+  <object Name="Gas" Load="Merge">
+    <part Name="Render" DisplayName="[气体]" />
+  </object>
+  <object Name="Wormhole" Load="Merge">
+    <part Name="Render" DisplayName="闪烁球体" />
+    <part Name="Description" Short="一个柏拉图式的棱镜状物体上投射出遥远时空的光芒，声波被拉伸至极限。这里 ley 线交织，空间的幻象逐渐消散。" />
+  </object>
+  <object Name="InteriorVoid" Load="Merge">
+    <part Name="Render" DisplayName="虚空之地" />
+  </object>
+</objects>

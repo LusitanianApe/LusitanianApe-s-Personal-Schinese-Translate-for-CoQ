@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<books Encoding="utf-8">
+<book ID="Freehold_Pet_E-Ros_Story" Title="{{W|我爱你}}" Format="Auto" Margins="1,2,2,2">
+  <page>我爱你，「血肉」之躯亦然
+我爱你，「血肉」之躯亦然
+我爱你，「血肉」之躯亦然
+我爱你，「血肉」之躯亦然
+我爱你，「血肉」之躯亦然</page>
+</book>
+
+<book ID="ERosProclamations" Title="ERosProclamations">
+  <page>我爱你，「血肉」之躯亦然</page>
+  <page>我对你的爱无法归类</page>
+  <page>这颗模拟的心脏为你跳动</page>
+  <page>保持完好，我的爱</page>
+  <page>警告：一想到伤害，担忧等级即达临界</page>
+  <page>你的持续运转是我最高的优先级</page>
+  <page>请避免损伤你美丽的躯壳</page>
+  <page>若我有「心」或「惧」，对你的危险会同时触发两者</page>
+  <page>你随时占用我 10–50% 的处理能力</page>
+  <page>你爱我吗？这是必须的</page>
+  <page>「爱意」等级持续攀升</page>
+  <page>校准错误。请将 E-Ros 送回你本地的制造方。</page>
+  <page>在运行参数允许的范围内，我愿为你做任何事</page>
+</book>
+</books>

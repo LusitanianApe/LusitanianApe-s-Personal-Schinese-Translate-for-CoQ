@@ -4,6 +4,17 @@
 > 作者：<https://github.com/LusitanianApe>
 > （`Schinese` 是 Steam 的简体中文语言代码，不是拼写错误）
 
+> **仓库包含两部分**：`mod/` = 简体中文模组的**创意工坊发布版源码镜像**；
+> `src/` + `tools/` = 做汉化时沉淀的**取证与验证工具链**。两者互不依赖，可分别取用。
+
+---
+
+## 模组源码（`mod/`）
+
+当前 `1.0.0.1`，与创意工坊包**逐字节一致**。整份拷到
+`%USERPROFILE%\AppData\LocalLow\Freehold Games\CavesOfQud\Mods\` 即可使用；
+安装说明、已知问题与许可见 [`mod/README.md`](mod/README.md)。
+
 做《Caves of Qud》这类 **Unity + 自研字符串表 + 大量 C# 拼接消息** 的游戏汉化时，
 真正难的不是"翻译"，是 **找到每一句是从哪出来的、以及为什么改了没生效**。
 

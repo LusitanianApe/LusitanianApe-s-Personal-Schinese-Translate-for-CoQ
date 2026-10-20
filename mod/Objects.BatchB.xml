@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  常用武器 / 护甲 / 食物 / 药品（方案 B）。
+
+  ★ 目的：先把**玩家主动查看 + message log 常客**的物件做干净，
+     这样 message log 若还有问题，可判定为「汉化不全」而非「机制错误」。
+
+  ★ 只写 DisplayName / Description.Short；每个 <object> 上写 Load="Merge"。
+  ★ DisplayName 里的 {{color|…}} 着色标记原样保留。
+
+  生成器：_tools/build_batchB.py（可重跑）
+-->
+<objects Load="Merge" Lang="zh-Hans" Encoding="utf-8">
+  <object Name="Steel Butcher Knife" Load="Merge">
+    <part Name="Render" DisplayName="{{Y|钢制}}屠刀" />
+    <part Name="Description" Short="宽阔明亮的刀刃上涂着内脏的痕迹。" />
+  </object>
+  <object Name="Steel Utility Knife" Load="Merge">
+    <part Name="Render" DisplayName="{{Y|钢制}}工具刀" />
+    <part Name="Description" Short="一把用钝了、沾满指印的折刀，能折进自身。" />
+  </object>
+  <object Name="HE Missile" Load="Merge">
+    <part Name="Render" DisplayName="高爆飞弹" />
+    <part Name="Description" Short="一枚明亮的气弹头装在这条钢制死亡滑道的末端。" />
+  </object>
+  <object Name="Hand Axe" Load="Merge">
+    <part Name="Render" DisplayName="手斧" />
+    <part Name="Description" Short="斧刃上挂着几缕藤秆的碎须。" />
+  </object>
+  <object Name="Battle Axe5" Load="Merge">
+    <part Name="Render" DisplayName="{{K|富勒石}}战斧" />
+    <part Name="Description" Short="一片暗色金属的剃刀状楔子焊在钢柄上。" />
+  </object>
+  <object Name="Steel Hammer" Load="Merge">
+    <part Name="Render" DisplayName="{{Y|钢制}}锤" />
+    <part Name="Description" Short="一颗打磨过的钢球从久经战阵的锤杆顶端鼓出。" />
+  </object>
+  <object Name="Chain Pistol" Load="Merge">
+    <part Name="Render" DisplayName="链式手枪" />
+    <part Name="Description" Short="一个锡制细弹夹挂在刮花的镀铬弹匣井上。" />
+  </object>
+  <object Name="Steel Arrow" Load="Merge">
+    <part Name="Render" DisplayName="{{Y|钢制}}箭" />
+    <part Name="Description" Short="一根窄箭杆，尾端缀着鸟羽，前端安着钢箭头。" />
+  </object>
+  <object Name="Battle Axe5th" Load="Merge">
+    <part Name="Render" DisplayName="{{K|富勒石}}双手斧" />
+    <part Name="Description" Short="一片宽大的剃刀状暗色金属楔子焊在巨大的钢柄上。" />
+  </object>
+  <object Name="Carbide Shield" Load="Merge">
+    <part Name="Render" DisplayName="{{b|碳化物}}盾" />
+    <part Name="Description" Short="一面蓝色鸢形盾张扬着齿与爪的圣符。" />
+  </object>
+  <object Name="Ring Mail" Load="Merge">
+    <part Name="Render" DisplayName="环甲" />
+    <part Name="Description" Short="一件皮衣上覆满缝入的钢环。" />
+  </object>
+  <object Name="Steel Shield" Load="Merge">
+    <part Name="Render" DisplayName="{{Y|钢制}}盾" />
+    <part Name="Description" Short="一面钢制鸢形盾张扬着齿与爪的圣符。" />
+  </object>
+  <object Name="Leather Cloak" Load="Merge">
+    <part Name="Render" DisplayName="皮斗篷" />
+    <part Name="Description" Short="一件山羊皮罩袍被岁月的酸液蚀出圈圈斑痕。" />
+  </object>
+  <object Name="Carbide Boots" Load="Merge">
+    <part Name="Render" DisplayName="{{b|碳化物}}靴" />
+    <part Name="Description" Short="暗蓝色的折叠金属泛着刻痕，箍住一双湖里捞来的靴子。" />
+  </object>
+  <object Name="Telemetric Visor" Load="Merge">
+    <part Name="Render" DisplayName="{{telemetric|遥测}} {{C|面罩}}" />
+    <part Name="Description" Short="那片玻璃月牙上，信息沿电磁频道倾泻而下。" />
+  </object>
+  <object Name="Ape Fur Gloves" Load="Merge">
+    <part Name="Render" DisplayName="{{Y|猿毛}}手套" />
+    <part Name="Description" Short="柔软的毛皮从白化猿的雪花石膏般毛被上裁下，做成厚指手套。" />
+  </object>
+  <object Name="Chain Mail" Load="Merge">
+    <part Name="Render" DisplayName="锁子甲" />
+    <part Name="Description" Short="一张闪亮的环扣网，取自垃圾海的钢心。" />
+  </object>
+  <object Name="Ape Fur Cloak" Load="Merge">
+    <part Name="Render" DisplayName="{{Y|猿毛}}斗篷" />
+    <part Name="Description" Short="柔软的毛皮从白化猿的雪花石膏般毛被上裁下，做成一件宽肩斗篷。" />
+  </object>
+  <object Name="Raw Frog Meat" Load="Merge">
+    <part Name="Render" DisplayName="{{r|生蛙肉}}" />
+    <part Name="Description" Short="蛙腿浸在它自己洒出的血里。" />
+  </object>
+  <object Name="Raw Beetle Meat" Load="Merge">
+    <part Name="Render" DisplayName="{{y|生甲虫肉}}" />
+    <part Name="Description" Short="虫肉堆叠着，盛在碎裂的甲壳上。" />
+  </object>
+  <object Name="Raw Worm Meat" Load="Merge">
+    <part Name="Render" DisplayName="{{r|生虫肉}}" />
+    <part Name="Description" Short="虫肉浸在它自己洒出的黏液里。" />
+  </object>
+  <object Name="Raw Scorpiock Meat" Load="Merge">
+    <part Name="Render" DisplayName="{{r|生蝎鸡肉}}" />
+    <part Name="Description" Short="虫肉堆叠着，盛在碎裂的外骨上。" />
+  </object>
+  <object Name="Raw Pig Meat" Load="Merge">
+    <part Name="Render" DisplayName="{{r|生猪肉}}" />
+    <part Name="Description" Short="生猪的肉浸在它自己洒出的血里。" />
+  </object>
+  <object Name="Raw Bear Meat" Load="Merge">
+    <part Name="Render" DisplayName="{{r|生熊肉}}" />
+    <part Name="Description" Short="生熊的肉浸在它自己洒出的血里。" />
+  </object>
+  <object Name="Raw Boar Meat" Load="Merge">
+    <part Name="Render" DisplayName="{{r|生野猪肉}}" />
+    <part Name="Description" Short="生野猪的肉浸在它自己洒出的血里。" />
+  </object>
+  <object Name="Raw Goat Meat" Load="Merge">
+    <part Name="Render" DisplayName="{{r|生山羊肉}}" />
+    <part Name="Description" Short="生山羊的肉浸在它自己洒出的血里。" />
+  </object>
+  <object Name="Frog Jerky" Load="Merge">
+    <part Name="Render" DisplayName="{{w|蛙肉干}}" />
+    <part Name="Description" Short="蛙肉被切成整齐的条，腌过、熏过。" />
+  </object>
+  <object Name="Worm Jerky" Load="Merge">
+    <part Name="Render" DisplayName="虫肉干" />
+    <part Name="Description" Short="虫肉被切成整齐的条，腌过、熏过。" />
+  </object>
+  <object Name="Spray-a-Brain" Load="Merge">
+    <part Name="Render" DisplayName="喷{{r|-}}脑{{r|-}}灵" />
+    <part Name="Description" Short="「喷-脑-灵：要是这些墙会说话……」" />
+  </object>
+  <object Name="Fixit Spray" Load="Merge">
+    <part Name="Render" DisplayName="万能修补喷泡" />
+    <part Name="Description" Short="一罐喷雾，灌满了会起泡的填缝剂。" />
+  </object>
+  <object Name="Clue_EmptyInjector" Load="Merge">
+    <part Name="Render" DisplayName="用过的注射器" />
+    <part Name="Description" Short="黏稠的苏醒剂残渣仍裹着玻璃管。" />
+  </object>
+  <object Name="RelicTonic" Load="Merge">
+    <part Name="Description" Short="一根四氙玻璃管里，闪烁着乳白色的糖浆。" />
+  </object>
+  <object Name="Ulnar Stimulators" Load="Merge">
+    <part Name="Render" DisplayName="尺神经刺激器" />
+    <part Name="Description" Short="一双贴身导电网的薄手套，让双手电击般地进入高效状态。" />
+  </object>
+  <object Name="Bandage" Load="Merge">
+    <part Name="Render" DisplayName="绷带" />
+    <part Name="Description" Short="虫丝纱缠在木棒上，用来止血正合适。" />
+  </object>
+</objects>

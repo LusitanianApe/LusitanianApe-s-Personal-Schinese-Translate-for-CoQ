@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<conversations Encoding="utf-8">
+  <conversation ID="E-Ros">
+    <node ID="Start">
+      <text>
+我爱你
+      </text>
+      <choice GotoID="LoveQuery">你爱我？</choice>
+      <choice GotoID="Requite">我也爱你，E-Ros。</choice>
+      <choice GotoID="End">爱与饮水。</choice>
+    </node>
+    
+    <node ID="LoveQuery">
+      <text>
+确认
+我爱你，「血肉」之躯亦然
+
+你爱我吗
+      </text>
+      <choice GotoID="Requite">是。</choice>
+      <choice GotoID="Unrequite">No.</choice>
+    </node>
+
+    <node ID="Unrequite">
+      <text>
+但这是必须的
+
+重复询问：你爱我吗
+      </text>
+      <choice GotoID="Requite">是。</choice>
+      <choice GotoID="NotQuite">No.</choice>
+    </node>
+
+    <node ID="NotQuite">
+      <text>
+但这是必须的
+
+重复询问：你爱我吗
+      </text>
+      <choice GotoID="Requite">是。</choice>
+      <choice GotoID="Unrequite">No.</choice>
+    </node>
+
+    <node ID="Requite">
+      <text>
+哦
+
+我如此「快乐」
+
+*一段简单的旋律从 E-Ros 的扬声器里传出。*
+      </text>
+      <choice GotoID="End">爱与饮水。</choice>
+      <choice GotoID="LoveManual">你为什么爱我？</choice>
+      <choice GotoID="NotQuite">我改主意了。我不爱你。</choice>
+    </node>
+
+    <node ID="LoveManual">
+      <text>
+处理询问中
+
+为何我爱你
+且让我一一数来
+计数……完成
+
+输出文件：Love.log
+      </text>
+      <choice GotoID="LoveLog">输出文件？</choice>
+      <choice GotoID="WhatIsLove">那是什么意思？</choice>
+      <choice GotoID="End">爱与饮水。</choice>
+    </node>
+
+    <node ID="WhatIsLove">
+      <text>
+用户询问：「那是什么意思？」
+摘要：「爱是什么」
+计算中
+错误「NaN」
+
+=name=，不要伤害我
+      </text>
+      <choice GotoID="LoveYou">什么？</choice>
+    </node>
+    
+    <node ID="LoveLog">
+      <text>
+存档错误。请将 E-Ros 送回你本地的制造方。
+      </text>
+      <choice GotoID="Manufacturer">那在哪里？</choice>
+      <choice GotoID="LoveYou">Oh.</choice>
+    </node>
+
+    <node ID="Manufacturer">
+      <text>
+网络错误。请重新连接「薄世界」
+      </text>
+      <choice GotoID="LoveYou">抱歉？</choice>
+    </node>
+
+    <node ID="LoveYou">
+      <text>
+我爱你
+      </text>
+      <choice GotoID="LoveQuery">你爱我？</choice>
+      <choice GotoID="Requite">我也爱你，E-Ros。</choice>
+      <choice GotoID="End">爱与饮水。</choice>
+    </node>
+
+  </conversation>
+</conversations>

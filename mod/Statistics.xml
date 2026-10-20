@@ -1,0 +1,226 @@
+<?xml version='1.0' encoding='utf-8'?>
+<statistics Encoding="utf-8" Lang="zh-Hans">
+  <statistic Name="Strength">
+    <displayName>力量</displayName>
+    <displayTitle>力量</displayTitle>
+    <shortName>STR</shortName>
+    <shortTitle>Str</shortTitle>
+    <helpText>你的{{W|力量}}决定你的近战伤害（通过提升护甲穿透）、抵抗强制位移的能力，以及负重上限。</helpText>
+    <minimum>1</minimum>
+    <maximum>9000</maximum>
+    <attribute>true</attribute>
+  </statistic>
+  <statistic Name="Agility">
+    <displayName>敏捷</displayName>
+    <displayTitle>敏捷</displayTitle>
+    <shortName>AGI</shortName>
+    <shortTitle>Agi</shortTitle>
+    <helpText>你的{{W|敏捷}}决定你使用近战与远程武器的命中，以及闪避攻击的几率。</helpText>
+    <minimum>1</minimum>
+    <maximum>9000</maximum>
+    <attribute>true</attribute>
+  </statistic>
+  <statistic Name="Toughness">
+    <displayName>坚韧</displayName>
+    <displayTitle>坚韧</displayTitle>
+    <shortName>TOU</shortName>
+    <shortTitle>Tou</shortTitle>
+    <helpText>你的{{W|坚韧}}决定你的生命值、生命恢复速度，以及抵抗中毒与疾病的能力。</helpText>
+    <minimum>1</minimum>
+    <maximum>9000</maximum>
+    <attribute>true</attribute>
+  </statistic>
+  <statistic Name="Intelligence">
+    <displayName>智力</displayName>
+    <displayTitle>智力</displayTitle>
+    <shortName>INT</shortName>
+    <shortTitle>Int</shortTitle>
+    <helpText>你的{{W|智力}}决定你的技能点数量，以及检视器物的能力。</helpText>
+    <minimum>1</minimum>
+    <maximum>9000</maximum>
+    <attribute>true</attribute>
+    <mental>true</mental>
+  </statistic>
+  <statistic Name="Willpower">
+    <displayName>意志</displayName>
+    <displayTitle>意志</displayTitle>
+    <shortName>WIL</shortName>
+    <shortTitle>Wil</shortTitle>
+    <helpText>你的{{W|意志}}影响主动能力的冷却时间、抵抗心灵攻击的能力，以及生命恢复速度。</helpText>
+    <minimum>1</minimum>
+    <maximum>9000</maximum>
+    <attribute>true</attribute>
+    <mental>true</mental>
+  </statistic>
+  <statistic Name="Ego">
+    <displayName>自我</displayName>
+    <displayTitle>自我</displayTitle>
+    <shortName>EGO</shortName>
+    <shortTitle>Ego</shortTitle>
+    <helpText>你的{{W|自我}}决定精神变异的效力、与商人讨价还价的能力，以及支配其它生物意志的能力。</helpText>
+    <minimum>1</minimum>
+    <maximum>9000</maximum>
+    <attribute>true</attribute>
+    <mental>true</mental>
+  </statistic>
+  <statistic Name="AV">
+    <shortName>AV</shortName>
+    <shortTitle>AV</shortTitle>
+    <helpText>你的{{W|护甲值（AV）}}衡量你抵御命中你的物理攻击的保护程度。数值越高，对手的攻击穿透你的护甲并造成伤害的次数就越少。</helpText>
+    <minimum>0</minimum>
+    <maximum>100</maximum>
+  <displayName>AV</displayName><displayTitle>AV</displayTitle></statistic>
+  <statistic Name="DV">
+    <shortName>DV</shortName>
+    <shortTitle>DV</shortTitle>
+    <helpText>你的{{W|闪避值（DV）}}衡量你被物理攻击命中的几率。数值越高，对手的攻击越难命中你。你的闪避值受敏捷调整值影响。</helpText>
+    <displayModifier>6</displayModifier>
+    <minimum>-100</minimum>
+    <maximum>100</maximum>
+  <displayName>DV</displayName><displayTitle>DV</displayTitle></statistic>
+  <statistic Name="MA">
+    <shortName>MA</shortName>
+    <shortTitle>MA</shortTitle>
+    <helpText>你的{{W|精神护甲（MA）}}衡量你抵御心灵攻击的保护程度。数值越高，对手的心灵攻击越难穿透你的防御并伤到你。你的精神护甲受意志调整值影响。</helpText>
+    <displayModifier>4</displayModifier>
+    <minimum>-100</minimum>
+    <mental>true</mental>
+  <displayName>MA</displayName><displayTitle>MA</displayTitle></statistic>
+  <statistic Name="Speed">
+    <displayName>迅捷</displayName>
+    <displayTitle>迅捷</displayTitle>
+    <shortName>QN</shortName>
+    <shortTitle>QN</shortTitle>
+    <helpText>你的{{W|迅捷}}衡量你执行每一个动作的速度。</helpText>
+    <minimum>1</minimum>
+    <maximum>10000</maximum>
+  </statistic>
+  <statistic Name="MoveSpeed">
+    <displayName>移动速度</displayName>
+    <displayTitle>移动速度</displayTitle>
+    <shortName>MS</shortName>
+    <shortTitle>MS</shortTitle>
+    <helpText>你的{{W|移动速度}}衡量你行走或飞行的快慢。</helpText>
+    <minimum>-1800</minimum>
+    <maximum>195</maximum>
+    <inverse>true</inverse>
+  </statistic>
+  <statistic Name="Temperature">
+    <displayName>温度</displayName>
+    <displayTitle>温度</displayTitle>
+    <shortName>T</shortName>
+    <shortTitle>T</shortTitle>
+    <helpText>你的{{W|温度}}衡量你的冷热程度。过冷会降低你的迅捷，并使你无法采取物理行动。过热会点燃你，每回合造成伤害。</helpText>
+  </statistic>
+  <statistic Name="AcidResistance">
+    <displayName>酸抗性</displayName>
+    <displayTitle>酸抗性</displayTitle>
+    <shortName>AR</shortName>
+    <shortTitle>AR</shortTitle>
+    <helpText>你的{{W|酸抗性}}决定你能削减多少酸伤害。达到 100 时，你对酸伤害免疫。</helpText>
+    <minimum>-100</minimum>
+    <maximum>100</maximum>
+  </statistic>
+  <statistic Name="ColdResistance">
+    <displayName>寒抗性</displayName>
+    <displayTitle>寒抗性</displayTitle>
+    <shortName>CR</shortName>
+    <shortTitle>CR</shortTitle>
+    <helpText>你的{{W|寒抗性}}决定你能削减多少寒冷伤害，以及你对降温效果的隔绝程度。达到 100 时，你对寒冷伤害免疫，温度也不会被降低。</helpText>
+    <minimum>-100</minimum>
+    <maximum>100</maximum>
+  </statistic>
+  <statistic Name="ElectricResistance">
+    <displayName>电抗性</displayName>
+    <displayTitle>电抗性</displayTitle>
+    <shortName>ER</shortName>
+    <shortTitle>ER</shortTitle>
+    <helpText>你的{{W|电抗性}}决定你能削减多少电击伤害，以及你对电流的阻抗程度。达到 100 时，你对电击伤害免疫，且不再导电。</helpText>
+    <minimum>-100</minimum>
+    <maximum>100</maximum>
+  </statistic>
+  <statistic Name="HeatResistance">
+    <displayName>热抗性</displayName>
+    <displayTitle>热抗性</displayTitle>
+    <shortName>HR</shortName>
+    <shortTitle>HR</shortTitle>
+    <helpText>你的{{W|热抗性}}决定你能削减多少火焰伤害，以及你对升温效果的隔绝程度。达到 100 时，你对火焰伤害免疫，温度也不会被升高。</helpText>
+    <minimum>-100</minimum>
+    <maximum>100</maximum>
+  </statistic>
+  <statistic Name="Hitpoints">
+    <displayName>生命值</displayName>
+    <displayTitle>生命值</displayTitle>
+    <displayNameSingular>hit point</displayNameSingular>
+    <displayTitleSingular>Hit Point</displayTitleSingular>
+    <narrationName>life</narrationName>
+    <shortName>HP</shortName>
+    <shortTitle>HP</shortTitle>
+    <minimum>0</minimum>
+    <maximum>64000</maximum>
+    <plural>true</plural>
+  </statistic>
+  <statistic Name="AP">
+    <displayName>属性点</displayName>
+    <displayTitle>属性点</displayTitle>
+    <displayNameSingular>attribute point</displayNameSingular>
+    <displayTitleSingular>Attribute Point</displayTitleSingular>
+    <shortName>AP</shortName>
+    <shortTitle>AP</shortTitle>
+    <minimum>0</minimum>
+    <plural>true</plural>
+  </statistic>
+  <statistic Name="MP">
+    <displayName>变异点</displayName>
+    <displayTitle>变异点</displayTitle>
+    <displayNameSingular>mutation point</displayNameSingular>
+    <displayTitleSingular>Mutation Point</displayTitleSingular>
+    <shortName>MP</shortName>
+    <shortTitle>MP</shortTitle>
+    <minimum>0</minimum>
+    <plural>true</plural>
+  </statistic>
+  <statistic Name="SP">
+    <displayName>技能点</displayName>
+    <displayTitle>技能点</displayTitle>
+    <displayNameSingular>skill point</displayNameSingular>
+    <displayTitleSingular>Skill Point</displayTitleSingular>
+    <shortName>SP</shortName>
+    <shortTitle>SP</shortTitle>
+    <minimum>0</minimum>
+    <plural>true</plural>
+  </statistic>
+  <statistic Name="XP">
+    <displayName>经验值</displayName>
+    <displayTitle>经验值</displayTitle>
+    <displayNameSingular>experience point</displayNameSingular>
+    <displayTitleSingular>Experience Point</displayTitleSingular>
+    <shortName>XP</shortName>
+    <shortTitle>XP</shortTitle>
+    <minimum>0</minimum>
+    <plural>true</plural>
+  </statistic>
+  <statistic Name="XPValue">
+    <displayName>经验值（击杀）</displayName>
+    <displayTitle>经验值（击杀）</displayTitle>
+    <shortName>XV</shortName>
+    <shortTitle>XV</shortTitle>
+    <minimum>0</minimum>
+  <helpText>你从击杀该生物中获得的{{W|经验值}}。</helpText></statistic>
+  <statistic Name="Level">
+    <displayName>等级</displayName>
+    <displayTitle>等级</displayTitle>
+    <shortName>LV</shortName>
+    <shortTitle>Lv</shortTitle>
+    <minimum>1</minimum>
+    <maximum>10000</maximum>
+  </statistic>
+  <statistic Name="Energy">
+    <displayName>能量</displayName>
+    <displayTitle>能量</displayTitle>
+    <shortName>EN</shortName>
+    <shortTitle>EN</shortTitle>
+    <minimum>-100000</minimum>
+    <maximum>100000</maximum>
+  </statistic>
+</statistics>

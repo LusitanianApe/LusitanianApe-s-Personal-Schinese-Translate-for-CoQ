@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<conversations Encoding="utf-8">
+  <conversation ID="Ercolano">
+    <start ID="Welcome">
+      <text>
+        <text>坐下吧，朋友。</text>
+        <text>坐下吧，=name=。</text>
+        <text>歇歇你的骨头，朋友。</text>
+        <text>歇歇你的骨头，=name=。</text>
+        <text>想摇一摇吗？</text>
+        <text>来坐下，把烦恼摇散。</text>
+        <text>我为什么在这里？</text>
+        <text>我们为什么在这里？</text>
+        <text>我们为什么在这里，=name=？</text>
+        <text>嘿嘿嘿嘿嘿嘿嘿嘿。</text>
+        <text>像风中的叶子那样摇摆吧，我高个子的朋友。</text>
+        <text>坐。</text>
+        <text>坐。</text>
+        <text>静下来。</text>
+        <text>把你的动静收敛到「间隙」里。</text>
+        <text>间隙是周期的。它向两个方向延展：此与彼。</text>
+        <text>你不想让生活简单些吗？</text>
+        <text>活在当下，=name=。</text>
+        <text>细细品味此刻。</text>
+      </text>
+      <choice GotoID="CalmMe">说说话，让我静下来，Ercolano。</choice>
+      <choice GotoID="End">再见，朋友。</choice>
+    </start>
+    <node ID="CalmMe" Inherits="Welcome">
+      <!-- the CalmMe choice is hidden on CalmMe page, so goto CalmMeAgain -->
+      <choice GotoID="CalmMeAgain">说说话，让我静下来，Ercolano。</choice>
+    </node>
+    <node ID="CalmMeAgain" Inherits="Welcome">
+      <!-- this one goes back to CalmMe -->
+    </node>
+  </conversation>
+</conversations>

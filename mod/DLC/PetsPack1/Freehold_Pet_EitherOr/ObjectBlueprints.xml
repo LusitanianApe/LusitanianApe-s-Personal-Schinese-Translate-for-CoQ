@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<objects Encoding="utf-8">
+  <object Name="EitherOrPetSpawner" Inherits="Widget">
+    <part Name="Render" DisplayName="{{M|非此 / 即彼}}" Tile="Creatures/pet-either-or.png" ColorString="&amp;C" DetailColor="r"></part>
+    <part Name="EitherOrPetSpawner"></part>
+    <tag Name="Pet"></tag>
+    <tag Name="StartingPet"></tag>
+    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
+  </object>
+  <object Name="BaseEitherOrPet" Inherits="BaseHumanoid">    
+    <part Name="Brain" Factions="highly entropic beings-100" />
+    <part Name="PetEitherOr" Either="true"></part>
+    <part Name="CannotBeInfluenced" Messages="default::=subject.The==subject.name= =verb:are= insensible to your blandishments." />
+    <part Name="NoDamage" />
+    <part Name="ConversationScript" ConversationID="EitherOr" />
+    <tag Name="Nullphase" />
+    <tag Name="NoEffects" />
+    <xtagGrammar Proper="true" />
+    <property Name="Story" Value="Freehold_Pet_EitherOr_Story" />
+    <!-- *noinherit feels like a bug, but 'twas decided it's a feature -->
+    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
+    <tag Name="EitherOrPet" />
+    <tag Name="NoLibrarian" />
+    <tag Name="NoXP" />
+		<tag Name="NoCombat" />
+  </object>
+  <object Name="EitherPet" Inherits="BaseEitherOrPet">
+    <part Name="Render" DisplayName="{{c|非此}}" ColorString="&amp;c" DetailColor="C"></part>
+    <part Name="Description" Short="那是你，但你脸上的影子由另一个太阳与尖塔投下。你的福、你的祸、你一切行动的总和：如今它们有了新的语境。当你伸手去够果树上的星苹果时，「非此」也同样伸手，但它摘回了什么？答案被一千条时间线的暗影遮蔽。"></part>
+    <part Name="PetEitherOr" Either="true"></part>
+    <tag Name="ExcludeFromDynamicEncountersOption" Value="!OptionDLC1IncludeEitherRandomly" />
+  </object>
+  <object Name="OrPet" Inherits="BaseEitherOrPet">
+    <part Name="Render" DisplayName="{{r|即彼}}" ColorString="&amp;r" DetailColor="R"></part>
+    <part Name="Description" Short="那是你，但你眼睛的色泽由另一个月亮与灯盏照出。你的判断、你的选择……它们真属于你吗？当「即彼」伸向一片剪影般的空间时，你正伸向果树上的星苹果。你的动作必定是源头，你必定是行动者。可你发誓，先动的是「即彼」。"></part>
+    <part Name="PetEitherOr" Either="false"></part>
+    <tag Name="ExcludeFromDynamicEncountersOption" Value="!OptionDLC1IncludeEitherRandomly" />
+  </object>
+</objects>

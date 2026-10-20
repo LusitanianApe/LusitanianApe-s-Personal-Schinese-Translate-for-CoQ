@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<conversations Encoding="utf-8">
+  <conversation ID="Uthabatafah">
+    <node ID="Start">
+      <text>
+        <text>哼呋哼呋哼呋。</text>
+        <text>哼呋哼呋。</text>
+        <text>{{R|呜嗯嗯嗯嗯嗯！！！}}</text>
+        <text>哼呋。</text>
+        <text>哼嗯嗯。</text>
+        <text>哼嗯。</text>
+        <text>{{R|哼嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯！！！}}</text>
+        <text>{{R|哼嗯！哼嗯！哼嗯嗯！！！}}</text>
+        <text>哼呋呜啊啊啊啊 哼嗯嗯。</text>
+        <text>哼呋呜啊啊啊 哼嗯嗯 呜啊啊啊啊 哼嗯。</text>
+        <text>哼呋呋呋呋。</text>
+        <text>哼呋呋呋 {{R|呜嗯嗯嗯吼吼吼！！！}}</text>
+      </text>
+      <choice GotoID="End">活下去，喝足水。</choice>
+    </node>
+  </conversation>
+</conversations>

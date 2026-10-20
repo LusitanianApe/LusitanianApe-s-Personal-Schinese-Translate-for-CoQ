@@ -1,0 +1,812 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  互动菜单动作名（InventoryActions.xml）。
+
+  ★ 根元素是 <inventoryActions>（注意大小写）。
+  ★ display = 菜单上显示的动词；key = 快捷键（不译）。
+  ★ 参考官方 ExampleLanguage\InventoryActions.example.xml。
+
+  生成器：_tools/build_inv_actions.py（可重跑）
+-->
+<inventoryActions Lang="zh-Hans" Encoding="utf-8">
+  <inventoryAction Name="InterfaceWithGritGateMainframe">
+    <display>接入</display>
+    <key>i</key>
+  </inventoryAction>
+  <inventoryAction Name="InterfaceWithBecomingNook">
+    <display>接入</display>
+    <key>i</key>
+  </inventoryAction>
+  <inventoryAction Name="InterfaceWithTerminal">
+    <display>接入</display>
+    <key>i</key>
+  </inventoryAction>
+  <inventoryAction Name="WakeSleeper">
+    <display>唤醒</display>
+    <key>w</key>
+  </inventoryAction>
+  <inventoryAction Name="DismissProselyte">
+    <display>遣散</display>
+    <key>d</key>
+  </inventoryAction>
+  <inventoryAction Name="DismissServitor">
+    <display>遣散</display>
+    <key>d</key>
+  </inventoryAction>
+  <inventoryAction Name="CompanionStopFlying">
+    <display>指令：停止飞行</display>
+    <key>_</key>
+  </inventoryAction>
+  <inventoryAction Name="Read">
+    <display>阅读</display>
+    <key>r</key>
+  </inventoryAction>
+  <inventoryAction Name="ReadUnread">
+    <display>阅读</display>
+    <key>r</key>
+  </inventoryAction>
+  <inventoryAction Name="CancelLifeDrain">
+    <display>取消生命汲取</display>
+    <key>c</key>
+  </inventoryAction>
+  <inventoryAction Name="CompanionAttackTarget">
+    <display>指令：攻击目标</display>
+    <key>a</key>
+  </inventoryAction>
+  <inventoryAction Name="CompanionToggleEngagementAggressive">
+    <display>指令：激进交战</display>
+    <key>e</key>
+  </inventoryAction>
+  <inventoryAction Name="CompanionToggleEngagementDefensive">
+    <display>指令：防守交战</display>
+    <key>e</key>
+  </inventoryAction>
+  <inventoryAction Name="CompanionCome">
+    <display>指令：跟上</display>
+    <key>c</key>
+  </inventoryAction>
+  <inventoryAction Name="CompanionGiveItems">
+    <display>给予物品</display>
+    <key>g</key>
+  </inventoryAction>
+  <inventoryAction Name="CompanionMoveTo">
+    <display>指令：移动</display>
+    <key>m</key>
+  </inventoryAction>
+  <inventoryAction Name="CompanionChangeFollowDistance">
+    <display>指令：改变跟随距离</display>
+    <key>f</key>
+  </inventoryAction>
+  <inventoryAction Name="CompanionStay">
+    <display>指令：原地待命</display>
+    <key>s</key>
+  </inventoryAction>
+  <inventoryAction Name="CompanionAbilityUse">
+    <display>指令：使用能力</display>
+    <key>u</key>
+  </inventoryAction>
+  <inventoryAction Name="CompanionRename">
+    <display>改名</display>
+    <key>r</key>
+  </inventoryAction>
+  <inventoryAction Name="Untarget">
+    <display>取消标记</display>
+    <key>t</key>
+  </inventoryAction>
+  <inventoryAction Name="Target">
+    <display>标记</display>
+    <key>t</key>
+  </inventoryAction>
+  <inventoryAction Name="ShowEffects">
+    <display>查看效果</display>
+    <key>w</key>
+  </inventoryAction>
+  <inventoryAction Name="Apply">
+    <display>使用</display>
+    <key>a</key>
+  </inventoryAction>
+  <inventoryAction Name="ApplyTo">
+    <display>用于</display>
+    <key>A</key>
+  </inventoryAction>
+  <inventoryAction Name="ApplyEat">
+    <display>吃</display>
+    <key>e</key>
+  </inventoryAction>
+  <inventoryAction Name="ApplyToEat">
+    <display>喂给</display>
+    <key>f</key>
+  </inventoryAction>
+  <inventoryAction Name="ApplyImportant">
+    <display>使用</display>
+    <key>a</key>
+  </inventoryAction>
+  <inventoryAction Name="ApplyDefault">
+    <display>使用</display>
+    <key>a</key>
+  </inventoryAction>
+  <inventoryAction Name="DebugShowAttitude">
+    <display>显示态度 {{K|[debug]}}</display>
+    <key>A</key>
+  </inventoryAction>
+  <inventoryAction Name="DebugEnableThinkOutLoud">
+    <display>开启出声思考 {{K|[debug]}}</display>
+    <key>/</key>
+  </inventoryAction>
+  <inventoryAction Name="DebugDisableThinkOutLoud">
+    <display>关闭出声思考 {{K|[debug]}}</display>
+    <key>/</key>
+  </inventoryAction>
+  <inventoryAction Name="Chat">
+    <display>交谈</display>
+    <key>h</key>
+  </inventoryAction>
+  <inventoryAction Name="Destroy">
+    <display>{{R|摧毁}}</display>
+    <key>d</key>
+  </inventoryAction>
+  <inventoryAction Name="ResupplyForCloning">
+    <display>补给 [1 德拉姆克隆药剂]</display>
+    <key>r</key>
+  </inventoryAction>
+  <inventoryAction Name="CmdCustomAbilityAdd">
+    <display>添加自定义能力</display>
+    <key>u</key>
+  </inventoryAction>
+  <inventoryAction Name="CmdCustomAbilityEdit">
+    <display>编辑自定义能力</display>
+    <key>u</key>
+  </inventoryAction>
+  <inventoryAction Name="BeStoodUp">
+    <display>站起</display>
+    <key>s</key>
+  </inventoryAction>
+  <inventoryAction Name="Pet">
+    <display>抚摸</display>
+    <key>p</key>
+  </inventoryAction>
+  <inventoryAction Name="Supply">
+    <display>供给</display>
+    <key>s</key>
+  </inventoryAction>
+  <inventoryAction Name="Butcher">
+    <display>屠宰</display>
+    <key>b</key>
+  </inventoryAction>
+  <inventoryAction Name="LoadTonics">
+    <display>装入补剂</display>
+    <key>o</key>
+  </inventoryAction>
+  <inventoryAction Name="EjectTonics">
+    <display>弹出补剂</display>
+    <key>j</key>
+  </inventoryAction>
+  <inventoryAction Name="LoadTonic">
+    <display>装入医疗辅助模块</display>
+    <key>m</key>
+  </inventoryAction>
+  <inventoryAction Name="ImprintRecoiler">
+    <display>印刻</display>
+    <key>i</key>
+  </inventoryAction>
+  <inventoryAction Name="ActivateRecoilerTeleporter">
+    <display>激活</display>
+    <key>a</key>
+  </inventoryAction>
+  <inventoryAction Name="Look">
+    <display>查看</display>
+    <key>l</key>
+  </inventoryAction>
+  <inventoryAction Name="ReadStory">
+    <display>回忆故事</display>
+    <key>s</key>
+  </inventoryAction>
+  <inventoryAction Name="EnterInterior">
+    <display>进入</display>
+    <key>e</key>
+  </inventoryAction>
+  <inventoryAction Name="ExitInterior">
+    <display>退出</display>
+    <key>e</key>
+  </inventoryAction>
+  <inventoryAction Name="Examine">
+    <display>检视</display>
+    <key>x</key>
+  </inventoryAction>
+  <inventoryAction Name="Eat">
+    <display>吃</display>
+    <key>a</key>
+  </inventoryAction>
+  <inventoryAction Name="EatSus">
+    <display>吃</display>
+    <key>a</key>
+  </inventoryAction>
+  <inventoryAction Name="Ascend">
+    <display>上行</display>
+    <key>a</key>
+  </inventoryAction>
+  <inventoryAction Name="AscendCable">
+    <display>上行</display>
+    <key>a</key>
+  </inventoryAction>
+  <inventoryAction Name="Descend">
+    <display>下行</display>
+    <key>a</key>
+  </inventoryAction>
+  <inventoryAction Name="DescendCable">
+    <display>下行</display>
+    <key>a</key>
+  </inventoryAction>
+  <inventoryAction Name="SleepOnBed">
+    <display>睡觉</display>
+    <key>s</key>
+  </inventoryAction>
+  <inventoryAction Name="StandUpFromChair">
+    <display>站立</display>
+    <key>s</key>
+  </inventoryAction>
+  <inventoryAction Name="SitOnChair">
+    <display>坐下</display>
+    <key>s</key>
+  </inventoryAction>
+  <inventoryAction Name="Close">
+    <display>关闭</display>
+    <key>c</key>
+  </inventoryAction>
+  <inventoryAction Name="Open">
+    <display>打开</display>
+    <key>o</key>
+  </inventoryAction>
+  <inventoryAction Name="OpenCasual">
+    <display>打开</display>
+    <key>o</key>
+  </inventoryAction>
+  <inventoryAction Name="ExitEnclosing">
+    <display>退出</display>
+    <key>e</key>
+  </inventoryAction>
+  <inventoryAction Name="EnterEnclosing">
+    <display>进入</display>
+    <key>e</key>
+  </inventoryAction>
+  <inventoryAction Name="ActivateForceProjector">
+    <display>激活</display>
+    <key>a</key>
+  </inventoryAction>
+  <inventoryAction Name="DeactivateForceProjector">
+    <display>停用</display>
+    <key>a</key>
+  </inventoryAction>
+  <inventoryAction Name="Pray">
+    <display>祈祷</display>
+    <key>y</key>
+  </inventoryAction>
+  <inventoryAction Name="Desecrate">
+    <display>亵渎</display>
+    <key>D</key>
+  </inventoryAction>
+  <inventoryAction Name="Detonate">
+    <display>引爆</display>
+    <key>n</key>
+  </inventoryAction>
+  <inventoryAction Name="ActivateAjiConch">
+    <display>吹奏</display>
+    <key>b</key>
+  </inventoryAction>
+  <inventoryAction Name="ActivateAnimateObject">
+    <display>激活</display>
+    <key>a</key>
+  </inventoryAction>
+  <inventoryAction Name="Defibrillate">
+    <display>激活</display>
+    <key>a</key>
+  </inventoryAction>
+  <inventoryAction Name="RaiseBanner">
+    <display>举起</display>
+    <key>r</key>
+  </inventoryAction>
+  <inventoryAction Name="BubbleLevel">
+    <display>翻转</display>
+    <key>f</key>
+  </inventoryAction>
+  <inventoryAction Name="LightCampfire">
+    <display>点燃</display>
+    <key>i</key>
+  </inventoryAction>
+  <inventoryAction Name="DrawWithCrayons">
+    <display>拔出</display>
+    <key>w</key>
+  </inventoryAction>
+  <inventoryAction Name="BuildFromDataDisk">
+    <display>建造</display>
+    <key>b</key>
+  </inventoryAction>
+  <inventoryAction Name="LearnFromDataDisk">
+    <display>学习</display>
+    <key>l</key>
+  </inventoryAction>
+  <inventoryAction Name="DeactivateHologramBracelet">
+    <display>停用</display>
+    <key>a</key>
+  </inventoryAction>
+  <inventoryAction Name="ActivateHologramBracelet">
+    <display>激活</display>
+    <key>a</key>
+  </inventoryAction>
+  <inventoryAction Name="DeployInfrastructure">
+    <display>部署=deployNoun=</display>
+    <key>y</key>
+  </inventoryAction>
+  <inventoryAction Name="FlipBeam">
+    <display>翻转</display>
+    <key>f</key>
+  </inventoryAction>
+  <inventoryAction Name="Engrave">
+    <display>镌刻</display>
+    <key>e</key>
+  </inventoryAction>
+  <inventoryAction Name="ActivateFactionDeed">
+    <display>缠结文字</display>
+    <key>n</key>
+  </inventoryAction>
+  <inventoryAction Name="ToggleForceEmitterDeactivate">
+    <display>停用</display>
+    <key>a</key>
+  </inventoryAction>
+  <inventoryAction Name="ToggleForceEmitterActivate">
+    <display>激活</display>
+    <key>a</key>
+  </inventoryAction>
+  <inventoryAction Name="RifleThroughGarbage">
+    <display>搜掠</display>
+    <key>r</key>
+  </inventoryAction>
+  <inventoryAction Name="ActivateGenocideCurio">
+    <display>激活</display>
+    <key>a</key>
+  </inventoryAction>
+  <inventoryAction Name="BlowGrandfatherHorn">
+    <display>吹奏</display>
+    <key>b</key>
+  </inventoryAction>
+  <inventoryAction Name="Harvest">
+    <display>采收</display>
+    <key>h</key>
+  </inventoryAction>
+  <inventoryAction Name="SmokeHookah">
+    <display>吸</display>
+    <key>s</key>
+  </inventoryAction>
+  <inventoryAction Name="ActivateMechanicalWings">
+    <display>激活</display>
+    <key>a</key>
+  </inventoryAction>
+  <inventoryAction Name="ActivatePassiveFactionDeed">
+    <display>激活</display>
+    <key>a</key>
+  </inventoryAction>
+  <inventoryAction Name="DeactivateTemplarPhylactery">
+    <display>停用</display>
+    <key>a</key>
+  </inventoryAction>
+  <inventoryAction Name="ActivateTemplarPhylactery">
+    <display>激活</display>
+    <key>a</key>
+  </inventoryAction>
+  <inventoryAction Name="ActivatePortableWall">
+    <display>激活</display>
+    <key>a</key>
+  </inventoryAction>
+  <inventoryAction Name="ActivateSpiralBorer">
+    <display>激活</display>
+    <key>a</key>
+  </inventoryAction>
+  <inventoryAction Name="ActivateSkyshroud">
+    <display>激活</display>
+    <key>a</key>
+  </inventoryAction>
+  <inventoryAction Name="ActivateSummoningCurio">
+    <display>激活</display>
+    <key>a</key>
+  </inventoryAction>
+  <inventoryAction Name="ActivateTeleprojector">
+    <display>激活</display>
+    <key>a</key>
+  </inventoryAction>
+  <inventoryAction Name="Disassemble">
+    <display>拆解</display>
+    <key>m</key>
+  </inventoryAction>
+  <inventoryAction Name="DisassembleAll">
+    <display>全部拆解</display>
+    <key>M</key>
+  </inventoryAction>
+  <inventoryAction Name="Repair">
+    <display>修理</display>
+    <key>r</key>
+  </inventoryAction>
+  <inventoryAction Name="RepairOnActor">
+    <display>修理</display>
+    <key>R</key>
+  </inventoryAction>
+  <inventoryAction Name="PressIron">
+    <display>压榨</display>
+    <key>p</key>
+  </inventoryAction>
+  <inventoryAction Name="DeactivateStopsvalinn">
+    <display>停用</display>
+    <key>a</key>
+  </inventoryAction>
+  <inventoryAction Name="ActivateStopsvalinn">
+    <display>激活</display>
+    <key>a</key>
+  </inventoryAction>
+  <inventoryAction Name="Tattoo">
+    <display>刺青</display>
+    <key>t</key>
+  </inventoryAction>
+  <inventoryAction Name="ActivateTeleporter">
+    <display>激活</display>
+    <key>a</key>
+  </inventoryAction>
+  <inventoryAction Name="ActivateTeleporterPair">
+    <display>激活</display>
+    <key>a</key>
+  </inventoryAction>
+  <inventoryAction Name="ActivateTeleporterPairCooldown">
+    <display>激活 [冷却 {{C|=turns=}} 回合]</display>
+    <key>a</key>
+  </inventoryAction>
+  <inventoryAction Name="ConfigureTemperatureController">
+    <display>设定目标温度</display>
+    <key>s</key>
+  </inventoryAction>
+  <inventoryAction Name="SmokeThurible">
+    <display>焚香</display>
+    <key>i</key>
+  </inventoryAction>
+  <inventoryAction Name="ActivateTimeCube">
+    <display>激活</display>
+    <key>a</key>
+  </inventoryAction>
+  <inventoryAction Name="TorchLight">
+    <display>点燃</display>
+    <key>i</key>
+  </inventoryAction>
+  <inventoryAction Name="TorchExtinguish">
+    <display>熄灭</display>
+    <key>x</key>
+  </inventoryAction>
+  <inventoryAction Name="FillSlotted">
+    <display>装入=subject.basename|strip=</display>
+    <key>f</key>
+  </inventoryAction>
+  <inventoryAction Name="Unseal">
+    <display>启封</display>
+    <key>u</key>
+  </inventoryAction>
+  <inventoryAction Name="Seal">
+    <display>封缄</display>
+    <key>s</key>
+  </inventoryAction>
+  <inventoryAction Name="FillFrom">
+    <display>装入</display>
+    <key>f</key>
+  </inventoryAction>
+  <inventoryAction Name="Drain">
+    <display>抽取</display>
+    <key>r</key>
+  </inventoryAction>
+  <inventoryAction Name="Drink">
+    <display>喝</display>
+    <key>k</key>
+  </inventoryAction>
+  <inventoryAction Name="Pour">
+    <display>倒出</display>
+    <key>p</key>
+  </inventoryAction>
+  <inventoryAction Name="AutoCollectLiquidOn">
+    <display>自动收集液体</display>
+    <key>a</key>
+  </inventoryAction>
+  <inventoryAction Name="AutoCollectLiquidOff">
+    <display>关闭自动收集液体</display>
+    <key>a</key>
+  </inventoryAction>
+  <inventoryAction Name="CollectLiquid">
+    <display>收集液体</display>
+    <key>c</key>
+  </inventoryAction>
+  <inventoryAction Name="CleanWithLiquid">
+    <display>清洁你所有物品 [1 德拉姆]</display>
+    <key>n</key>
+  </inventoryAction>
+  <inventoryAction Name="CommandChangeGrip">
+    <display>换握</display>
+    <key>c</key>
+  </inventoryAction>
+  <inventoryAction Name="LoadMagazineAmmo">
+    <display>装填</display>
+    <key>o</key>
+  </inventoryAction>
+  <inventoryAction Name="UnloadMagazineAmmo">
+    <display>卸下</display>
+    <key>u</key>
+  </inventoryAction>
+  <inventoryAction Name="Psychometry">
+    <display>以触物占卜读取历史</display>
+    <key>i</key>
+  </inventoryAction>
+  <inventoryAction Name="DrinkCharge">
+    <display>饮下充能</display>
+    <key>k</key>
+  </inventoryAction>
+  <inventoryAction Name="Unequip">
+    <display>移除</display>
+    <key>r</key>
+  </inventoryAction>
+  <inventoryAction Name="LoadoutOn">
+    <display>加入当前装备组</display>
+    <key>q</key>
+  </inventoryAction>
+  <inventoryAction Name="LoadoutOff">
+    <display>从当前装备组移除</display>
+    <key>q</key>
+  </inventoryAction>
+  <inventoryAction Name="LoadoutCreate">
+    <display>新建装备组</display>
+    <key>q</key>
+  </inventoryAction>
+  <inventoryAction Name="UnequipSwap">
+    <display>换出</display>
+    <key>s</key>
+  </inventoryAction>
+  <inventoryAction Name="CommandTakeObject">
+    <display>拾取</display>
+    <key>g</key>
+  </inventoryAction>
+  <inventoryAction Name="CommandDropObject">
+    <display>丢下</display>
+    <key>d</key>
+  </inventoryAction>
+  <inventoryAction Name="CommandDropAllObject">
+    <display>全部丢下</display>
+    <key>D</key>
+  </inventoryAction>
+  <inventoryAction Name="CommandAutoEquipObject">
+    <display>装备（自动）</display>
+    <key>e</key>
+  </inventoryAction>
+  <inventoryAction Name="CommandEquipObject">
+    <display>装备（手动）</display>
+    <key>E</key>
+  </inventoryAction>
+  <inventoryAction Name="FightFire">
+    <display>灭火</display>
+    <key>f</key>
+  </inventoryAction>
+  <inventoryAction Name="Attack">
+    <display>攻击</display>
+    <key>k</key>
+  </inventoryAction>
+  <inventoryAction Name="Mod">
+    <display>以修补术改装</display>
+    <key>t</key>
+  </inventoryAction>
+  <inventoryAction Name="AddNotes">
+    <display>添加备注</display>
+    <key>n</key>
+  </inventoryAction>
+  <inventoryAction Name="MarkUnimportant">
+    <display>标为不重要</display>
+    <key>i</key>
+  </inventoryAction>
+  <inventoryAction Name="MarkImportant">
+    <display>标为重要</display>
+    <key>i</key>
+  </inventoryAction>
+  <inventoryAction Name="RemoveNotes">
+    <display>移除备注</display>
+    <key>n</key>
+  </inventoryAction>
+  <inventoryAction Name="CleanItem">
+    <display>清洁</display>
+    <key>a</key>
+  </inventoryAction>
+  <inventoryAction Name="ShowInternals">
+    <display>显示内部 {{K|[debug]}}</display>
+    <key>W</key>
+  </inventoryAction>
+  <inventoryAction Name="RechargeCapacitor">
+    <display>充能</display>
+    <key>R</key>
+  </inventoryAction>
+  <inventoryAction Name="RechargeEnergyCell">
+    <display>充能</display>
+    <key>R</key>
+  </inventoryAction>
+  <inventoryAction Name="RechargeEnergyCellSlotted">
+    <display>为=subject.basename|strip=充能</display>
+    <key>R</key>
+  </inventoryAction>
+  <inventoryAction Name="ReplaceSocketCell">
+    <display>更换电池</display>
+    <key>c</key>
+  </inventoryAction>
+  <inventoryAction Name="ReplaceSocketCellEmpty">
+    <display>安装电池</display>
+    <key>c</key>
+  </inventoryAction>
+  <inventoryAction Name="PowerSwitchOff">
+    <display>停用</display>
+    <key>a</key>
+  </inventoryAction>
+  <inventoryAction Name="PowerSwitchOn">
+    <display>激活</display>
+    <key>a</key>
+  </inventoryAction>
+  <inventoryAction Name="RemotePowerSwitchOff">
+    <display>停用</display>
+    <key>a</key>
+  </inventoryAction>
+  <inventoryAction Name="RemotePowerSwitchOn">
+    <display>激活</display>
+    <key>a</key>
+  </inventoryAction>
+  <inventoryAction Name="WindUp">
+    <display>上弦</display>
+    <key>w</key>
+  </inventoryAction>
+  <inventoryAction Name="Cook">
+    <display>烹饪</display>
+    <key>c</key>
+  </inventoryAction>
+  <inventoryAction Name="ExtinguishCampfire">
+    <display>熄灭</display>
+    <key>x</key>
+  </inventoryAction>
+  <inventoryAction Name="CookWhipUp">
+    <display>随手做一顿饭。</display>
+    <key>m</key>
+  </inventoryAction>
+  <inventoryAction Name="CookChooseIngredients">
+    <display>选择烹饪用的食材。</display>
+    <key>i</key>
+  </inventoryAction>
+  <inventoryAction Name="CookFromRecipe">
+    <display>按食谱烹饪。</display>
+    <key>r</key>
+  </inventoryAction>
+  <inventoryAction Name="CookPreserve">
+    <display>保存你的新鲜食物。</display>
+    <key>f</key>
+  </inventoryAction>
+  <inventoryAction Name="CookPreserveExotic">
+    <display>保存你的异域食物。</display>
+    <key>x</key>
+  </inventoryAction>
+  <inventoryAction Name="CookStopBleeding">
+    <display>止血。</display>
+    <key>b</key>
+  </inventoryAction>
+  <inventoryAction Name="CookTreatPoison">
+    <display>解毒。</display>
+    <key>p</key>
+  </inventoryAction>
+  <inventoryAction Name="CookTreatIllness">
+    <display>治病。</display>
+    <key>l</key>
+  </inventoryAction>
+  <inventoryAction Name="CookTreatDiseaseOnset">
+    <display>治疗初发病症。</display>
+    <key>d</key>
+  </inventoryAction>
+  <inventoryAction Name="ToggleScrapOff">
+    <display>不再视作废料</display>
+    <key>S</key>
+  </inventoryAction>
+  <inventoryAction Name="ToggleScrapOn">
+    <display>视作废料</display>
+    <key>S</key>
+  </inventoryAction>
+  <inventoryAction Name="DisarmMine">
+    <display>解除</display>
+    <key>d</key>
+  </inventoryAction>
+  <inventoryAction Name="ArmMine">
+    <display>装上</display>
+    <key>a</key>
+  </inventoryAction>
+  <inventoryAction Name="LayMineBomb">
+    <display>放置</display>
+    <key>s</key>
+  </inventoryAction>
+  <inventoryAction Name="LayMine">
+    <display>下蛋</display>
+    <key>L</key>
+  </inventoryAction>
+  <inventoryAction Name="PluckPolyp">
+    <display>拔取</display>
+    <key>p</key>
+  </inventoryAction>
+  <inventoryAction Name="Sacrifice">
+    <display>献祭</display>
+    <key>s</key>
+  </inventoryAction>
+  <inventoryAction Name="FlipSwitch">
+    <display>拨动</display>
+    <key>f</key>
+  </inventoryAction>
+  <inventoryAction Name="VehicleControl">
+    <display>操控</display>
+    <key>c</key>
+  </inventoryAction>
+  <inventoryAction Name="ReleaseVehicle">
+    <display>退出</display>
+    <key>x</key>
+  </inventoryAction>
+  <inventoryAction Name="RecallVehicle">
+    <display>召回=vehicleTerm=</display>
+    <key>c</key>
+  </inventoryAction>
+  <inventoryAction Name="RepairVehicle">
+    <display>修理=vehicleTerm=</display>
+    <key>r</key>
+  </inventoryAction>
+  <inventoryAction Name="ActivateGolemMound">
+    <display>接入</display>
+    <key>i</key>
+  </inventoryAction>
+  <inventoryAction Name="CompanionEnterVehicle">
+    <display>指令随从进入</display>
+    <key>f</key>
+  </inventoryAction>
+  <inventoryAction Name="CommandSingleSeatEject">
+    <display>弹射</display>
+    <key>j</key>
+  </inventoryAction>
+  <inventoryAction Name="StarshipLaunch">
+    <display>发射</display>
+    <key>c</key>
+  </inventoryAction>
+  <inventoryAction Name="TelekineticPull">
+    <display>以念力拉向自己</display>
+    <key>p</key>
+  </inventoryAction>
+  <inventoryAction Name="TelekineticPullOne">
+    <display>以念力将一件拉向自己</display>
+    <key>P</key>
+  </inventoryAction>
+  <inventoryAction Name="TelekineticPullAndTake">
+    <display>以念力拉向自己并取走</display>
+    <key>t</key>
+  </inventoryAction>
+  <inventoryAction Name="TelekineticPullAndTakeOne">
+    <display>以念力将一件拉向自己并取走</display>
+    <key>T</key>
+  </inventoryAction>
+  <inventoryAction Name="TelekineticHurl">
+    <display>以念力投掷</display>
+    <key>h</key>
+  </inventoryAction>
+  <inventoryAction Name="TelekineticHurlOne">
+    <display>以念力投掷一件</display>
+    <key>H</key>
+  </inventoryAction>
+  <inventoryAction Name="TelekineticMove">
+    <display>以念力移动</display>
+    <key>m</key>
+  </inventoryAction>
+  <inventoryAction Name="TelekineticMoveOne">
+    <display>以念力移动一件</display>
+    <key>M</key>
+  </inventoryAction>
+  <inventoryAction Name="ToggleAllowAutogetStart">
+    <display>开启自动拾取</display>
+    <key>S</key>
+  </inventoryAction>
+  <inventoryAction Name="ToggleAllowAutogetStop">
+    <display>关闭自动拾取</display>
+    <key>S</key>
+  </inventoryAction>
+</inventoryActions>

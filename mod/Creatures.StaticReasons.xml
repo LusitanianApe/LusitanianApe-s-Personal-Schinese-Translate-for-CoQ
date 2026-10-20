@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 声望「憎恨 / 喜爱原因」数据侧覆盖（F14-2 · 2026-10-18）
+     官方 ObjectBlueprints\Creatures.xml 里有 12 个物件带
+       <tag Name="StaticHateReason" Value="…" /> / <tag Name="StaticLikeReason" Value="…" />
+     官方 LanguageXml 把该 Value 标成 IsDisplayText=true（不是键）⇒ 可以直接写中文。
+     我方此前零覆盖 ⇒ 截图里「受 X 憎恨，原因: eating one of their young.」原样英文。 -->
+<objects Encoding="utf-8">
+  <object Name="BaseNephal" Load="Merge">
+    <tag Name="StaticLikeReason" Value="某个没人记得的原因" />
+    <tag Name="StaticHateReason" Value="吃掉了他们的一只幼崽" />
+  </object>
+  <object Name="Scribe" Load="Merge">
+    <tag Name="StaticLikeReason" Value="让他们的手稿增光" />
+    <tag Name="StaticHateReason" Value="拒绝让他们的手稿增光" />
+  </object>
+  <object Name="Shoemaker" Load="Merge">
+    <tag Name="StaticLikeReason" Value="为他们制作匠造鞋" />
+    <tag Name="StaticHateReason" Value="拒绝为他们制作匠造鞋" />
+  </object>
+  <object Name="Hatter" Load="Merge">
+    <tag Name="StaticLikeReason" Value="为他们制作匠造帽" />
+    <tag Name="StaticHateReason" Value="拒绝为他们制作匠造帽" />
+  </object>
+  <object Name="Glover" Load="Merge">
+    <tag Name="StaticLikeReason" Value="为他们制作匠造手套" />
+    <tag Name="StaticHateReason" Value="拒绝为他们制作匠造手套" />
+  </object>
+  <object Name="Chef" Load="Merge">
+    <tag Name="StaticLikeReason" Value="为他们烹制一顿丰盛的大餐" />
+    <tag Name="StaticHateReason" Value="拒绝为他们下厨" />
+  </object>
+  <object Name="Haberdasher" Load="Merge">
+    <tag Name="StaticLikeReason" Value="为他们制作匠造斗篷" />
+    <tag Name="StaticHateReason" Value="拒绝为他们制作匠造斗篷" />
+  </object>
+  <object Name="Armorer" Load="Merge">
+    <tag Name="StaticLikeReason" Value="为他们制作匠造护甲" />
+    <tag Name="StaticHateReason" Value="拒绝为他们制作匠造护甲" />
+  </object>
+  <object Name="Gunsmith" Load="Merge">
+    <tag Name="StaticLikeReason" Value="为他们制作匠造枪械" />
+    <tag Name="StaticHateReason" Value="拒绝为他们制作匠造枪械" />
+  </object>
+  <object Name="IchorMerchant" Load="Merge">
+    <tag Name="StaticLikeReason" Value="蒸馏出稀有液体" />
+    <tag Name="StaticHateReason" Value="拒绝蒸馏稀有液体" />
+  </object>
+  <object Name="Gemcutter" Load="Merge">
+    <tag Name="StaticLikeReason" Value="用小雕像美化他们" />
+    <tag Name="StaticHateReason" Value="用小雕像丑化他们" />
+  </object>
+  <object Name="Gutsmonger" Load="Merge">
+    <tag Name="StaticLikeReason" Value="备有稀有植入体" />
+    <tag Name="StaticHateReason" Value="拒绝出售稀有植入体" />
+  </object>
+</objects>

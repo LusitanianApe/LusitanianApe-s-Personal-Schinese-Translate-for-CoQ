@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 由 Mods.xml 借译（Load="Merge" 增量覆盖）。
+     译文基准取自 210.20 补丁，机翻明显处已优化，译名以我们的术语表为准。 -->
+<mods Load="Merge" Lang="zh-Hans" Encoding="utf-8">
+  <mod Part="ModLacquered" TinkerDisplayName="漆器" TinkerCategory="工具" Description="上漆： 此物品不会生锈。" />
+  <mod Part="ModSturdy" TinkerDisplayName="坚固" TinkerCategory="工具" Description="坚固： 此物品不会损坏。" />
+  <mod Part="ModSlender" TinkerDisplayName="纤细" TinkerCategory="工具" Description="纤细： 此物品重量低于正常。" />
+  <mod Part="ModWillowy" TinkerDisplayName="柳枝" TinkerCategory="工具" Description="柳枝： 此物品重量远低于正常。" />
+  <mod Part="ModSuspensor" TinkerDisplayName="悬浮装置" TinkerCategory="工具" />
+  <mod Part="ModJewelEncrusted" TinkerDisplayName="镶嵌宝石的" TinkerCategory="工具" Description="镶宝： 此物品价值远超寻常，并使佩戴者获得+100水商声望。" />
+  <mod Part="ModDrumLoaded" TinkerDisplayName="鼓装" TinkerCategory="步枪" Description="鼓装： 此武器可额外装载20%弹药。" />
+  <mod Part="ModScoped" TinkerDisplayName="瞄准镜" TinkerCategory="步枪" Description="瞄准镜： 此武器精度提升。" />
+  <mod Part="ModLiquidCooled" TinkerDisplayName="液冷" TinkerCategory="步枪" />
+  <mod Part="ModBeamsplitter" TinkerDisplayName="装配分光器" TinkerCategory="步枪" />
+  <mod Part="ModNanon" TinkerDisplayName="纳米" TinkerCategory="步枪" />
+  <mod Part="ModSharp" TinkerDisplayName="锋利" TinkerCategory="近战武器" Description="锋利： 穿透检定+1" />
+  <mod Part="ModMasterwork" TinkerDisplayName="精工" TinkerCategory="近战武器" Description="精工： 此武器暴击率翻倍。" />
+  <mod Part="ModDisplacer" TinkerDisplayName="位移器" TinkerCategory="近战武器" />
+  <mod Part="ModMorphogenetic" TinkerDisplayName="形态发生" TinkerCategory="近战武器" />
+  <mod Part="ModSerrated" TinkerDisplayName="锯齿" TinkerCategory="近战武器" Description="锯齿： 此武器有3%几率造成对手肢体残缺。" />
+  <mod Part="ModGigantic" TinkerDisplayName="巨型" TinkerCategory="工具" />
+  <mod Part="ModElectrified" TinkerDisplayName="带电的" TinkerCategory="近战武器" />
+  <mod Part="ModFreezing" TinkerDisplayName="冰冻的" TinkerCategory="近战武器" />
+  <mod Part="ModFlaming" TinkerDisplayName="火焰的" TinkerCategory="近战武器" />
+  <mod Part="ModCounterweighted" TinkerDisplayName="配重" TinkerCategory="近战武器" />
+  <mod Part="ModReinforced" TinkerDisplayName="强化" TinkerCategory="护甲" Description="强化： +1 AV" />
+  <mod Part="ModFlexiweaved" TinkerDisplayName="柔性编织" TinkerCategory="护甲" />
+  <mod Part="ModRecycling" TinkerDisplayName="回收" TinkerCategory="护甲" Description="回收： 此物品收集、净化并储存穿戴者最多8德拉姆废水。" />
+  <mod Part="ModDisguise" TinkerDisplayName="伪装" TinkerCategory="护甲" />
+  <mod Part="ModVisored" TinkerDisplayName="面罩" TinkerCategory="护甲" Description="面罩： +1 DV" />
+  <mod Part="ModPadded" TinkerDisplayName="衬垫" TinkerCategory="护甲" />
+  <mod Part="ModLanterned" TinkerDisplayName="灯笼化" TinkerCategory="护甲" Description="灯笼化： 此物品提供光源。" />
+  <mod Part="ModFilters" TinkerDisplayName="配备过滤器" TinkerCategory="护甲" />
+  <mod Part="ModTwoFaced" TinkerDisplayName="双面的" TinkerCategory="护甲" Description="双面： 此物品提供额外面部装备槽。" />
+  <mod Part="ModTerrifyingVisage" TinkerDisplayName="恐怖面容的" TinkerCategory="护甲" Description="恐怖面容： 此物品减少“训斥”、“恐吓”和“威胁凝视”的冷却时间10回合。此外，它占用头部和面部装备槽。" />
+  <mod Part="ModSereneVisage" TinkerDisplayName="宁静面容的" TinkerCategory="护甲" Description="宁静面容： +1 意志力并减少“冥想”的冷却时间40回合。此外，此物品占用头部和面部装备槽。" />
+  <mod Part="ModCoProcessor" TinkerDisplayName="协处理器" TinkerCategory="护甲" />
+  <mod Part="ModSpiked" TinkerDisplayName="尖刺的" TinkerCategory="护甲" />
+  <mod Part="ModRefractive" TinkerDisplayName="折射的" TinkerCategory="护甲" />
+  <mod Part="ModSixFingered" TinkerDisplayName="六指" TinkerCategory="护甲" Description="六指： +1 敏捷" />
+  <mod Part="ModGesticulating" TinkerDisplayName="手势的" TinkerCategory="护甲" />
+  <mod Part="ModFeathered" TinkerDisplayName="羽饰的" TinkerCategory="护甲" Description="羽化： 此物品使穿戴者获得+250鸟类声望。" />
+  <mod Part="ModScaled" TinkerDisplayName="鳞片的" TinkerCategory="护甲" Description="鳞化： 此物品使穿戴者获得+250无壳爬行动物声望。" />
+  <mod Part="ModWooly" TinkerDisplayName="毛绒的" TinkerCategory="护甲" Description="毛绒： 此物品提供对热和冷的抗性。" />
+  <mod Part="ModSnailEncrusted" TinkerDisplayName="蜗牛附着的" TinkerCategory="护甲" Description="鳞化： 此物品使穿戴者获得+250软体动物声望。" />
+  <mod Part="ModSpringLoaded" TinkerDisplayName="弹簧加载的" TinkerCategory="护甲" Description="弹簧加载： +5-10 移动速度" />
+  <mod Part="ModCleated" TinkerDisplayName="装有鞋钉的" TinkerCategory="护甲" />
+  <mod Part="ModPolarized" TinkerDisplayName="偏振的" TinkerCategory="护甲" />
+  <mod Part="ModNav" TinkerDisplayName="导航" TinkerCategory="护甲" />
+  <mod Part="ModNulling" TinkerDisplayName="虚无化" TinkerCategory="工具" />
+  <mod Part="ModHighCapacity" TinkerDisplayName="高容量" TinkerCategory="弹药和能量电池" />
+  <mod Part="ModMetered" TinkerDisplayName="计量" TinkerCategory="弹药和能量电池" />
+  <mod Part="ModRadioPowered" TinkerDisplayName="无线供电的" TinkerCategory="弹药和能量电池" />
+  <mod Part="ModIlluminated" TinkerDisplayName="装有插图的" TinkerCategory="工具" Description="插图： 本书配有装饰性旁注和插图。它的价值增加了​​ 30%。" />
+  <mod Part="ModExtradimensional" TinkerDisplayName="异次元的" TinkerCategory="工具" Description="异次元： 此物品最近实体化，继承了其原生维度的一些特性。" />
+  <mod Part="ModAirfoil" TinkerDisplayName="翼型" />
+  <mod Part="ModPhaseConjugate" TinkerDisplayName="相位共轭" />
+  <mod Part="ModHardened" TinkerDisplayName="电磁屏蔽的" TinkerCategory="工具" />
+  <mod Part="ModJacked" TinkerDisplayName="插电的" TinkerCategory="工具" />
+  <mod Part="ModOverloaded" TinkerDisplayName="过载的" TinkerCategory="工具" />
+  <mod Part="ModPhaseHarmonic" TinkerDisplayName="相位谐波的" TinkerCategory="工具" />
+  <mod Part="ModEngraved" TinkerDisplayName="雕刻的" TinkerCategory="工具" Description="雕刻： 此物品雕刻有历史事件的描绘。" />
+  <mod Part="ModPainted" TinkerDisplayName="彩绘的" TinkerCategory="工具" Description="彩绘： 此物品彩绘有历史事件的描绘。" />
+</mods>

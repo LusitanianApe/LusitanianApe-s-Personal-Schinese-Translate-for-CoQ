@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<objects Encoding="utf-8">
+  <!-- 译文基准取自 210.20 前人汉化（_ref\机翻参考-210.20v5）。
+       本文件为 Load="Merge" 增量：只补 HiddenObjects.xml 里尚未汉化的对象。
+       已做确定性预处理：修正拼写错误槽 / 自造中文槽 / 双「的」/ 动词槽。 -->
+  <object Name="MotedAir" Load="Merge">
+    <part Name="Render" DisplayName="太空真空" />
+    <part Name="Description" Short="彩虹光子在这片低智压力的虚空中完成了百万年的马拉松。" />
+  </object>
+  <object Name="Chiliad Creature Issachari" Load="Merge">
+    <part Name="Description" Short="风把一件带流苏的袍子与颈饰紧贴在人形之上。布面上的刺绣与盐滩及星切天穹的花纹押着韵。" />
+  </object>
+</objects>

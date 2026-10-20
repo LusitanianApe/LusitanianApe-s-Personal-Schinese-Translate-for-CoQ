@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  《卡德洞窟》帮助手册（F1）简体中文。
+  ★ 每个 <topic> 的 name 属性是查表键，逐字照抄官方 Base/Manual.xml，不得改动。
+  ★ 中文标题走官方 DisplayName 属性（官方模板 ExampleLanguage/Manual.example.xml 即此写法）。
+  ★ 正文硬折行：引擎的折行器只在空格/换行处断行（TranslatorBase::NextPossibleLineBreakIndex
+    只找 " \n"），中文没有空格 ⇒ 不自己折行就会溢出。本文件每行不超过 76 显示列。
+  ★ 译名口径见 _tools/术语表.md；属性缩写 AV/DV/MA/QN/MS/T 一律保留英文。
+  ★ Credits 的人名与 Open Source Licenses 的 MIT 许可证正文按原样保留（专名 / 法律文本）。
+-->
+<help Lang="zh-Hans" Encoding="utf-8">
+  <topic name="Quickstart" DisplayName="快速上手">
+开局时你该做的九件事。
+之后可以把本帮助的其余部分当作参考手册来用。
+
+{{W|1. 四处走动}}
+
+{{?KB|按方向键（~CmdMoveN、~CmdMoveE 等）移动，或在地图上点击。}}{{?Gamepad|用 ~UI:Navigate 指定方向，
+按 ~Take A Step 移动，按住 ~Take A Step 则持续移动。}}{{?Gamepad|
+你也可以用 ~CmdAutoExplore 自动探索地图。}}
+
+{{W|2. 与事物互动}}
+
+走到 NPC 或其他物件旁边，按 ~CmdUse。
+
+{{W|3. 观察事物}}
+
+{{?KB|按 }}~CmdLook 进入观察模式，然后在地图上移动光标。
+{{?KB|或{{hotkey|右键}}快速观察。}}
+
+{{W|4. 使用能力}}
+
+{{?KB|点击屏幕底部能力栏上的按钮，
+或按它的快捷键。}}{{?Gamepad|用 ~UI:Navigate/left 与 ~UI:Navigate/right 在屏幕底部的快捷栏中移动，
+再按 ~Use Ability 施展能力。}}
+
+{{W|5. 查看角色面板}}
+
+{{?KB|按 ~CmdCharacter 查看你的核心角色信息。
+按 ~CmdEquipment 查看装备。
+按 ~CmdInventory 查看背包。
+按 ~CmdJournal 查看日志。
+按 ~CmdQuests 查看任务。
+按 ~CmdSkillsPowers 查看技能。
+按 ~CmdFactions 查看派系关系。
+
+可用 ~Page Left 与 ~Page Right 在这些页面间翻动。}}{{?Gamepad|按 ~CmdCharacter 查看你的核心角色信息。
+用 ~Page Left 与 ~Page Right 在角色面板中翻到其它页面。}}
+
+{{W|6. 调出兴趣点列表}}
+
+按 ~CmdMoveToPointOfInterest。
+
+{{W|7. 调出地图上物件的附加信息}}
+
+按 ~Highlight 可显示叠层，含生物敌对状态等额外信息（红 = 敌对，黄 = 中立，
+绿 = 友好），以及有用物品的清晰视图。
+
+{{W|8. 走到另一张地图}}
+
+直接走出屏幕边缘即可，或用 ~CmdMoveU 前往世界地图。
+
+{{W|9. 攻击敌人}}
+
+要发动普通攻击，径直走进敌对生物即可。
+也可以使用攻击类能力。
+</topic>
+  <topic name="Attributes" DisplayName="属性">
+[[{{C|力量}}]]
+力量决定你的近战伤害（通过提高护甲穿透）、抵抗强制位移的能力，
+以及负重上限。
+
+[[{{C|敏捷}}]]
+敏捷决定你使用近战与远程武器的命中率，以及闪避攻击的能力。
+
+[[{{C|坚韧}}]]
+坚韧决定你的生命值上限、生命值回复速度，以及抵抗毒素与疾病的能力。
+
+[[{{C|智力}}]]
+智力决定你获得的技能点数量，以及检视器物的能力。
+
+[[{{C|意志}}]]
+意志修正你主动能力的冷却时间，决定你抵抗精神攻击的能力，
+并修正生命值回复速度。
+
+[[{{C|自我}}]]
+自我决定你精神变异的强度、与商人讨价还价的能力，
+以及支配其他生物意志的能力。
+
+[[{{C|护甲值（AV）与闪避值（DV）}}]]
+护甲值（AV）衡量你对命中你的物理攻击的防护程度。你的数值越高，
+对手的攻击就越难对你造成重伤。大多数角色的基础 AV 为 0。
+
+闪避值（DV）衡量你被物理攻击命中的概率。你的数值越高，对手就越难命中你。
+DV 受你的敏捷修正影响。大多数角色的基础 DV 为 6。
+
+[[{{C|精神护甲（MA）}}]]
+精神护甲（MA）衡量你对精神攻击的防护程度，正如护甲值衡量你对物理攻击的
+防护程度。你的数值越高，对手的精神攻击就越难对你造成严重后果。
+MA 受你的意志修正影响。大多数角色的基础 MA 为 4。
+
+[[{{C|迅捷（QN）}}]]
+迅捷衡量你执行每一个动作的速度。你的基础迅捷为 100。
+注意，能提升该数值的途径极少。
+
+[[{{C|移动速度（MS）}}]]
+移动速度衡量你步行或飞行的快慢。你的基础移动速度为 100。
+
+[[{{C|温度（T）}}]]
+温度衡量你的冷热程度。处于寒冷时，你的迅捷减半；处于冰冻时，
+你无法进行物理行动；处于燃烧时，你每回合受到热伤害，直到你的温度降低。
+
+[[{{C|酸抗性}}]]
+酸抗性衡量你能消减多少酸伤害。你的基础酸抗性为 0。
+达到 100 时，你免疫酸伤害。
+
+[[{{C|寒抗性}}]]
+寒抗性衡量你能消减多少寒伤害，以及你对降低温度的效果有多隔绝。
+你的基础寒抗性为 0。达到 100 时，你免疫寒伤害，且你的温度无法被降低。
+
+[[{{C|电抗性}}]]
+电抗性衡量你能消减多少电伤害，以及你对电流的抵抗程度。你的基础电抗性为 0。
+达到 100 时，你免疫电伤害，且不再导电。
+
+[[{{C|热抗性}}]]
+热抗性衡量你能消减多少热伤害，以及你对升高温度的效果有多隔绝。
+你的基础热抗性为 0。达到 100 时，你免疫热伤害，且你的温度无法被升高。
+</topic>
+  <topic name="Skills" DisplayName="技能">
+技能代表你一生中学到的本领。每棵技能树都包含若干技能。
+开局时你会依你的种姓或天职获得若干技能。升级时获得的技能点
+可用于购买其它技能（你的智力越高，获得的技能点越多）。
+
+要购买新技能，必须先买下该技能树的入门技能。你还须满足目标技能
+在属性或能力上的要求。若你的种姓或天职已授予某项技能，
+你可以不具备其入门技能而直接拥有它。
+
+技能常常赋予你主动能力。购买技能后，你可以在「能力选择器」
+菜单（'~CmdAbilities'）中找到新获得的主动能力。
+</topic>
+  <topic name="Mutations and Defects" DisplayName="变异与缺陷">
+突变是赐予卡德（Qud）居民的独特生物力量——来自外围生态建筑区的
+真正子嗣（True Kin）不具备突变。突变分两类：肉体变异与精神变异。
+每种突变都有对应的突变值。你的肉体变异值，以及由肉体变异赋予的
+主动能力的冷却时间，都是固定的。而你的精神变异值受自我修正影响，
+其赋予能力的冷却时间则按你的意志高于或低于 16 的每一点，以 5% 的幅度调整。
+
+大多数角色的初始突变值为 1。每当你升一级，你会获得 1 点变异点，
+可用于把某项突变的突变值提高 1。任何突变的突变值都不得超过
+「1 + 你的角色等级 ÷ 2」。此外，用变异点提升的上限为 10；
+若你的自我进一步加成，精神变异可以超过 10。
+
+另一种选择是消耗 4 点变异点，从三个随机选出的突变中挑一个新突变。
+你选中的突变初始突变值为 1。如果你是奇美拉，提供给你的选择是肉体变异；
+如果你是灵能者，提供的是精神变异；否则提供给你三个完全随机的突变。
+突变常常赋予你主动能力。获得突变后，你可以在「能力选择器」菜单
+（'~CmdAbilities'）中找到新获得的主动能力。
+
+缺陷是以负面效果为主的突变。某些变异人开局时会带一个缺陷。
+缺陷没有对应的突变值。
+</topic>
+  <topic name="Artifacts" DisplayName="器物">
+器物是技术上过于复杂、卡德（Qud）居民几乎无人能懂的物品。
+未鉴定的器物在你眼里显示为「怪异器物」。你可以检视器物来尝试鉴定它。
+若鉴定成功，你会缩小该器物功能的可能范围（例如原本的「棍棒」，
+现在你可能鉴定为「步枪」）。最终你可以完全鉴定该器物。
+但每次尝试鉴定失败，都有小概率将它损坏。
+你成功鉴定器物的概率取决于你的智力。
+</topic>
+  <topic name="Tonics" DisplayName="补剂">
+补剂是从多方面增强你精神与身体属性的化学制剂。它们属于器物，
+因此你必须成功鉴定它们，才能明白其功效。在前一种补剂仍生效时
+再服用另一种是危险的；你每多服一种新补剂，补剂之间发生不良反应的
+概率就越来越高。你的坚韧越高，你越有可能在不产生不良效果的情况下
+服用多种补剂。
+
+补剂对真正子嗣（True Kin）的效果比变异人更强。此外，由于变异人的
+身体化学本身不稳定，变异人服下的补剂有 5% 的概率产生不良效果。
+
+补剂可用修补匠技能调配。除零件外，调配补剂通常还需要一种天然材料。
+</topic>
+  <topic name="Weapons and Armor" DisplayName="武器与护甲">
+[[{{C|武器}}]]
+每件武器都有穿透值与伤害值（例如 {{C|→}}4、{{R|♥}}1d4）。近战武器的
+穿透值与你的力量有关，但其上限取决于武器材质（用 'l' 观察武器
+可看到其穿透上限）。远程武器的穿透值固定，不随你的力量变化。
+武器还可能修正其它属性；用 'l' 观察武器即可弄清它的全部作用。
+
+[[{{C|护甲}}]]
+大多数护甲都有护甲值与闪避值（例如 {{b|♦}}4 {{K|○}}4），
+用以提升你自身的 {{b|♦}}AV 与 {{K|○}}DV（见 {{g|属性}}）。
+护甲还可能修正其它属性；用 'l' 观察护甲即可弄清它的全部作用。
+</topic>
+  <topic name="Combat" DisplayName="战斗">
+[[{{C|近战}}]]
+近战是两名相邻对手用剑、匕首、斧、棍棒等标准近战武器进行的战斗。
+要攻击相邻的敌对对手，径直朝对手的方向移动即可。要攻击其它目标
+（例如非敌对对手或墙壁），使用 '~CmdAttackDirection'
+并选择你想攻击的方向。
+
+当你对目标发动近战攻击时，会依次发生以下事件：
+
+[[{{c|1. 判定你是否命中目标。}}]]
+你的命中判定为 1d20 加你的敏捷修正，再加你从武器或技能能力中
+获得的加值。若该结果超过对手的闪避值（DV），则你命中。
+目标上方出现空心圆图标表示你的攻击未命中。
+
+[[{{c|2. 判定是否发生盾牌格挡。}}]]
+若目标装备了盾牌，其基础有 25% 的概率用它格挡，该概率随技能提高。
+格挡成功时，盾牌的护甲值（AV）会加到目标本次受击的 AV 上。
+
+[[{{c|3. 判定你的攻击以多大程度穿透目标护甲。}}]]
+每件武器都有穿透值（例如 {{C|→}}4）。该数值代表你的武器通常能轻松
+穿透的护甲值（AV）。若你的武器穿透值远高于目标的 AV，你的武器
+很可能多次穿透。你的武器每穿透一次目标护甲，目标就受到等于你武器
+伤害值（例如 {{R|♥}}1d4）的伤害。目标上方出现实心圆图标表示你的攻击
+命中了，但未能穿透目标护甲。出现心形图标表示你的攻击命中并穿透了
+目标护甲。
+
+[[{{c|4. 判定是否进行多次攻击。}}]]
+你有 15% 的概率用副手追加一次攻击。拥有多条肢体的角色
+还能在此之外追加攻击。
+
+[[{{C|远程}}]]
+远程是两名对手用弓、手枪、步枪等远程武器进行的战斗。
+要发动远程攻击，按 '~CmdFire' 瞄准武器，再按一次 '~CmdFire' 射击。
+
+当你发动远程攻击时，会依次发生以下事件：
+
+[[{{c|1. 判定弹丸的飞行轨迹。}}]]
+弹丸偏离预定轨迹的程度，取决于你的敏捷与武器的精度。
+
+[[{{c|2. 命中弹丸轨迹上第一个中型或更大的物体。}}]]
+
+[[{{c|3. 判定弹丸以多大程度穿透目标护甲。}}]]
+其判定方式与近战攻击相同。
+
+[[{{c|4. 判定是否进行多次攻击。}}]]
+某些能力允许你用特定的远程武器一次射出多发弹丸。
+
+如果你同时与一个以上的敌对对手处于近战状态，你的每次远程攻击
+都有 50% 的概率失准（向左或向右偏 45 度）。
+</topic>
+  <topic name="Saving Throws" DisplayName="豁免判定">
+某些效果或能力要求生物进行豁免检定，否则就要承担后果。
+每次豁免检定都对应一个属性与一个难度。要通过豁免检定，需投一次 1d20，
+再加上你的相关属性修正。若该数值达到或超过难度，则你通过；否则失败。
+某些针对生物能力的豁免检定，还会把该生物的属性修正加到难度上。
+</topic>
+  <topic name="Action Costs" DisplayName="动作消耗">
+做一件事所需的时间以行动消耗来衡量。大多数任务的行动消耗为 1000。
+你的迅捷越高，你恢复该消耗的速度越快，从而能比迟缓的生物行动得更频繁。
+
+某些技能、突变与装备能让你以更低、甚至为零的行动消耗执行特定动作。
+</topic>
+<topic name="Credits" DisplayName="制作人员">
+
+                                 [[{{C|制作}}
+                      Brian Bucklew and Jason Grinblat
+                      
+
+              QA 与附加设计 - Nick Decapua
+              附加程序 - Corey Frang
+                               音乐 - Craig Hamilton            
+                                  QA - Autumn McDonell
+              附加程序 - Bastia Rosen
+         附加写作与设计 - Caelyn Sandel
+                    附加音乐 - Brandon Tanner        
+                            图块美术 - Samuel Wilson
+                附加界面设计 - Polat Yarisci
+                        音效设计 - A Shell in the Pit
+            QA、附加设计与
+              附加程序 - Thaumatic Systems        
+              附加程序 - Brian Reynolds
+                       法律顾问 - Thomas C. Allison, P.A.
+                      
+                      背景美术 - Cyril van der Haegen
+                            标志美术 - Laura &amp;&amp; Jeff Bucholtz
+                社区管理 - Ivy Melinda 与市长团队
+
+
+                                {{C|发行}}
+                                Kitfox Games
+
+                                Tina Liu
+                                Xin Ran Liu
+                                Alexandra Orlando
+                                Tanya X. Short
+                                
+
+                                {{C|特别鸣谢}}
+                                Ashenai
+                                Riley Vincent
+                                Gibbed
+                                Floorislava
+                                Dr Amazing
+                                Devonaut
+                                Vaos
+                                Tyskil
+                                Lakren
+                                Stelas
+                                Social Animal
+                                Contra Duck
+                                Saberwulf
+                                Megaflare
+                                Doctorfrog
+                                Palecur
+                                NovaPolice
+                                Mirdath
+                                The Glow
+                                Dyzzy
+                                Schister
+                                Lazybuttons
+                                Colonp
+                                Niff
+                                Matterhorn
+                                Clamiam
+                                Donraj
+                                Randy Marsh
+                                Rabbi
+                                Getter77
+                                Capuchin
+                                Wafflecopter
+                                Nomikos
+                                Magitek
+                                Andrew Smash
+                                Vastin
+                                Frumple
+                                Sappho
+                                Soulwynd
+                                Cpbpunch
+                                Tarran
+                                Brian Turcotte
+                                Oryx
+                                Jim Shepard, Dungeonmans
+                                MightyMerch
+                                Eva Problems, Carbide Chef
+                                a nonsense bird
+                                Tarn &amp;&amp; Zach Adams
+                                
+
+                                {{C|赞助者}}
+                                Reed（变异人）与 Tiffany（兔子）
+                                epsalon
+                                Tim Linscott
+                                Cody, The Rat
+                                iconmaster
+                                Coal
+                                Reuben Eadon
+                                Goldkin
+                                mdct
+                                Rusted Jake Matz
+                                Benjamin T. Steed
+                                Xerkie!
+                                Dij
+                                LongueVanne
+                                50RCERESS
+                                Chef Agate Severance Star
+                                awful_falafel
+                                Jonny Robertson
+                                Ian Wall
+                                Orion Perruc-Reyes
+                                Ryan Orlando (Fat Thunder)
+                                FS Colley
+                                Asunaro
+                                Trevor Clack
+                                Gillian Eggleston
+                                Nerem
+                                Somsnosa
+                                Ivy Sly
+                                livelongcoffee
+                                SMB64 (Koshi)
+                                NO Press
+                                EveryZig314
+                                Floopygapples
+                                Eric Hulen
+                                Caine DeWitt
+                                Eric Anthony Rodriguez
+                                Nathaniel Krell
+                                Boo-cher
+                                Pax Frank
+                                Matteo De Cristofaro
+                                Meo
+                                Boyarde Roneen
+                                wastrel
+                                Drew Kerrigan
+                                Jordan Wood
+                                Kasey Patrick Morgan
+                                Callum Love
+                                Petrichor "petrak@7604"
+                                Devon Cupo
+                                Big Simple
+                                Kevin Orren
+                                Lennart Schefe
+                                Beemancer
+                                Lady Eithné, Queen of Brokilon
+                                Nic Gard
+                                NeroPrime
+                                InfiniteTidalWave
+                                Aveon Zero
+                                Joshua Southerland
+                                _tr
+                                James Earle
+                                Nick Correale
+                                MichaÅ‚ Byczko                                
+                                Reuben Eadon
+                                Shane Allcroft
+                                Aidan Page
+                                Earthly Delights Ogdo
+                                John Szevin
+                                Shane Allcroft
+                                Kelly Joyce
+                                Cleo Lamb
+                                Mike Sipior
+                                James Canter
+                                Joshua Buckley
+                                Qingyao Sun
+                                CHOWARD
+                                Luke J.
+                                Gobi Silverfrog, siver and gold goddess
+                                Ethan Rigby
+                                Ethan "Kobold" CB
+                                Maria Ross Colton Chamberlin
+                                {{w-W-Y-Y-Y-Y-Y-W-w sequence|Paingouin}} "Jordan B."
+                                James Lagervall
+                                Doug "Severian" Callahan
+                                Leo Durante
+                                Rarden
+                                Ray ({{r|books}})
+                                awful_falafel
+                                ambersand
+                                dmajorduckie
+                                Lukas Wagner (König Muskelmagen)
+                                Marek Pohlodek
+                                Kamille Rose
+                                Retes;Nome
+                                Sabboth Ochoa
+                                Almea
+                                Caleb Ulichney
+                                Visnex
+                                CreativeCorpse
+                                Kelly Vincent
+                                Teagan Erika Stephanie Strickland
+                                Mirthful Sloth
+                                beepy roboticvenusian (enchiridion)
+                                AvianAnarchy
+                                Gavin Conover
+
+  ]]
+</topic>
+<topic name="Open Source Licenses" DisplayName="开源许可">
+[[{{c|Harmony 的许可（https://github.com/pardeike/Harmony）}}
+  {{W|MIT 许可证}}
+
+  Copyright (c) 2017 Andreas Pardeike
+
+{{c|FuzzySharp 的许可（https://github.com/JakeBayer/FuzzySharp）}}
+  {{W|MIT 许可证}}
+
+  Copyright (c) 2018 
+  
+{{c|UnityStandaloneFileBrowser 的许可
+ （https://github.com/gkngkc/UnityStandaloneFileBrowser）}}
+  {{W|MIT 许可证}}
+
+  Copyright (c) 2017 Gökhan Gökçe
+
+{{c|ZString 的许可（https://github.com/Cysharp/ZString）}}
+  {{W|MIT 许可证}}
+
+  Copyright (c) 2020 Yoshifumi Kawai / Cysharp, Inc.
+
+{{c|UniTask 的许可（https://github.com/Cysharp/UniTask）}}
+  {{W|MIT 许可证}}
+
+  Copyright (c) 2019 Yoshifumi Kawai / Cysharp, Inc.
+
+
+{{W|MIT 许可证}} {{c|- 全文}}
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.]]
+
+</topic>
+</help>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<conversations Encoding="utf-8">
+  <conversation ID="ManOpener">
+    <node ID="Start">
+      <text>
+        <text>{{emote|*Man Opener 吱吱叫。*}}</text>
+        <text>{{emote|*Man Opener 低下头，讨要抚摸。*}}</text>
+        <text>{{emote|*Man Opener 用角刨地。*}}</text>
+        <text>{{emote|*Man Opener 嘴里衔着东西，却不让你看。*}}</text>
+        <text>{{emote|*Man Opener 打了个响鼻。*}}</text>
+        <text>{{emote|*Man Opener 高兴地低吼。*}}</text>
+        <text>{{emote|*Man Opener 专注地注视着你。*}}</text>
+        <text>{{emote|*Man Opener 撒欢。*}}</text>
+        <text>{{emote|*Man Opener 啃着她在先前某场战斗中赢来的断斧柄。*}}</text>
+        <text>{{emote|*Man Opener 啃着她在先前某场战斗中赢来的半个头盔。*}}</text>
+        <text>{{emote|*Man Opener 正在啃一只她在先前某场战斗中赢来的手。*}}</text>
+        <text>{{emote|*Man Opener 朝地平线投去怅惘的目光。*}}</text>
+      </text>
+      <choice GotoID="End">活下去，喝足水。</choice>
+    </node>
+  </conversation>
+</conversations>

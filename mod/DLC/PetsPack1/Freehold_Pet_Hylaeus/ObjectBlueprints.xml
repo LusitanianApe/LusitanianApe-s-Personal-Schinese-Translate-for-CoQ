@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<objects Encoding="utf-8">
+  <object Name="Hylaeus" Inherits="BaseDog">
+    <part Name="Render" DisplayName="{{M|Hylaeus}}" Tile="creatures/sw_dog_shaggy.bmp" ColorString="&amp;Y" DetailColor="C" />
+    <part Name="Description" Short="荒野把=pronouns.possessive=一层层最柔软的雪白毛皮揉成了一片被荒草刷过的冻原。宽阔的鼻吻让=pronouns.subjective==verb:bear:afterpronoun=，用来刨开被雨浸湿的壤土；还有一条结实的尾巴，用来使劲摇。=pronouns.Subjective==verb:pant:afterpronoun=并=verb:eep:afterpronoun=，以清醒的感激之情回应一个值得在意的同伴。"></part>
+    <part Name="Brain" MinKillRadius="2" MaxKillRadius="2"></part>
+    <stat Name="Level" Value="4"></stat>
+    <stat Name="AV" Value="3"></stat>
+    <stat Name="Hitpoints" Value="35"></stat>
+    <stat Name="Strength" Boost="1" />
+    <stat Name="Agility" Boost="1" />
+    <stat Name="Toughness" Boost="1" />
+    <stat Name="Intelligence" sValue="18"></stat>
+    <stat Name="Willpower" sValue="20"></stat>
+    <stat Name="Ego" Boost="1" />
+    <mutation Name="ThickFur"></mutation>
+    <skill Name="Tinkering_Scavenger" />
+    <skill Name="Endurance_Longstrider" />
+    <skill Name="Survival_SaltDesertSurvival" />
+    <inventoryobject Blueprint="Dog_Bite" Number="1"></inventoryobject>
+    <tag Name="PetResponse" Value="barks,licks you,nuzzles you,puts his snout in your lap,whines,pants,growls" />
+    <tag Name="Pet"/>
+    <tag Name="StartingPet"/>
+    <tag Name="Gender" Value="male" />
+    <xtagGrammar Proper="true"></xtagGrammar>
+    <property Name="Story" Value="Freehold_Pet_Hylaeus_Story" />
+    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
+    <part Name="Fetches"></part>
+  </object> 
+</objects>

@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='utf-8'?>
+<strings Lang="zh-Hans" Encoding="utf-8">
+
+  <string Context="EskhindSonnetBook Title" ID="{{W|a crumpled sheet of paper}}">{{W|揉皱的纸页（a crumpled sheet of paper）}}</string>
+
+  
+  <string Context="EskhindSonnetBook Scheme A/B Choice 1 Line 1" ID="all four limbs of mine do long to run">我的四肢渴望着奔走</string>
+  <string Context="EskhindSonnetBook Scheme A/B Choice 1 Line 2" ID="weary mind cannot conceive of fun">疲乏的心想不出缘由</string>
+  <string Context="EskhindSonnetBook Scheme A/B Choice 2 Line 1" ID="I can feel my walls are closing in">我能感到四壁在合拢</string>
+  <string Context="EskhindSonnetBook Scheme A/B Choice 2 Line 2" ID="Hindriarch says all I do is sin">女族长说我罪孽深重</string>
+  <string Context="EskhindSonnetBook Scheme A/B Choice 3 Line 1" ID="evil thoughts accost my blackened soul">邪念缠上我漆黑的魂灵</string>
+  <string Context="EskhindSonnetBook Scheme A/B Choice 3 Line 2" ID="splitting head feels much more like a hole">裂开的头颅更像一口井</string>
+  <string Context="EskhindSonnetBook Scheme A/B Choice 4 Line 1" ID="spitting anger boils up in my blood">怒气在我血中沸腾</string>
+  <string Context="EskhindSonnetBook Scheme A/B Choice 4 Line 2" ID="hardened heart despises all of Qud">硬化的心厌弃卡德（Qud）众生</string>
+  <string Context="EskhindSonnetBook Scheme A/B Choice 5 Line 1" ID="my mind does all grievances rehash">我的心反复翻搅旧怨</string>
+  <string Context="EskhindSonnetBook Scheme A/B Choice 5 Line 2" ID="Hindriarch treats kendren like they're trash">女族长视幼子如破烂</string>
+  <string Context="EskhindSonnetBook Scheme A/B Choice 6 Line 1" ID="this cruel world does bring me sad and low">这残酷世界压我低沉</string>
+  <string Context="EskhindSonnetBook Scheme A/B Choice 6 Line 2" ID="there's a line I clearly cannot tow">有条界线我无法遵循</string>
+
+  
+  <string Context="EskhindSonnetBook Scheme C Choice 1 Line 1" ID="your sparring axeblade parts the air">你的练武斧劈开长空</string>
+  <string Context="EskhindSonnetBook Scheme C Choice 1 Line 2" ID="you run your fingers through your hair">你的手指穿过发丛</string>
+  <string Context="EskhindSonnetBook Scheme C Choice 2 Line 1" ID="you look at me with those sweet eyes">你用温柔的眼看我</string>
+  <string Context="EskhindSonnetBook Scheme C Choice 2 Line 2" ID="you're close enough to tantalize">你近得足以点燃心火</string>
+  <string Context="EskhindSonnetBook Scheme C Choice 3 Line 1" ID="you stand, resplendent and refined">你站得端方而优雅</string>
+  <string Context="EskhindSonnetBook Scheme C Choice 3 Line 2" ID="I think perhaps you could be mine">我想也许你能归我名下</string>
+  <string Context="EskhindSonnetBook Scheme C Choice 4 Line 1" ID="your armor glints under the sun">你的甲胄在日光下闪亮</string>
+  <string Context="EskhindSonnetBook Scheme C Choice 4 Line 2" ID="our hearts both beat in time as one">我们两心同跳一样</string>
+  <string Context="EskhindSonnetBook Scheme C Choice 5 Line 1" ID="you take my hand, yours rough but warm">你握住我的手，粗粝而温热</string>
+  <string Context="EskhindSonnetBook Scheme C Choice 5 Line 2" ID="my eyes, unbidden, trace your form">我的目光描你的轮廓</string>
+
+  
+  <string Context="EskhindSonnetBook Scheme D Choice 1 Line 1" ID="my heart ascends the spindle's height">我的心飞上纺锤（the Spindle）之巅</string>
+  <string Context="EskhindSonnetBook Scheme D Choice 1 Line 2" ID="I know that everything's all right">我知道一切安然无险</string>
+  <string Context="EskhindSonnetBook Scheme D Choice 2 Line 1" ID="a happy smile comes to my face">一抹笑意浮上我的面庞</string>
+  <string Context="EskhindSonnetBook Scheme D Choice 2 Line 2" ID="I think that I might find my place">我想我或许能寻到地方</string>
+  <string Context="EskhindSonnetBook Scheme D Choice 3 Line 1" ID="I feel the gentle warmth of love">我感到爱意温柔地发烫</string>
+  <string Context="EskhindSonnetBook Scheme D Choice 3 Line 2" ID="I hope that we could be enough">我盼我们能彼此不忘</string>
+  <string Context="EskhindSonnetBook Scheme D Choice 4 Line 1" ID="I feel a tingle on my skin">我感到皮肤上一阵战栗</string>
+  <string Context="EskhindSonnetBook Scheme D Choice 4 Line 2" ID="my heart scarce knows where to begin">我的心不知从何说起</string>
+  <string Context="EskhindSonnetBook Scheme D Choice 5 Line 1" ID="my breath comes, like my heart, too quick">我的呼吸与心跳一样急</string>
+  <string Context="EskhindSonnetBook Scheme D Choice 5 Line 2" ID="I see you and become lovesick">一见你便害了相思疾</string>
+
+  
+  <string Context="EskhindSonnetBook Scheme E Choice 1 Line 1" ID="tended fields of lah">种拉的辛劳</string>
+  <string Context="EskhindSonnetBook Scheme E Choice 1 Line 2" ID="felling trees by saw">伐木的锯刀</string>
+  <string Context="EskhindSonnetBook Scheme E Choice 2 Line 1" ID="eating in a yurt">毡帐里的饭</string>
+  <string Context="EskhindSonnetBook Scheme E Choice 2 Line 2" ID="farming 'til we hurt">劳作的伤残</string>
+  <string Context="EskhindSonnetBook Scheme E Choice 3 Line 1" ID="stripping watervine">剥水藤的手</string>
+  <string Context="EskhindSonnetBook Scheme E Choice 3 Line 2" ID="claiming to be fine">硬撑着的口</string>
+  <string Context="EskhindSonnetBook Scheme E Choice 4 Line 1" ID="putting safety first">求稳的打算</string>
+  <string Context="EskhindSonnetBook Scheme E Choice 4 Line 2" ID="planning for the worst">防坏的盘算</string>
+  <string Context="EskhindSonnetBook Scheme E Choice 5 Line 1" ID="gath'ring morning dew">晨露的清凉</string>
+  <string Context="EskhindSonnetBook Scheme E Choice 5 Line 2" ID="fearing what is new">畏新的惊慌</string>
+
+  
+  <string Context="EskhindSonnetBook Scheme F Choice 1 Line 1" ID="ease us when we hurt">疼时安慰我们</string>
+  <string Context="EskhindSonnetBook Scheme F Choice 1 Line 2" ID="to the past revert">让往昔重现</string>
+  <string Context="EskhindSonnetBook Scheme F Choice 2 Line 1" ID="treat us like their own">待我们如亲生</string>
+  <string Context="EskhindSonnetBook Scheme F Choice 2 Line 2" ID="melt their hearts of stone">融化他们的铁石心肠</string>
+  <string Context="EskhindSonnetBook Scheme F Choice 3 Line 1" ID="let me be myself">容我做我自己</string>
+  <string Context="EskhindSonnetBook Scheme F Choice 3 Line 2" ID="look out for our health">照看我们的身体</string>
+  <string Context="EskhindSonnetBook Scheme F Choice 4 Line 1" ID="see that life needs love">明白生命需要爱</string>
+  <string Context="EskhindSonnetBook Scheme F Choice 4 Line 2" ID="ever be enough">永远觉得足够</string>
+  <string Context="EskhindSonnetBook Scheme F Choice 5 Line 1" ID="offer me your hand">向我伸出手</string>
+  <string Context="EskhindSonnetBook Scheme F Choice 5 Line 2" ID="ever understand">永远都懂我</string>
+
+  
+  <string Context="EskhindSonnetBook Scheme G Choice 1 Line 1" ID="However can I tell my aching heart">我该如何告诉我这疼痛的心</string>
+  <string Context="EskhindSonnetBook Scheme G Choice 1 Line 2" ID="that our remaining years will be apart?">我们余下的年月竟要离分？</string>
+  <string Context="EskhindSonnetBook Scheme G Choice 2 Line 1" ID="Although I may succumb to nature's fang,">纵然我或将屈服于自然的獠牙，</string>
+  <string Context="EskhindSonnetBook Scheme G Choice 2 Line 2" ID="my heart needs more than one square parasang.">我的心要的却超过一平方帕拉桑（parasang）。</string>
+  <string Context="EskhindSonnetBook Scheme G Choice 3 Line 1" ID="But I must leave you if you won't concede">但我必须离开，若你不肯让步</string>
+  <string Context="EskhindSonnetBook Scheme G Choice 3 Line 2" ID="that death will find me should I stay unfreed.">我若不得自由，死亡终会寻来。</string>
+  <string Context="EskhindSonnetBook Scheme G Choice 4 Line 1" ID="Now knowing I must go and you must stay">如今我知我必须走，你必须留</string>
+  <string Context="EskhindSonnetBook Scheme G Choice 4 Line 2" ID="it makes my tender heartstrings start to fray.">我柔软的心弦已开始颤抖。</string>
+  <string Context="EskhindSonnetBook Scheme G Choice 5 Line 1" ID="To know I cannot stay, and you can't leave">明知我留不下，而你也走不掉</string>
+  <string Context="EskhindSonnetBook Scheme G Choice 5 Line 2" ID="I'm left with no recourse except to grieve.">我只能悲恸，别无他道。</string>
+
+  
+  <string Context="EskhindSonnetBook Verse 1 Line 1" ID="When =a1=">当=a1=</string>
+  <string Context="EskhindSonnetBook Verse 1 Line 2" ID="and =b1=">而=b1=</string>
+  <string Context="EskhindSonnetBook Verse 1 Line 3" ID="When =a2=">当=a2=</string>
+  <string Context="EskhindSonnetBook Verse 1 Line 4" ID="and =b2=">而=b2=</string>
+  <string Context="EskhindSonnetBook Verse 2 Line 1" ID="But then =c1=">但那时=c1=</string>
+  <string Context="EskhindSonnetBook Verse 2 Line 2" ID="and so =d1=">于是=d1=</string>
+  <string Context="EskhindSonnetBook Verse 2 Line 3" ID="So as =c2=">因此当=c2=</string>
+  <string Context="EskhindSonnetBook Verse 2 Line 4" ID="That's when =d2=">就在那时=d2=</string>
+  <string Context="EskhindSonnetBook Verse 3 Line 1" ID="What need have we for =e1=">我们何须=e1=</string>
+  <string Context="EskhindSonnetBook Verse 3 Line 2" ID="Our parents will not =f1=">我们的父母不会=f1=</string>
+  <string Context="EskhindSonnetBook Verse 3 Line 3" ID="What do we gain from =e2=">我们从=e2=中又得到什么</string>
+  <string Context="EskhindSonnetBook Verse 3 Line 4" ID="Our village shall not =f2=">我们的村庄不会=f2=</string>
+  <string Context="EskhindSonnetBook Verse 4 Line 1" ID="=g1=">=g1=</string>
+  <string Context="EskhindSonnetBook Verse 4 Line 2" ID="=g2=">=g2=</string>
+
+</strings>

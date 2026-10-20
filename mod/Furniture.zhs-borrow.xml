@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<objects Encoding="utf-8">
+  <!-- 译文基准取自 210.20 前人汉化（_ref\机翻参考-210.20v5）。
+       本文件为 Load="Merge" 增量：只补 Furniture.xml 里尚未汉化的对象。
+       已做确定性预处理：修正拼写错误槽 / 自造中文槽 / 双「的」/ 动词槽。 -->
+  <object Name="MountedFurniture" Load="Merge">
+    <part Name="Render" DisplayName="[安装的家具]" />
+  </object>
+  <object Name="Switch" Load="Merge">
+    <part Name="Render" DisplayName="开关" />
+  </object>
+  <object Name="DoorSwitch" Load="Merge">
+    <part Name="Render" DisplayName="控制开关" />
+    <part Name="Description" Short="按钮以垂直排列的方式设置在一个涂鸦金属矩形上" />
+  </object>
+  <object Name="ElevatorSwitch" Load="Merge">
+    <part Name="Render" DisplayName="控制开关" />
+    <part Name="Description" Short="按钮以垂直排列的方式设置在一个涂鸦金属矩形上" />
+  </object>
+  <object Name="StiltWell" Load="Merge">
+    <part Name="Render" DisplayName="圣井" />
+    <part Name="Description" Short="圣化后时代的斯芬克斯场景以黄金和凹雕环绕在黑色大理石喷泉的边缘。 其明亮的纹理刺眼，但向下望去，却退入一片无星的深渊。 " />
+  </object>
+  <object Name="Door" Load="Merge">
+    <part Name="Render" DisplayName="门" />
+    <part Name="Description" Short="石板上布满了岁月留下的手印，铰链顶部的锈迹斑斑。 然而，这扇门依然固执地划分着‘内’与‘外’。 " />
+  </object>
+  <object Name="CyberneticsTerminal2" Load="Merge">
+    <part Name="Render" DisplayName="蜕变龛" />
+    <part Name="Description" Short="一块印有人类轮廓的中性泡沫悬挂在玻璃拱门之下。 在泡沫上与眼睛齐平的位置，椭圆形屏幕上循环显示着符文。 被强光遮挡的手术器械从封闭穹顶下方伸出，如同甲虫般爬出。 " />
+  </object>
+  <object Name="ConveyorDrive" Load="Merge">
+    <part Name="Render" DisplayName="传送带驱动单元" />
+    <part Name="Description" Short="润滑油从闪亮的铬合金引擎滴落，染污了惰轮。 滑轮以奇怪的角度布置，使平坦的橡胶带在空间中运转。 " />
+  </object>
+  <object Name="ConveyorPad" Load="Merge">
+    <part Name="Render" DisplayName="传送带" />
+    <part Name="Description" Short="腐臭的渣滓粘附在平坦的黑色二橡胶凹槽上。 " />
+  </object>
+  <object Name="FactoryArm" Load="Merge">
+    <part Name="Render" DisplayName="旋转机械臂" />
+    <part Name="Description" Short="金属泡沫被压缩并包裹成巨大的生物手臂模型，二头肌和三头肌的头部闪闪发光。 巨大的关节在旋转时发出咔嚓声。 " />
+  </object>
+  <object Name="GrabberArm" Load="Merge">
+    <part Name="Render" DisplayName="锁定机械臂" />
+    <part Name="Description" Short="金属泡沫被压缩并制成巨大的生物臂模型，二头肌和三头肌的头部闪闪发光。 黄铜夹具从目标处夺走动能。 " />
+  </object>
+  <object Name="Bed" Load="Merge">
+    <part Name="Render" DisplayName="床" />
+    <part Name="Description" Short="用含有水藤碎屑的织物填充，并铺在木制横档上，风格源自山地民族。 " />
+  </object>
+  <object Name="Chair" Load="Merge">
+    <part Name="Render" DisplayName="椅子" />
+    <part Name="Description" Short="木板以沼泽居民的风格直角钉在一起。 " />
+  </object>
+  <object Name="CyberneticsRack" Load="Merge">
+    <part Name="Render" DisplayName="赛博义肢架" />
+    <part Name="Description" Short="铬合金钉构成的格子，等待连接的生化模块排列其上。 " />
+  </object>
+  <object Name="Vessel" Load="Merge">
+    <part Name="Render" DisplayName="[花瓶]" />
+  </object>
+  <object Name="Campfire" Load="Merge">
+    <part Name="Render" DisplayName="篝火" />
+    <part Name="Description" Short="早期地球的温暖磷光被整齐地排列在木砖之中，如今它如同一颗微小的恒星般运作。 " />
+  </object>
+  <object Name="Hookah" Load="Merge">
+    <part Name="Render" DisplayName="水烟管" />
+    <part Name="Description" Short="水晶水烟管上绽放出吸烟的烟嘴。 " />
+  </object>
+  <object Name="SultanShrine" Load="Merge">
+    <part Name="Render" DisplayName="神龛" />
+    <part Name="Description" Short="无" />
+  </object>
+  <object Name="NephilimShrine" Load="Merge">
+    <part Name="Render" DisplayName="尼菲利姆神龛" />
+  </object>
+  <object Name="Tombstone" Load="Merge">
+    <part Name="Render" DisplayName="墓碑" />
+    <part Name="Description" Short="无" />
+  </object>
+  <object Name="ReshephsCrypt" Load="Merge">
+    <part Name="Render" DisplayName="地穴" />
+  </object>
+</objects>

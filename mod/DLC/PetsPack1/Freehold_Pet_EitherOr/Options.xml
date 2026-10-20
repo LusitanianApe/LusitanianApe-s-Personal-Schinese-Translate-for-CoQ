@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<options Encoding="utf-8">
+    <option ID="OptionDLC1IncludeEitherRandomly" DisplayText="让「非此／即彼」出现在随机遭遇中，即使你未将其选为初始宠物（需重启）" Category="Pets" Type="Checkbox" Default="No">
+    </option>
+</options>

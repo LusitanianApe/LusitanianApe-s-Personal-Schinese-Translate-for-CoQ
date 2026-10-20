@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<conversations Encoding="utf-8">
+  <conversation ID="Lyy">
+    <node ID="Start">
+      <text>
+        <text>{{emote|*呱*}}</text>
+        <text>{{emote|*呱*！}}</text>
+        <text>{{emote|*呱呱*}}</text>
+        <text>{{emote|*呱呱！*}}</text>
+        <text>{{emote|*呱*}}</text>
+        <text>{{emote|*呱*！}}</text>
+        <text>{{emote|*呱呱*}}</text>
+        <text>{{emote|*呱呱！*}}</text>
+        <text>{{emote|*呱*}}</text>
+        <text>{{emote|*呱*！}}</text>
+        <text>{{emote|*呱呱*}}</text>
+        <text>{{emote|*呱呱！*}}</text>
+        <text>{{emote|*呱*}}</text>
+        <text>{{emote|*呱*！}}</text>
+        <text>{{emote|*呱呱*}}</text>
+        <text>{{emote|*呱呱！*}}</text>
+        <text>{{emote|*凤尾绿咬鹃*}}</text>
+      </text>
+      <choice GotoID="End">...</choice>
+    </node>
+  </conversation>
+</conversations>

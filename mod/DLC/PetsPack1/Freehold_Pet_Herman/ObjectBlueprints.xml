@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<objects Encoding="utf-8">
+  <object Name="Herman" Inherits="NPC">
+    <part Name="Render" DisplayName="{{M|Herman}}" Tile="Creatures/pet-herman.png" ColorString="&amp;w" DetailColor="W" />
+    <part Name="Description" Short="你见过的最古怪的方舟客，皮肤鼓胀，底下仿佛有东西在翻涌。=pronouns.Possessive=动作颤抖、迟缓、不完美，但至少在某種最基础的水平上还算协调。步态踉跄，面容不自然，但=pronouns.possessive=那骇人微笑背后的意图，却是纯粹的。" />
+    <part Name="Corpse" CorpseChance="0" />
+    <part Name="ConversationScript" ConversationID="Freehold_Pet_Herman" />
+    <part Name="Brain" Hostile="false" Mobile="true" Factions="Worms-100" />
+    <stat Name="Level" Value="4" />
+    <mutation Name="Regeneration" Level="9" />
+    <mutation Name="Telepathy" />
+    <mutation Name="DarkVision" Level="3" />
+    <stat Name="Hitpoints" Value="100" />
+    <stat Name="Agility" sValue="14" />
+    <stat Name="Strength" sValue="16,1d3,(t-1)d3" />    
+    <stat Name="Toughness" sValue="16,1d3,(t-1)d2" />
+    <stat Name="Intelligence" sValue="8,1d2,(t-1)d2-1" />
+    <stat Name="Willpower" sValue="6,1d2,(t-1)d2-1" />
+    <stat Name="Ego" sValue="8,1d2,(t-1)d2-1" />
+    <inventoryobject Blueprint="Woven Tunic" Number="1" />
+    <part Name="NoKnockdown" />
+    <tag Name="Class" Value="worm" />
+    <tag Name="Species" Value="worm" />
+    <tag Name="Pet" />
+    <tag Name="StartingPet" />
+    <part Name="Pettable" />
+    <tag Name="PetResponse" Value="squishes,deforms to the shape of your appendage,groans in appreciation,makes a hideous gurgling sound,sways in place,undulates from within" />
+    <tag Name="Gender" Value="nonspecific" />
+    <xtagGrammar Proper="true" />
+    <property Name="Story" Value="Freehold_Pet_Herman_Story" />
+    <tag Name="DeathSounds" Value="Sounds/Creatures/VO/sfx_creature_animal_worm_vo_die" />
+    <tag Name="TakeDamageSound" Value="Sounds/Creatures/VO/sfx_creature_animal_worm_vo_hurt"/>
+    <tag Name="AmbientIdleSound" Value="Sounds/Creatures/VO/sfx_creature_animal_worm_vo_idle"/>
+    <tag Name="PunchSound" Value="Sounds/Creatures/VO/sfx_creature_animal_worm_vo_attack"/>
+    <tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
+  </object>
+</objects>

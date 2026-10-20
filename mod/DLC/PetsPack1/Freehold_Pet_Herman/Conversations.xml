@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<conversations Encoding="utf-8">
+  <conversation ID="Freehold_Pet_Herman">
+    <node ID="Start">
+      <text>
+        <text>嗷——活下去，喝足水。</text>
+        <text>呃。没鼓起来？没有？好。</text>
+        <text>啊，真是个不去留意自己内脏的好日子。</text>
+        <text>{{emote|*Herman 发出怪异的挤压声。*}}</text>
+        <text>呃噜噜。</text>
+        <text>我凭本能呼吸。呼——我根本不用去想这件事。</text>
+        <text>咕呃。我们一起旅行真好。</text>
+        <text>人是一件多么了不起的作品！呵——</text>
+      </text>
+      <choice GotoID="Greeting">月亮与太阳，Herman。</choice>
+      <choice GotoID="What">Herman，你是什么种类的生物？</choice>
+      <choice GotoID="Human">和我一起冥想人类的处境吧，Herman。</choice>
+      <choice GotoID="End">活下去，喝足水，Herman。</choice>
+    </node>
+    <node ID="Greeting" Inherits="Start">
+      <text>
+        =name=，呼呃。智慧与扭动。
+      </text>
+      <choice GotoID="Greeting2">你感觉怎么样？</choice>
+    </node>
+    <node ID="Greeting2" Inherits="Start">
+      <text>
+        <text>咕。我没事。</text>
+        <text>呵呃，人类常常受挫。我很受挫。</text>
+        <text>饿。</text>
+        <text>还行。那……你呢。</text>
+        <text>嗷啊啊呃。没什么可抱怨的。</text>
+        <text>噗。好过现在。</text>
+        <text>开心？</text>
+      </text>
+    </node>
+    <node ID="What">
+      <text>呵——？{{emote|*Herman 身体的某处发出令人不适的挤压声。*}}
+      
+      你的话让我困惑，呃。尽管我一生都懂口语……语言。
+      
+      我是人类。一个人类，单独一个人类就是我。Herman。
+      </text>
+      <choice GotoID="Human">那样的话，跟我说点关于做人的趣事。</choice>
+      <choice GotoID="End">...</choice>
+    </node>
+    <node ID="Human">
+      <text>
+        <text>呼噜。当人类真好。我喜欢呼吸……用三个小孔，而不是整张皮。</text>
+        <text>哦，是的。作为人类。呃——我能体会到真正的孤独。</text>
+        <text>我，一个人类……很容易被自己复杂的情绪左右。</text>
+        <text>咕噜噜。我不累。我不需要「躺下」或者以别的方式倒下。呵。人类是著名的持久猎手。</text>
+        <text>作为人类，咕。我热爱……暴力。</text>
+        <text>人类是哺乳动物。他们……噗……我们。按身体部位分泌不同的液体。</text>
+        <text>人类的……生殖器。事实上很恶心。我在一份食者的文献里读到的。</text>
+        <text>你知道吗，人类的手指。咕。看着灵巧，里面却有「骨头」严重限制活动。</text>
+      </text>
+      <choice GotoID="Start">我明白了。</choice>
+      <choice GotoID="Worms">我该担心你是一具塞满虫子、蠕虫或老鼠、假装成人类的尸体吗？</choice>
+      <choice GotoID="End">...</choice>
+    </node>
+    <node ID="Worms">
+      <text>...
+      
+      No.
+      </text>
+      <choice GotoID="Start">嗯。</choice>
+    </node>
+  </conversation>
+</conversations>

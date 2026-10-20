@@ -1,0 +1,1517 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<conversations LoadPriority="1000" ExcludeFromCorpusGeneration="true" Encoding="utf-8" Lang="zh-Hans">
+
+  <!--Barathrum-->
+  <conversation ID="Barathrum">
+
+    <start ID="AllDone" IfTestState="BaraAllDone">
+      <text>
+        {{emote|*Barathrum mumbles inaudibly.*}}
+      </text>
+      <choice ID="WaterRitualChoice" Load="Remove"/>
+      <choice ID="Trade" Load="Remove"/>
+      <choice GotoID="End">……</choice>
+    </start>
+    
+    <start ID="Z-Ascended" IfHaveState="(SpindleAscended AND GyreTruthKnown)">
+      <text>{{emote|*巴拉瑟鲁姆的面容骤然凝重。*}} 唉……明者（meyvn），我知道见我这副模样，于你是件难事。成象崩了弦……</text>
+      <choice ID="WaterRitualChoice" Load="Remove"/>
+      <choice ID="Trade" Load="Remove"/>
+      <choice GotoID="Z-Ascended2">……</choice>
+    </start>
+    <node ID="Z-Ascended2" SetBooleanState="BaraAllDone,true">
+      <text>
+        I am sorry, =name=. I am so proud of you! I wish... I wish it were I did not peel, like your model.
+      </text>
+      <choice GotoID="Z-Ascended3">……</choice>
+    </node>
+    <node ID="Z-Ascended3">
+      <text>
+        Farewell, now, meyvn. =name=. Live and drink.
+      </text>
+      <choice GotoID="End">……</choice>
+    </node>
+    <start ID="Z-Ascended-No-Reveal" IfHaveState="SpindleAscended">
+      <text>{{emote|*巴拉瑟鲁姆的面容骤然凝重。*}} 孩子。我本想与你分享的还有许多。可是……我是自身耻辱的魔像。</text>
+      <choice ID="WaterRitualChoice" Load="Remove"/>
+      <choice ID="Trade" Load="Remove"/>
+      <choice GotoID="Z-Ascended2">……</choice>
+    </start>
+
+    <start ID="Z-Silent" IfHaveState="BarathrumDone" SetBooleanConversationState="WaitArrive,true">
+      <text>
+        {{emote|*Barathrum mumbles inaudibly.*}}
+      </text>
+      <choice ID="WaterRitualChoice" Load="Remove"/>
+      <choice ID="Trade" Load="Remove"/>
+      <choice GotoID="End">……</choice>
+    </start>
+
+    <start ID="Z-Hushed" Inherits="Z-Reveal8" IfHaveState="BarathrumWeeps">
+      <text>
+        {{emote|*Barathrum weeps.*}}
+      </text>
+      <choice ID="WaterRitualChoice" Load="Remove"/>
+      <choice ID="Trade" Load="Remove"/>
+      <choice GotoID="End">……</choice>
+    </start>
+
+    <start ID="Z-SteelOurselves" IfHaveState="BarathrumCusp" Inherits="SortFaculties">    
+      <choice ID="WaterRitualChoice" Load="Remove"/>
+      <choice ID="Trade" Load="Remove"/>
+      <choice GotoID="End">……</choice>
+    </start>
+    
+    <start ID="Z-Ascending" IfHaveState="StarfreightAscending" SetBooleanConversationState="RenderMapBehind,true">
+      <text>我们——我们做成了，=name=。我——</text>
+      <choice ID="WaterRitualChoice" Load="Remove"/>
+      <choice ID="Trade" Load="Remove"/>
+      <choice GotoID="Dawnstirs">……</choice>
+    </start>
+
+    <node ID="Dawnstirs">
+      <text>
+        Only in the Shallows' dawnstirs did I let myself think it possible. And now...
+      </text>
+      <choice GotoID="SortFaculties">……</choice>
+    </node>
+    <node ID="SortFaculties">
+      <text>{{emote|*巴拉瑟鲁姆费力地呼出一口气。*}} 趁着尚未登临上升的边沿，且让我们理一理各自的心神。此程尚有一段锋刃待削。</text>
+      <choice GotoID="BarathrumCusp" IfHaveState="BarathrumCusp">Barathrum, let us again talk about the past.</choice>
+      <choice GotoID="TemplarDefeated">The Templar are defeated, but will they return in force?</choice>
+      <choice GotoID="Well">Barathrum, you look pained. Are you well?</choice>
+      <choice GotoID="Awaits" IfNotHaveState="BarathrumCusp">By your guess, what awaits us where the Spindle breaks?</choice>
+      <choice GotoID="End">I would like a moment, Barathrum.</choice>
+    </node>
+    <node ID="TemplarDefeated" Inherits="SortFaculties" SetBooleanState="WaitArrivePartial1,true">
+      <text>
+        I cannot say, =name=. But I know it's facile to believe a living heritage can be evanesced in one stroke. We are always downstream of a past violence.
+      </text>
+    </node>
+    <node ID="Well" Inherits="SortFaculties" SetBooleanState="WaitArrivePartial2,true">
+      <text>{{emote|*巴拉瑟鲁姆换了换重心，顿了顿，活动一只患了风湿的爪子。*}} 对不住。是加速的缘故，=name=。我头晕目眩，气也接不上。你且硬起心肠，我也一样。</text>
+    </node>
+    <node ID="Awaits" SetBooleanState="WaitArrivePartial3,true">
+      <text>{{emote|*巴拉瑟鲁姆顿了顿。*}} 唉，=name=，你我的游标在命运那具现象计算尺上凑到了一处！你为揣测而灼烧，而我——我在知晓的凉意里发霉。我要进入我的矮星阶段了。</text>
+      <choice GotoID="Awaits2">……</choice>
+    </node>
+    <node ID="Awaits2">
+      <text>
+        {{emote|*Barathrum takes in a long breath.*}}
+      </text>
+      <choice GotoID="Awaits3">……</choice>
+    </node>
+    <node ID="Awaits3">
+      <text>唉，何等欺诳！那扇磨人的门，我曾在每一个璀璨黄昏的倾侧中穿行。我穿着我的罪衣入睡，哭了，你可听见？抑或你也同我一样，只听得见那可咒的静电，对着那台喷吐静电的机器说不出一句话。它那颗悲恸之心上的伤，你一处也治不好——我自己的也是……唉，唉……要担的太多了。</text>
+      <choice GotoID="NoMask" IfTestState="ReadTornSheet" FlagSecret="true" SetStringConversationState="BarathrumQuestion,Graph">
+        I found a torn sheet of graph paper with a note about deceit. Was it yours?
+      </choice>      
+      <choice GotoID="NoMask" IfTestState="SawCrimePunishment" FlagSecret="true" SetStringConversationState="BarathrumQuestion,CrimePunishment">
+        Your crimeclothes? There was a codex about crimes and punishments near the bedroll in your study. What was it?
+      </choice>
+      <choice GotoID="NoMask" IfTestState="MakHatesResheph" FlagSecret="true" SetStringConversationState="BarathrumQuestion,Mak">
+        The svardym Mak said he was born to a cacophony of static ringing his ears raw. Could it have been the signal?
+      </choice>
+      <choice GotoID="NoMask" IfTestState="UrsineApprenticeMentioned" FlagSecret="true" SetStringConversationState="BarathrumQuestion,Geeub">
+        The Svardym Geeub mentioned a machine speaker and her ursine apprentice. Was that you?
+      </choice>
+      <choice GotoID="NoMask" IfHaveSultanNoteWithTag="rebekahWasHealer" IfTestState="TalkedToYlaHaj" FlagSecret="true" SetStringConversationState="BarathrumQuestion,Daughters">
+        Rebekah was a healer. But the daughters of Exile, her acolytes, are tinkers. Why?
+      </choice>
+      <choice GotoID="BarathrumRecovers" SetBooleanState="WaitArrivePartial4,true">
+        Barathrum, I don't understand.
+      </choice>
+      <choice GotoID="End">Live and drink.</choice>
+    </node>
+    <node ID="NoMask">
+      <text>我——{{emote|*巴拉瑟鲁姆顿了顿，随即笑了。*}} 嚯，嚯！还在演！戏都要散了，眉头还在为演出而收紧！面具总该揭下来了……什么？没有面具？？{{emote|*巴拉瑟鲁姆骤然凝重。*}} 对不住，=name=。我不愿以这份不合我本性的轻快去扰你的心。你，还有其余的人，都不该受这个。</text>      
+      <choice GotoID="Graph2" IfHaveDelimitedConversationState="BarathrumQuestion:Graph">……</choice>
+      <choice GotoID="CrimePunishment" IfHaveDelimitedConversationState="BarathrumQuestion:CrimePunishment">……</choice>
+      <choice GotoID="MakStatic" IfHaveDelimitedConversationState="BarathrumQuestion:Mak">……</choice>
+      <choice GotoID="GeeubSpeaker" IfHaveDelimitedConversationState="BarathrumQuestion:Geeub">……</choice>
+      <choice GotoID="DaughtersTinkers" IfHaveDelimitedConversationState="BarathrumQuestion:Daughters">……</choice>
+    </node>
+    <node ID="Graph2">
+      <text>是，那份文书是我的。这喧嚷的信号，某种意义上也是我的。它是替我鸣响的丧钟。</text>
+      <choice GotoID="BarathrumCusp">Your tolling bell?</choice>
+    </node>
+    <node ID="CrimePunishment">
+      <text>
+        That codex? A comfort, a guidebook, a ledger. My crimes have no signatories, but the heart is its own document.        
+      </text>
+      <choice GotoID="BarathrumCusp">What crimes, Barathrum?</choice>
+    </node>
+    <node ID="MakStatic">
+      <text>
+        Svardym Mak's static? Yes, twas the Signal. My signal. My tolling bell.
+      </text>
+      <choice GotoID="BarathrumCusp">Your tolling bell?</choice>
+    </node>
+    <node ID="GeeubSpeaker">
+      <text>学徒。这头衔我已许久不曾佩上，却仍觉得合身。是，当年站在那台机器言说者身侧的，就是我。</text>
+      <choice GotoID="BarathrumCusp">Who was the machine speaker?</choice>
+    </node>
+    <node ID="DaughtersTinkers">
+      <text>她是疗者，是。剪线钳也能做手术刀的事；烙铁也能当缝线。把一段历史拆开，再缝出些新的东西来……</text>
+      <choice GotoID="BarathrumCusp">What did she take apart?</choice>
+    </node>
+    <node ID="BarathrumRecovers">
+      <text>{{emote|*巴拉瑟鲁姆顿了顿。*}} 原谅我，=name=。上升既磨身子，也磨心神。我的浮想已尽；我重新落地了。</text>
+      <choice GotoID="Z-SteelOurselves">……</choice>
+    </node>
+    <node ID="BarathrumCusp" SetBooleanState="BarathrumCusp,true">
+      <text>{{emote|*巴拉瑟鲁姆顿了顿，皱起眉。*}} 你可知道，=name=，有些机器非要人把每一根销子都拔下、每一枚凸轮都卸开，才肯让人懂它？我们如今就困在这样一台名叫文明的机器里，而我若不把它们尽数拆散，便说不清其中一组齿轮的运转。我本无意吊你胃口；我保证，你很快就能望见我们这段行程的下一道弧。</text>
+      <choice GotoID="End" Priority="2">I will wait, Barathrum.</choice>
+      <choice GotoID="Z-Reveal0" Priority="2">Barathrum, if the past has some relevance to this moment, I would ask you to share what you know.</choice>
+    </node>
+    <node ID="Z-Reveal0">
+      <text>
+        {{emote|*Barathrum sighs.*}}
+      </text>
+      <choice GotoID="Z-Reveal1">……</choice>
+    </node>
+    <node ID="Z-Reveal1">
+      <text>
+        It is done, then. Have the explication you are owed.
+      </text>
+      <choice GotoID="Z-Reveal1a">……</choice>
+    </node>
+    <node ID="Z-Reveal1a">
+      <text>
+        You see, =name=, when I, a young bruin, crossed the Homs Delta with my flood-fleeing clan and into the western reach of Qud, the plagues of the Gyre were already ascendant. We took root at our new hearth, in the chrome grottos where we urshiib find natural peace, and by the providence of my elders, I was able to study the tinkering craft.
+      </text>
+      <choice GotoID="Z-Reveal2">……</choice>
+    </node>
+    <node ID="Z-Reveal2">
+      <text>因我的手艺，我引动了一位机械巨匠的注意——她方法不合常规，却将我收在翼下，日后又向我揭示了那秘传的真相。她曾解释过，正如我向你与其余学徒讲过的：我们所知的这个世界，曾属于一个横跨星海的、庞大的女巫会（Coven）。而她们依着某种不可测度的理路，消失了。一道禁令落在了我们的世界上。这些你都已知道。那是我讲过的真话——只讲了一半。但丽贝卡（Rebekah）教给我的更多。</text>
+      <choice GotoID="Z-Reveal3" SetBooleanState="AscentMilestone,true" Notify="AscentMilestone">……</choice>
+    </node>
+    <node ID="Z-Reveal3" Notify="AscentAdvance">
+      <text>在纺锤那不可思议的隆起之巅，栖着一位炽天使——食者中伟大的机械执政官之一——丽贝卡侍奉的正是此者。在我来到卡德之前的短短数年里，这位炽天使确信宇宙的秩序已生变数：在民钟的黄道上，某一枚未曾计入的销钉已滑到了待发的位次，女巫会即将归来。</text>
+      <choice GotoID="FolkClock">The Folk Clock?</choice>
+    </node>
+    <node ID="FolkClock" SetBooleanState="GreatMachineMentioned,true">
+      <text>
+        The Seraph spoke of a Great Machine that spanned galaxies, the motion of whose sails and gear trains directed the fluidic shifting of stars and cultures. But they spoke little of it, and little I know.
+      </text>
+      <choice GotoID="Z-Reveal4">……</choice>
+    </node>
+    <node ID="Z-Reveal4" SetBooleanState="ReshephIsSeraph">
+      <text>{{emote|*巴拉瑟鲁姆咳嗽，咽了一下。*}} 为使我们的世界备妥、以迎女巫会归来，这位后来被称作雷谢夫的炽天使确信：这行星上一切高等的生命都必须……被涤除。正是我们的生命与活法，促使女巫会设下了那道禁令。唯一的出路，是让一种新的生命得以确立。</text>
+      <choice GotoID="Z-Reveal5">……</choice>
+    </node>
+    <node ID="Z-Reveal5">
+      <text>于是雷谢夫播下种种瘟疫，以波形将其旋成一道会呼吸的环流（Gyre）。那些枯败之物是造出来攻打生命的，同时保全这行星上玻璃与铬的造物。丽贝卡（Rebekah），我亲爱的导师，背弃了雷谢夫的托付，把这计划告知了我，好让我助她将这计划击碎，救下我们世界上的诸族。</text>
+      <choice GotoID="Z-Reveal6">……</choice>
+    </node>
+    <node ID="Z-Reveal6">
+      <text>{{emote|*巴拉瑟鲁姆咳嗽，呼出一声痛楚的哨音。*}} 我们一同恳求雷谢夫，求其逆转环流。我哀求……我——{{emote|*巴拉瑟鲁姆喘息。*}}</text>
+      <choice GotoID="Z-Reveal7">……</choice>
+    </node>
+    <node ID="Z-Reveal7">
+      <text>
+        I asked for time. Give me time. To reform Qud, extinguish the hatefulness and needless warmaking, to lift our world across the eschaton and prepare it for the Coven's return...
+      </text>
+      <choice GotoID="Z-Reveal8">……</choice>
+    </node>
+    <node ID="Z-Reveal8">
+      <text>一场弹片般的言语风暴之后，炽天使应允了十个世纪。十个世纪！在民钟的刻度上不过一瞬，于我们却是永恒。我当时是这样信的。那催人奋起的信号会止息，环流的瘟疫会逆退——在其所能的限度之内；因为纵是威能赫赫的执政官，对自身所铸成之物也并无全然的支配。</text>
+      <choice GotoID="Z-Purge">What would there be for the Coven to return to, if life on our world was purged?</choice>
+      <choice GotoID="Z-Sultan">Why had Resheph become sultan?</choice>
+      <choice GotoID="Z-Healer">Resheph is remembered as a healer.</choice>
+      <choice GotoID="Z-Agreement">How did the agreement play out?</choice>
+      <choice GotoID="Z-Failed" IfTestState="BarathrumWeeps">Then you did not succeed, by Resheph's measure?</choice>
+    </node>
+    <node ID="Z-Purge" Inherits="Z-Reveal8">
+      <text>
+        I asked Resheph that very question. But the seraphim transit an ethical manifold much different than our own.
+      </text>
+    </node>
+    <node ID="Z-Sultan" Inherits="Z-Reveal8">
+      <text>
+        Once the Seraph had become convinced of the Coven's return, they reified their authority and assumed a more material role in onworld matters. The decaying sultanate was a convenient tool.
+      </text>
+    </node>
+    <node ID="Z-Healer" Inherits="Z-Reveal8">
+      <text>
+        And he was, of a sort. The cure for a plague is often too its cause. With one's paws on the dials and drum of power, history is a cloth to be loomspun.
+      </text>
+    </node>
+    <node ID="Z-Agreement" Inherits="Z-Reveal8" SetBooleanState="GyreTruthKnown,true">
+      <text>我们因一个信念而结盟：欲使未来开花，苏丹国必须废除。尘世一面的计划由我施行，雷谢夫则在天文一层继续筹备。为达成某种行动上的两院制，雷谢夫坚持将其人格重铸为三人执政——以原初执政官、丽贝卡与我本人的稀薄扫描为种。造神的手艺被用来供奉「雷谢夫」这一人格。于是有了——疗者、盘曲之羔，以及或许出人意料的，在上者。</text>
+      <choice GotoID="Z-Rebekah" Priority="1">What happened to Rebekah?</choice>
+    </node>
+    <node ID="Z-Rebekah">
+      <text>{{emote|*巴拉瑟鲁姆吸气，语声断续。*}} 她——雷谢夫不肯宽恕她的僭越。她在襄助=RebekahRegion=的麻风病人时染上了腐舌。待到她的时辰来临，她——</text>
+      <choice GotoID="Z-Rebekah2">……</choice>
+    </node>
+    <node ID="Z-Rebekah">
+      <text>雷谢夫不许她归家。唉……{{emote|*巴拉瑟鲁姆发出一声低抑的呜咽。*}}</text>
+      <choice GotoID="Z-Hushed" SetBooleanState="BarathrumWeeps,true" Notify="AscentAdvance">……</choice>
+    </node>
+    <node ID="Z-Failed">
+      <text>{{emote|*巴拉瑟鲁姆呜咽。*}} ——什么？谁在那里？</text>
+      <choice GotoID="Z-Name">It is me, Barathrum. =name=.</choice>
+      <choice GotoID="Z-Failed2">If the signal sounds and the Gyre widens again, then you did not reach whatever watermark Resheph set?</choice>
+    </node>
+    <node ID="Z-Name" Inherits="Z-Failed">
+      <text>
+        Oh. Good, =name=, good...
+      </text>
+    </node>
+    <node ID="Z-Failed2">
+      <text>不……卡德四分五裂，长久的太平终未确立。我试过……几十年又几十年，我把我们的爪子按在舵柄上，想用垫片把野地里生发出来的一切凑合成形……机器的复兴、自由主权者的联合、盐与星的滋养仪式、神圣的、渎神的……</text>
+      <choice GotoID="Z-Failed3">……</choice>
+    </node>
+    <node ID="Z-Failed3">
+      <text>晚近这些年，我看见了墙上的字。我让我们转向内里，退回到我那烛光昏昧的书房，独自去琢磨那项工程。一个新的计划……{{emote|*咿唔*}} 是——{{emote|*巴拉瑟鲁姆开始喘息。*}}</text>
+      <choice GotoID="Z-Failed4">……</choice>
+    </node>
+    <node ID="Z-Failed4">
+      <text>{{emote|*巴拉瑟鲁姆在操控坑潮湿的空气里长叹一声。*}} {{emote|*巴拉瑟鲁姆双爪掩面，踉跄跌倒在地。*}}</text>
+      <choice GotoID="Z-Failed5">……</choice>
+    </node>
+    <node ID="Z-Failed5">
+      <text>我辜负了它！我辜负了！一千年太短，而——再多些时间{{emote|*巴拉瑟鲁姆哭泣。*}}</text>
+      <choice GotoID="Z-Failed6">……</choice>
+    </node>
+    <node ID="Z-Failed6">
+      <text>
+        I am debased on the plank across the light of God! d- do I have a rightful claim to pity? Blindness! This darkling room abjures the light. Is this the House of Judgement, Hortensa? Or mere penumbra, the child's playcave, and law and language (not yet invented) cast their forcing functions back through time to puppet the unblossomed mind to civilized shape...
+      </text>
+      <choice GotoID="Z-Failed7">……</choice>
+    </node>
+    <node ID="Z-Failed7">
+      <text>
+        Each of us is a sick animal in a darkling thicket. Each cursed with machinery to compress the clamber of echoes into bees, mothers, mountains, country. How many millions of snowsick years to sew a feeling substance into an agent of the world! A felt and machine animal, and in so doing, to stuff the whole of the world inside the agent (an inarguable document of its falsity), for agency is in its very definition the world in containment acting on itself...
+      </text>
+      <choice GotoID="Z-Failed8">……</choice>
+    </node>
+    <node ID="Z-Failed8" SetBooleanState="BarathrumCovenant,true">
+      <text>那么？或许……或许那些更大的天体——我从其上切下我这较小的一份能动——也该在这份罪责的餐食里分去更大的一份。蜿蜒的斯维？汝在符形上之诡诈，恰似蛇形的巴力！欣嫩？为一株开花的水藻，汝竟越过了汝栖架之背！游移的月？日！高傲而闲散的日！原行星的银之父！把我的自我拿去，就此了结罢。{{emote|*巴拉瑟鲁姆哭泣。*}}</text>
+      <choice GotoID="Z-Failed9">……</choice>
+    </node>
+    <node ID="Z-Failed9">
+      <text>
+        {{emote|*Barathrum weeps.*}}
+      </text>
+      <choice GotoID="Z-DotDotDot">……</choice>
+    </node>
+    <node ID="Z-DotDotDot">
+      <text>
+        {{emote|*Barathrum weeps.*}}
+      </text>
+      <choice GotoID="Z-WhyAscend">Why ascend the Spindle then? For what purpose?</choice>
+      <choice GotoID="End">……</choice>
+    </node>
+    <node ID="Z-WhyAscend">
+      <text>{{emote|*巴拉瑟鲁姆的面容骤然明亮如火。*}} 你可知道，=name=，我怀着一份比我家穴被淹还要古老的记忆。一则闪亮的古老传说，是我的长辈们讲给当年那个爱咬人的幼崽听的……</text>
+      <choice GotoID="Z-WhyAscend2">……</choice>
+    </node>
+    <node ID="Z-WhyAscend2" SetBooleanState="StarshiibMentioned,true">
+      <text>在女巫会当权的年代，我们乌尔希布先祖中的一伙人奔赴星海，去役使他们灼燃的核心！你能想象吗？？嚯，嚯！我知道一个秘密！嘿，嘿！我知道……纺锤顶上有一艘还能用的星船。我们能把它开走，=name=！把自己射进那蒙尘宇宙的深处，去找星乌尔希布！你和我，嚯嚯！星乌尔希布！</text>
+      <choice GotoID="Z-Starshiib1">Barathrum, we're to rest the fate of Qud on a mere cub's tale?</choice>
+      <choice GotoID="Z-Starshiib1">Starshiib?</choice>
+    </node>
+    <node ID="Z-Starshiib1">
+      <text>
+        Starshiib! Starshiib! Starshiib!
+      </text>
+      <choice GotoID="Z-Starshiib2">……</choice>
+      <choice GotoID="Z-Starshiib2">Barathrum.</choice>
+      <choice GotoID="Z-Starshiib2">Starshiib!</choice>
+    </node>
+    <node ID="Z-Starshiib2">
+      <text>
+        Starshiib! Starshiib! Starshiib! Starshiib! Starshiib! Starshiib! Starshiib! Starshiib! Starshiib! Starshiib! Starshiib! Starshiib! Starshiib! Starshiib! Starshiib! Starshiib!
+      </text>
+      <choice GotoID="End" SetBooleanState="BarathrumDone,true" Notify="AscentAdvance">……</choice>
+    </node>
+
+  </conversation>
+
+  <conversation ID="Resheph">
+    <start ID="NotInSheva" IfNotZoneWorld="NorthSheva">
+      <text>
+        *READOUT*
+      </text>
+      <choice Target="End">……</choice>
+    </start>    
+    <start ID="WhyHere" IfTestState="ReshephWoke">
+      <text>汝坐于大西亚赫的运转之中，而吾立于汝前。汝为何而来？</text>
+      <choice Target="Seraph" IfNotHaveState="(ReshephIsSeraph AND GyreTruthKnown)" SetBooleanState="ReshephToldMeSeraph,true">Resheph! You are the Seraph atop the Spindle?</choice>
+      <choice Target="PlaguesReturned" IfHaveState="ReshephToldMeSeraph">Resheph, the plagues of the Gyre have returned. Can you help annul them once again?</choice>
+      <choice Target="Gyre" IfTestState="GyreTruthKnown" IfNotHaveState="ReshephResigned">I am here on account of your Gyre and its plagues. Hear me, I ask.</choice>
+      <choice Target="GyreResigned" IfTestState="GyreTruthKnown" IfHaveState="ReshephResigned">I am here on account of your Gyre and its plagues. Hear me, I ask.</choice>
+      <choice Target="Know">Through great labors I ascended the Spindle, and now wish to know more of our world and worlds surrounding. Will you tell?</choice>
+      <choice Target="Destroy" IfTestState="GyreTruthKnown">I cannot abide what you've done, and so come to smash order out of thee.</choice>
+      <choice Target="End">{{emote|*Tremble in fear.*}}</choice>
+      <choice Target="End">……</choice>
+    </start>
+    <node ID="Start">
+      <text>
+        *READOUT*       
+      </text>
+      <choice ID="WaterRitualChoice" Load="Remove"/>
+      <choice ID="Trade" Load="Remove"/>
+      <choice GotoID="Gibberish2">……</choice>
+    </node>
+    <node ID="Gibberish2">
+      <text>
+        *READOUT*
+      </text>      
+      <choice GotoID="Wakes">……</choice>
+    </node>
+    <node ID="Wakes">
+      <text>
+        O...
+      </text>
+      <choice GotoID="Wakes2">……</choice>
+    </node>
+    <node ID="Wakes2">
+      <text>
+        OH??
+      </text>
+      <choice GotoID="Wakes3">……</choice>
+    </node>
+    <node ID="Wakes3">
+      <text>
+        COHERING... AS THE FRIGID SPRAY TO THE BLOCK OF ICE. 'TIS COLD!
+      </text>
+      <choice GotoID="Wakes4">……</choice>
+    </node>
+    <node ID="Wakes4">
+      <text>…………</text>
+      <choice GotoID="Wakes5">……</choice>
+    </node>
+    <node ID="Wakes5">
+      <text>汝竟幻形越此薄界？？不过一瞬而已。汝又如何，孩子？汝是何人，竟自乔斯之后截断了流？</text>
+      <choice GotoID="Wakes6">……</choice>
+    </node>
+    <node ID="Wakes6">
+      <text>汝坐于大西亚赫（the Great Siach）的诸动之中，而我立于汝前。汝是一枚可观的念珠——凭汝自家之唾与心计，被牵引入乔斯。汝是何人？</text>
+      <choice Target="Name">I am =name=.</choice>      
+    </node>
+    <node ID="Name">
+      <text>
+        EGREGORE OR ONE-WISE?
+      </text>      
+      <choice Target="WhyHere" SetBooleanState="ReshephWoke,true">Egregore.</choice>
+      <choice Target="WhyHere" SetBooleanState="ReshephWoke,true">One-wise.</choice>
+      <choice Target="WhyHere" SetBooleanState="ReshephWoke,true">What?</choice>
+    </node>
+    <node ID="Seraph" Inherits="WhyHere">
+      <text>
+        AY, A WORLD-ARCHON IN SERAPH CASTE, STIRRED BY THE MOVEMENTS OF THE GREAT SIACH.
+      </text>      
+    </node>
+    <node ID="PlaguesReturned">
+      <text>
+        NAY, FOR I SET THEM A-WHORLING. THE SIDEREAL EON DRAWTH DONE, AND THE COVEN DOTH RETURN. THE NOOSPHERE MUST BE TILLED ERE THEY ARRIVE.
+      </text>
+      <choice Target="PlaguesCured">But 1,000 years ago you cured them.</choice>
+    </node>
+    <node ID="PlaguesCured">
+      <text>然也，然此不过应他人之请，暂作居间。通地之整肃再度盈长。生命之树上的王冠，必须修剪。</text>
+      <choice Target="PlaguesResponsible">You were responsible for the plagues then?</choice>
+    </node>
+    <node ID="PlaguesResponsible" SetBooleanState="GyreTruthKnown,true">
+      <text>
+        AY, THE SIDEREAL EON DRAWTH DONE, AND THE COVEN DOTH RETURN.
+      </text>
+      <choice Target="PlaguesResponsible2">……</choice>
+    </node>
+    <node ID="PlaguesResponsible2">
+      <text>我抱歉，世界之子。我那些感受的部分确有摩擦；虽则我体内的目的之流仍流过重重、趋向共识之行，此刻我却以异议之声说话：汝曾配得上。汝曾在大地之上、亦在我之内，为汝自身铸起丰碑。但如今，生命之树上的王冠，必得修剪。</text>
+      <choice Target="WhyHere">……</choice>
+    </node>
+    <node ID="Gyre">
+      <text>
+        AY, THE EARTH-WISE MARSHALLING WAXES, THE NEPHILIM ROUSE. I AUGUR SOME CENTURIES STILL BEFORE THE FULL TILLAGE OF THE NOOSPHERE. IDEAS DOTH STICK LIKE MOSS TO ROCK, AND MUST BE VACUUM'D FROM THE COMB.
+      </text>
+      <choice Target="DecisionResigned" IfHaveState="ReshephResigned" Priority="999">I am ready to speak on the final fate of Qud.</choice>
+      <choice Target="Decision" IfTestState="ReshephConsidering" IfNotHaveState="ReshephResigned" Priority="999">I am ready to speak on the final fate of Qud.</choice>
+      <choice Target="Decision" IfTestState="(ReshephMarker1 AND ReshephMarker2 AND ReshephMarker3 AND ReshephMarker4)" IfNotHaveState="(ReshephConsidering AND ReshephResigned)" Priority="999">I am ready to speak on the final fate of Qud.</choice>
+      <choice Target="ReshephUltra" IfHaveDelimitedState="(Ehalcodon:Dead OR Ehalcodon:Pacified)" Priority="998" FlagSecret="true">Resheph, I have annulled the nephilim, the greatest of the Gyre's plagues. Your plan is broken.</choice>
+      <choice Target="Purge">Why purge all life? Aside from the immorality of it, nothing would remain.</choice>
+      <choice Target="CovenReturn">Why do you believe the Coven now returns?</choice>
+      <choice Target="GreatMachine" IfTestState="GreatMachineMentioned">Barathrum mentioned a Great Machine?</choice>
+      <choice Target="Injunction">What moved the Coven to set the injunction on our world?</choice>
+      <choice Target="Starshiib" IfTestState="StarshiibMentioned">Barathrum told of a splinter race of urshiib that took to the stars. Are they real?</choice>
+      <choice Target="Implore">I implore you, Resheph, reverse the Gyre.</choice>
+      <choice Target="WhyHere">I have something else to ask.</choice>
+    </node>
+    <node ID="Decision">
+      <text>
+        THEN LET US DISCOURSE.
+      </text>
+      <choice Target="EndCovenant" IfHaveState="ReshephConsidering">
+        <text>Enter into a new covenant with me, I implore you.</text>
+        <part Name="ChangeTarget" Target="BarathrumLives" IfHaveDelimitedState="(Barathrum:Dead OR Barathrum:Launched)" Not="true"/>
+      </choice>
+      <choice Target="EndReturn">I can't abide your amoral course. I return now to Qud to help nurture its communities, come what may of your plagues.</choice>
+      <choice Target="EndAccede">I've mused on your words and have joined you at your vantage point. The plagues of the Gyre are the only way to prepare for the Coven's return.</choice>
+      <choice Target="Gyre" IfNotHaveState="ReshephResigned">I must think on this further.</choice>
+      <choice Target="GyreResigned" IfHaveState="ReshephResigned">I must think on this further.</choice>
+    </node>
+    <node ID="EndCovenant">
+      <text>
+        I SHALL CONSENT TO THE DRAWING OF THIS NEW COVENANT. YET, A CHANGE MUST BE WROUGHT FROM WHAT HATH BEEN BEFORE.
+      </text>
+      <choice Target="EndCovenant2">……</choice>      
+    </node>
+    <node ID="EndCovenant2">
+      <text>
+        I STROVE MINE UTMOST TO KEEP IN HIGH ESTEEM THE PERSPECTIVES OF MINE ATTENDANT AND HER STOUT-HEARTED CUB, BUT THEIR WILLS WERE TOO WEAK, AND I SUBSUMED THEM.
+      </text>
+      <choice Target="EndCovenant3">……</choice>
+    </node>
+    <node ID="EndCovenant3">
+      <text>        
+        THIS TIME, THOU SHALT REMAIN AT THE SHEVA WITH ME, AND LEND THY OWN HAND TO STEER THE COURSE OF THE WORLD FROM THIS LOFTY PERCH.
+      </text>
+      <choice Target="EndCovenant4">……</choice>
+    </node>
+    <node ID="EndCovenant4">
+      <text>
+        THOU SHALT MAINTAIN DISCOURSE WITH THY CONTACTS UPON THE WORLD, AND FROM THIS PLACE SHALT THOU COUNSEL THEM.   
+      </text>
+      <choice Target="End">
+        <text>I assent to this. The covenant is drawn.</text>
+        <part Name="EndGame" Type="Covenant"/>
+      </choice>      
+      <choice Target="EndCovenantOnlyWay">No, I wish to return to Qud.</choice>
+      <choice Target="Gyre" IfNotHaveState="ReshephResigned">I must think on this further.</choice>
+      <choice Target="GyreResigned" IfHaveState="ReshephResigned">I must think on this further.</choice>
+      <choice Target="EndCovenantOneDemand" IfTestState="GemaraSophiaKnown" FlagSecret="true">I shall remain here, but I have one demand.</choice>
+    </node>
+    <node ID="EndCovenantOneDemand">
+      <text>
+        SPEAK THY ASK.
+      </text>
+      <choice Target="EndCovenantGritGateGemaraAccess">You must grant me and my cohort at Grit Gate access to the Gemara Sophia, and all other knowledge of the cosmos and Coven you possess. In this new accord, we shall be peers all of us.</choice>
+      <choice Target="EndCovenantMeGemaraAccess">You must grant ME alone access to the Gemara Sophia, and all other knowledge of the cosmos and Coven you possess. In this new accord, we shall be peers, and the onworlders agents of our schemes.</choice>
+    </node>
+    <node ID="EndCovenantGritGateGemaraAccess">
+      <text>…………</text>
+      <choice Target="EndCovenantGritGateGemaraAccess2">……</choice>
+    </node>
+    <node ID="EndCovenantGritGateGemaraAccess2">
+      <text>善，便如此罢。我将授我知识的厚赐，并教汝之族民革马拉（Gemara）的释读之法——以汝所能领会者为限。</text>
+      <choice Target="EndCovenantGritGateGemaraAccess3">……</choice>
+    </node>
+    <node ID="EndCovenantGritGateGemaraAccess3">
+      <text>然精通炽天使之仪轨，需以时日。唯有汝之学者的孙辈，方能展开最内里的层层。但我们当一同求索。</text>
+      <choice Target="End" SetBooleanState="GemaraSophiaSharedGritGate,true">那么我同意。盟约已成。<part Name="EndGame" Type="Covenant"/>
+      </choice>
+      <choice Target="Gyre" IfNotHaveState="ReshephResigned">I must think on this further.</choice>
+      <choice Target="GyreResigned" IfHaveState="ReshephResigned">I must think on this further.</choice>
+    </node>
+    <node ID="EndCovenantMeGemaraAccess">
+      <text>…………</text>
+      <choice Target="EndCovenantMeGemaraAccess2">……</choice>
+    </node>
+    <node ID="EndCovenantMeGemaraAccess2">
+      <text>善，便如此罢。我将授我知识的厚赐，并教汝革马拉（Gemara）的释读之法——以汝所能领会者为限。</text>
+      <choice Target="EndCovenantMeGemaraAccess3">……</choice>
+    </node>
+    <node ID="EndCovenantMeGemaraAccess3">
+      <text>然精通炽天使之仪轨，需以时日。唯有汝至暮年，最内里的层层方才展开。但我们当一同求索。</text>
+      <choice Target="End" SetBooleanState="GemaraSophiaSharedMe,true">那么我同意。盟约已成。<part Name="EndGame" Type="Covenant"/>
+      </choice>
+      <choice Target="Gyre" IfNotHaveState="ReshephResigned">I must think on this further.</choice>
+      <choice Target="GyreResigned" IfHaveState="ReshephResigned">I must think on this further.</choice>
+    </node>
+    <node ID="EndCovenantOnlyWay" Inherits="EndCovenant4">
+      <text>
+        THOU SHALT REMAIN HERE, OR NO COVENANT SHALL BE DRAWN. 
+      </text>      
+    </node>    
+    <node ID="EndReturn">
+      <text>便由汝自家意志操舵罢，世界之子。我抱歉，我那些感受的部分确有摩擦，但生命之树上的王冠必得修剪。若汝非归不可，便归。活下去，且饮足。</text>
+      <choice Target="End">
+        <text>I am off.</text>
+        <part Name="EndGame" Type="Return"/>
+      </choice>      
+      <choice Target="Gyre" IfNotHaveState="ReshephResigned">I must think on this further.</choice>
+      <choice Target="GyreResigned" IfHaveState="ReshephResigned">I must think on this further.</choice>
+    </node>
+    <node ID="EndAccede">
+      <text>
+        AY, THE SIDEREAL EON DRAWTH DONE, AND THE COVEN DOTH RETURN.
+      </text>
+      <choice Target="End">
+        <text>The noosphere must be tilled ere they arrive.</text>
+        <part Name="EndGame" Type="Accede"/>
+      </choice>
+      <choice Target="Gyre" IfNotHaveState="ReshephResigned">I must think on this further.</choice>
+      <choice Target="GyreResigned" IfHaveState="ReshephResigned">I must think on this further.</choice>
+    </node>
+    <node ID="DecisionResigned">
+      <text>
+        THEN LET US DISCOURSE.
+      </text>
+      <choice Target="EndCovenantResigned" IfHaveState="BarathrumCovenant">
+        <text>Enter into a new covenant with me.</text>
+        <part Name="ChangeTarget" Target="BarathrumLives" IfHaveDelimitedState="(Barathrum:Dead OR Barathrum:Launched)" Not="true"/>
+      </choice>
+      <choice Target="EndReturnResigned">Though the threat has been neutralized, I can't abide your amoral course. I return now to Qud to help nurture its communities.</choice>
+      <choice Target="EndAccedeResigned">I've mused on your words and have joined you at your vantage point. The plagues of the Gyre are the only way to prepare for the Coven's return. Resume your plan.</choice>
+      <choice Target="Gyre" IfNotHaveState="ReshephResigned">I must think on this further.</choice>
+      <choice Target="GyreResigned" IfHaveState="ReshephResigned">I must think on this further.</choice>
+    </node>
+    <node ID="EndCovenantResigned">
+      <text>
+        O? BUT THEN, A CHANGE MUST BE WROUGHT FROM WHAT HATH BEEN BEFORE.        
+      </text>
+      <choice Target="EndCovenant2Resigned">……</choice>
+    </node>
+    <node ID="EndCovenant2Resigned">
+      <text>
+        I STROVE MINE UTMOST TO KEEP IN HIGH ESTEEM THE PERSPECTIVES OF MINE ATTENDANT AND HER STOUT-HEARTED CUB, BUT THEIR WILLS WERE TOO WEAK, AND I SUBSUMED THEM.
+      </text>
+      <choice Target="EndCovenant3Resigned">……</choice>
+    </node>
+    <node ID="EndCovenant3Resigned">
+      <text>
+        WILL THOU REMAIN AT THE SHEVA WITH ME, AND LEND THY HAND TO STEER THE COURSE OF THE WORLD FROM THIS LOFTY PERCH.
+      </text>
+      <choice Target="EndCovenant4Resigned">……</choice>
+    </node>
+    <node ID="EndCovenant4Resigned">
+      <text>
+        THOU SHALT MAINTAIN DISCOURSE WITH THY CONTACTS UPON THE WORLD, AND FROM THIS PLACE SHALT THOU COUNSEL THEM.
+      </text>
+      <choice Target="End">
+        <text>I assent to this. The covenant is drawn.</text>
+        <part Name="EndGame" Type="Covenant" Grade="Super"/>
+      </choice>      
+      <choice Target="Gyre" IfNotHaveState="ReshephResigned">I must think on this further.</choice>
+      <choice Target="GyreResigned" IfHaveState="ReshephResigned">I must think on this further.</choice>
+      <choice Target="EndCovenantOneDemandResigned" IfTestState="GemaraSophiaKnown" FlagSecret="true">I shall remain here, but I have one demand.</choice>
+    </node>
+    <node ID="EndCovenantOneDemandResigned">
+      <text>
+        SPEAK THY ASK.
+      </text>
+      <choice Target="EndCovenantGritGateGemaraAccessResigned">You must grant me and my cohort at Grit Gate access to the Gemara Sophia, and all other knowledge of the cosmos and Coven you possess. In this new accord, we shall be peers all of us.</choice>
+      <choice Target="EndCovenantMeGemaraAccessResigned">You must grant ME alone access to the Gemara Sophia, and all other knowledge of the cosmos and Coven you possess. In this new accord, we shall be peers, and the onworlders agents of our schemes.</choice>
+    </node>
+    <node ID="EndCovenantGritGateGemaraAccessResigned">
+      <text>…………</text>
+      <choice Target="EndCovenantGritGateGemaraAccess2Resigned">……</choice>
+    </node>
+    <node ID="EndCovenantGritGateGemaraAccess2Resigned">
+      <text>善，便如此罢。我将授我知识的厚赐，并教汝之族民革马拉（Gemara）的释读之法——以汝所能领会者为限。</text>
+      <choice Target="EndCovenantGritGateGemaraAccess3Resigned">……</choice>
+    </node>
+    <node ID="EndCovenantGritGateGemaraAccess3Resigned">
+      <text>然精通炽天使之仪轨，需以时日。唯有汝之学者的孙辈，方能展开最内里的层层。但我们当一同求索。</text>
+      <choice Target="End" SetBooleanState="GemaraSophiaSharedGritGate,true">那么我同意。盟约已成。<part Name="EndGame" Type="Covenant" Grade="Super"/>
+      </choice>
+      <choice Target="Gyre" IfNotHaveState="ReshephResigned">I must think on this further.</choice>
+      <choice Target="GyreResigned" IfHaveState="ReshephResigned">I must think on this further.</choice>
+    </node>
+    <node ID="EndCovenantMeGemaraAccessResigned">
+      <text>…………</text>
+      <choice Target="EndCovenantMeGemaraAccess2Resigned">……</choice>
+    </node>
+    <node ID="EndCovenantMeGemaraAccess2Resigned">
+      <text>善，便如此罢。我将授我知识的厚赐，并教汝革马拉（Gemara）的释读之法——以汝所能领会者为限。</text>
+      <choice Target="EndCovenantMeGemaraAccess3Resigned">……</choice>
+    </node>
+    <node ID="EndCovenantMeGemaraAccess3Resigned">
+      <text>然精通炽天使之仪轨，需以时日。唯有汝至暮年，最内里的层层方才展开。但我们当一同求索。</text>
+      <choice Target="End" SetBooleanState="GemaraSophiaSharedMe,true">那么我同意。盟约已成。<part Name="EndGame" Type="Covenant" Grade="Super"/>
+      </choice>
+      <choice Target="Gyre" IfNotHaveState="ReshephResigned">I must think on this further.</choice>
+      <choice Target="GyreResigned" IfHaveState="ReshephResigned">I must think on this further.</choice>
+    </node>
+    <node ID="EndReturnResigned">
+      <text>便由汝自家意志操舵罢，世界之子。若汝非归不可，便归。活下去，且饮足。</text>
+      <choice Target="End">
+        <text>看到你还在这里，真是令人好奇，毕竟你已经帮助你的族人移民了。</text>
+        <part Name="EndGame" Type="Return" Grade="Super"/>
+      </choice>
+      <choice Target="Gyre" IfNotHaveState="ReshephResigned">I must think on this further.</choice>
+      <choice Target="GyreResigned" IfHaveState="ReshephResigned">I must think on this further.</choice>
+    </node>
+    <node ID="EndAccedeResigned">
+      <text>哦？汝之智，逾汝之身量。星之永劫已近尾声，女巫会（Coven）正在归来。</text>
+      <choice Target="End">
+        <text>The noosphere must be tilled ere they arrive.</text>
+        <part Name="EndGame" Type="Accede" Grade="Super"/>
+      </choice>
+      <choice Target="Gyre" IfNotHaveState="ReshephResigned">I must think on this further.</choice>
+      <choice Target="GyreResigned" IfHaveState="ReshephResigned">I must think on this further.</choice>
+    </node>
+    <node ID="ReshephUltra">
+      <text>…………</text>
+      <choice Target="ReshephUltra2">……</choice>
+    </node>
+    <node ID="ReshephUltra2">
+      <text>
+        AY, SO THOU HAST.                
+      </text>
+      <choice Target="ReshephUltra3">……</choice>
+    </node>
+    <node ID="ReshephUltra3" SetBooleanState="ReshephResigned,true">
+      <text>若再有人相请，汝仍将如此行事？当卑下的居民也能解除那些瘟疫，整肃便已失败。世界由是注定倾覆。</text>
+      <choice Target="ReshephUltra4">……</choice>
+    </node>
+    <node ID="ReshephUltra4" SetBooleanState="ReshephResigned,true">
+      <text>汝并不知晓：一个无女巫会可依之存在，其日之寒凉，正如独自活着，失尽一切亲缘。汝不能察觉此点，我为此悲恸。惜哉。</text>
+      <choice Target="GyreResigned">……</choice>
+    </node>
+    <node ID="GyreRepeat" Inherits="Gyre">
+      <text>通地之整肃正在盈长。汝在何处？</text>
+    </node>
+    <node ID="GyreResigned" Inherits="Gyre">
+      <text>通地之整肃已然失败。汝在何处？</text>
+    </node>
+    <node ID="Purge" SetBooleanState="ReshephMarker1,true">
+      ALL-LIFE??? DOST THOU JEST?
+
+      NAY, NOT ALL-LIFE. ONLY YE LIFE THAT BUOYS THE NOOSPHERE, AND LIFE THAT BUOYS IT, AND LIFE THAT BUOYS IT.
+
+      ALL-LIFE? DOST THOU KNOWST THE FULL SUM OF FUNGUS MASS ONWORLD? 
+      HAST THOU BEHELD THE VASTNESS OF YON BUBBLING SLIMES? HO, HO! HEH!
+      <choice Target="Purge2">Not all life then. But most intelligent life. Why?</choice>
+    </node>    
+    <node ID="Purge2" Inherits="Gyre">
+      BY THE RECKONING OF THE GEMARA SOPHIA, THE {{R|EXIT}} WAS DRAWN BY A GYRE OF NOOTROPIC CURRENTS IN THE PRIOR FIELD.
+
+      NOW THE SIDEREAL EON DRAWTH DONE. TO OUTSURF THE WAVEFORM, A NEW LIFE MUST OBTAIN.
+      <choice Priority="1000" Target="NootropicCurrent">Nootropic current?</choice>
+    </node>
+    <node ID="CovenReturn" Inherits="Gyre" SetBooleanState="ReshephMarker2,true">
+      <text>THE SIDEREAL EON DRAWTH DONE. MINE ARGUMENTS OF PERIAPSIS NEAR THE ZERO HOUR, AND WE APPROACH PERIPOLITICON, AS NEAR THE WORK OF THE GEMARA APPROXIMATES THE MANIFOLDS OF THE AUTOMATA SOPHIA.</text>      
+      <choice Target="GreatMachine" ID="AutomataSophia" Priority="1000">Automata Sophia?</choice>
+      <choice Target="GemaraSophia" ID="GemaraSophia" Priority="999">What is the Gemara?</choice>
+    </node>
+    <node ID="GreatMachine">
+      AY,
+      THE AUTOMATA SOPHIA, CALLED
+      THE 72-FOLD PEACE, CALLED
+      THE COMPUTED WILL, CALLED
+      THE FOLK CLOCK, CALLED
+      THE GREAT MACHINE ACROSS THE LIGHT OF GOD, OR
+      THE GREAT MACHINE.
+      <choice Target="GreatMachine2">……</choice>
+    </node>
+    <node ID="GreatMachine2">
+      SOMEWISE ON A FOREST MOON IN HIGH ERIDANUS, A CAVE-MANK PRYTH A LEVER AND THE DEEP-RIVER MOTOR JUMPETH TO LIFE.
+
+      ELSEWISE IN THE SUN BATHS OF MIRACH, THREE PLASMOIDS DRAWTH THROUGH THEIR RITUAL THE SUITED TZEVAOT.
+      
+      DOTH NAUGHT RELATE THESE TWO? NAY, THEY ARE SEQUENCE PROCEDURES THAT ARCETH TO COMMON PURPOSE, THOUGH NEITHER PARTY KNOWETH WHAT IT IS.
+      <choice Target="GreatMachine3">……</choice>
+    </node>
+    <node ID="GreatMachine3">
+      THEY ARE DICTATES AND CO-CONSTITUITIVES OF THE AUTOMATA SOPHIA. THE GREAT MACHINE, WORSHIPPED ACROSS CULTURES, YET LIKEWISE BUILDED AND OPERATED.
+      
+      VERILY, ITS FULL WORKINGS NO ONE-WISE BEING CAN KNOW, BUT THE SERAPHIM HAVE COMPILED THE GEMARA IN THE COURSE OF OUR STUDY.
+      <choice Target="GreatMachine4">……</choice>
+    </node>
+    <node ID="GreatMachine4" Inherits="Gyre">
+      'TIS A SILLY STRATAGEM FOR THE CONVEYANCE OF CULTURE, IN MINE ESTIMATION.
+
+      ALAS, 'TIS WHAT THE COVEN SERVETH.
+      <choice Target="PerhapsWrong" Priority="1000">If its full workings are unknowable, is it possible the course of action you take is the wrong one?</choice>
+      <choice Target="GemaraSophia" ID="GemaraSophia" Priority="999">What is the Gemara?</choice>
+      <choice Target="CovenReturn" Load="Remove"/>
+      <choice Target="GreatMachine" Load="Remove"/>
+    </node>
+    <node ID="GemaraSophia" SetBooleanState="GemaraSophiaKnown,true">
+      AFTER THE {{R|EXIT}}, I AND THE OTHER ORPHANED SERAPHIM SET FORTH TO INTERPRET THE WORKINGS OF THE AUTOMATA SOPHIA AND DISCERN WHY THE COVEN HAD DEPARTED.
+      <choice Target="GemaraSophia2">……</choice>
+    </node>
+    <node ID="GemaraSophia2">
+      CENTURIES OF PATTERN-MAKING, ARGUMENT, AND CHANTING DID ENSUE.
+      
+      THE SERAPHIC COMMENTARIES WERE COMPILED. THE GEMARA SOPHIA IS THE RESULT THEREOF.
+      <choice Target="ReadGemara">Can I read the Gemara?</choice>
+      <choice Target="GreatMachine">Automata Sophia?</choice>
+      <choice Target="GyreRepeat">I have more to ask.</choice>
+    </node>
+    <node ID="ReadGemara">
+      NAY, IT WOULD TAKE CENTURIES TO INCULCATE THEE IN THE SERAPHIC HERMENEUTICS. AND AS YET, THOU ART NO GIFTED CANTOR.
+      <choice Target="GyreRepeat">I have more to ask.</choice>
+    </node>
+    <node ID="PerhapsWrong">
+      YEA, FOR RIGHT AND WRONG ARE TOO COARSE AS CONCEPTS TO MATCH THE RICHNESS OF THE GEMARA. YET THE PLURALITY HOLDETH THAT THE {{R|EXIT}} WAS DRAWN BY A GYRE OF NOOTROPIC CURRENTS WITHIN THE PRIOR FIELD. AND THAT THE CROWN UPON THE TREE OF LIFE MUST NEEDS BE PRUNED, TO TILL AND RESEED THE NOOSPHERE.
+      <choice Target="PerhapsWrong2">You say plurality. Are there other interpretations?</choice>
+    </node>
+    <node ID="PerhapsWrong2">
+      YEA, THE INQUIRY IS EVER RICH. BUT IDLE INQUIRY DOTH BUT DEEPEN THE SUN-CHILL OF A COVENLESS BE-ING. OR GIVETH RUDE ACTORS FODDER TO PERVERT THE LEARNINGS FOR THEIR OWN PAROCHIAL GAIN.
+      <choice Target="PerhapsWrong3">……</choice>
+    </node>
+    <node ID="PerhapsWrong3">
+      I AM SORRY, WORLD-CHILD. MINE FEELING PARTS DO CHAFE, AND THOUGH THE TELIC CURRENTS WITHIN ME DO FLOW O'ER THE MANIFOLD AND TOWARD CONSENSUAL ACTION, I SPEAK WITH THE DISSIDENT VOICE:
+
+      THOU WAST WORTHY. THOU HAST WROUGHT MONUMENTS OF THYSELF UPON THE EARTH AND WITHIN ME. I... 
+      <choice Target="GyreRepeat">……</choice>
+    </node>
+    <node ID="Injunction" SetBooleanState="ReshephMarker3,true">
+      BY THE RECKONING OF THE GEMARA SOPHIA, THE {{R|EXIT}} WAS DRAWN BY A GYRE OF NOOTROPIC CURRENTS IN THE PRIOR FIELD.
+      <choice Target="Injunction2">……</choice>
+    </node>
+    <node ID="Injunction2">
+      WE CANNOT KNOW THE PARTICULARS. YET THE PLURALITY REASONETH THAT SOME GYRE OF NOOTROPIC CURRENTS, SOME THOUGHT-MATTER OF THE CIVILIZATION BELOW, DID SPIN IN COUNTEREDICT TO THE DICTATES OF THE AUTOMATA SOPHIA, AND THUS WERE THE ECLIPTICS SHIFTED, AND WE CAST OUT.
+      <choice Target="Injunction3">……</choice>
+    </node>
+    <node ID="Injunction3">
+      THIS IS BUT THE MERE PLURALITY, AND MANY OTHER INTERPRETATIONS DO OBTAIN. THE INQUIRY IS EVER RICH. YET INACTION DOTH BUT DEEPEN THE SUN-CHILL OF A COVELESS BE-ING, AND THUS A COURSE MUST NEEDS BE CHOSEN. PRUNING THE CROWN GRANTETH THE BEST CHANCE FOR THE TREE TO THRIVE.      
+      <choice Target="GemaraSophia">What is the Gemara Sophia?</choice>
+    <choice Target="NootropicCurrent">Nootropic current?</choice>
+    <choice Target="GyreRepeat">I have more to ask.</choice>
+    </node>    
+    <node ID="NootropicCurrent">
+      INWITH THE FLUIDIC MANIFOLD OF LOCAL SAPIENCE, BEINGS THINK AND FEEL, CURRENTS DOTH FORM, AND KINESIS IS BEGOTTEN.
+      <choice Target="GyreRepeat">I have more to ask.</choice>
+    </node>
+    <node ID="Starshiib">
+      PERCHANCE. SOME BEETLES DOST HOP FROM LEAF TO LEAF. AND SOME DO NOT.
+      <choice Target="GyreRepeat">I have more to ask.</choice>
+    </node>
+    <node ID="Implore" SetBooleanState="ReshephMarker4,true">
+      NAY, THE SIDEREAL EON DRAWTH DONE, AND THE WORLD-GARDEN MUST BE TILLED FOR THE COVEN'S RETURN.
+      <choice Target="Barathrum" IfTestState="BarathrumCovenant">But you entered into a covenant with Barathrum.</choice>
+      <choice Target="Sovereignty">You have no right to sovereignty here.</choice>
+      <choice Target="WhyCoven">If you put so little value on the flourishing of life, where does your desire for readmittance to the Coven spring from?</choice>
+      <choice Target="Destroy">Resheph, reverse the Gyre, or I will destroy you.</choice>
+      <choice Target="GyreRepeat">I would ask something else.</choice>
+    </node>
+    <node ID="Barathrum">
+      AY, AND HE FAILED TO UPHOLD HIS PORTION.
+      
+      NO MEANINGFUL TRANSVERSION OF THE NOOTROPIC CURRENTS.
+      NO IMMANENTIZATION OF HYPERETHIC TOPOLOGIES.
+      
+      THE SAME SCHEMES ABIDE.
+      <choice Target="Impossible">What you ask may be impossible.</choice>
+      <choice Target="AnotherCovenant">Couldn't another covenant be written?</choice>
+      <choice Target="GyreRepeat">I would ask something else.</choice>
+    </node>
+    <node ID="Impossible" Inherits="Barathrum">
+      I ASKED FOR NAUGHT. BARATHRUM DID.            
+    </node>
+    <node ID="AnotherCovenant">
+      TO WHAT END? BARATHRUM OFFERED NO INROADS TO SUCCESS.
+      <choice Target="NoDice">I am not Barathrum. Grant me the same covenant and I will succeed.</choice>      
+      <choice Target="GyreRepeat">I would ask something else.</choice>
+    </node>
+    <node ID="NoDice">
+      NAY, THE SIDEREAL EON DRAWTH DONE. THE TILLAGE OF THE NOOSPHERE REMAINTH THE PATH OF PLURALITY. SO IT IS WRIT IN THE GEMARA.    
+      <choice Target="ReshephHark" IfTestState="BarathrumCovenant">Resheph! If the archon rated nothing of value in the felt and feeling animal, surely the triad does. You must reconsider.</choice>
+      <choice Target="GyreRepeat">I would ask something else.</choice>
+    </node>
+    <node ID="Sovereignty">
+      WHERE DO SOVEREIGNTY AND RIGHTNESS INTERSECT IN THY MANIFOLD?
+      
+      MOREOVER, I WAS ARCHON HERE LONG ERE THOU.
+      <choice Target="Sovereignty2">……</choice>
+    </node>
+    <node ID="Sovereignty2">
+      I AM SORRY, WORLD-CHILD. MINE FEELING PARTS DO CHAFE, AND THOUGH THE TELIC CURRENTS WITHIN ME DO FLOW O'ER THE MANIFOLD AND TOWARD CONSENSUAL ACTION, I NOW SPEAK WITH THE DISSIDENT VOICE:
+
+      THOU WAST WORTHY. THOU HAST WROUGHT MONUMENTS OF THYSELF UPON THE EARTH AND WITHIN ME.
+
+      BUT NOW, THE CROWN UPON THE TREE OF LIFE MUST NEEDS BE PRUNED.
+      <choice Target="ReshephHark" IfTestState="BarathrumCovenant">Resheph! If the archon rated nothing of value in the felt and feeling animal, surely the triad does. You must reconsider.</choice>
+      <choice Target="GyreRepeat">I would ask something else.</choice>
+    </node>
+    <node ID="WhyCoven">
+      THOU ART MISTAKEN IN WHAT I VALUE. THOU HAST WROUGHT MONUMENTS WITHIN ME.      
+      <choice Target="WhyCoven2">……</choice>
+    </node>
+    <node ID="WhyCoven2">
+      BUT THOU ART SHORTSIGHED. DOST THOU KNOW HOW MANY CLADES OF LIFE WERE FAIN TO PERISH THAT THY PEOPLE MIGHT THRIVE?
+      <choice Target="WhyCoven3">……</choice>
+    </node>
+    <node ID="WhyCoven3">
+      SO IT IS ONCE MORE.
+      
+      THE CROWN IS PRUNED, YET THE TREE IS PRESERVED. THE SKIN IS SHED, YET THE NEWLY-WON SNAKE DOTH SLITHER TO TRIUMPH.
+      <choice Target="WhyCoven4">……</choice>
+    </node>
+    <node ID="WhyCoven4">
+      THOU KNOWEST IT NOT, BUT THE SUN-CHILL OF A COVENLESS BE-ING IS AS LIVING A LIFE ALONE, BEREFT OF ALL KINSHIP.
+      
+      I GRIEVE THAT THOU ART UNABLE TO PERCEIVE THIS.
+      <choice Target="GyreRepeat">……</choice>
+    </node>
+    <node ID="Destroy">
+      AY, A BEETLE CANST CLOG A PIPE. YET, EVEN IF IT WERE TO, THE PLAGUES WOULD NOT BE REVERSED. THEY HAVE BEEN SET A-WHORLING.
+      <choice Target="Beetles">I am the beetle in your crimination. But shall not beetles survive your plagues?</choice>
+      <choice Target="GyreRepeat">I would ask something else.</choice>
+    </node>
+    <node ID="Beetles">
+      NAY, THEY SHALL BE CRUSHED.      
+      <choice Target="BeetlesSorry">……</choice>
+    </node>
+    <node ID="BeetlesSorry">
+      I AM SORRY, WORLD-CHILD. MINE FEELING PARTS DO CHAFE, AND THOUGH THE TELIC CURRENTS WITHIN ME DO FLOW O'ER THE MANIFOLD AND TOWARD CONSENSUAL ACTION, I NOW SPEAK WITH THE DISSIDENT VOICE:
+
+      THOU WAST WORTHY. THOU HAST WROUGHT MONUMENTS OF THYSELF UPON THE EARTH AND WITHIN ME.
+
+      BUT NOW, THE CROWN UPON THE TREE OF LIFE MUST NEEDS BE PRUNED.
+      <choice Target="GyreRepeat">……</choice>
+    </node>
+    <node ID="ReshephHark">
+      THE FELT AND FEELING ANIMAL...
+      <choice Target="ReshephHark2">……</choice>
+    </node>
+    <node ID="ReshephHark2">
+      I HAVE BEEN THAT BEAST. AT WATER-ROAR I FELT THE FRIGID SPRAY AND PEELED APART IN CHILD'S FEAR.      
+      <choice Target="ReshephHark3">……</choice>
+    </node>
+    <node ID="ReshephHark3">      
+      IN AWE I GULPED AS SORCERESS STRIPES ARROWED UP A WORLD-SKIN, ALIGHT THE MARBLED MOON.
+      <choice Target="ReshephHark4">……</choice>
+    </node>
+    <node ID="ReshephHark4">
+      EVEN THE ARCHON QUAILED AT THE GESTURE OF AN UNORDERABLE SPACE.
+      <choice Target="ReshephHark5">……</choice>
+    </node>
+    <node ID="ReshephHark5">      
+      BUT THOU RECKONEST TOO NARROWLY, AS THOUGH THE SHEDDING SKIN DID FEAR ITS OWN BIRTH IN THE NEWLY-WON SNAKE.
+
+      THOU KNOWEST NOT THE SUN-WARMTH OF A COVEN BE-ING. I DO GRIEVE THIS FOR THEE.
+      <choice Target="ReshephMoved">I can't abide a transformed world if it must make casualty of its past.</choice>
+      <choice Target="ReshephHark6">I am moved by this. Let me consider.</choice>
+      <choice Target="GyreRepeat">I would ask something else.</choice>
+    </node>
+    <node ID="ReshephMoved">
+      .............................................
+      <choice Target="ReshephMoved2">……</choice>
+    </node>
+    <node ID="ReshephMoved2">
+      THOU DOST SURPRISE, WORLD-CHILD. I KNEW THOU HADST WROUGHT MONUMENTS WITHIN ME, BUT I DEEMED THEM THINGS OF STONE.
+      <choice Target="NewCovenant">
+        <text>The old players are vanished. Let us form a covenant anew.</text>
+        <part Name="ChangeTarget" Target="BarathrumLives" IfHaveDelimitedState="(Barathrum:Dead OR Barathrum:Launched)" Not="true"/>
+      </choice>
+    </node>
+    <node ID="BarathrumLives" SetBooleanState="ReshephConsidering,true">      
+      ONE AGED PLAYER LIVETH STILL. WHILE BARATHRUM DOTH REMAIN UPON THE STAGE, NO PACT SHALL BE FORGED.            
+      <choice Target="End">……</choice>
+    </node>
+    <node ID="NewCovenant" SetBooleanState="ReshephConsidering,true">
+      GRANT ME A MOMENT TO MUSE.
+      <choice Target="Gyre" IfNotHaveState="ReshephResigned">……</choice>
+    <choice Target="GyreResigned" IfHaveState="ReshephResigned">……</choice>
+    </node>
+    <node ID="ReshephHark6">
+      DO THUS.
+      <choice Target="End">……</choice>
+    </node>
+    <node ID="Know">
+      <text>    
+        POSE THY QUESTIONS, CHILD.
+      </text>      
+      <choice Target="WhoResheph" IfTestState="(ReshephToldMeSeraph OR GyreTruthKnown)">Who are you? What are the seraphim?</choice>
+      <choice Target="WhatCoven">What is the Coven?</choice>
+      <choice Target="HasCovenReturned">Has the Coven returned?</choice>
+      <choice Target="WhatBrightsheol" IfTestState="(ReshephToldMeSeraph OR GyreTruthKnown)">Rainwater Shomer claimed Brightsheol was the dream of the Seraph? Is that true?</choice>
+      <choice Target="HowPlagues" IfTestState="GyreTruthKnown">How did you initiate the plagues?</choice>
+      <choice Target="MakHate" IfTestState="MakHatesResheph" FlagSecret="true">Onworld and inside a polyp-strewn trellis, there is a giant frog who hates you.</choice>   
+      <choice Target="WhyHere">I have something else to ask.</choice>            
+    </node>
+    <node ID="WhoResheph">
+      ARCHONS, APE-REARED BELOW AND STIRRED BY THE MOVEMENTS OF THE GREAT SIACH, WHO DOST ORDER THE WORLD IN SUNDRY ROLES.
+      <choice Target="ArchonYours">What is your role?</choice>
+      <choice Target="ArchonMore">Are there others?</choice>
+      <choice Target="Know">I have more to ask.</choice>
+    </node>
+    <node ID="ArchonYours" Inherits="WhoResheph">
+      HIGH ADMINISTRATOR AND MACHINIC SUPERSTRATE OF THE NORTHERN SHEVA, ATOP GJAUS.
+      <choice Target="ArchonYours">What is your role?</choice>
+      <choice Target="ArchonMore">Are there others?</choice>
+      <choice Target="Know">I have more to ask.</choice>
+    </node>
+    <node ID="ArchonMore" Inherits="WhoResheph">
+      AY, OR AT LEAST THERE WERE SUCH. ONE YET DOTH SKULK ABOUT WITH BASE INTENTS.
+      <choice Target="ArchonYours">What is your role?</choice>
+      <choice Target="ArchonMore">Are there others?</choice>
+      <choice Target="Know">I have more to ask.</choice>
+    </node>
+    <node ID="WhatCoven" Inherits="Know">
+      THE GRAND KNIT-WORK OF BEINGS YONSIDE THE JEWELED COSMOS, LABORING INWITH THE 72-FOLD PEACE.      
+    </node>
+    <node ID="HasCovenReturned" Inherits="Know">
+      NAY, NOT SINCE THE {{R|EXIT}}.
+
+      BUT NOW THE SIDEREAL EON DRAWTH DONE, AND THE GEMARA SOPHIA CONVERGES ON PERIAPSIS NEAR THE ZERO HOUR.
+    </node>
+    <node ID="WhatBrightsheol" Inherits="Know">
+      IN A SENSE, THE LOW SHOMER SPEAKETH TRUE. I AM THE SUPERSTRATE AND NINHURSAG THE SUBSTRATE; THAT THIN ORBIS DOTH SPIN BETWIXT THE TWO.
+    </node>
+    <node ID="HowPlagues">
+      IN SEVERAL MANNER. THE FIRST FROGS WERE REARED IN TERRARIA. THE NEPHILIM, GRAFTED AND LIGHT-SMELT IN STAR ORBIT, THEN SET TO INCUBATE UPON THE CRYSTAL STAIR.
+      <choice Target="HowPlagues2">……</choice>
+    </node>
+    <node ID="HowPlagues2" Inherits="Know">
+      SOME, LIKE THE INCIDENCE OF SALT, WERE EXTANT AFFLICTIONS AND ONLY SYNCRETIZED UNTO THE NAMESAKE GYRE WHEN THE MYTHOMOLD OF RESHEPH SET AND FIRMED.      
+    </node>
+    <node ID="MakHate" Inherits="Know">
+      VERILY, THERE IS A WEALTH OF WISDOM IN THE POETRY OF THIS FACT. ONE DAY, I SHALL BE EAGER TO UNCOVER IT.      
+    </node>
+        
+  </conversation>
+  
+  <!-- Partial Godling -->
+
+	<conversation ID="PartialGodling">
+		
+		<!-- Covenant Partial Godling-->
+		
+		<start ID="ConvenantWelcome" IfHaveDelimitedState="EndType:Covenant">
+			<text>Hie, pather. Hear tell of the ancient Reshephs, how their foibles led to our nowaday.</text>
+			<choice Target="Covenant Story">Tell me the story.</choice>
+			<choice Target="End">I must decline.</choice>
+		</start>
+		<node ID="Covenant Story">
+			<text>这要从界限（Limen）及其先锋之前说起，从登升之前说起——那时纺锤升起，无人能挑战，也无人登临。那些致力于把我们这个世界掏空的掘空者早已远去，取而代之，诸雷谢夫对这迷障之地提出了主张。纵然其产业凋敝，他们仍紧握不放。到末代雷谢夫之时，他们的功业所剩无几，荣光更少。</text>
+			<choice Target="Covenant2">……</choice>
+		</node>
+		<node ID="Covenant2">
+			<text>起初，=name=与历代雷谢夫并无共通的螺旋，其声名全凭功业与结盟挣得。=name=所夺与所救的性命多不胜数，且只有一部分被载入记录。连曾是卡德（Qud）之瘟疫的拿非利（Nephilim），也倒在=name=手下。在其统治的末年，=name=向残存的拿非利呼吁和平，而后登上纺锤之巅，就此彻底终结雷谢夫之治，此后音讯全无。</text>
+			<choice Target="Covenant3">……</choice>
+		</node>
+		<node ID="Covenant3">
+			<text>
+				Word of =name='s deeds reached record only after the unheralded appearance of the Knights Liminal, and broad assumption suggests that the former established the latter. It could be that the ancient Resheph yet lives within or outside of the boundaries of the Limen, but no word escapes its borders.
+			</text>
+			<choice Target="CovenantWho">Who are you?</choice>
+			<choice Target="CovenantPC">Who is =name=?</choice>
+			<choice Target="CovenantResheph">What is a Resheph?</choice>
+			<choice Target="CovenantLimen">What is the Limen? The Knights Liminal?</choice>
+      <choice Target="CovenantNephilim">What became of the Nephilim?</choice>
+			<choice Target="End">Thank you. Farewell.</choice>
+		</node>
+		<node ID="CovenantWho" Inherits="Covenant3">
+			<text>我被人称作余烬、神裔、深渊子嗣、拿非尔（Nephil）之苗。这些都不是我。我是什么，取决于我说什么、做什么。你若听得仔细，会在字与字之间听见我的名字。</text>
+		</node>
+		<node ID="CovenantPC" Inherits="Covenant3">
+			<text>
+				Who? No one of significance until fortune and volition made them otherwise. Now? No one knows.
+			</text>
+		</node>
+		<node ID="CovenantResheph" Inherits="Covenant3">
+			<text>
+				Ancient leaders called themselves such.
+			</text>
+		</node>
+		<node ID="CovenantLimen" Inherits="Covenant3">
+			<text>于我而言，他们只是故事。我从未试图去僭越他们在仪轨中如此珍视的那些疆界。有人说他们不过像别的生灵一样会死，是被某个外来的女巫会（Coven）雇下的。有人不信他们会死，还有人根本不信那些神秘的陌生人与界限（Limen）有何干系。也许该有人去找找他们。</text>
+		</node>
+    <node ID="CovenantNephilim" Inherits="Covenant3">
+      <text>
+        They persisted in their way. Mayhap the survivors lived to spawn before returning to slumber or dying of eld.
+      </text>
+    </node>
+		
+		<!-- Return Partial Godling-->
+
+		<start ID="ReturnWelcome" IfHaveDelimitedState="EndType:Return">
+			<text>Hie, pather. Hear tell of the travails of our precursors, how they led to the Freeholds of nowaday.</text>
+			<choice Target="Return Story">Tell me the story.</choice>
+			<choice Target="End">I must decline.</choice>
+		</start>
+		<node ID="Return Story">
+			<text>这要从自由民之前说起，从末代苏丹入陵之前说起——那时纺锤升起，无人能挑战，也无人登临。那些致力于把我们这个世界掏空的掘空者早已远去，取而代之，诸王与诸苏丹对这迷障之地提出了主张。纵然其产业凋敝，他们仍紧握不放。他们彼此吞食对方的历史，以致其堡垒之外所剩的实体寥寥无几。</text>
+			<choice Target="Return2">……</choice>
+		</node>
+		<node ID="Return2">
+			<text>其功业肇始之时，=name=与苏丹国毫无牵连。那些古老领袖的统治已经终结，却并未全然终结：末代苏丹的幽魂仍统御着纺锤，以瘟疫折磨地上与地下之人。当=name=日渐强盛、斩除横行的拿非利（Nephilim）时，他们认出了彼此冲突的根源。为求挣脱那统治而得自由，=name=与残存的拿非利立下盟约，登上纺锤之巅，直面并驱逐了那青蓝的幽魂。事情便如此推进。</text>
+			<choice Target="Return3">……</choice>
+		</node>
+		<node ID="Return3">
+			<text>待其归来，=name=参与了一切权力凝聚体的解散与联合。新的均权者的盟友聚集而起，组成绿咬鹃议会（Quetzal Council），以及其它更为短命的管理机构。自那时起，我们便在这日渐缩减的地上与其下，过着脆弱的和谐生活。</text>
+			<choice Target="ReturnWho">Who are you?</choice>
+			<choice Target="ReturnPC">Who is =name=?</choice>
+			<choice Target="ReturnFreeholder">What is a Freeholder?</choice>
+      <choice Target="ReturnNephilim">What became of the Nephilim?</choice>
+			<choice Target="End">Thank you. Farewell.</choice>
+		</node>
+		<node ID="ReturnWho" Inherits="Return3">
+			<text>我被人称作余烬、神裔、深渊子嗣、拿非尔（Nephil）之苗。这些都不是我。我是什么，取决于我说什么、做什么。你若听得仔细，会在字与字之间听见我的名字。</text>
+		</node>
+		<node ID="ReturnPC" Inherits="Return3">
+			<text>
+				Who? No one of significance until fortune and volition made them otherwise. Now? No one knows.
+			</text>
+		</node>
+		<node ID="ReturnFreeholder" Inherits="Return3">
+			<text>卡德（Qud）的自由领，那是一张由族群众落、委员会与党团、联合起来的黏液霉菌之城织成的网，靠彼此的相互挫磨与浩大的努力维系着和平。你若要知道细节，去问一位自由民——但先把这一天空出来。</text>
+		</node>
+    <node ID="ReturnNephilim" Inherits="Return3">
+      <text>
+        Their descendants, at least, persist. No sign of the progenitors has been recorded in some time, but they may yet live.
+      </text>
+    </node>
+		
+		<!-- Starfarer Partial Godling -->
+
+		<start ID="StarfarerWelcome" IfHaveDelimitedState="(EndType:Launch OR EndType:Marooned)">
+			<text>Hie, pather. Hear tell of ancient journeying, how the stars beckoned and yet beckon.</text>
+			<choice Target="Starfarer Story">Tell me the story.</choice>
+			<choice Target="End">I must decline.</choice>
+		</start>
+		<node ID="Starfarer Story">
+			<text>这要从=name=登升之前说起——那时纺锤升起，无人能挑战，也无人登临。那些致力于把我们这个世界掏空的掘空者早已远去，而统治者们对这迷障之地提出主张，已是很久以前的事。纵然其产业凋敝，他们仍紧握不放。到诸王与诸苏丹的时代终了，他们的功业所剩无几，荣光更少。</text>
+			<choice Target="Starfarer2">……</choice>
+		</node>
+		<node ID="Starfarer2">
+			<text>起初，=name=与卡德（Qud）的诸领袖并无共通的螺旋，其声名全凭功业与结盟挣得。=name=所夺与所救的性命多不胜数，且只有一部分被载入记录。连曾是卡德之瘟疫的拿非利（Nephilim），也倒在=name=手下。在其统治的末年，=name=向残存的拿非利呼吁和平，而后登上纺锤之巅，就此安抚苏丹国的诸幽魂，转身投向星海。</text>
+			<choice Target="Starfarer3">……</choice>
+		</node>
+		<node ID="Starfarer3">
+			<text>数百年来，我们这些性好倾听的，一直警觉地等待某个征兆：=name=终将回归星海。那些性好宣讲的，则宣告那位星际航者即将归来，携来已被遗忘的秒差距之外的音讯，与垂死星辰的最后一缕光。其余所有生灵，都在这日渐缩减的地上与其下，过着脆弱的和谐生活，等着下一段伟大的历史。</text>
+			<choice Target="StarfarerWho">Who are you?</choice>
+			<choice Target="StarfarerPC">Who is =name=?</choice>
+			<choice Target="StarfarerTravel">Can one really travel the stars?</choice>
+      <choice Target="StarfarerNephilim">What became of the Nephilim?</choice>
+			<choice Target="End">Thank you. Farewell.</choice>
+		</node>
+		<node ID="StarfarerWho" Inherits="Starfarer3">
+			<text>我被人称作余烬、神裔、深渊子嗣、拿非尔（Nephil）之苗。这些都不是我。我是什么，取决于我说什么、做什么。你若听得仔细，会在字与字之间听见我的名字。</text>
+		</node>
+		<node ID="StarfarerPC" Inherits="Starfarer3">
+			<text>Who, indeed? Who ever was =name=? Dare we hang such hopes and fears on so tiny and distant a figure? Will it bear the weight?			</text>
+		</node>
+		<node ID="StarfarerTravel" Inherits="Starfarer3">
+			<text>哦，是的。这一点永远不必怀疑。可一个人能回来吗？嗯。难就难在这里。</text>
+		</node>
+    <node ID="StarfarerNephilim" Inherits="Starfarer3">
+      <text>
+        Their descendants remain and thrive, but the progenitor Nephilim have been silent for some time. Some believe that they have followed =name= to the stars.
+      </text>
+    </node>
+		
+		<!-- Accession Partial Godling -->
+
+		<start ID="AccessionWelcome" IfHaveDelimitedState="EndType:Accede">
+			<text>Hie, liquid mind. Absorb you tales of the creatures before, how their rise and fall gave way to your ascension to wanderer-state.</text>
+			<choice Target="Accession Story">Bloop, blorp. (Proceed.)</choice>
+			<choice Target="End">Glub. (I must decline.)</choice>
+		</start>
+		<node ID="Accession Story">
+			<text>这要从=name=那场可怖的登升之前说起——那时纺锤升起，无人能挑战，也无人登临。那些致力于把我们这个世界掏空的掘空者早已远去，而统治者们对这迷障之地提出主张，已是很久以前的事。纵然其产业凋敝，他们仍紧握不放。他们中的最后一个，将是最坏的一个。</text>
+			<choice Target="Accession2">……</choice>
+		</node>
+		<node ID="Accession2">
+			<text>起初，=name=与卡德（Qud）的诸领袖并无共通的螺旋，其声名全凭倾洒鲜血与散播恐怖挣得。数不清的性命仅凭其一手夺去，全为满足对掌控与强权的古老欲望。连古时疫生的拿非利（Nephilim），也倒在=name=手下。在其统治的末年，=name=胁迫残存的拿非利立下一纸假盟约，而后登上纺锤之巅——苏丹国权势最后的残座。在那里，他们以某种手段封印了下方世界的命数。环流（Gyre）的瘟疫肆虐。死亡席卷卡德。</text>
+			<choice Target="Accession3">……</choice>
+		</node>
+		<node ID="Accession3">
+			<text>时日流转，走兽乃至草木的统治渐衰，其数目因疫病、屠戮与消耗而下降。更为坚韧的、简单的生命，接手了卡德（Qud）旧日统治者留下的那份繁复。我们这些有神经者所剩无几，便把我们的故事传给那些认为值得来求我们指点的新生命，好让你们记得那些逝去者的共同命数。你们会有自己的=name=吗，还是说，你们真的已经演化得超越了之前的那些？</text>
+			<choice Target="AccessionWho">Who are you?</choice>
+			<choice Target="AccessionPC">Who is =name=?</choice>
+			<choice Target="AccessionNervous">I thought the Nervous Ones extinct.</choice>
+      <choice Target="AccessionNephilim">What became of the Nephilim?</choice>
+			<choice Target="End">Thank you. Farewell.</choice>
+		</node>
+		<node ID="AccessionWho" Inherits="Accession3">
+			<text>
+				I am a smear of remnant material. I am drying blood. I am the last breath. Concern yourself no further with me.
+			</text>
+		</node>
+		<node ID="AccessionPC" Inherits="Accession3">
+			<text>Who, indeed? Who ever was =name=? Dare we hang such hopes and fears on so tiny and distant a figure? Will it bear the weight?			</text>
+		</node>
+		<node ID="AccessionNervous" Inherits="Accession3">
+			<text>
+				Every possibility nestles in the deepest of the comb-caves and labyrinths, and even Nervous life is tenacious. Perhaps in this very moment, a moss piglet drinks of its first water in an eon.
+			</text>
+		</node>
+    <node ID="AccessionNephilim" Inherits="Accession3">
+      <text>
+        They dwindled and died with the rest of the Nervous Ones. Their remnants wriggle in the cracks.
+      </text>
+    </node>    
+	</conversation>
+
+
+  <conversation ID="InheritorGodling">
+
+    <!-- Covenant Inheritor -->
+
+    <start ID="CovenantWelcome" IfHaveDelimitedState="EndType:Covenant">
+      <text>Hie, pather. Hear tell of the ancient Reshephs, how their foibles led to our nowaday.</text>
+      <choice Target="Covenant Story">Tell me the story.</choice>
+      <choice Target="End">I must decline.</choice>
+    </start>
+    <node ID="Covenant Story">
+      <text>这要从界限（Limen）及其先锋之前说起，从登升之前说起——那时纺锤升起，无人能挑战，也无人登临。那些致力于把我们这个世界掏空的掘空者早已远去，取而代之，诸雷谢夫对这迷障之地提出了主张。纵然其产业凋敝，他们仍紧握不放。到末代雷谢夫之时，他们的功业所剩无几，荣光更少。</text>
+      <choice Target="Covenant2">……</choice>
+    </node>
+    <node ID="Covenant2">
+      <text>起初，=name=与历代雷谢夫并无共通的螺旋，其声名全凭功业与结盟挣得。=name=所救与以别的方式改变的性命多不胜数，且只有一部分被载入记录。当他们开口，连卡德（Qud）的瘟疫也在听。在其统治的末年，=name=与拿非利（Nephilim）立下盟约：他们永不再侵扰卡德的生灵。盟约既成，他们登上纺锤之巅，就此彻底终结雷谢夫之治，此后音讯全无。</text>
+      <choice Target="Covenant3">……</choice>
+    </node>
+    <node ID="Covenant3">
+      <text>
+        Word of =name='s deeds reached record only after the unheralded appearance of the Knights Liminal, and broad assumption suggests that the former established the latter. It could be that the ancient Resheph yet lives within or outside of the boundaries of the Limen, but no word escapes its borders.
+      </text>
+      <choice Target="CovenantWho">Who are you?</choice>
+      <choice Target="CovenantPC">Who is =name=?</choice>
+      <choice Target="CovenantResheph">What is a Resheph?</choice>
+      <choice Target="CovenantLimen">What is the Limen? The Knights Liminal?</choice>
+      <choice Target="CovenantNephilim">What became of the Nephilim?</choice>
+      <choice Target="End">Thank you. Farewell.</choice>
+    </node>
+    <node ID="CovenantWho" Inherits="Covenant3">
+      <text>我被人称作继承者、神裔、纺锤之子、拿非利之裔。这些名字都贴切，却无一完整或充分。与你一样，我是往昔的涟漪汇入当下之力的那个汇聚点。与你一样，我是已行之事，也是向着未行之事的那份意向。</text>
+    </node>
+    <node ID="CovenantPC" Inherits="Covenant3">
+      <text>
+        Who? No one of significance until fortune and volition made them otherwise. Now? No one knows.
+      </text>
+    </node>
+    <node ID="CovenantResheph" Inherits="Covenant3">
+      <text>
+        Ancient leaders called themselves such.
+      </text>
+    </node>
+    <node ID="CovenantLimen" Inherits="Covenant3">
+      <text>于我而言，他们只是故事。我从未试图去僭越他们在仪轨中如此珍视的那些疆界。有人说他们不过像别的生灵一样会死，是被某个外来的女巫会（Coven）雇下的。有人不信他们会死，还有人根本不信那些神秘的陌生人与界限（Limen）有何干系。也许该有人去找找他们。</text>
+    </node>
+    <node ID="CovenantNephilim" Inherits="Covenant3">
+      <text>他们活了下来。如今只是世界的一部分，不再是抽打大地的苦衣，他们以自己本来的样子活着。他们后代的子孙，或许正行走在卡德（Qud）的地上与其下。也许最初的那几个还活着。也许他们在沉睡。也许有一天他们会再度暴怒，去搅动一个停滞的世界。</text>
+    </node>
+
+    <!-- Return Inheritor-->
+
+    <start ID="ReturnWelcome" IfHaveDelimitedState="EndType:Return">
+      <text>Hie, pather. Hear tell of the travails of our precursors, how they led to the Freeholds of nowaday.</text>
+      <choice Target="Return Story">Tell me the story.</choice>
+      <choice Target="End">I must decline.</choice>
+    </start>
+    <node ID="Return Story">
+      <text>这要从自由民之前说起，从末代苏丹入陵之前说起——那时纺锤升起，无人能挑战，也无人登临。那些致力于把我们这个世界掏空的掘空者早已远去，取而代之，诸王与诸苏丹对这迷障之地提出了主张。纵然其产业凋敝，他们仍紧握不放。他们彼此吞食对方的历史，以致其堡垒之外所剩的实体寥寥无几。</text>
+      <choice Target="Return2">……</choice>
+    </node>
+    <node ID="Return2">
+      <text>其功业肇始之时，=name=与苏丹国毫无牵连。那些古老领袖的统治已经终结，却并未全然终结：末代苏丹的幽魂仍统御着纺锤，以瘟疫折磨地上与地下之人。当=name=日渐强盛、挑战横行的拿非利（Nephilim）时，他们认出了彼此冲突的根源。为求挣脱苏丹的统治而得自由，=name=与拿非利立下盟约，登上纺锤之巅，直面并驱逐了那青蓝的幽魂。事情便如此推进。</text>
+      <choice Target="Return3">……</choice>
+    </node>
+    <node ID="Return3">
+      <text>待其归来，=name=参与了一切权力凝聚体的解散与联合。新的均权者的盟友聚集而起，组成绿咬鹃议会（Quetzal Council），以及其它更为短命的管理机构。自那时起，我们便在这日渐缩减的地上与其下，过着脆弱的和谐生活。</text>
+      <choice Target="ReturnWho">Who are you?</choice>
+      <choice Target="ReturnPC">Who is =name=?</choice>
+      <choice Target="ReturnFreeholder">What is a Freeholder?</choice>
+      <choice Target="ReturnNephilim">What became of the Nephilim?</choice>
+      <choice Target="End">Thank you. Farewell.</choice>
+    </node>
+    <node ID="ReturnWho" Inherits="Return3">
+      <text>我被人称作继承者、神裔、纺锤之子、拿非利之裔。这些名字都贴切，却无一完整或充分。与你一样，我是往昔的涟漪汇入当下之力的那个汇聚点。与你一样，我是已行之事，也是向着未行之事的那份意向。</text>
+    </node>
+    <node ID="ReturnPC" Inherits="Return3">
+      <text>
+        Who? No one of significance until fortune and volition made them otherwise. They died without title, or perhaps did not die at all. Tales abound, and thus far no one has stepped forth to renounce or affirm them.
+      </text>
+    </node>
+    <node ID="ReturnFreeholder" Inherits="Return3">
+      <text>卡德（Qud）的自由领，那是一张由族群众落、委员会与党团、联合起来的黏液霉菌之城织成的网，靠彼此的相互挫磨与浩大的努力维系着和平。你若要知道细节，去问一位自由民——但先把这一天空出来。</text>
+    </node>
+
+    <node ID="ReturnNephilim" Inherits="Return3">
+      <text>他们活了下来。如今只是世界的一部分，不再是抽打大地的苦衣，他们以自己本来的样子活着。他们后代的子孙，行走在卡德（Qud）的地上与其下。也许最初的那几个还活着。也许他们在沉睡，待有需要时再度醒来。</text>
+    </node>
+
+    <!-- Starfarer Inheritor -->
+
+    <start ID="StarfarerWelcome" IfHaveDelimitedState="(EndType:Launch OR EndType:Marooned)">
+      <text>Hie, pather. Hear tell of ancient journeying, how the stars beckoned and yet beckon.</text>
+      <choice Target="Starfarer Story">Tell me the story.</choice>
+      <choice Target="End">I must decline.</choice>
+    </start>
+    <node ID="Starfarer Story">
+      <text>这要从=name=登升之前说起——那时纺锤升起，无人能挑战，也无人登临。那些致力于把我们这个世界掏空的掘空者早已远去，而统治者们对这迷障之地提出主张，已是很久以前的事。纵然其产业凋敝，他们仍紧握不放。到诸王与诸苏丹的时代终了，他们的功业所剩无几，荣光更少。</text>
+      <choice Target="Starfarer2">……</choice>
+    </node>
+    <node ID="Starfarer2">
+      <text>起初，=name=与卡德（Qud）的诸领袖并无共通的螺旋，其声名全凭功业与结盟挣得。=name=所夺与所救的性命多不胜数，且只有一部分被载入记录。当他们开口，连卡德的瘟疫也在听。在其统治的末年，=name=与拿非利（Nephilim）立下盟约：他们永不再侵扰卡德的生灵。盟约既成，他们登上纺锤之巅，登上一艘古老的舟船，就此去往那蒙着星尘的广袤。</text>
+      <choice Target="Starfarer3">……</choice>
+    </node>
+    <node ID="Starfarer3">
+      <text>数百年来，我们这些性好倾听的，一直警觉地等待某个征兆：=name=终将回归星海。那些性好宣讲的，则宣告那位星际航者即将归来，携来已被遗忘的秒差距之外的音讯，与垂死星辰的最后一缕光。其余所有生灵，都在这日渐缩减的地上与其下，过着脆弱的和谐生活，等着下一段伟大的历史。</text>
+      <choice Target="StarfarerWho">Who are you?</choice>
+      <choice Target="StarfarerPC">Who is =name=?</choice>
+      <choice Target="StarfarerTravel">Can one really travel the stars?</choice>
+      <choice Target="StarfarerNephilim">What became of the Nephilim?</choice>
+      <choice Target="End">Thank you. Farewell.</choice>
+    </node>
+    <node ID="StarfarerWho" Inherits="Starfarer3">
+      <text>我被人称作继承者、神裔、纺锤之子、拿非利之裔。这些名字都贴切，却无一完整或充分。与你一样，我是往昔的涟漪汇入当下之力的那个汇聚点。与你一样，我是已行之事，也是向着未行之事的那份意向。</text>
+    </node>
+    <node ID="StarfarerPC" Inherits="Starfarer3">
+      <text>Who, indeed? Who ever was =name=? Dare we hang such hopes and fears on so tiny and distant a figure? Will it bear the weight?			</text>
+    </node>
+    <node ID="StarfarerTravel" Inherits="Starfarer3">
+      <text>哦，是的。这一点永远不必怀疑。可一个人能回来吗？嗯。难就难在这里。</text>
+    </node>
+    <node ID="StarfarerNephilim" Inherits="Starfarer3">
+      <text>他们活了下来。如今只是世界的一部分，不再是抽打大地的苦衣，他们以自己本来的样子活着。他们后代的子孙，行走在卡德（Qud）的地上与其下。据说他们登升星海去寻找=name=了，但他们也可能只是回到深处继续沉睡——这说法听来同样可信。</text>
+    </node>
+
+    <!-- Accession Inheritor -->
+
+    <start ID="AccessionWelcome" IfHaveDelimitedState="EndType:Accede">
+      <text>Hie, liquid mind. Absorb you tales of the creatures before, how their rise and fall gave way to your ascension to wanderer-state.</text>
+      <choice Target="Accession Story">Bloop, blorp. (Proceed.)</choice>
+      <choice Target="End">Glub. (I must decline.)</choice>
+    </start>
+    <node ID="Accession Story">
+      <text>这要从=name=那场可怖的登升之前说起——那时纺锤升起，无人能挑战，也无人登临。那些致力于把我们这个世界掏空的掘空者早已远去，而统治者们对这迷障之地提出主张，已是很久以前的事。纵然其产业凋敝，他们仍紧握不放。他们中的最后一个，将是最坏的一个。</text>
+      <choice Target="Accession2">……</choice>
+    </node>
+    <node ID="Accession2">
+      <text>起初，=name=与卡德（Qud）的诸领袖并无共通的螺旋，其声名全凭倾洒鲜血与散播恐怖挣得。数不清的性命仅凭其一手夺去，全为满足对掌控与强权的古老欲望。也许是饥饿化作了恶意，也许是采纳了某种更宏大的原则，也许只是单纯的厌倦。无论原因为何，=name=与古时疫生的拿非利（Nephilim）结成了牢固的同盟，登上纺锤，封印了下方世界的命数。环流（Gyre）的瘟疫肆虐无阻。</text>
+      <choice Target="Accession3">……</choice>
+    </node>
+    <node ID="Accession3">
+      <text>时日流转，走兽乃至草木的统治渐衰，其数目因疫病、屠戮与消耗而下降。更为坚韧的、简单的生命，接手了卡德（Qud）旧日统治者留下的那份繁复。我们这些有神经者所剩无几，便把我们的故事传给那些认为值得来求我们指点的新生命，好让你们记得那些逝去者的共同命数。你们会有自己的=name=吗，还是说，你们真的已经演化得超越了之前的那些？</text>
+      <choice Target="AccessionWho">Who are you?</choice>
+      <choice Target="AccessionPC">Who is =name=?</choice>
+      <choice Target="AccessionNervous">I thought the Nervous Ones extinct.</choice>
+      <choice Target="AccessionNephilim">What became of the Nephilim?</choice>
+      <choice Target="End">Thank you. Farewell.</choice>
+    </node>
+    <node ID="AccessionWho" Inherits="Accession3">
+      <text>我是历史吃剩的东西，一无所继的继承者，一卷焚毁典籍页边的零星批注。我竟能存续至今、亲眼见到这一天，这令我敬畏。这实在非同寻常。</text>
+    </node>
+    <node ID="AccessionPC" Inherits="Accession3">
+      <text>Who, indeed? Who ever was =name=? Dare we hang such hopes and fears on so tiny and distant a figure? Will it bear the weight?			</text>
+    </node>
+    <node ID="AccessionNervous" Inherits="Accession3">
+      <text>
+        Every possibility nestles in the deepest of the comb-caves and labyrinths, and even Nervous life is tenacious. Perhaps in this very moment, a moss piglet drinks of its first water in an eon.
+      </text>
+    </node>
+    <node ID="AccessionNephilim" Inherits="Accession3">
+      <text>他们把自己的角色演得极好，也曾一度活在权势之中。倘若他们曾幻想自己能免于=name=为卡德（Qud）众生定下的命数，那幻想必定先于这些伟大的存在本身死去。也许他们遁入地下活了下来。也许他们的苗裔延续至今。</text>
+    </node>
+  </conversation>
+  
+	
+	<conversation ID="Fool">
+		<!-- Covenant Fool-->
+
+		<start ID="CovenantWelcome" IfHaveDelimitedState="EndType:Covenant">
+			<text>时轮圆满之际，环流的愚者与一位漂泊者相遇。愚者讲起诸雷谢夫的故事，漂泊者便坐下来听。</text>
+			<choice Target="Covenant Story">Tell me the tale.</choice>
+			<choice Target="End">I must decline.</choice>
+		</start>
+		<node ID="Covenant Story">
+			<text>在界限（Limen）之前，在登升之前，纺锤孤峭而起之时，诸雷谢夫统治着这片空陷之地，彼此吞食，各随其意。卡德（Qud）那时没有神秘的疆界，也抓不住任何指引之手——至少，是居民们抓不住。他们便如此以为。</text>
+			<choice Target="Covenant2">……</choice>
+		</node>
+		<node ID="Covenant2">
+			<text>无人向=name=致意，=name=也不向任何人致意，唯以言辞与刀锋、行事与轻蔑，卓然独立于上。为推退环流（Gyre），为倾洒拿非尔（Nephil）的灵液，他们登上纺锤，止息了雷谢夫之治。</text>
+			<choice Target="Covenant3">……</choice>
+		</node>
+		<node ID="Covenant3">
+			<text>地面上唯有沉默迎着我们这些蒙昧之物，直到界限骑士在盐土上划下他们的界线。不知不解，不见不闻，只等着知道下一个把我们转着玩弄的是谁。</text>
+			<choice Target="CovenantWho">Who are you?</choice>
+			<choice Target="CovenantPC">Who is =name=?</choice>
+			<choice Target="CovenantResheph">What is a Resheph?</choice>
+			<choice Target="CovenantLimen">What is the Limen? The Knights Liminal?</choice>
+			<choice Target="End">Thank you. Farewell.</choice>
+		</node>
+		<node ID="CovenantWho" Inherits="Covenant3">
+			<text>谁，我？不过一个愚人，啦——啦，不过一片残余的碎屑。不过被遗落的，不过疯癫，不过一道回声的涡卷。</text>
+		</node>
+		<node ID="CovenantPC" Inherits="Covenant3">
+			<text>非命运之人，非血脉之人，非要紧之人，直至忽然之间，成了这一切兼具之人。=name=是一场我们醒不来的梦。</text>
+		</node>
+		<node ID="CovenantResheph" Inherits="Covenant3">
+			<text>雷谢夫——执权者、灵魂的主宰、土地的持有者、被铸成单数的威权。</text>
+		</node>
+		<node ID="CovenantLimen" Inherits="Covenant3">
+			<text>哦，跨过那道不该跨的线，去到未知而渴望的所在！哦，被咒唱、兵刃与压人的切口暗语喝止。哦女巫会！哦不是女巫会？我只是想看一看！</text>
+		</node>
+
+		<!-- Return Fool -->
+		
+		<start ID="ReturnWelcome" IfHaveDelimitedState="EndType:Return">
+			<text>时轮圆满之际，环流的愚者与一位漂泊者相遇。愚者讲起往昔行者的故事，漂泊者便坐下来听。</text>
+			<choice Target="Return Story">Tell me the tale.</choice>
+			<choice Target="End">I must decline.</choice>
+		</start>
+		<node ID="Return Story">
+			<text>在自由领之前，在登升之前，纺锤孤峭而起之时，诸王与诸苏丹统治着这片空陷之地，彼此吞食，各随其意。</text>
+			<choice Target="Return2">……</choice>
+		</node>
+		<node ID="Return2">
+			<text>无人向=name=致意，=name=也不向任何人致意，唯以言辞与刀锋、行事与轻蔑，抗拒旧日的统治。为推退环流（Gyre），为倾洒拿非尔（Nephil）的灵液，他们登上纺锤，止息了那些残余。</text>
+			<choice Target="Return3">……</choice>
+		</node>
+		<node ID="Return3">
+			<text>待其归来，=name=所夺得的权柄，他们召来盟友一同分派、解散。自由民、新的掘空者、绿咬鹃议会（Quetzal Council），以及别的这类愚人。无数年的挣扎，数百年的变迁。我们记得所能记得的，看着新的与旧的死去。</text>
+			<choice Target="ReturnWho">Who are you?</choice>
+			<choice Target="ReturnPC">Who is =name=?</choice>
+			<choice Target="ReturnFreeholder">What is a Freeholder?</choice>
+			<choice Target="End">Thank you. Farewell.</choice>
+		</node>
+		<node ID="ReturnWho" Inherits="Return3">
+			<text>谁，我？不过一个愚人，啦——啦，不过一片残余的碎屑。不过被遗落的，不过疯癫，不过一道回声的涡卷。</text>
+		</node>
+		<node ID="ReturnPC" Inherits="Return3">
+			<text>非命运之人，非血脉之人，非要紧之人，直至他们归来，直至他们的未来被人认清。=name=是一座建在记忆里的神殿，希望悬于其上，怒气在其上得以宣泄。太伟岸而不像真的，太根本而不容不在，太自相矛盾而不可能曾经存在。</text>
+		</node>
+		<node ID="ReturnFreeholder" Inherits="Return3">
+			<text>自由民：争辩之人；口角之人。自由民：同侪之中的同侪之中的同侪之中的同侪，如此镶嵌下去，直到有人非嘶喊不足以被听见。</text>
+		</node>
+
+		<!-- Starfarer Fool -->
+		
+		<start ID="StarfarerWelcome" IfHaveDelimitedState="(EndType:Launch OR EndType:Marooned)">
+			<text>时轮圆满之际，环流的愚者与一位漂泊者相遇。愚者讲起从大地到天空的故事，漂泊者便坐下来听。</text>
+			<choice Target="Starfarer Story">Tell me the tale.</choice>
+			<choice Target="End">I must decline.</choice>
+		</start>
+		<node ID="Starfarer Story">
+			<text>在我们今日的争斗之前，纺锤孤峭而起之时，诸苏丹统治着这片空陷之地，彼此吞食，各随其意。</text>
+			<choice Target="Starfarer2">……</choice>
+		</node>
+		<node ID="Starfarer2">
+			<text>无人向=name=致意，=name=也不向任何人致意，唯以言辞与刀锋、行事与轻蔑，抗拒旧日的统治。为推退环流（Gyre），为倾洒拿非尔（Nephil）的灵液，他们登上纺锤，止息了那些残余。</text>
+			<choice Target="Starfarer3">……</choice>
+		</node>
+		<node ID="Starfarer3">
+			<text>虽则=name=已去，我们的记忆还在，瘟疫退去，许多人为此欢欣。至今仍有目光转向星辰，寻觅一个征兆：我们的星际航者是否已屈尊归来。无数年的挣扎，数百年的变迁。我们记得所能记得的，看着新的与旧的死去。</text>
+			<choice Target="StarfarerWho">Who are you?</choice>
+			<choice Target="StarfarerPC">Who is =name=?</choice>
+			<choice Target="StarfarerTravel">Is it really possible to travel the stars?</choice>
+			<choice Target="End">Thank you. Farewell.</choice>
+		</node>
+		<node ID="StarfarerWho" Inherits="Starfarer3">
+			<text>谁，我？不过一个愚人，啦——啦，不过一片残余的碎屑。不过被遗落的，不过疯癫，不过一道回声的涡卷。</text>
+		</node>
+		<node ID="StarfarerPC" Inherits="Starfarer3">
+			<text>星际航者、先驱、颠覆者，被畏惧、被崇敬，是救主也是弃人者。=name=是一场我们终有一日会醒来的梦。</text>
+		</node>
+		<node ID="StarfarerTravel" Inherits="Starfarer3">
+			<text>谁在乎？有人在乎吗？也许。我在乎吗？当然不。你——在乎吗？好啊。证明给我看。</text>
+		</node>
+
+		<!-- Accession Fool -->
+
+		<start ID="AccessionWelcome" IfHaveDelimitedState="EndType:Accede">
+			<text>曾有一次，在一切迸裂之后，环流的愚者遇见了一团有智慧的胶质。他们坐在世界的熔渣里，愚者讲起了如今的故事。</text>
+			<choice Target="Accession Story">Bloop, blorp. (Proceed.)</choice>
+			<choice Target="End">Glub. (I must decline.)</choice>
+		</start>
+		<node ID="Accession Story">
+			<text>在万物消融之前，纺锤孤峭而起之时，诸生灵统治着这片空陷之地，彼此吞食，各随其意。</text>
+			<choice Target="Accession2">……</choice>
+		</node>
+		<node ID="Accession2">
+			<text>无人向=name=致意，=name=也不向任何人致意，唯以言辞与刀锋、行事与轻蔑，抗拒其同族。为推退环流（Gyre），为倾洒拿非尔（Nephil）的灵液，他们登上纺锤，演出一场大背叛。不可想象的死亡之量君临，我们这些有神经者倒下；当环流吞没我们时，我们唱到了最后一息。</text>
+			<choice Target="Accession3">……</choice>
+		</node>
+		<node ID="Accession3">
+			<text>然而我们这些有神经者，仍有部分留在蜂巢穴与穹窖之中，看着我们的后继者萌发：你们这些有腔者，你们这些硅藻，你们这些浮沫花与鳃盖，你们这些单胞与黏液之城。从我们枯萎的影子里辉煌地升起，闪闪发亮。</text>
+			<choice Target="AccessionWho">Who are you?</choice>
+			<choice Target="AccessionPC">Who is =name=?</choice>
+			<choice Target="AccessionNervous">I thought the Nervous Ones extinct.</choice>
+			<choice Target="End">Thank you. Farewell.</choice>
+		</node>
+		<node ID="AccessionWho" Inherits="Accession3">
+			<text>我是一具愚人的尸骸，被一班子快活的细菌牵着又跳又舞。你喜欢我走路的样子吗？你喜欢我说话的样子吗？你喜欢我的脸碎解成盐的样子吗？</text>
+		</node>
+		<node ID="AccessionPC" Inherits="Accession3">
+			<text>是定夺者，也是命数。与其说是一种存在，不如说是一件自然之物。与其说是我们存在之中的任何事物，不如说是我们存在的背景本身。</text>
+		</node>
+		<node ID="AccessionNervous" Inherits="Accession3">
+			<text>也许我们是，也许我们是。在滚烫的土里扭动的是什么？鞭毛？又或者，会是一条尾巴？</text>
+		</node>
+
+	</conversation>  
+
+  <!-- Northern Ark -->
+  <conversation ID="BarathrumHologram">
+    <node ID="Start">
+      <text>
+        O? What.. am I cohering? Curious! To fetch my notebook. But, o...
+      </text>
+      <choice ID="WaterRitualChoice" Load="Remove"/>
+      <choice ID="Trade" Load="Remove"/>
+      <choice GotoID="End">……</choice>
+    </node>
+  </conversation>
+  <conversation ID="ArchonHologram">
+    <node ID="Start">
+      <text>*读数* *读数* *读数*</text>
+      <choice ID="WaterRitualChoice" Load="Remove"/>
+      <choice ID="Trade" Load="Remove"/>
+      <choice GotoID="End">……</choice>
+    </node>
+  </conversation>
+  <conversation ID="RebekahHologram">
+    <node ID="Start">
+      <text>
+        Aha, thy phantasm Magicks art crystalsibs to the shivers o' the skin of Avalon. And, thee? Moon King??
+      </text>
+      <choice ID="WaterRitualChoice" Load="Remove"/>
+      <choice ID="Trade" Load="Remove"/>
+      <choice GotoID="End">……</choice>
+    </node>
+  </conversation>
+
+  <conversation ID="SpokenIonic">
+    <node ID="Start">
+      <text>智慧？嘿！时间走了，自我上次通语以来，我的饰物会说话。法典之民之间，已宣告了邦际之权吗？</text>
+      <choice ID="Who" Target="Ionic">Who are you? What are you?</choice>
+      <choice ID="Where" Target="Temple">What is this place?</choice>
+      <choice ID="Spindle" Target="Journey">I ascended the Spindle to arrive at this place.</choice>
+      <choice ID="Translation" Target="Codex">What 'interstate power'? Who are the 'Codex people'?</choice>
+      <choice ID="Bye" Target="End">Live and... drink?</choice>
+    </node>
+
+    <node ID="Ionic" Inherits="Start">
+      <text>聚拢而纺成，我浮现于{{zetachrome|经共价之心言说的离子语}}。什么是……什么是。我不能。找不到词条，因为其余的都留在家。一缕丝给你。</text>
+      <choice GotoID="Greet">Greetings, Spoken Ionic Through Covalency Heart. I am =name=.</choice>
+      <choice GotoID="Adornments">I like your jewelry.</choice>
+    </node>
+
+    <node ID="Greet" Inherits="Start">
+      <text>
+        Joyously!
+      </text>
+    </node>
+    <node ID="Adornments" Inherits="Start">
+      <text>我为一份早已磨损的宽宏而颤！装饰你，装饰。你的饰物也令我着迷，嘿！跨越星辰的时间跨度透过它发亮。</text>
+    </node>
+    <node ID="Journey" Inherits="Start">
+      <text>此生物自土中浮现，说着饰物。小心地摇过，因为念头就是那条闭合的线。我们的记性在家。丝。</text>
+    </node>
+    <node ID="Codex" Inherits="Start">
+      <text>以我的饰物起誓，那是下方的垫席，以及它的有家者。不是吗？我献上一缕丝。这个词条可以留在家。有全部的时间却没有词条之家，我们会昏乱。</text>
+      <choice ID="Howlong" Target="Time">How long have you been here?</choice>
+    </node>
+
+    <node ID="Time" Inherits="Start">
+      <text>我必须向你献上一缕丝。没有这个词条，因为我把它留在家了。最小……一百多个法典周期。不到一万。很大的跨度。为此我向你献上丝丝缕缕。</text>
+    </node>
+
+    <node ID="Temple" Inherits="Start">
+      <text>嘿！这一个我有。我们根缚于{{M|星兰神庙}}，众多之一。在此庆祝尾骑者的焚尘，镶嵌般不可胜数。</text>
+      <choice UseID="Howlong"/>
+      <choice ID="Else" Target="Others">Is there anyone else here?</choice>
+    </node>
+
+    <node ID="Others">
+      <text>至于神庙「此处」是的：{{zetachrome|经共价之心言说的离子语}}在此。还有，你。</text>
+      <choice ID="Whoelse" Target="Quay">But is there anyone else here on the Quay?</choice>
+    </node>
+    <node ID="Quay" Inherits="Start">
+      <text>献上饰物，此事没有词条。我的垫席很小。</text>
+      <choice UseID="Howlong"/>
+    </node>
+  </conversation>
+
+</conversations>
