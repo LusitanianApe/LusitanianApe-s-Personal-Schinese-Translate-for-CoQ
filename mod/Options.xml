@@ -18,7 +18,7 @@
   <option ID="OptionDisplayContrast" DisplayText="对比度" Category="显示"/>
   <option ID="OptionDisplayFullscreen" DisplayText="全屏" Category="显示"/>
   <option ID="OptionDisplayResolution" DisplayText="全屏分辨率" Category="显示"/>
-  <option ID="OptionDisplayFramerate" DisplayText="帧率" Category="显示"/>
+  <option ID="OptionDisplayFramerate" DisplayText="帧率" Category="显示" Type="Combo" Values="10|10,20|20,30|30,40|40,50|50,60|60,120|120,Unlimited|无限,VSync|垂直同步" />
   <option ID="OptionUseTiles" DisplayText="启用图块画面" Category="显示"/>
   <option ID="OptionDisplayVignette" DisplayText="显示暗角效果" Category="显示"/>
   <option ID="OptionDisplayScanlines" DisplayText="显示扫描线" Category="显示"/>
@@ -30,7 +30,7 @@
   <option ID="OptionDisableBloodsplatter" DisplayText="禁用血迹飞溅" Category="显示"/>
   <option ID="OptionDisableSmoke" DisplayText="禁用烟雾效果" Category="显示"/>
   <option ID="OptionDisableImposters" DisplayText="禁用现代图块式图形效果" Category="显示"/>
-  <option ID="OptionMainMenuBackground" DisplayText="主菜单背景图" Category="显示"/>
+  <option ID="OptionMainMenuBackground" DisplayText="主菜单背景图" Category="显示" Type="Combo" Values="Modern|现代,Classic|经典" />
   <option ID="OptionImposterChars" DisplayText="模拟文本图块" Category="显示"/>
   <option ID="OptionsKeybindings" DisplayText="按键设置" Category="操作"/>
   <option ID="OptionKeyRepeatDelay" DisplayText="按键重复延迟" Category="操作"/>
@@ -47,12 +47,12 @@
   <option ID="OptionDisableFullscreenWarpEffects" DisplayText="禁用全屏画面扭曲效果" Category="无障碍"/>
   <option ID="OptionBrighterGreyWeights" DisplayText="以更亮的灰色显示重量" Category="无障碍"/>
   <option ID="OptionModernUI" DisplayText="启用现代界面" Category="界面"/>
-  <option ID="OptionPrereleaseStageScale" DisplayText="界面缩放" Category="界面"/>
+  <option ID="OptionPrereleaseStageScale" DisplayText="界面缩放" Category="界面" Type="Combo" Values="auto|自动,auto x1.25|自动 ×1.25,auto x1.5|自动 ×1.5,.5|.5,.75|.75,1.0|1.0,1.25|1.25,1.5|1.5,2|2" />
   <option ID="OptionModernCharacterSheet" DisplayText="启用现代界面角色面板" Category="界面"/>
   <option ID="OptionCharacterSheetAdditionalScale" DisplayText="角色面板缩放百分比" Category="界面"/>
-  <option ID="OptionPlayScale" DisplayText="游玩区域缩放" Category="界面"/>
-  <option ID="OptionTileScale" DisplayText="像素级图块缩放" Category="界面"/>
-  <option ID="OptionAbilityBarMode" DisplayText="技能栏模式" Category="界面"/>
+  <option ID="OptionPlayScale" DisplayText="游玩区域缩放" Category="界面" Type="Combo" Values="Fit|适应,Cover|铺满,Pixel Perfect|像素精确" />
+  <option ID="OptionTileScale" DisplayText="像素级图块缩放" Category="界面" Type="Combo" Values="1|1,2|2,3|3,4|4,5|5,6|6,7|7,8|8" />
+  <option ID="OptionAbilityBarMode" DisplayText="技能栏模式" Category="界面" Type="Combo" Values="Full|完整,Compact|紧凑" />
   <option ID="OptionOverlayMinimap" DisplayText="显示小地图" Category="界面"/>
   <option ID="OptionOverlayNearbyObjects" DisplayText="显示附近物体列表" Category="界面"/>
   <option ID="OptionOverlayNearbyObjectsLocal" DisplayText="附近物体列表：仅显示当前格内容" Category="界面"/>
@@ -60,11 +60,11 @@
   <option ID="OptionOverlayNearbyObjectsPlants" DisplayText="附近物体列表：显示植物" Category="界面"/>
   <option ID="OptionOverlayNearbyObjectsTakeable" DisplayText="附近物体列表：仅显示可拿取物体" Category="界面"/>
   <option ID="OptionMessageLineLogScale" DisplayText="消息日志字号（磅）" Category="界面"/>
-  <option ID="OptionDockMovable" DisplayText="停靠消息日志与小地图" Category="界面"/>
+  <option ID="OptionDockMovable" DisplayText="停靠消息日志与小地图" Category="界面" Type="Combo" Values="Unset|未设置,Right|右,Left|左,Flip|翻转" />
   <option ID="OptionDockOpacity" DisplayText="停靠区背景不透明度" Category="界面"/>
-  <option ID="OptionMouseCursor" DisplayText="鼠标指针外观" Category="界面"/>
+  <option ID="OptionMouseCursor" DisplayText="鼠标指针外观" Category="界面" Type="Combo" Values="System|系统,Default|默认,Alternate|备选" />
   <option ID="OptionMouseAutoHideCursorEnabled" DisplayText="闲置时自动隐藏鼠标指针" Category="界面"/>
-  <option ID="OptionControllerFont" DisplayText="手柄按键外观" Category="界面"/>
+  <option ID="OptionControllerFont" DisplayText="手柄按键外观" Category="界面" Type="Combo" Values="Auto|自动,KBM|键鼠,XBox|Xbox,PS|PS,XBox Filled|Xbox（实心）,PS Filled|PS（实心）,Switch|Switch" />
   <option ID="OptionFloatingKeyboard" DisplayText="在支持的设备上显示悬浮键盘" Category="界面"/>
   <option ID="OptionZoomSensitivity" DisplayText="缩放灵敏度" Category="界面"/>
   <option ID="OptionTooltipDelay" DisplayText="提示框延迟（毫秒）" Category="界面"/>
@@ -83,7 +83,7 @@
   <option ID="OptionNavigateInventoryAndEquipmentWithPagination" DisplayText="以左右翻页而非移动键浏览物品栏与装备栏" Category="界面"/>
   <option ID="OptionPressingRightInInventoryEquips" DisplayText="在装备界面按右/左分别装备/卸下高亮物品" Category="界面"/>
   <option ID="OptionExpandHighlightedInventoryAndEquipmentPane" DisplayText="聚焦时展开装备栏或物品栏" Category="界面"/>
-  <option ID="OptionStatusScreenSize" DisplayText="角色面板尺寸" Category="界面"/>
+  <option ID="OptionStatusScreenSize" DisplayText="角色面板尺寸" Category="界面" Type="Combo" Values="Standard|标准,Full Height|全高,Full|完整" />
   <option ID="OptionTutorialComplete" DisplayText="将教程移至游戏模式列表末尾" Category="界面"/>
   <option ID="OptionShowCollectionBadges" DisplayText="在主菜单显示收藏者印记" Category="界面"/>
   <option ID="OptionShowSidebarAbilities" DisplayText="在侧栏显示技能图标" Category="旧式界面"/>
@@ -95,19 +95,19 @@
   <option ID="OptionMapShiftDirectionToPage" DisplayText="将 Shift+方向映射到菜单翻页键（数字键盘绑定无效）" Category="旧式界面"/>
   <option ID="OptionPushAZHotkeys" DisplayText="始终将 A-Z 快捷键透传给旧式界面" Category="旧式界面"/>
   <option ID="OptionAutoSip" DisplayText="口渴时自动饮用淡水" Category="自动化"/>
-  <option ID="OptionAutoSipLevel" DisplayText="自动饮水的口渴阈值" Category="自动化"/>
+  <option ID="OptionAutoSipLevel" DisplayText="自动饮水的口渴阈值" Category="自动化" Type="Combo" Values="Dehydrated|脱水,Parched|干渴,Thirsty|口渴,Quenched|已解渴,Tumescent|充盈" />
   <option ID="OptionAutoTorch" DisplayText="自动熄灭与点燃火把" Category="自动化"/>
   <option ID="OptionAutoDisassembleScrap" DisplayText="自动拆解废料" Category="自动化"/>
-  <option ID="OptionAutoexploreIgnoreEasyEnemies" DisplayText="忽略敌对生物的实力阈值" Category="自动化"/>
-  <option ID="OptionAutoexploreIgnoreDistantEnemies" DisplayText="忽略敌对生物的距离阈值" Category="自动化"/>
+  <option ID="OptionAutoexploreIgnoreEasyEnemies" DisplayText="忽略敌对生物的实力阈值" Category="自动化" Type="Combo" Values="None|无,Easy|简单,Average|势均力敌,Tough|艰难,Very Tough|非常艰难,Impossible|不可能" />
+  <option ID="OptionAutoexploreIgnoreDistantEnemies" DisplayText="忽略敌对生物的距离阈值" Category="自动化" Type="Combo" Values="None|无,1|1,2|2,3|3,5|5,7|7,10|10,15|15,20|20,30|30,40|40" />
   <option ID="OptionAutoexploreAttackIgnoredAdjacentEnemies" DisplayText="自动探索时攻击被忽略却相邻的敌人" Category="自动化"/>
   <option ID="OptionInterruptHeldMovement" DisplayText="附近有敌人时中断持续移动" Category="自动化"/>
   <option ID="OptionInterruptHeldMovementOnZoneTransition" DisplayText="进入未探索区域时中断持续移动" Category="自动化"/>
   <option ID="OptionUseTextAutowalkThreatIndicator" DisplayText="使用文字自动行动中断提示，而非闪红框" Category="自动化"/>
   <option ID="OptionAutoexploreChests" DisplayText="自动探索时搜索容器" Category="自动化"/>
   <option ID="OptionDigOnMove" DisplayText="持握挖掘工具时，朝墙移动即自动挖掘" Category="自动化"/>
-  <option ID="OptionAutosaveInterval" DisplayText="移动到其它区域时自动保存" Category="自动化"/>
-  <option ID="OptionAutoexploreRate" DisplayText="自动移动与自动攻击的最大速率（格/秒）" Category="自动化"/>
+  <option ID="OptionAutosaveInterval" DisplayText="移动到其它区域时自动保存" Category="自动化" Type="Combo" Values="0|无,1|1,2|2,3|3,5|5,7|7,10|10,15|15,20|20,30|30,40|40" />
+  <option ID="OptionAutoexploreRate" DisplayText="自动移动与自动攻击的最大速率（格/秒）" Category="自动化" Type="Combo" Values="1|1,2|2,3|3,5|5,7|7,10|10,15|15,20|20,30|30,60|60,0|∞" />
   <option ID="OptionAutogetAmmo" DisplayText="自动拾取弹药" Category="自动拾取"/>
   <option ID="OptionAutogetPrimitiveAmmo" DisplayText="自动拾取原始弹药" Category="自动拾取"/>
   <option ID="OptionAutogetNuggets" DisplayText="自动拾取铜、银、金块" Category="自动拾取"/>
@@ -129,7 +129,7 @@
   <option ID="OptionConfirmDangerousLiquid" DisplayText="饮用或进入某些危险液体前询问" Category="提示"/>
   <option ID="OptionAskForOneItem" DisplayText="从地面拿取物品时列出清单，即使只有一件" Category="提示"/>
   <option ID="OptionPromptFavoriteRecipe" DisplayText="询问是否收藏新烹饪配方" Category="提示"/>
-  <option ID="OptionDisplayHPWarning" DisplayText="低生命警告阈值" Category="提示"/>
+  <option ID="OptionDisplayHPWarning" DisplayText="低生命警告阈值" Category="提示" Type="Combo" Values="20%|20%,40%|40%,60%|60%,80%|80%,100%|100%,No Warning|不警告" />
   <option ID="OptionDismemberAsPopup" DisplayText="肢解或斩首他人时显示弹窗" Category="提示"/>
   <option ID="OptionAbilityCooldownWarningAsMessage" DisplayText="技能冷却提示以消息日志条目而非弹窗显示" Category="提示"/>
   <option ID="OptionShowScavengeItemAsMessage" DisplayText="拾荒所得物品以消息日志条目而非弹窗显示" Category="提示"/>
@@ -149,7 +149,7 @@
   <option ID="OptionDrawStepImmediately" DisplayText="移动后立即渲染一帧（适用于 CPU 性能较低的环境）" Category="性能"/>
   <option ID="OptionShowAdvancedOptions" DisplayText="显示高级选项" Category="应用设置"/>
   <option ID="OptionMusicBackground" DisplayText="让《卡德洞窟》在后台保持运行" Category="应用设置"/>
-  <option ID="OptionSessionBackups" DisplayText="滚动备份存档的数量" Category="应用设置"/>
+  <option ID="OptionSessionBackups" DisplayText="滚动备份存档的数量" Category="应用设置" Type="Combo" Values="None|无,1|1,2|2,3|3,5|5,7|7,10|10,15|15,20|20,30|30,40|40" />
   <option ID="OptionAnalytics" DisplayText="发送匿名游玩数据" Category="应用设置"/>
   <option ID="OptionDisableSteamInputWarning" DisplayText="禁用输入警告" Category="应用设置"/>
   <option ID="OptionDisablePermadeath" Category="调试" DisplayText="经典模式死亡时不删除存档"/>

@@ -287,6 +287,8 @@ namespace Nattens.QudZhsCookbook
                 new KeyValuePair<Regex, string>(Compile("irisdual beam"), "虹双光束"),
                 new KeyValuePair<Regex, string>(Compile("on the ground"), "在地上"),
                 new KeyValuePair<Regex, string>(Compile("scintillating"), "闪烁"),
+                // 2026-10-25: 模板里的裸文本 （不走补语槽）
+                new KeyValuePair<Regex, string>(Compile("to glow"), "发光"),
                 new KeyValuePair<Regex, string>(Compile("this creature"), "此生物"),
                 new KeyValuePair<Regex, string>(Compile("to the ground"), "倒地"),
                 new KeyValuePair<Regex, string>(Compile("Barathrumite"), "巴拉斯鲁米特"),

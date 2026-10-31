@@ -158,11 +158,18 @@ namespace Nattens.QudZhsCookbook
                 }
 
                 // ② `Show` / `AskString` 的第一个 string 参数
+                // ★ 2026-10-29：补 Async 变体 —— `UIManager.UseNewPopups` 为真时
+                //   `AskString` 内部直接 `return AskStringAsync(Message, …).Result`；
+                //   而白名单里只有同步版 ⇒ 改名输入框的提示在任何路径上都可能没被改到
+                //   （实测：日志说替换了，画面仍是 `Enter a new name for …`）。
                 foreach (MethodInfo mi in t.GetMethods(BindingFlags.Public
                              | BindingFlags.NonPublic | BindingFlags.Static))
                 {
                     if (mi.Name != "Show" && mi.Name != "AskString"
-                        && mi.Name != "ShowYesNo") continue;
+                        && mi.Name != "ShowYesNo"
+                        && mi.Name != "AskStringAsync" && mi.Name != "ShowAsync"
+                        && mi.Name != "ShowYesNoAsync" && mi.Name != "ShowYesNoCancelAsync"
+                        && mi.Name != "ShowBlock" && mi.Name != "ShowSpace") continue;
                     ParameterInfo[] ps = mi.GetParameters();
                     if (ps.Length == 0 || ps[0].ParameterType != typeof(string)) continue;
                     try
@@ -306,20 +313,26 @@ namespace Nattens.QudZhsCookbook
             return "(读不回)";
         }
 
-        /// <summary>重写弹窗正文。</summary>
-        private static void PrefixText(ref string __0)
+        /// <summary>重写弹窗正文（带「来源方法名 + 改后复读」，§49 自证）。</summary>
+        private static void PrefixText(ref string __0, System.Reflection.MethodBase __originalMethod)
         {
             if (ZhsRenameZh.Disabled) return;
             try
             {
                 string zh = ZhsRenameZh.Fix(__0);
                 if (zh == null) return;
-                if (ZhsRenameZh.Hits < 8)
+                string who = __originalMethod != null ? __originalMethod.Name : "?";
+                if (ZhsRenameZh.Hits < 12)
                 {
-                    UnityEngine.Debug.Log(Tag + __0 + "  =>  " + zh);
+                    UnityEngine.Debug.Log(Tag + "[" + who + "] " + __0 + "  =>  " + zh);
                 }
                 ZhsRenameZh.Hits++;
                 __0 = zh;
+                if (ZhsRenameZh.Hits <= 12)
+                {
+                    // ★ 复读：确认写回的是 `__0` 本身，而不是只改了自己的局部变量
+                    UnityEngine.Debug.Log(Tag + "[" + who + "] 复读 __0=" + __0);
+                }
             }
             catch { }
         }

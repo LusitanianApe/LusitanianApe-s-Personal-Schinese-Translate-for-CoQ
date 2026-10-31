@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<objects Encoding="utf-8">
+<objects Lang="zh-Hans" Encoding="utf-8">
   <!-- 译文基准取自 210.20 前人汉化（_ref\机翻参考-210.20v5）。
        本文件为 Load="Merge" 增量：只补 Walls.xml 里尚未汉化的对象。
        已做确定性预处理：修正拼写错误槽 / 自造中文槽 / 双「的」/ 动词槽。 -->

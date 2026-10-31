@@ -427,7 +427,7 @@
   <object Name="OnboardRecoiler" Inherits="BaseCyberneticsEquipment_4point">
     <part Name="Physics" Weight="1"/>
     <part Name="Description" Short="一个地理空间核心装有生化系绳。"/>
-    <part Name="Render" DisplayName="{{Y|内置回弹器}}" Tile="Items/sw_cyber_onboard_recoiler.bmp" ColorString="&amp;C" DetailColor="r"/>
+    <part Name="Render" DisplayName="{{Y|内置传送器}}" Tile="Items/sw_cyber_onboard_recoiler.bmp" ColorString="&amp;C" DetailColor="r"/>
     <part Name="ItemElements" Elements="travel::5"/>
     <part Name="CyberneticsBaseItem" Slots="Hands,Feet,Body,Back,Face,Arm,Head" Cost="4" BehaviorDescription="你可以将这个植入物标记一个位置（冷却时间100）并回弹到该位置（冷却时间50）"/>
     <part Name="CyberneticsOnboardRecoilerTeleporter" Sound="Sounds/Interact/sfx_interact_recoiler_activate"/>

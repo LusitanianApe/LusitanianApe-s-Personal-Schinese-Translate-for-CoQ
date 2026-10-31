@@ -44,7 +44,6 @@ namespace Nattens.QudZhsCookbook
         private static bool _done;
         private static int _desc, _level, _fallback, _putFail, _xmlFail, _empty, _emptyNoNode;
 
-        private static IDictionary _byId;
         private static MethodInfo _readTemplateNode;
         private static Type _xmlHelperType;
 
@@ -57,10 +56,9 @@ namespace Nattens.QudZhsCookbook
             if (string.IsNullOrEmpty(id)) return false;
             try
             {
-                var byId = ById;
-                if (byId == null) return false;
-                Type tplType = AccessTools.TypeByName("XRL.Templates+Template");
-                Type txtType = AccessTools.TypeByName("XRL.Templates+TextNode");
+                if (Repo == null) return false;
+                Type tplType = AccessTools.TypeByName("XRL.Templates.Template");
+                Type txtType = AccessTools.TypeByName("XRL.Templates.TextNode");
                 if (tplType == null || txtType == null) { _putFail++; return false; }
                 object tpl = Activator.CreateInstance(tplType);
                 AccessTools.Field(tplType, "ID")?.SetValue(tpl, id);
@@ -68,20 +66,79 @@ namespace Nattens.QudZhsCookbook
                 if (nodes == null) { _putFail++; return false; }
                 nodes.Clear();
                 nodes.Add(Activator.CreateInstance(txtType, new object[] { "" }));
-                byId[id] = tpl;
-                return true;
+                return RepoSet(id, tpl);
             }
             catch { _putFail++; return false; }
         }
 
-        private static IDictionary ById
+        // ★ 2026-10-30 游戏更新后：
+        //   旧结构：`XRL.Templates` 是**类**，内有 `TemplateByID` 字典字段、`NEWLINE`、`ReadTemplateNode`；
+        //   新结构：`XRL.Templates` 变成**命名空间**，
+        //           仓库 = `XRL.Templates.TemplateFactory.Repository`（`StringMap<Template>`），
+        //           方法 = `TemplateFactory.ReadTemplateNode` / `LoadTemplateFromExternal`。
+        //   `StringMap` 不是 `IDictionary` ⇒ 读写都用反射（TryGetValue / 索引器）。
+        private static Type FactoryType
+        {
+            get { return AccessTools.TypeByName("XRL.Templates.TemplateFactory"); }
+        }
+
+        private static object Repo
         {
             get
             {
-                if (_byId == null)
-                    _byId = AccessTools.Field(typeof(XRL.Templates), "TemplateByID")?.GetValue(null) as IDictionary;
-                return _byId;
+                try
+                {
+                    var ft = FactoryType;
+                    if (ft == null) return null;
+                    return AccessTools.Field(ft, "Repository")?.GetValue(null);
+                }
+                catch { return null; }
             }
+        }
+
+        private static bool RepoContains(string id)
+        {
+            try
+            {
+                var repo = Repo;
+                if (repo == null || string.IsNullOrEmpty(id)) return false;
+                var mi = AccessTools.Method(repo.GetType(), "TryGetValue");
+                if (mi == null) return false;
+                object[] args = new object[] { id, null };
+                return (bool)mi.Invoke(repo, args);
+            }
+            catch { return false; }
+        }
+
+        private static bool RepoSet(string id, object tpl)
+        {
+            try
+            {
+                var repo = Repo;
+                if (repo == null || string.IsNullOrEmpty(id) || tpl == null) return false;
+                var pi = repo.GetType().GetProperty("Item");
+                if (pi == null) return false;
+                pi.SetValue(repo, tpl, new object[] { id });
+                return true;
+            }
+            catch { return false; }
+        }
+
+        /// <summary>`StringMap` 是否有 Remove 未确认 ⇒ 反射找，找不到就降级（返回 false）。</summary>
+        private static bool RepoRemove(string id)
+        {
+            try
+            {
+                var repo = Repo;
+                if (repo == null || string.IsNullOrEmpty(id)) return false;
+                var mi = AccessTools.Method(repo.GetType(), "Remove");
+                if (mi == null) return false;
+                if (mi.ReturnType == typeof(bool))
+                    return (bool)mi.Invoke(repo, new object[] { id });
+                mi.Invoke(repo, new object[] { id });
+                return true;
+            }
+            catch { return false; }
         }
 
         /// <summary>把一条说明（纯文本）塞进 TemplateByID。</summary>
@@ -90,10 +147,9 @@ namespace Nattens.QudZhsCookbook
             if (string.IsNullOrEmpty(id) || string.IsNullOrEmpty(text)) return false;
             try
             {
-                var byId = ById;
-                if (byId == null) return false;
-                Type tplType = AccessTools.TypeByName("XRL.Templates+Template");
-                Type txtType = AccessTools.TypeByName("XRL.Templates+TextNode");
+                if (Repo == null) return false;
+                Type tplType = AccessTools.TypeByName("XRL.Templates.Template");
+                Type txtType = AccessTools.TypeByName("XRL.Templates.TextNode");
                 if (tplType == null || txtType == null) { _putFail++; return false; }
 
                 // 说明是「段落」语义：每个 \n 一段，交给模板里的换行节点渲染
@@ -102,15 +158,14 @@ namespace Nattens.QudZhsCookbook
                 var nodes = AccessTools.Field(tplType, "Nodes")?.GetValue(tpl) as IList;
                 if (nodes == null) { _putFail++; return false; }
                 nodes.Clear();
-                object newline = AccessTools.Field(typeof(XRL.Templates), "NEWLINE")?.GetValue(null);
+                object newline = AccessTools.Field(FactoryType, "NEWLINE")?.GetValue(null);
                 string[] paras = text.Split('\n');
                 for (int i = 0; i < paras.Length; i++)
                 {
                     if (i > 0 && newline != null) nodes.Add(newline);
                     nodes.Add(Activator.CreateInstance(txtType, new object[] { paras[i] }));
                 }
-                byId[id] = tpl;
-                return true;
+                return RepoSet(id, tpl);
             }
             catch (Exception e)
             {
@@ -143,10 +198,10 @@ namespace Nattens.QudZhsCookbook
             {
                 if (_readTemplateNode == null)
                 {
-                    _readTemplateNode = AccessTools.Method(typeof(XRL.Templates), "ReadTemplateNode");
+                    _readTemplateNode = AccessTools.Method(FactoryType, "ReadTemplateNode");
                     _xmlHelperType = AccessTools.TypeByName("XRL.XmlDataHelper");
                 }
-                if (_readTemplateNode == null || _xmlHelperType == null || ById == null) { _xmlFail++; return false; }
+                if (_readTemplateNode == null || _xmlHelperType == null || Repo == null) { _xmlFail++; return false; }
 
                 // ★★ 2.16.38：**幂等化**。调用方可能已经自带 XML 声明
                 //   （2.16.34 给 `BuildLevelText` 加过一条 ⇒ 这里再拼一次 = **两个 XML 声明**）
@@ -220,12 +275,12 @@ namespace Nattens.QudZhsCookbook
         ///   但 `GetLevelText` 返回的仍是英文原文（含未展开的 `@N`），
         ///   且「含未展开占位符」的条数（33）= 模板 64 − 官方空 31 ——
         ///   强烈提示**我们那份中文 XML 根本没进字典**，
-        ///   而原代码 `return ById.Contains(id)` 的返回值**从未被检查**，失败被完全吞掉。
+        ///   而原代码 `return RepoContains(id)` 的返回值**从未被检查**，失败被完全吞掉。
         /// </summary>
         private static bool _CountAndReturn(string id)
         {
             bool present = false;
-            try { present = ById != null && ById.Contains(id); } catch { }
+            try { present = RepoContains(id); } catch { }
             if (present) _xmlOk++; else _xmlContainFalse++;
             return present;
         }
@@ -235,7 +290,7 @@ namespace Nattens.QudZhsCookbook
         //   但 `GetLevelText` 返回的仍是**英文原文**（含未展开的 `@N`）。
         //   而「含未展开占位符」的条数（33）恰好等于「模板 64 − 官方空 31」——
         //   说明**我们那份中文 XML 根本没进字典**，`PutXml` 静默失败了：
-        //   原来的代码只用 `ById.Contains(id)` 当返回值，且**从不检查它**，
+        //   原来的代码只用 `RepoContains(id)` 当返回值，且**从不检查它**，
         //   于是失败被完全吞掉。这两个计数就是为了不再被骗。
         private static int _xmlOk, _xmlContainFalse;
 
@@ -458,7 +513,7 @@ namespace Nattens.QudZhsCookbook
             _done = true;
             try
             {
-                if (ById == null)
+                if (Repo == null)
                 {
                     UnityEngine.Debug.LogError("[QudZhsCookbook] 变异模板：取不到 Templates.TemplateByID");
                     return;
@@ -678,12 +733,12 @@ namespace Nattens.QudZhsCookbook
                     catch { }
                     if (string.IsNullOrEmpty(mutClass)) mutClass = ZhsMutationUtil.FieldStr(entry, "Class");
 
-                    bool haveByName = !string.IsNullOrEmpty(entryName) && ById.Contains("Mutation." + entryName + ".LevelText");
-                    bool haveByCls = !string.IsNullOrEmpty(mutClass) && ById.Contains("Mutation." + mutClass + ".LevelText");
+                    bool haveByName = !string.IsNullOrEmpty(entryName) && RepoContains("Mutation." + entryName + ".LevelText");
+                    bool haveByCls = !string.IsNullOrEmpty(mutClass) && RepoContains("Mutation." + mutClass + ".LevelText");
                     bool haveReg = haveByName || haveByCls;
                     if (haveReg) keyHitLvl++;
-                    if ((!string.IsNullOrEmpty(entryName) && ById.Contains("Mutation." + entryName + ".Description"))
-                        || (!string.IsNullOrEmpty(mutClass) && ById.Contains("Mutation." + mutClass + ".Description")))
+                    if ((!string.IsNullOrEmpty(entryName) && RepoContains("Mutation." + entryName + ".Description"))
+                        || (!string.IsNullOrEmpty(mutClass) && RepoContains("Mutation." + mutClass + ".Description")))
                         keyHitDesc++;
 
                     string lvl = null, desc = null, err = "";
@@ -761,7 +816,7 @@ namespace Nattens.QudZhsCookbook
                 "<template ID=\"" + id + "\" Encoding=\"utf-8\"><p>探针</p></template>");
             UnityEngine.Debug.Log("[QudZhsCookbook] 模板通道自检：极简模板 "
                 + (a ? "成功" : "失败"));
-            if (a) { try { ById.Remove(id); } catch { } }
+            if (a) { try { RepoRemove(id); } catch { } }
 
             // 再把「带 stat 占位」的最小组合试一次
             const string id2 = "__zhs_probe2__";
@@ -772,7 +827,7 @@ namespace Nattens.QudZhsCookbook
                 + "<default><p>b</p></default></switch></p></template>");
             UnityEngine.Debug.Log("[QudZhsCookbook] 模板通道自检：带 stat/switch 的模板 "
                 + (b ? "成功" : "失败"));
-            if (b) { try { ById.Remove(id2); } catch { } }
+            if (b) { try { RepoRemove(id2); } catch { } }
         }
 
         private static string Pick(Dictionary<string, string> map, string nm, string cl, string suffix)
@@ -917,6 +972,31 @@ namespace Nattens.QudZhsCookbook
         }
 
         /// <summary>序列化属性（转义值）。</summary>
+        /// <summary>官方 `<stat Unit="…">` 的英文单位 → 中文。查不到返回 null（保持原样）。</summary>
+        private static string UnitZh(string unit)
+        {
+            if (string.IsNullOrEmpty(unit)) return null;
+            switch (unit.Trim().ToLowerInvariant())
+            {
+                case "serving":
+                case "servings": return "份";
+                case "day":
+                case "days": return "天";
+                case "turn":
+                case "turns": return "回合";
+                case "point":
+                case "points": return "点";
+                case "hour":
+                case "hours": return "小时";
+                case "minute":
+                case "minutes": return "分钟";
+                case "square":
+                case "squares": return "格";
+                case "percent": return "%";
+                default: return null;
+            }
+        }
+
         private static void Attrs(System.Text.StringBuilder sb, System.Xml.XmlNode n)
         {
             if (n.Attributes == null) return;
@@ -944,6 +1024,13 @@ namespace Nattens.QudZhsCookbook
                 {
                     sb.Append(" DisplayName=\"").Append(XmlEscape(zhLabel ?? a.Value)).Append('"');
                     wrote = true;
+                    continue;
+                }
+                // ★ 2026-10-25：`Unit` 是**给玩家看的单位**（如 `serving` → 「1serving」）。
+                //   官方骨架里写的是英文，原样输出就会和我们的中文量词叠成「1serving 份」。
+                if (string.Equals(a.Name, "Unit", StringComparison.Ordinal))
+                {
+                    sb.Append(" Unit=\"").Append(XmlEscape(UnitZh(a.Value) ?? a.Value)).Append('"');
                     continue;
                 }
                 sb.Append(' ').Append(a.Name).Append("=\"").Append(XmlEscape(a.Value)).Append('"');
@@ -1028,6 +1115,12 @@ namespace Nattens.QudZhsCookbook
                                          string cls, string nm)
         {
             if (n.NodeType != System.Xml.XmlNodeType.Element) return;
+            // ★ 2026-10-25：`LevelEffectDescription` 是**伪 stat**（不在 replacer 注册表里），
+            //   官方靠 XML 渲染链特判它；我们的骨架路径插进去后没人解析
+            //   ⇒ 屏幕上会出现字面量 `=LevelEffectDescription=`。这里直接跳过。
+            if (n.Name == "stat"
+                && string.Equals(Attr(n, "Name"), "LevelEffectDescription", StringComparison.Ordinal))
+                return;
             if (n.Name == "switch" && !string.IsNullOrEmpty(cls) && !string.IsNullOrEmpty(nm))
             {
                 EmitSwitch(sb, n, cls, nm);

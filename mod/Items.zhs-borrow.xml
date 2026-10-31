@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<objects Encoding="utf-8">
+<objects Lang="zh-Hans" Encoding="utf-8">
   <!-- 译文基准取自 210.20 前人汉化（_ref\机翻参考-210.20v5）。
        本文件为 Load="Merge" 增量：只补 Items.xml 里尚未汉化的对象。
        已做确定性预处理：修正拼写错误槽 / 自造中文槽 / 双「的」/ 动词槽。 -->
@@ -1859,7 +1859,7 @@
   </object>
   <object Name="ScrapCape" Load="Merge">
     <part Name="Render" DisplayName="废料斗篷" />
-    <part Name="Description" Short="来自深层第29层，这件斗篷由垃圾编织而成；千年历史如今披在了屁股上。" />
+    <part Name="Description" Short="来自深层第二十九层，这件斗篷由垃圾编织而成；千年历史如今披在了屁股上。" />
   </object>
   <object Name="n-Pointed Asterisk" Load="Merge">
     <part Name="Render" DisplayName="n-星点星形" />
@@ -2515,7 +2515,7 @@
     <part Name="Description" Short="一张松散的羊皮纸卷轴，用脐带绑紧，并用大师制造者的蜡封印记密封。" />
   </object>
   <object Name="HistoryofJoppaVol1" Load="Merge">
-    <part Name="Render" DisplayName="{{W|约帕历史，第1卷}}" />
+    <part Name="Render" DisplayName="{{W|约帕历史，第一卷}}" />
     <part Name="Description" Short="一本用盐茎浆制成的松散账册，被绑在涂蜡的木棍上并卷起。" />
   </object>
   <object Name="HistoryofJoppaVol2" Load="Merge">

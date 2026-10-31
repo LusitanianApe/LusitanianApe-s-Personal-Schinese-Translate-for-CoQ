@@ -45,173 +45,37 @@ namespace Nattens.QudZhsCookbook
         internal static int Fixed;
 
         /// <summary>硬编码效果名 → 中文（键为**原文**，精确匹配）。</summary>
-        internal static readonly Dictionary<string, string> L =
-            new Dictionary<string, string>(StringComparer.Ordinal)
-        {
-            // ── 长刃架势（原 `ZhsEffectNamePatch` 的 6 条，统一收到这里）──
-            { "{{G|defensive stance}}",     "{{G|防御架势}}" },
-            { "{{G|aggressive stance}}",    "{{G|进攻架势}}" },
-            { "{{G|dueling stance}}",       "{{G|决斗架势}}" },
-            { "{{G|in defensive stance}}",  "{{G|处于防御架势}}" },
-            { "{{G|in aggressive stance}}", "{{G|处于进攻架势}}" },
-            { "{{G|in dueling stance}}",    "{{G|处于决斗架势}}" },
-
-            // ══════════════════════════════════════════════════════════════
-            // ★★ 2.16.65：**效果名整批补完**（用户截图 `sitting` 仍是英文）
-            //
-            // 【盲区】效果名**不走字符串表**，是**构造函数里直接赋 `DisplayName`**
-            //   ⇒ 任何 XML 都改不到，只能挂构造函数替换。
-            //   本表此前**只有 8 条**（液体 2 + 长刃 6）⇒ 其余全英文。
-            //
-            // 【范围（机械枚举，不靠猜）】
-            //   工具 `_tools\_census_effect_names.py`：
-            //     从 `GetDetails` 覆盖（142）+ `DisplayName = "` 赋值点（100）
-            //     合并 152 个类型，扫**全部构造函数**的 IL/反编译体
-            //     ⇒ 去重 **103 条**效果名字面量（产出 `_tools\_effect_displaynames.txt`）
-            //   ⚠ 其中若干条是**前缀**（如 `{{C|lying on `、`{{B|engulfed by `），
-            //     代码会再拼上对象名 ⇒ 译文只译到标记内文本、**保留标记与前缀形态**。
-            // ══════════════════════════════════════════════════════════════
-            // —— 无标记 ——
-            // ★★ 2026-10-17 补：**色标被剥掉后的同名形态**
-            //   【起因】用户截图：查看面板里状态名显示成**光秃秃的 `sitting`**
-            //     而本表当时只有带色标的 `{{C|sitting}}` ⇒ 精确匹配落空 ⇒ 留英文。
-            //   【取证】`XRL.World.Effects.Sitting::.ctor` 赋的确实是 `"{{C|sitting}}"`
-            //     （`Swimming::.ctor` 同样是 `"{{B|swimming}}"`），
-            //     但**查看/检查面板会把色标剥掉后再渲染** ⇒ 命中不到。
-            //   【做法】给最高频的状态名**成对登记**（带色标 + 无标记），
-            //     精确匹配 ⇒ 不会误伤；两条都是白名单内的原文，安全。
-            //   ⚠ 与上面「带色标」那组是**不同的键**，不构成重复键。
-            { "sitting", "坐着" },
-            { "swimming", "游泳" },
-            { "wading", "涉水" },
-            { "submerged", "淹没" },
-            { "prone", "倒地" },
-            { "stunned", "眩晕" },
-            { "paralyzed", "麻痹" },
-            { "hobbled", "跛行" },
-            { "piloting", "驾驶中" },
-            { "warming up", "预热中" },
-            { "camouflaged", "伪装" },
-            { "corrected vision", "视力矫正" },
-            { "covered in liquid", "被液体覆盖" },
-            { "cracked", "破裂" },
-            { "demolishing", "正在摧毁" },
-            { "flying", "飞行" },
-            { "greased", "涂满油脂" },
-            { "healing", "治疗中" },
-            { "hemorrhaging", "大出血" },
-            { "hooked", "被钩住" },
-            { "immobilized", "被定身" },
-            { "incommunicado", "无法通讯" },
-            { "lost", "迷失" },
-            { "meditating", "冥想中" },
-            { "shaken", "动摇" },
-            { "shield wall", "盾墙" },
-            { "springing", "蓄势待发" },
-            { "sprinting", "疾奔" },
-            { "stained by liquid", "被液体染色" },
-            { "suppressed", "被压制" },
-            { "synapse snap", "突触崩断" },
-            { "syphoned", "被汲取" },
-            { "time cubed", "时间立方" },
-            { "time-dilated", "时间膨胀" },
-            { "trance", "出神" },
-            { "waking dream", "醒着的梦" },
-            { "&Wwell fed (+", "&W饱食（+" },
-            { "&minhabited", "&m被寄生" },
-            // —— 带色标 ——
-            { "{{B|engulfed by ", "{{B|被吞没于 " },
-            { "{{B|frenzied}}", "{{B|狂乱}}" },
-            { "{{B|mobility impaired}}", "{{B|行动不便}}" },
-            { "{{B|stressed}}", "{{B|超载}}" },
-            { "{{B|submerged}}", "{{B|淹没}}" },
-            { "{{B|swimming}}", "{{B|游泳}}" },
-            { "{{B|wading}}", "{{B|涉水}}" },
-            { "{{C|enclosed in ", "{{C|被封闭于 " },
-            { "{{C|hobbled}}", "{{C|跛行}}" },
-            { "{{C|interdicted}}", "{{C|被禁制}}" },
-            { "{{C|lying on ", "{{C|躺在 " },
-            { "{{C|paralyzed}}", "{{C|麻痹}}" },
-            { "{{C|piloting ", "{{C|驾驶 " },
-            { "{{C|piloting}}", "{{C|驾驶中}}" },
-            { "{{C|prone}}", "{{C|倒地}}" },
-            { "{{C|sitting on ", "{{C|坐在 " },
-            { "{{C|sitting}}", "{{C|坐着}}" },
-            { "{{C|stunned}}", "{{C|眩晕}}" },
-            { "{{C|unpiloted}}", "{{C|无人驾驶}}" },
-            { "{{C|warming up}}", "{{C|预热中}}" },
-            { "{{G|En garde!}}", "{{G|架势已起！}}" },
-            { "{{G|poisoned by gas}}", "{{G|气体中毒}}" },
-            { "{{G|poisoned}}", "{{G|中毒}}" },
-            { "{{G|refreshed}}", "{{G|神清气爽}}" },
-            { "{{K|gleaming}}", "{{K|闪光}}" },
-            { "{{K|overburdened}}", "{{K|负重过度}}" },
-            { "{{K|unpowered}}", "{{K|无动力}}" },
-            { "{{M|mutating}}", "{{M|突变中}}" },
-            { "{{M|stasis}}", "{{M|停滞}}" },
-            { "{{O|invulnerable}}", "{{O|无敌}}" },
-            { "{{O|shimmering}}", "{{O|闪耀}}" },
-            { "{{R|FURIOUS}}", "{{R|暴怒}}" },
-            { "{{R|confused}}", "{{R|困惑}}" },
-            { "{{R|crippled}}", "{{R|残废}}" },
-            { "{{R|enraged}}", "{{R|激怒}}" },
-            { "{{R|marked}}", "{{R|被标记}}" },
-            { "{{W|cardiac arrest}}", "{{W|心搏停止}}" },
-            { "{{W|covered in spores}}", "{{W|覆满孢子}}" },
-            { "{{W|floppy}}", "{{W|松软}}" },
-            { "{{W|queasy}}", "{{W|恶心}}" },
-            { "{{W|terrified}}", "{{W|恐惧}}" },
-            { "{{W|wakeful}}", "{{W|清醒}}" },
-            { "{{Y|omniphase}}", "{{Y|全相位}}" },
-            { "{{Y|proselytized}}", "{{Y|被劝诱}}" },
-            { "{{amorous|love}} tonic", "{{amorous|爱之}}补剂" },
-            { "{{b|deep dreaming}}", "{{b|深度入梦}}" },
-            { "{{camouflage|camouflaged}}", "{{camouflage|伪装}}" },
-            { "{{c|cybernetic rejection syndrome}}", "{{c|义体排斥综合征}}" },
-            { "{{freezing|freezing}}", "{{freezing|冰冻中}}" },
-            { "{{freezing|frozen}}", "{{freezing|冻结}}" },
-            { "{{g|illness}}", "{{g|患病}}" },
-            { "{{g|nullphased}}", "{{g|零相位}}" },
-            { "{{g|phase spider venom}}", "{{g|相位蛛毒}}" },
-            { "{{g|vitalized}}", "{{g|活力充盈}}" },
-            { "{{m|quantum-locked}}", "{{m|量子锁定}}" },
-            { "{{psionic|psionically cleaved}}", "{{psionic|灵能劈裂}}" },
-            { "{{rainbow|irisdual molting}}", "{{rainbow|虹彩蜕皮}}" },
-            { "{{rainbow|scintillating}}", "{{rainbow|闪烁}}" },
-            { "{{r|bleeding}}", "{{r|流血}}" },
-            { "{{r|callow}}", "{{r|稚嫩}}" },
-            { "{{r|cleaved}}", "{{r|被劈裂}}" },
-            { "{{r|drained}}", "{{r|被汲取}}" },
-            { "{{r|flagging}}", "{{r|衰退}}" },
-            { "{{r|latched onto}}", "{{r|被附着}}" },
-            { "{{r|nosebleed}}", "{{r|鼻血}}" },
-            { "{{r|prowling}}", "{{r|夜行强化}}" },
-            { "{{r|rusted}}", "{{r|锈蚀}}" },
-            { "{{r|shamed}}", "{{r|蒙羞}}" },
-            { "{{r|war trance}}", "{{r|战意出神}}" },
-            { "{{urban camouflage|urban camouflage}}", "{{urban camouflage|都市伪装}}" },
-            { "{{w|grounded}}", "{{w|接地}}" },
-            { "{{w|hampered}}", "{{w|受阻}}" },
-
-            // ── 架势的**其它色标变体**（`{{R|` / `{{W|` 版，2.16.65 对账时补出）──
-            //   对账工具 `_tools\_reconcile_effect_names3.py`：
-            //   103 条枚举名 → 缺这 2 条（`{{G|` 版早已有，红/白标版漏了）。
-            { "{{R|aggressive stance}}", "{{R|进攻架势}}" },
-            { "{{W|dueling stance}}", "{{W|决斗架势}}" },
-        };
+        internal static Dictionary<string, string> L => ZhsLexicon.Effects;
 
         /// <summary>精确查表；未命中原样返回。</summary>
         internal static string Tr(string en)
         {
             if (Disabled || string.IsNullOrEmpty(en)) return en;
             string zh;
-            if (!L.TryGetValue(en, out zh)) return en;
-            Fixed++;
-            return zh;
+            if (L.TryGetValue(en, out zh)) { Fixed++; return zh; }
+
+            // ★ 拼装句（主体无法枚举 ⇒ 只能锚定前缀，不能进精确表）
+            //   【取证】`XRL.World.Effects.Stuck::GetStateDescription`：
+            //     textBuilder.Append(Adjective)            // 字段默认 "stuck"
+            //       .Append(' ').Append(Preposition)       // 字段默认 "in"
+            //       .Append(' ').Append(From.an());        // ← 网对象（我方已译成中文）
+            //   ⇒ 实例 `stuck in 霜冻蛛网`（ZhsEffectNames.log 3 条，2026-10-25 实机）
+            //   ⇒ `stuck` 本身在 Effects 精确表里（`卡住`），但带主体的整串永远不在表里。
+            //   同族：`Stuck::GetDetails` = Adjective.InitUpper() + " in " + an()
+            //        （`Stuck in …`；GetDetails 尚未挂出口，规则先写好备用）
+            if (en.StartsWith("stuck in ", StringComparison.Ordinal))
+            { Fixed++; return "被困在" + en.Substring(9) + "中"; }
+            if (en.StartsWith("Stuck in ", StringComparison.Ordinal))
+            { Fixed++; return "被困在" + en.Substring(9) + "中"; }
+            // `GetDetails` 无 DependsOn 分支：`stuck where it is.`
+            if (en.StartsWith("stuck where it is", StringComparison.Ordinal))
+            { Fixed++; return "被困在原地。"; }
+
+            return en;
         }
 
         /// <summary>记录一条「类型名 → DisplayName」（去重）。</summary>
-        internal static void Note(string type, string name)
+        internal static void Note(string type, string name, bool hit)
         {
             try
             {
@@ -226,14 +90,24 @@ namespace Nattens.QudZhsCookbook
                     string dir = ZhsFileUtil.WriteDir;
                     if (dir == null) return;
                     _log = Path.Combine(dir, "ZhsEffectNames.log");
-                    try { if (File.Exists(_log)) File.Delete(_log); } catch { }
+                    // 2026-10-25: no longer delete; load existing lines as dedup seed
+                    try
+                    {
+                        if (File.Exists(_log))
+                            foreach (string line in File.ReadAllLines(_log))
+                            {
+                                string[] parts = line.Split((char)9);
+                                if (parts.Length >= 2) _seen.Add(parts[0] + (char)9 + parts[1]);
+                            }
+                    }
+                    catch { }
                 }
                 string key = type + "\t" + name;
                 if (_seen.Contains(key)) return;
                 _seen.Add(key);
                 if (_n >= Max) return;
                 _n++;
-                File.AppendAllText(_log, type + "\t" + name + "\n");
+                File.AppendAllText(_log, type + (char)9 + name + (char)9 + (hit ? "HIT" : "MISS") + (char)10);
             }
             catch { }
         }
@@ -356,9 +230,10 @@ namespace Nattens.QudZhsCookbook
                 if (fld == null) return;
                 string cur = fld.GetValue(__instance) as string;
                 if (string.IsNullOrEmpty(cur)) return;
-                ZhsEffectNameCollect.Note(__instance.GetType().Name, cur);
                 string zh = ZhsEffectNameCollect.Tr(cur);
-                if (!ReferenceEquals(zh, cur) && zh != cur) fld.SetValue(__instance, zh);
+                bool hit = !ReferenceEquals(zh, cur) && zh != cur;
+                ZhsEffectNameCollect.Note(__instance.GetType().Name, cur, hit);
+                if (hit) fld.SetValue(__instance, zh);
             }
             catch { }
         }
@@ -373,7 +248,7 @@ namespace Nattens.QudZhsCookbook
                 string zh = ZhsEffectNameCollect.Tr(__result);
                 if (ReferenceEquals(zh, __result) || zh == __result)
                 {
-                    ZhsEffectNameCollect.Note("(state)", __result);
+                    ZhsEffectNameCollect.Note("(state)", __result, false);
                     return;
                 }
                 __result = zh;

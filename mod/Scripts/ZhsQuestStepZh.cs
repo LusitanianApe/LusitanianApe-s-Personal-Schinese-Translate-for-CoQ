@@ -81,6 +81,10 @@ namespace Nattens.QudZhsCookbook
             { "Recover the Mark of Death", "\u5BFB\u56DE\u6B7B\u4EA1\u5370\u8BB0" },
             { "Recover the Repulsive Device", "\u593A\u56DE\u53EF\u618E\u4E4B\u5668" },
             { "Repair the Waydroid", "\u4FEE\u597D\u5BFB\u8DEF\u673A\u5668\u4EBA" },
+            // ★ 2026-10-29 手工补充：官方步骤名，`_questfix4_bak` 里没有对应中文（仍是英文），
+            //   生成器取不到 ⇒ 在这里补；生成器已加 MANUAL 表，重跑不会丢。
+            //   证据：`Quests.xml:42/54/66` 的 `<step Name="Return to Argyve" XP="75/150/500">`
+            { "Return to Argyve", "\u8FD4\u56DE\u963F\u5C14\u76D6\u592B\u5904" },   // 返回阿尔盖夫处
             { "Return to the Hydropon", "\u8FD4\u56DE\u6C34\u57F9\u573A" },
             { "Return with the Corpse", "\u5E26\u5C38\u4F53\u8FD4\u56DE\u7EA6\u5E15" },
             { "Sanctuary Candidates", "\u5E87\u62A4\u5019\u9009\u5730" },

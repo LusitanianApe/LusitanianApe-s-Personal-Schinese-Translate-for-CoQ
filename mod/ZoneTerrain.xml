@@ -126,7 +126,7 @@
   </object>
   <object Name="Godshroom" Load="Merge">
     <part Name="Render" DisplayName="{{o|埃尔卡特}}"/>
-    <part Name="Description" Short="它的外观充满了发光的珊瑚，这种蘑菇吸引了你的眼球，无与伦比。Qud 从未见过这样的色彩，于是你自问： 是什么样的光辉之雨染红了它的肉身？难道是彩虹林土壤中木乃伊化的吞噬者的一丝痕迹？"/>
+    <part Name="Description" Short="它的外观充满了发光的珊瑚，这种蘑菇吸引了你的眼球，无与伦比。Qud 从未见过这样的色彩，于是你自问：是什么样的光辉之雨染红了它的肉身？难道是彩虹林土壤中木乃伊化的吞噬者的一丝痕迹？"/>
   </object>
   <object Name="Brightshroom" Load="Merge">
     <part Name="Render" DisplayName="光亮菇"/>

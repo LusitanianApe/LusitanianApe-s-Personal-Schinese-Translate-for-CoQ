@@ -4,7 +4,7 @@
        <tag Name="StaticHateReason" Value="…" /> / <tag Name="StaticLikeReason" Value="…" />
      官方 LanguageXml 把该 Value 标成 IsDisplayText=true（不是键）⇒ 可以直接写中文。
      我方此前零覆盖 ⇒ 截图里「受 X 憎恨，原因: eating one of their young.」原样英文。 -->
-<objects Encoding="utf-8">
+<objects Lang="zh-Hans" Encoding="utf-8">
   <object Name="BaseNephal" Load="Merge">
     <tag Name="StaticLikeReason" Value="某个没人记得的原因" />
     <tag Name="StaticHateReason" Value="吃掉了他们的一只幼崽" />
@@ -52,5 +52,19 @@
   <object Name="Gutsmonger" Load="Merge">
     <tag Name="StaticLikeReason" Value="备有稀有植入体" />
     <tag Name="StaticHateReason" Value="拒绝出售稀有植入体" />
+  </object>
+
+  <!-- ★ 2026-10-25：固定村庄看守的派系初始声望原因（`staticFaction1` 的第三段）
+       官方写死英文 `defending their village`，游戏**直接显示 tag 值、不查串表**
+       （`Strings.xml` 里的 `Village Warden friend reason` 是死译文）。
+       只换第三段，保留 `faction,friend` 前缀 —— 改错会重置派系声望。 -->
+  <object Name="Warden Yrame" Load="Merge">
+    <tag Name="staticFaction1" Value="Joppa,friend,保卫他们的村庄" />
+  </object>
+  <object Name="Warden Indrix" Load="Merge">
+    <tag Name="staticFaction1" Value="Kyakukya,friend,保卫他们的村庄" />
+  </object>
+  <object Name="Warden 1-FF" Load="Merge">
+    <tag Name="staticFaction1" Value="Ezra,friend,保卫他们的村庄" />
   </object>
 </objects>

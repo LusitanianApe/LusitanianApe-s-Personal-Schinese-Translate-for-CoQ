@@ -86,6 +86,19 @@ namespace Nattens.QudZhsCookbook
                 || (c >= '\u3040' && c <= '\u30FF')     // 平假名 / 片假名
                 || (c >= '\uAC00' && c <= '\uD7A3');    // 谚文音节
         }
+
+        /// <summary>
+        /// 「中文语境」判定 = CJK + 几个**中文常用但不在 CJK 区**的符号。
+        ///
+        /// <para>为什么需要：中文段常用 `——`（U+2014）/ `……`（U+2026）/ `·`（U+00B7）打头。
+        /// 它们在 `IsCjk` 范围外 ⇒ 折行剪刀会把「——哦，趁我还没忘……」整段判成英文
+        /// ⇒ 交回基类按空格断 ⇒ 而中文里没有空格 ⇒ 整段当一块 ⇒ 不折行（超宽溢出）。
+        /// 2026-10-25 在 `Conversation Argyve.GiveWire.Text`（103 宽，一行塞不下）实测到。</para>
+        /// </summary>
+        internal static bool IsCjkish(char c)
+        {
+            return IsCjk(c) || c == '\u2014' || c == '\u2013' || c == '\u2026' || c == '\u00B7';
+        }
     }
 
     /// <summary>

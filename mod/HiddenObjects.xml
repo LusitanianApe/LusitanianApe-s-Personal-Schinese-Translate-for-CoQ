@@ -752,7 +752,7 @@
   </object>
   <object Name="Spoken Ionic" Load="Merge">
     <part Name="Render" DisplayName="{{zetachrome|离子言说之心}}"/>
-    <part Name="Description" Short="从这棵树的枝干弯曲程度，你推断出它的故乡星系排列过于几何复杂，不可能是自然形成的。=pronouns.Possessive= 丝带如玻璃般反射光线，在停滞的空气中舞动，宛如一个陌生文明的奇异旗帜。在这=pronouns.possessive=异乡池塘的边缘，来访者以令人困惑的方式根吸着凉爽的水。"/>
+    <part Name="Description" Short="从这棵树的枝干弯曲程度，你推断出它的故乡星系排列过于几何复杂，不可能是自然形成的。=pronouns.Possessive=丝带如玻璃般反射光线，在停滞的空气中舞动，宛如一个陌生文明的奇异旗帜。在这=pronouns.possessive=异乡池塘的边缘，来访者以令人困惑的方式根吸着凉爽的水。"/>
   </object>
   <object Name="Coda Player Statue" Load="Merge">
     <part Name="Render" DisplayName="玩家雕像"/>
@@ -801,11 +801,11 @@
   </object>
   <object Name="Chiliad Slynth Grit Gate" Load="Merge">
     <part Name="Render" DisplayName="斯林特扳手僧"/>
-    <part Name="Description" Short="=pronouns.possessive=的手指茎已经长到足以进行修理的长度，=pronouns.subjective= =verb:tauten:afterpronoun= =pronouns.possessive=根系在地下深处的抓握力，以增强=pronouns.possessive=扳手的扭矩。"/>
+    <part Name="Description" Short="=pronouns.possessive=的手指茎已经长到足以进行修理的长度，=pronouns.subjective==verb:tauten:afterpronoun==pronouns.possessive=根系在地下深处的抓握力，以增强=pronouns.possessive=扳手的扭矩。"/>
   </object>
   <object Name="Chiliad Slynth Bey Lah" Load="Merge">
     <part Name="Render" DisplayName="斯林特侦察兵"/>
-    <part Name="Description" Short="=pronouns.Subjective= 闻了闻空气，用=pronouns.possessive= 的后根在干燥的土壤中跺了跺。散发着浓烈气味、赭色调的花瓣从=pronouns.possessive= 的头冠和宽阔的臀部飘落。"/>
+    <part Name="Description" Short="=pronouns.Subjective=闻了闻空气，用=pronouns.possessive=后根在干燥的土壤中跺了跺。散发着浓烈气味、赭色调的花瓣从=pronouns.possessive=头冠和宽阔的臀部飘落。"/>
   </object>
   <object Name="Chiliad Slynth Kyakukya" Load="Merge">
     <part Name="Render" DisplayName="斯林特·苹果嘴"/>
@@ -813,7 +813,7 @@
   </object>
   <object Name="Chiliad Slynth Ezra" Load="Merge">
     <part Name="Render" DisplayName="斯林特流亡者"/>
-    <part Name="Description" Short="=pronouns.Possessive= 翠绿的花冠如侧帘般垂下=pronouns.possessive= 的肩膀，而=pronouns.possessive= 的手指藤蔓缠绕着闪闪发光的阴极。"/>
+    <part Name="Description" Short="=pronouns.Possessive=翠绿的花冠如侧帘般垂下=pronouns.possessive=肩膀，而=pronouns.possessive=手指藤蔓缠绕着闪闪发光的阴极。"/>
   </object>
   <object Name="Chiliad Slynth Yd Freehold" Load="Merge">
     <part Name="Render" DisplayName="斯林特笛手"/>
@@ -833,7 +833,7 @@
   </object>
   <object Name="Chiliad Slynth Village" Load="Merge">
     <part Name="Render" DisplayName="斯林特村民"/>
-    <part Name="Description" Short="=pronouns.Possessive= 翠绿的蔓生植物缠绕成了一件三角围裙，而=pronouns.subjective= 以一种奇异且充满使命感的姿态弯曲着身体。一双温暖的眼睛透露出友好之情。"/>
+    <part Name="Description" Short="=pronouns.Possessive=翠绿的蔓生植物缠绕成了一件三角围裙，而=pronouns.subjective=以一种奇异且充满使命感的姿态弯曲着身体。一双温暖的眼睛透露出友好之情。"/>
   </object>
   <object Name="Nacham's Loom" Load="Merge">
     <part Name="Render" DisplayName="纳查姆的织机"/>
@@ -901,7 +901,7 @@
   </object>
   <object Name="Chiliad Creature Apes" Load="Merge">
     <part Name="Render" DisplayName="=creatureRegionAdjective= 猿"/>
-    <part Name="Description" Short="=pronouns.Subjective= 蹲坐在谦卑的姿态中，一撮撮彩色的毛发从=pronouns.possessive=脸颊上长出。"/>
+    <part Name="Description" Short="=pronouns.Subjective=蹲坐在谦卑的姿态中，一撮撮彩色的毛发从=pronouns.possessive=脸颊上长出。"/>
   </object>
   <object Name="Chiliad Creature Arachnids" Load="Merge">
     <part Name="Render" DisplayName="=creatureRegionAdjective= 蝎子"/>
@@ -917,7 +917,7 @@
   </object>
   <object Name="Chiliad Creature Barathrumites" Load="Merge">
     <part Name="Render" DisplayName="乌尔希布 =creatureRegionNoun="/>
-    <part Name="Description" Short="=pronouns.Possessive= 的肩膀下垂，=pronouns.possessive= 的刺尖开始变暗。"/>
+    <part Name="Description" Short="=pronouns.Possessive=肩膀下垂，=pronouns.possessive=刺尖开始变暗。"/>
   </object>
   <object Name="Chiliad Creature Bears" Load="Merge">
     <part Name="Render" DisplayName="=creatureRegionAdjective= 熊"/>
@@ -925,7 +925,7 @@
   </object>
   <object Name="Chiliad Creature Birds" Load="Merge">
     <part Name="Render" DisplayName="=creatureRegionAdjective= 鸵鸟"/>
-    <part Name="Description" Short="长长的脖子抖动着驱赶蚊蚋，而=pronouns.possessive= 咔嚓作响的喙则咬向落单的虫子。"/>
+    <part Name="Description" Short="长长的脖子抖动着驱赶蚊蚋，而=pronouns.possessive=咔嚓作响的喙则咬向落单的虫子。"/>
   </object>
   <object Name="Chiliad Creature Cannibals" Load="Merge">
     <part Name="Render" DisplayName="=creatureRegionAdjective= 食人者"/>
@@ -945,7 +945,7 @@
   </object>
   <object Name="Chiliad Creature Crabs" Load="Merge">
     <part Name="Render" DisplayName="=creatureRegionAdjective= 螃蟹"/>
-    <part Name="Description" Short="=pronouns.Subjective= 在低处盘旋，并成对地剪断草。"/>
+    <part Name="Description" Short="=pronouns.Subjective=在低处盘旋，并成对地剪断草。"/>
   </object>
   <object Name="Chiliad Creature Cragmensch" Load="Merge">
     <part Name="Render" DisplayName="岩人 =creatureRegionNoun="/>
@@ -961,15 +961,15 @@
   </object>
   <object Name="Chiliad Creature Dromads" Load="Merge">
     <part Name="Render" DisplayName="驼人 =creatureRegionNoun="/>
-    <part Name="Description" Short="=pronouns.Subjective= 摇晃着=pronouns.possessive= 的脖子，随着风的僵硬节奏，并耸动=pronouns.possessive= 的驼峰向前。"/>
+    <part Name="Description" Short="=pronouns.Subjective=摇晃着=pronouns.possessive=脖子，随着风的僵硬节奏，并耸动=pronouns.possessive=驼峰向前。"/>
   </object>
   <object Name="Chiliad Creature Equines" Load="Merge">
     <part Name="Render" DisplayName="=creatureRegionAdjective= 斑马"/>
-    <part Name="Description" Short="=pronouns.possessive= 条纹侧身吸引并迷惑视线。"/>
+    <part Name="Description" Short="=pronouns.possessive=条纹侧身吸引并迷惑视线。"/>
   </object>
   <object Name="Chiliad Creature Farmers" Load="Merge">
     <part Name="Render" DisplayName="=creatureRegionAdjective= 农夫"/>
-    <part Name="Description" Short="=pronouns.Possessive= 的眼睛穿透了紧实的土壤，=pronouns.subjective= 搓着指间的粘土。"/>
+    <part Name="Description" Short="=pronouns.Possessive=眼睛穿透了紧实的土壤，=pronouns.subjective=搓着指间的粘土。"/>
   </object>
   <object Name="Chiliad Creature Wardens" Load="Merge">
     <part Name="Render" DisplayName="=creatureRegionAdjective= 监护者"/>
@@ -997,7 +997,7 @@
   </object>
   <object Name="Chiliad Creature Goatfolk" Load="Merge">
     <part Name="Render" DisplayName="山羊族 =creatureRegionNoun="/>
-    <part Name="Description" Short="=pronouns.Subjective= 站立着，蹄子呈弓形，骄傲地对着天空咩咩叫。"/>
+    <part Name="Description" Short="=pronouns.Subjective=站立着，蹄子呈弓形，骄傲地对着天空咩咩叫。"/>
   </object>
   <object Name="Chiliad Creature Prey" Load="Merge">
     <part Name="Render" DisplayName="=creatureRegionAdjective= 山羊"/>
@@ -1048,7 +1048,7 @@
   </object>
   <object Name="Chiliad Creature Naphtaali" Load="Merge">
     <part Name="Render" DisplayName="拿夫塔利 =creatureRegionNoun="/>
-    <part Name="Description" Short="=pronouns.possessive= 的苔藓毛皮浓密（甚至结出了果实），明亮的青色眼睛透过=pronouns.possessive= 的米纳扬面具向外窥视。"/>
+    <part Name="Description" Short="=pronouns.possessive=苔藓毛皮浓密（甚至结出了果实），明亮的青色眼睛透过=pronouns.possessive=米纳扬面具向外窥视。"/>
   </object>
   <object Name="Chiliad Creature Oozes" Load="Merge">
     <part Name="Render" DisplayName="=creatureRegionAdjective= 软泥"/>
@@ -1068,7 +1068,7 @@
   </object>
   <object Name="Chiliad Creature Robots" Load="Merge">
     <part Name="Render" DisplayName="机器 =creatureRegionNoun="/>
-    <part Name="Description" Short="肩部的雷达如同活动的肩章一样伸展并随着月时旋转，=pronouns.possessive= 的桶状靴子以机械的步伐行走。"/>
+    <part Name="Description" Short="肩部的雷达如同活动的肩章一样伸展并随着月时旋转，=pronouns.possessive=桶状靴子以机械的步伐行走。"/>
   </object>
   <object Name="Chiliad Creature Succulents" Load="Merge">
     <part Name="Render" DisplayName="=creatureRegionAdjective= 仙人掌"/>
@@ -1088,7 +1088,7 @@
   </object>
   <object Name="Chiliad Creature Trees" Load="Merge">
     <part Name="Render" DisplayName="阴影 =creatureRegionNoun="/>
-    <part Name="Description" Short="=pronouns.Subjective= 已经被精心修剪并湿润，=pronouns.possessive= 盆以月啸的风格重新上釉。"/>
+    <part Name="Description" Short="=pronouns.Subjective=已经被精心修剪并湿润，=pronouns.possessive=盆以月啸的风格重新上釉。"/>
   </object>
   <object Name="Chiliad Creature Trolls" Load="Merge">
     <part Name="Render" DisplayName="巨魔 =creatureRegionNoun="/>
@@ -1108,7 +1108,7 @@
   </object>
   <object Name="Chiliad Creature Water" Load="Merge">
     <part Name="Render" DisplayName="=creatureRegionAdjective= 领主"/>
-    <part Name="Description" Short="在浮力阶层中，坐姿的艺术被赋予了量子色动力学的微妙之处。在这里，=pronouns.subjective= 坐在=pronouns.possessive= 轿式行走机上，在青春的领域里畅饮。"/>
+    <part Name="Description" Short="在浮力阶层中，坐姿的艺术被赋予了量子色动力学的微妙之处。在这里，=pronouns.subjective=坐在=pronouns.possessive=轿式行走机上，在青春的领域里畅饮。"/>
   </object>
   <object Name="Chiliad Creature Winged Mammals" Load="Merge">
     <part Name="Render" DisplayName="=creatureRegionAdjective= 蝙蝠"/>
@@ -1120,7 +1120,7 @@
   </object>
   <object Name="Chiliad Creature Seekers" Load="Merge">
     <part Name="Render" DisplayName="=creatureRegionNoun= 无眼之道"/>
-    <part Name="Description" Short="晚期寻道者时尚的侧向丝带在湿润的空气中旋转，=pronouns.subjective= 无声地哼了一声，拂去了=pronouns.possessive=兜帽上的尘土。"/>
+    <part Name="Description" Short="晚期寻道者时尚的侧向丝带在湿润的空气中旋转，=pronouns.subjective=无声地哼了一声，拂去了=pronouns.possessive=兜帽上的尘土。"/>
   </object>
   <object Name="Chiliad Creature Pariahs" Load="Merge">
     <part Name="Render" DisplayName="=creatureRegionNoun= 和 =subject.possessive= 族人的弃儿"/>

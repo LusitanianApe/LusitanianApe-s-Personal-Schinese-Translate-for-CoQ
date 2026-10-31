@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<objects Encoding="utf-8">
+<objects Lang="zh-Hans" Encoding="utf-8">
   <!-- 译文基准取自 210.20 前人汉化（_ref\机翻参考-210.20v5）。
        本文件为 Load="Merge" 增量：只补 Furniture.xml 里尚未汉化的对象。
        已做确定性预处理：修正拼写错误槽 / 自造中文槽 / 双「的」/ 动词槽。 -->
@@ -19,19 +19,19 @@
   </object>
   <object Name="StiltWell" Load="Merge">
     <part Name="Render" DisplayName="圣井" />
-    <part Name="Description" Short="圣化后时代的斯芬克斯场景以黄金和凹雕环绕在黑色大理石喷泉的边缘。 其明亮的纹理刺眼，但向下望去，却退入一片无星的深渊。 " />
+    <part Name="Description" Short="圣化后时代的斯芬克斯场景以黄金和凹雕环绕在黑色大理石喷泉的边缘。其明亮的纹理刺眼，但向下望去，却退入一片无星的深渊。 " />
   </object>
   <object Name="Door" Load="Merge">
     <part Name="Render" DisplayName="门" />
-    <part Name="Description" Short="石板上布满了岁月留下的手印，铰链顶部的锈迹斑斑。 然而，这扇门依然固执地划分着‘内’与‘外’。 " />
+    <part Name="Description" Short="石板上布满了岁月留下的手印，铰链顶部的锈迹斑斑。然而，这扇门依然固执地划分着‘内’与‘外’。 " />
   </object>
   <object Name="CyberneticsTerminal2" Load="Merge">
     <part Name="Render" DisplayName="蜕变龛" />
-    <part Name="Description" Short="一块印有人类轮廓的中性泡沫悬挂在玻璃拱门之下。 在泡沫上与眼睛齐平的位置，椭圆形屏幕上循环显示着符文。 被强光遮挡的手术器械从封闭穹顶下方伸出，如同甲虫般爬出。 " />
+    <part Name="Description" Short="一块印有人类轮廓的中性泡沫悬挂在玻璃拱门之下。在泡沫上与眼睛齐平的位置，椭圆形屏幕上循环显示着符文。被强光遮挡的手术器械从封闭穹顶下方伸出，如同甲虫般爬出。 " />
   </object>
   <object Name="ConveyorDrive" Load="Merge">
     <part Name="Render" DisplayName="传送带驱动单元" />
-    <part Name="Description" Short="润滑油从闪亮的铬合金引擎滴落，染污了惰轮。 滑轮以奇怪的角度布置，使平坦的橡胶带在空间中运转。 " />
+    <part Name="Description" Short="润滑油从闪亮的铬合金引擎滴落，染污了惰轮。滑轮以奇怪的角度布置，使平坦的橡胶带在空间中运转。 " />
   </object>
   <object Name="ConveyorPad" Load="Merge">
     <part Name="Render" DisplayName="传送带" />
@@ -39,11 +39,11 @@
   </object>
   <object Name="FactoryArm" Load="Merge">
     <part Name="Render" DisplayName="旋转机械臂" />
-    <part Name="Description" Short="金属泡沫被压缩并包裹成巨大的生物手臂模型，二头肌和三头肌的头部闪闪发光。 巨大的关节在旋转时发出咔嚓声。 " />
+    <part Name="Description" Short="金属泡沫被压缩并包裹成巨大的生物手臂模型，二头肌和三头肌的头部闪闪发光。巨大的关节在旋转时发出咔嚓声。 " />
   </object>
   <object Name="GrabberArm" Load="Merge">
     <part Name="Render" DisplayName="锁定机械臂" />
-    <part Name="Description" Short="金属泡沫被压缩并制成巨大的生物臂模型，二头肌和三头肌的头部闪闪发光。 黄铜夹具从目标处夺走动能。 " />
+    <part Name="Description" Short="金属泡沫被压缩并制成巨大的生物臂模型，二头肌和三头肌的头部闪闪发光。黄铜夹具从目标处夺走动能。 " />
   </object>
   <object Name="Bed" Load="Merge">
     <part Name="Render" DisplayName="床" />

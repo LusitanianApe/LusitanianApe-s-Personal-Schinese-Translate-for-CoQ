@@ -36,7 +36,7 @@
   </object>
   <object Name="Dawnglider" Load="Merge">
     <part Name="Render" DisplayName="曙光滑翔者" />
-    <part Name="Description" Short="皮革般的翅膀从=pronouns.possessive=闪烁的光晕里扑开烟雾，=pronouns.possessive= S 形的身躯在气流的波上起伏。=pronouns.Possessive=羽饰明亮，带着红玉髓吐息灼过的痕迹。" />
+    <part Name="Description" Short="皮革般的翅膀从=pronouns.possessive=闪烁的光晕里扑开烟雾，=pronouns.possessive=S 形的身躯在气流的波上起伏。=pronouns.Possessive=羽饰明亮，带着红玉髓吐息灼过的痕迹。" />
   </object>
   <object Name="Slumberling" Load="Merge">
     <part Name="Render" DisplayName="沉眠兽" />

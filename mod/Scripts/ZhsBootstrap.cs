@@ -602,6 +602,29 @@ namespace Nattens.QudZhsCookbook
             if (!MountOff("ZhsPronounFieldPatch")) try { ZhsPronounFieldPatch.TryApply(); }
             catch (Exception e) { UnityEngine.Debug.LogError("[QudZhsCookbook] 称呼词接管失败：" + e); }
 
+            // ★ `=subject.thisCreature=`（void 型 replacer：往 Context.Value 追加文本）
+            //   现有 ZhsPronounPatch 的白名单只挂「返回 string」的方法
+            //   （`if (mi.ReturnType != typeof(string)) continue;`）⇒ 这个方法从未被挂过。
+            //   译文里仍有 52 处该槽位（2026-10-24 第三次测试窗口 #4）。
+            if (!MountOff("ZhsThisCreaturePatch")) try { ZhsThisCreaturePatch.TryApply(); }
+            catch (Exception e) { UnityEngine.Debug.LogError("[QudZhsCookbook] thisCreature 接管失败：" + e); }
+
+            // ★ `=day=` 的中文日期（序数 `13th` → 「十三日」）
+            //   `CalendarReplacers.Day` 往 Context.Value 追加 `=daynumber.displayDate=`
+            //   → 英文序数。影响 43 处槽位。
+            if (!MountOff("ZhsCalendarPatch")) try { ZhsCalendarPatch.TryApply(); }
+            catch (Exception e) { UnityEngine.Debug.LogError("[QudZhsCookbook] 中文日期失败：" + e); }
+
+            // 2026-10-27：日志界面页签标题（GetTabDisplayName 实现绕开 STR_鍵）
+            if (!MountOff("ZhsJournalTabPatch")) try { ZhsJournalTabPatch.TryApply(); }
+            catch (Exception e) { UnityEngine.Debug.LogError("[QudZhsCookbook] 日志页签失败：" + e); }
+
+            // 2026-10-28：日志 → 地点 → 地图注释的方位距离（`2 parasangs east of Joppa`）
+            //   取证：JournalMapNote.GetDisplayText → `=note.location=`
+            //         → XRL.LoreGenerator.GenerateLandmarkDirectionsTo
+            if (!MountOff("ZhsLandmarkDirectionPatch")) try { ZhsLandmarkDirectionPatch.TryApply(); }
+            catch (Exception e) { UnityEngine.Debug.LogError("[QudZhsCookbook] 地标方向失败：" + e); }
+
             // ★ XDidY / XDidYToZ 的**补语**（Extra）英文清理
             //   实证消息：阿盖夫 has restocked 他的 inventory!
             //   根因：GenericInventoryRestocker::PerformStock 传

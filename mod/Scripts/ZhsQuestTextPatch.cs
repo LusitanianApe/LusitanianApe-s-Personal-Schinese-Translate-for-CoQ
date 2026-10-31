@@ -79,14 +79,17 @@ namespace Nattens.QudZhsCookbook
                 "\u4efb\u52a1\u5931\u8d25\uff1a$1\u3002"),                             // 任务失败：X。
 
             // You have finished the step, X, of the quest Y!
+            // ★ 2026-10-29：捕获组从 `(.+?)` 改成 `([^\n!]+?)` —— 后者不会跨行/跨叹号。
+            //   旧写法配 `Singleline` 会把 `!\nYou gain {{C|75}} XP` 整段吞进 $2
+            //   （实测 Player.log 5352-5354），是「你 gain 75 XP」露英文的直接原因。
             new KeyValuePair<Regex, string>(
-                new Regex(@"^You have finished the step,\s*(.+?),\s*of the quest\s+(.+?)!$",
+                new Regex(@"^You have finished the step,\s*([^\n!]+?),\s*of the quest\s+([^\n!]+?)!$",
                           RegexOptions.Singleline),
                 "\u4efb\u52a1\u6b65\u9aa4\u5b8c\u6210\uff1a$1\uff08\u4efb\u52a1\uff1a$2\uff09\uff01"), // 任务步骤完成：X（任务：Y）！
 
             // You have failed the step, X, of the quest Y!
             new KeyValuePair<Regex, string>(
-                new Regex(@"^You have failed the step,\s*(.+?),\s*of the quest\s+(.+?)!$",
+                new Regex(@"^You have failed the step,\s*([^\n!]+?),\s*of the quest\s+([^\n!]+?)!$",
                           RegexOptions.Singleline),
                 "\u4efb\u52a1\u6b65\u9aa4\u5931\u8d25\uff1a$1\uff08\u4efb\u52a1\uff1a$2\uff09\u3002"), // 任务步骤失败：X（任务：Y）。
 
@@ -246,7 +249,12 @@ namespace Nattens.QudZhsCookbook
             string zh = ZhsQuestStepZh.Lookup(step);
             if (zh == null)
             {
-                if (!HasCjkText(step)) return null;   // 英文步骤名查不到 ⇒ 不半译
+                // ★ 2026-10-29 修：旧写法在这里 `return null`（「查不到就不半译」），
+                //   结果整句落到 `Rules` 的通用 `^You have finished the step,…`（Singleline），
+                //   被 `(.+?)` 把 `!\nYou gain {{C|75}} XP` **整段吞进任务名**（实测：
+                //   「任务步骤完成：…（任务：…!\nYou gain {{C|75}} XP）！」）。
+                //   ⇒ 改为**照常拆结构**：步骤名保留英文，但 XP 行一定译出来；
+                //   等 `ZhsQuestStepZh` 补上这条 ID 后自动全中文。
                 zh = step;
             }
 

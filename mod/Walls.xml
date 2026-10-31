@@ -31,7 +31,7 @@
   </object>
   <object Name="Halite" Load="Merge">
     <part Name="Render" DisplayName="岩盐"/>
-    <part Name="Description" Short="深红云彩结晶成形： 内外相嵌的立方体。莫格拉伊为何要将这形态藏于阳光之下？"/>
+    <part Name="Description" Short="深红云彩结晶成形：内外相嵌的立方体。莫格拉伊为何要将这形态藏于阳光之下？"/>
   </object>
   <object Name="Gypsum" Load="Merge">
     <part Name="Render" DisplayName="石膏"/>
@@ -256,19 +256,19 @@
   </object>
   <object Name="HolographicShaleWall" Load="Merge">
     <part Name="Render" DisplayName="全息页岩"/>
-    <part Name="Description" Short="光线在视差中被塑造成页岩墙的幻象： 黏土和石英经过干燥和粉碎，形成了千百年来山民开采的红岩。"/>
+    <part Name="Description" Short="光线在视差中被塑造成页岩墙的幻象：黏土和石英经过干燥和粉碎，形成了千百年来山民开采的红岩。"/>
   </object>
   <object Name="HoloMarble" Load="Merge">
     <part Name="Render" DisplayName="大理石墙"/>
-    <part Name="Description" Short="光线在大理石墙上雕刻出错视效果： 蜗牛和珊瑚在地质压力下被碾碎，绘制成杂质的条带，并沿着理想平面抛光。"/>
+    <part Name="Description" Short="光线在大理石墙上雕刻出错视效果：蜗牛和珊瑚在地质压力下被碾碎，绘制成杂质的条带，并沿着理想平面抛光。"/>
   </object>
   <object Name="HolographicLowSandstoneWall" Load="Merge">
     <part Name="Render" DisplayName="全息砂岩"/>
-    <part Name="Description" Short="光线在视差中被塑造成砂岩墙的幻象： 岩石侵蚀成沙，沙吹成湖泊，湖泊被泥土掩埋，泥土将沙压成岩石。大地重新排列。"/>
+    <part Name="Description" Short="光线在视差中被塑造成砂岩墙的幻象：岩石侵蚀成沙，沙吹成湖泊，湖泊被泥土掩埋，泥土将沙压成岩石。大地重新排列。"/>
   </object>
   <object Name="HolographicThatchedWall" Load="Merge">
     <part Name="Render" DisplayName="全息茅草墙"/>
-    <part Name="Description" Short="光芒闪烁，通过视差效果营造出茅草墙的幻象： 水藤和盐茎稻草条分批排列，角度巧妙地引导盐渣。"/>
+    <part Name="Description" Short="光芒闪烁，通过视差效果营造出茅草墙的幻象：水藤和盐茎稻草条分批排列，角度巧妙地引导盐渣。"/>
   </object>
   <object Name="HalfWall" Load="Merge">
     <part Name="Render" DisplayName="低墙"/>
@@ -330,25 +330,25 @@
     <part Name="Description" Short="这是一幅用稀有的天蓝色大理石精心雕刻的高浮雕。它描绘了《色谱颂歌》中吟唱的启蒙场景。圣结之后，银父们将卡萨费森斯的等离子金属塑造成适合凡人居住的建筑。他们将尖塔建在山上，拱门横跨河流。在这里，谢赫纳监督着建设，向东凝视着祂那崭新而闪耀的世界。"/>
   </object>
   <object Name="Relief11" Load="Merge">
-    <part Name="Render" DisplayName="大理石浮雕： 神圣联结"/>
+    <part Name="Render" DisplayName="大理石浮雕：神圣联结"/>
   </object>
   <object Name="Relief12" Load="Merge">
-    <part Name="Render" DisplayName="大理石浮雕： 神圣联结"/>
+    <part Name="Render" DisplayName="大理石浮雕：神圣联结"/>
   </object>
   <object Name="Relief13" Load="Merge">
-    <part Name="Render" DisplayName="大理石浮雕： 神圣联结"/>
+    <part Name="Render" DisplayName="大理石浮雕：神圣联结"/>
   </object>
   <object Name="Relief14" Load="Merge">
-    <part Name="Render" DisplayName="大理石浮雕： 神圣联结"/>
+    <part Name="Render" DisplayName="大理石浮雕：神圣联结"/>
   </object>
   <object Name="Relief15" Load="Merge">
-    <part Name="Render" DisplayName="大理石浮雕： 神圣联结"/>
+    <part Name="Render" DisplayName="大理石浮雕：神圣联结"/>
   </object>
   <object Name="Relief16" Load="Merge">
-    <part Name="Render" DisplayName="大理石浮雕： 神圣联结"/>
+    <part Name="Render" DisplayName="大理石浮雕：神圣联结"/>
   </object>
   <object Name="Relief17" Load="Merge">
-    <part Name="Render" DisplayName="大理石浮雕： 神圣联结"/>
+    <part Name="Render" DisplayName="大理石浮雕：神圣联结"/>
   </object>
   <object Name="Relief21" Load="Merge">
     <part Name="Render" DisplayName="大理石教诲浮雕"/>
@@ -396,31 +396,31 @@
   </object>
   <object Name="SultanWall_Period1" Load="Merge">
     <part Name="Render" DisplayName="来自=sultan:1=苏丹国的雕凿石墙"/>
-    <part Name="Description" Short="巨大的古老石块被堆砌、敲凿并雕刻成=sultan:1=时代流行的长弧形。自那以后，这个项目吸引了众多合作者，他们的印记随处可见： 这里，有破坏者的痕迹；那里，时间的细笔轻抚。"/>
+    <part Name="Description" Short="巨大的古老石块被堆砌、敲凿并雕刻成=sultan:1=时代流行的长弧形。自那以后，这个项目吸引了众多合作者，他们的印记随处可见：这里，有破坏者的痕迹；那里，时间的细笔轻抚。"/>
   </object>
   <object Name="SultanWall_Period2" Load="Merge">
     <part Name="Render" DisplayName="来自=sultan:2=苏丹国的雕刻石"/>
-    <part Name="Description" Short="巨大的古老石块被堆砌、敲凿并雕刻成=sultan:2=时代的风格。自那以后，这个项目吸引了众多合作者，他们的痕迹随处可见： 这里，有破坏者的涂鸦留下的空白；那里，时间的笔触轻轻拂过。"/>
+    <part Name="Description" Short="巨大的古老石块被堆砌、敲凿并雕刻成=sultan:2=时代的风格。自那以后，这个项目吸引了众多合作者，他们的痕迹随处可见：这里，有破坏者的涂鸦留下的空白；那里，时间的笔触轻轻拂过。"/>
   </object>
   <object Name="SultanWall_Period3" Load="Merge">
     <part Name="Render" DisplayName="来自=sultan:3=苏丹国的雕石"/>
-    <part Name="Description" Short="巨大的古老石块被堆砌、敲打并雕刻成=sultan:3=时代的风格。自那以后，这个项目吸引了许多合作者，他们的痕迹随处可见： 这里有被破坏者留下的空白，那里有时光温柔的笔触。"/>
+    <part Name="Description" Short="巨大的古老石块被堆砌、敲打并雕刻成=sultan:3=时代的风格。自那以后，这个项目吸引了许多合作者，他们的痕迹随处可见：这里有被破坏者留下的空白，那里有时光温柔的笔触。"/>
   </object>
   <object Name="SultanWall_Period4" Load="Merge">
     <part Name="Render" DisplayName="来自苏丹国 =sultan:4= 的雕刻石墙"/>
-    <part Name="Description" Short="巨大的古老石块被堆砌、敲打并雕刻成 =sultan:4= 时代的风格。自那以后，这个项目吸引了许多合作者，他们的痕迹随处可见： 这里有被破坏者的涂鸦留下的空白，那里有时光之笔轻柔的痕迹。"/>
+    <part Name="Description" Short="巨大的古老石块被堆砌、敲打并雕刻成 =sultan:4= 时代的风格。自那以后，这个项目吸引了许多合作者，他们的痕迹随处可见：这里有被破坏者的涂鸦留下的空白，那里有时光之笔轻柔的痕迹。"/>
   </object>
   <object Name="SultanWall_Period5" Load="Merge">
     <part Name="Render" DisplayName="来自=sultan:5=苏丹国的雕凿石墙"/>
-    <part Name="Description" Short="巨大的古老石块被堆砌、敲打并雕刻成=sultan:5=时代的风格。自那以后，这个项目吸引了许多合作者，他们的痕迹随处可见： 这里是破坏者的空白印记；那里是时间轻柔的笔触。"/>
+    <part Name="Description" Short="巨大的古老石块被堆砌、敲打并雕刻成=sultan:5=时代的风格。自那以后，这个项目吸引了许多合作者，他们的痕迹随处可见：这里是破坏者的空白印记；那里是时间轻柔的笔触。"/>
   </object>
   <object Name="SultanWall_Period6" Load="Merge">
     <part Name="Render" DisplayName="来自雷斯费普苏丹国的雕刻石"/>
-    <part Name="Description" Short="巨大的古老石块被堆砌、敲打并雕刻成雷斯费普时代的风格。自那时起，这个项目吸引了许多合作者，他们的痕迹随处可见： 这里有被破坏者留下的空白，那里有时光温柔的痕迹。"/>
+    <part Name="Description" Short="巨大的古老石块被堆砌、敲打并雕刻成雷斯费普时代的风格。自那时起，这个项目吸引了许多合作者，他们的痕迹随处可见：这里有被破坏者留下的空白，那里有时光温柔的痕迹。"/>
   </object>
   <object Name="SultanWall_Ornate_Period5" Load="Merge">
     <part Name="Render" DisplayName="来自=sultan:5=苏丹国的雕凿石墙"/>
-    <part Name="Description" Short="巨大的古老石块被堆砌、敲打并雕刻成=sultan:5=时代的风格。自那以后，这个项目吸引了许多合作者，他们的痕迹随处可见： 这里是破坏者的空白印记；那里是时间轻柔的笔触。"/>
+    <part Name="Description" Short="巨大的古老石块被堆砌、敲打并雕刻成=sultan:5=时代的风格。自那以后，这个项目吸引了许多合作者，他们的痕迹随处可见：这里是破坏者的空白印记；那里是时间轻柔的笔触。"/>
   </object>
   <object Name="InnerSultanWall_Period1" Load="Merge">
     <part Name="Render" DisplayName="来自*苏丹1名*苏丹国的镀金大理石"/>
@@ -546,7 +546,7 @@
   </object>
   <object Name="Rubble" Load="Merge">
     <part Name="Render" DisplayName="碎石堆"/>
-    <part Name="Description" Short="不规则的石块堆积在一起。在其表面，秩序的痕迹零星地穿透熵之堆： 一尊雕像的手指，日晷的针，一块电路板。"/>
+    <part Name="Description" Short="不规则的石块堆积在一起。在其表面，秩序的痕迹零星地穿透熵之堆：一尊雕像的手指，日晷的针，一块电路板。"/>
   </object>
   <object Name="Rubble Grey" Load="Merge">
     <part Name="Render" DisplayName="碎石堆"/>

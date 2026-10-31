@@ -160,7 +160,7 @@ namespace Nattens.QudZhsCookbook
 
         private static MethodBase TargetMethod()
         {
-            return AccessTools.Method(typeof(XRL.Templates), "LoadTemplateFromExternal");
+            return AccessTools.Method(AccessTools.TypeByName("XRL.Templates.TemplateFactory"), "LoadTemplateFromExternal");
         }
 
         [HarmonyPrepare]
@@ -481,17 +481,15 @@ namespace Nattens.QudZhsCookbook
                 var dupNames = new List<string>();
                 try
                 {
-                    var tpl = AccessTools.Field(typeof(XRL.Templates), "TemplateByID")?.GetValue(null) as IDictionary;
-                    if (tpl != null)
+                    // 2026-10-30 游戏更新后：`XRL.Templates` 变命名空间，
+                    // 仓库是 `XRL.Templates.TemplateFactory.Repository`（`StringMap<Template>`，
+                    // 不是 `IDictionary`）⇒ 这里只取总数，逐条统计降级（只影响日志）。
+                    object repo = AccessTools.Field(
+                        AccessTools.TypeByName("XRL.Templates.TemplateFactory"), "Repository")?.GetValue(null);
+                    if (repo != null)
                     {
-                        tplTotal = tpl.Count;
-                        foreach (DictionaryEntry e in tpl)
-                        {
-                            string id = e.Key as string;
-                            if (id == null || !id.StartsWith("Mutation.", StringComparison.Ordinal)
-                                || !id.EndsWith(".Description", StringComparison.Ordinal)) continue;
-                            tplZh++;
-                        }
+                        object cnt = repo.GetType().GetProperty("Count")?.GetValue(repo, null);
+                        tplTotal = cnt is int ? (int)cnt : 0;
                     }
                     // 重复条目检测：这里只能看到「官方可见」的条目。
                     // ★ 真正的重灾区是 `_MutationsByClass`：官方的 `Init` **不会**按名去重，

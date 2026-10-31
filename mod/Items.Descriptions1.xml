@@ -24,7 +24,7 @@
   </object>
   <object Name="Snapjaw" Load="Merge">
     <part Name="Render" DisplayName="咬颚兽" />
-    <part Name="Description" Short="一簇簇毛皮裹着绷紧在结实肌肉上的皮肤。=pronouns.subjective=直立着，但=pronouns.subjective=随时准备伏下四肢。=pronouns.Possessive=口鼻龇起，=pronouns.possessive=耳朵抽动。=pronouns.Subjective=吠叫起来，=pronou…（全文见 XML）" />
+    <part Name="Description" Short="一簇簇毛皮裹着绷紧在结实肌肉上的皮肤。=pronouns.subjective=直立着，但=pronouns.subjective=随时准备伏下四肢。=pronouns.Possessive=口鼻龇起，=pronouns.possessive=耳朵抽动。=pronouns.Subjective=吠叫起来，=pronouns.possessive=鬣狗族亲便应声回应。" />
   </object>
   <object Name="Goatfolk" Load="Merge">
     <part Name="Render" DisplayName="羊人" />
@@ -43,7 +43,7 @@
     <part Name="Description" Short="青铜磨成尖，柄上缠着皮革。" />
   </object>
   <object Name="Mamon" Load="Merge">
-    <part Name="Description" Short="马蒙比=pronouns.possessive=同胞高出将近一个头，肩膀也更宽。大簇沾血打结的毛发——有些还编成辫子——从=pronouns.possessive=头顶与下巴垂挂下来，一顶破烂的绯红头巾挂在=pronouns.possessive=巨角中的一只上。=pronouns.possessive=裸露的胸膛上，…（全文见 XML）" />
+    <part Name="Description" Short="马蒙比=pronouns.possessive=同胞高出将近一个头，肩膀也更宽。大簇沾血打结的毛发——有些还编成辫子——从=pronouns.possessive=头顶与下巴垂挂下来，一顶破烂的绯红头巾挂在=pronouns.possessive=巨角中的一只上。=pronouns.possessive=裸露的胸膛上，大片毛发被烧焦、皮肤被剥去。=pronouns.Subjective=腰间围着一件纱笼，羊毛纤维浸透了污浊的墨色液体。=pronouns.Possessive=面容是一片疯狂的景象，既像狂喜的老妪，又像受惊的孩童。" />
   </object>
   <object Name="Horns" Load="Merge">
     <part Name="Render" DisplayName="角" />
@@ -75,7 +75,7 @@
   </object>
   <object Name="Dromad" Load="Merge">
     <part Name="Render" DisplayName="驼人" />
-    <part Name="Description" Short="刺青墨水在=pronouns.possessive=长颈的垂囊上，点染出骆驼族千种纹样中的一种。=pronouns.Possessive=耳朵上排着镀金的环，睫毛像水藤叶一样顺着=pronouns.possessive=脸垂落。=pronouns.possessive=背上，一峰饱满健康的脂肪把=pronouns.po…（全文见 XML）" />
+    <part Name="Description" Short="刺青墨水在=pronouns.possessive=长颈的垂囊上，点染出骆驼族千种纹样中的一种。=pronouns.Possessive=耳朵上排着镀金的环，睫毛像水藤叶一样顺着=pronouns.possessive=脸垂落。=pronouns.possessive=背上，一峰饱满健康的脂肪把=pronouns.possessive=重心高高托起。" />
   </object>
   <object Name="Tonic" Load="Merge">
     <part Name="Description" Short="一支玻璃管配一根注射针，把补剂直接送进血液。" />

@@ -1588,6 +1588,16 @@ namespace Nattens.QudZhsCookbook
               "正在吞没$1时你无法飞行。"),
             R(@"^You fail to engulf (.+)\.$",
               "你未能吞没$1。"),
+            // 2026-10-27：方位距离（`2 parasangs east of Joppa` 之类，整句锚定）
+            //   语序必须重排（中文是「距 X 以东 N 帕拉桑」，不是「N 帕拉桑以东的 X」）
+            R(@"^(\d+)\s+parasangs?\s+east\s+of\s+(.+?)\.?$",
+              "距 $2 以东 $1 帕拉桑"),
+            R(@"^(\d+)\s+parasangs?\s+west\s+of\s+(.+?)\.?$",
+              "距 $2 以西 $1 帕拉桑"),
+            R(@"^(\d+)\s+parasangs?\s+north\s+of\s+(.+?)\.?$",
+              "距 $2 以北 $1 帕拉桑"),
+            R(@"^(\d+)\s+parasangs?\s+south\s+of\s+(.+?)\.?$",
+              "距 $2 以南 $1 帕拉桑"),
             R(@"^Your larva gestated and you gained the (.+)\.$",
               "你的幼虫发育成熟，你获得了$1。"),
             R(@"^Your attack bounces harmlessly off of (.+)\.$",

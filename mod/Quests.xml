@@ -352,13 +352,13 @@
 	
 	<quest Name="The Golem" Level="40" Accomplishment="" Achievement="ACH_GOLEM">
 		<step ID="Soup" Name="Procure the Sanguine Fluid">
-			<text>把二十德拉姆（dram）「原初之汤」带给帕克斯·克兰克。</text>
+			<text>把二十德拉姆「原初之汤」带给帕克斯·克兰克。</text>
 		</step>
 		<step ID="Body" Name="Choose a Body">
 			<text>提供一名三十级或更高的随从。</text>
 		</step>
 		<step ID="Catalyst" Name="Choose a Catalyst">
-			<text>提供三德拉姆（dram）纯净液体。</text>
+			<text>提供三德拉姆纯净液体。</text>
 		</step>
 		<step ID="Atzmus" Name="Choose an Atzmus">
 			<text>提供一只生物的肢体。</text>
@@ -373,7 +373,7 @@
 			<text>提供一件重量不超过五磅的物品。</text>
 		</step>
 		<step ID="Power" Name="Acquire an Ascension Power Source">
-			<text>提供三德拉姆（dram）中子通量，或另寻一种能源。</text>
+			<text>提供三德拉姆中子通量，或另寻一种能源。</text>
 		</step>
 	</quest>
 

@@ -2,11 +2,11 @@
 <objects Load="Merge" Lang="zh-Hans" Encoding="utf-8">
   <object Name="GritGateCommPanel" Load="Merge">
     <part Name="Render" DisplayName="通讯面板"/>
-    <part Name="Description" Short="金属百叶窗扩散了双向扬声器的声音。 一个小按钮从底角弹出。 "/>
+    <part Name="Description" Short="金属百叶窗扩散了双向扬声器的声音。一个小按钮从底角弹出。 "/>
   </object>
   <object Name="GritGateMainframeRoomCommPanel" Load="Merge">
     <part Name="Render" DisplayName="通讯面板"/>
-    <part Name="Description" Short="金属百叶窗扩散了双向扬声器的声音。 一个小按钮从底角弹出。 "/>
+    <part Name="Description" Short="金属百叶窗扩散了双向扬声器的声音。一个小按钮从底角弹出。 "/>
   </object>
   <object Name="Bell of Rest" Load="Merge">
     <part Name="Render" DisplayName="安息之钟"/>
@@ -17,11 +17,11 @@
   </object>
   <object Name="Platform" Load="Merge">
     <part Name="Render" DisplayName="铬合金平台"/>
-    <part Name="Description" Short="一个黑色且带有格栅的金属平台，被时间的尘埃所覆盖。 其上交错着微小生物的足迹。 "/>
+    <part Name="Description" Short="一个黑色且带有格栅的金属平台，被时间的尘埃所覆盖。其上交错着微小生物的足迹。 "/>
   </object>
   <object Name="Marble Dais" Load="Merge">
     <part Name="Render" DisplayName="大理石基座"/>
-    <part Name="Description" Short="平滑的天蓝色大理石看起来像是全息光固化成的固体岩石。 边缘和角落镶嵌着金色。 "/>
+    <part Name="Description" Short="平滑的天蓝色大理石看起来像是全息光固化成的固体岩石。边缘和角落镶嵌着金色。 "/>
   </object>
   <object Name="NW Marble Dais" Load="Merge">
     <part Name="Render" DisplayName="大理石基座"/>
@@ -82,14 +82,14 @@
   </object>
   <object Name="Wavy Door" Load="Merge">
     <part Name="Render" DisplayName="门"/>
-    <part Name="Description" Short="由余弦锯切割的金属被精密焊接并安装到钢框架上。 锁框镀铬。 "/>
+    <part Name="Description" Short="由余弦锯切割的金属被精密焊接并安装到钢框架上。锁框镀铬。 "/>
   </object>
   <object Name="Metal Door" Load="Merge">
     <part Name="Render" DisplayName="门"/>
     <part Name="Description" Short="一道刻痕金属板嵌入门框，中央切出一个滑动面板。 "/>
   </object>
   <object Name="Double Door" Load="Merge">
-    <part Name="Description" Short="两扇门板上布满了岁月的痕迹，手印斑斑，铰链顶部的锈迹片片脱落。 然而，它们依然固执地守卫着‘内外’之分。 "/>
+    <part Name="Description" Short="两扇门板上布满了岁月的痕迹，手印斑斑，铰链顶部的锈迹片片脱落。然而，它们依然固执地守卫着‘内外’之分。 "/>
   </object>
   <object Name="Double Windowed Door" Load="Merge">
     <part Name="Description" Short="在这对门的某个时刻，一位居住者展开了他们的好奇心，在门上开了一扇观察孔。 "/>
@@ -107,7 +107,7 @@
     <part Name="Description" Short="从栏到栏的面板由横梁加固，以增强进出边缘的稳定性。 "/>
   </object>
   <object Name="BaseDoubleWavyDoor" Load="Merge">
-    <part Name="Description" Short="经过余弦锯切割的金属被精密焊接并安装到加宽的钢框架上。 锁柱用铬垫包裹。 "/>
+    <part Name="Description" Short="经过余弦锯切割的金属被精密焊接并安装到加宽的钢框架上。锁柱用铬垫包裹。 "/>
   </object>
   <object Name="BaseDoubleMetalDoor" Load="Merge">
     <part Name="Description" Short="一对凹槽金属板安装在双开门的拱顶上，其中心部分被切割成滑动面板。 "/>
@@ -126,23 +126,23 @@
   </object>
   <object Name="Security Door" Load="Merge">
     <part Name="Render" DisplayName="安全门"/>
-    <part Name="Description" Short="一道刻有纹路的金属板安装在门拱上，中央嵌入了一个滑动面板。 面板上印有钥匙卡的模具。 "/>
+    <part Name="Description" Short="一道刻有纹路的金属板安装在门拱上，中央嵌入了一个滑动面板。面板上印有钥匙卡的模具。 "/>
   </object>
   <object Name="Fused Security Door" Load="Merge">
     <part Name="Render" DisplayName="熔融安全门"/>
-    <part Name="Description" Short="一道皱褶的金属板嵌入门拱中。 其铰链和导轨已熔化并与墙框融为一体。 "/>
+    <part Name="Description" Short="一道皱褶的金属板嵌入门拱中。其铰链和导轨已熔化并与墙框融为一体。 "/>
   </object>
   <object Name="Troll Door" Load="Merge">
     <part Name="Render" DisplayName="下沉的金属门"/>
   </object>
   <object Name="Troll Door 1" Load="Merge">
-    <part Name="Description" Short="一扇涂有铜色的金属巨门倚靠在其古老的门框上。 门把手被一个精美的机械锁固定住。 "/>
+    <part Name="Description" Short="一扇涂有铜色的金属巨门倚靠在其古老的门框上。门把手被一个精美的机械锁固定住。 "/>
   </object>
   <object Name="Troll Door 2" Load="Merge">
-    <part Name="Description" Short="一块巨大的银色金属板从古老的门框中倾斜而出。 把手被一个精美的机械锁固定住。 "/>
+    <part Name="Description" Short="一块巨大的银色金属板从古老的门框中倾斜而出。把手被一个精美的机械锁固定住。 "/>
   </object>
   <object Name="Troll Door 3" Load="Merge">
-    <part Name="Description" Short="一块巨大的金色金属板斜靠在古老的门框上。 把手被一个精美的机械锁固定着。 "/>
+    <part Name="Description" Short="一块巨大的金色金属板斜靠在古老的门框上。把手被一个精美的机械锁固定着。 "/>
   </object>
   <object Name="Door_GritGateRank1" Load="Merge">
     <part Name="Render" DisplayName="门"/>
@@ -152,31 +152,31 @@
   </object>
   <object Name="Death Gate W" Load="Merge">
     <part Name="Render" DisplayName="死亡之门"/>
-    <part Name="Description" Short="帕提纳将巨大的青铜门变成了巨大的海藻和珊瑚架。 面板上高浮雕描绘了诗意的死亡： 锁链吊起倒置的金字塔穿过钙化的村庄、气体火焰和盐水拱顶。 骷髅琴师在浮雕上漫步，山羊在檐口咀嚼铜骨。 "/>
+    <part Name="Description" Short="帕提纳将巨大的青铜门变成了巨大的海藻和珊瑚架。面板上高浮雕描绘了诗意的死亡：锁链吊起倒置的金字塔穿过钙化的村庄、气体火焰和盐水拱顶。骷髅琴师在浮雕上漫步，山羊在檐口咀嚼铜骨。 "/>
   </object>
   <object Name="Death Gate E" Load="Merge">
     <part Name="Render" DisplayName="死亡之门"/>
-    <part Name="Description" Short="帕提纳将巨大的青铜门变成了巨大的海藻和珊瑚架。 面板上高浮雕描绘了诗意的死亡： 锁链吊起倒置的金字塔穿过钙化的村庄、气体火焰和盐水拱顶。 骷髅琴师在浮雕上漫步，山羊在檐口咀嚼铜骨。 "/>
+    <part Name="Description" Short="帕提纳将巨大的青铜门变成了巨大的海藻和珊瑚架。面板上高浮雕描绘了诗意的死亡：锁链吊起倒置的金字塔穿过钙化的村庄、气体火焰和盐水拱顶。骷髅琴师在浮雕上漫步，山羊在檐口咀嚼铜骨。 "/>
   </object>
   <object Name="Life Gate W" Load="Merge">
     <part Name="Render" DisplayName="生命之门"/>
-    <part Name="Description" Short="帕提纳将巨大的青铜门转变成海沫和珊瑚的大书架。 门板上以高浮雕描绘了生命的剧场： 棕榈叶将金字塔举向星空，水流从酒壶边缘倾泻而下。 恋人横跨浮雕，山羊在檐口咀嚼铜制反刍物。 "/>
+    <part Name="Description" Short="帕提纳将巨大的青铜门转变成海沫和珊瑚的大书架。门板上以高浮雕描绘了生命的剧场：棕榈叶将金字塔举向星空，水流从酒壶边缘倾泻而下。恋人横跨浮雕，山羊在檐口咀嚼铜制反刍物。 "/>
   </object>
   <object Name="Life Gate E" Load="Merge">
     <part Name="Render" DisplayName="生命之门"/>
-    <part Name="Description" Short="帕提纳将巨大的青铜门转变成海沫和珊瑚的大书架。 门板上以高浮雕描绘了生命的剧场： 棕榈叶将金字塔举向星空，水流从酒壶边缘倾泻而下。 恋人横跨浮雕，山羊在檐口咀嚼铜制反刍物。 "/>
+    <part Name="Description" Short="帕提纳将巨大的青铜门转变成海沫和珊瑚的大书架。门板上以高浮雕描绘了生命的剧场：棕榈叶将金字塔举向星空，水流从酒壶边缘倾泻而下。恋人横跨浮雕，山羊在檐口咀嚼铜制反刍物。 "/>
   </object>
   <object Name="Crypt Door" Load="Merge">
     <part Name="Render" DisplayName="雕刻精美的大理石门带铭牌"/>
-    <part Name="Description" Short="明亮的纹饰在门面的黑色大理石上勾勒出一生的意义。 一块纪念铭牌上刻写着家族姓氏。 "/>
+    <part Name="Description" Short="明亮的纹饰在门面的黑色大理石上勾勒出一生的意义。一块纪念铭牌上刻写着家族姓氏。 "/>
   </object>
   <object Name="Crypt Double Door N" Load="Merge">
     <part Name="Render" DisplayName="门"/>
-    <part Name="Description" Short="明亮的纹饰在门面的黑色大理石上勾勒出一生的意义。 一块纪念铭牌上刻写着家族姓氏。 "/>
+    <part Name="Description" Short="明亮的纹饰在门面的黑色大理石上勾勒出一生的意义。一块纪念铭牌上刻写着家族姓氏。 "/>
   </object>
   <object Name="Crypt Double Door S" Load="Merge">
     <part Name="Render" DisplayName="门"/>
-    <part Name="Description" Short="明亮的纹饰在门面的黑色大理石上勾勒出一生的意义。 一块纪念铭牌上刻写着家族姓氏。 "/>
+    <part Name="Description" Short="明亮的纹饰在门面的黑色大理石上勾勒出一生的意义。一块纪念铭牌上刻写着家族姓氏。 "/>
   </object>
   <object Name="Brightsheol Gate W" Load="Merge">
     <part Name="Render" DisplayName="通往明暗界之门"/>
@@ -186,7 +186,7 @@
   </object>
   <object Name="Recoming Nook Door" Load="Merge">
     <part Name="Render" DisplayName="雕刻精美的大理石门带铭牌"/>
-    <part Name="Description" Short="明亮的纹饰在门面的黑色大理石上勾勒出一生的意义。 一块纪念铭牌上刻写着家族姓氏。 "/>
+    <part Name="Description" Short="明亮的纹饰在门面的黑色大理石上勾勒出一生的意义。一块纪念铭牌上刻写着家族姓氏。 "/>
   </object>
   <object Name="Gate" Load="Merge">
     <part Name="Render" DisplayName="[大门]"/>
@@ -235,11 +235,11 @@
   </object>
   <object Name="Kiln" Load="Merge">
     <part Name="Render" DisplayName="熔炉"/>
-    <part Name="Description" Short="一层磨光的钢制外壳紧紧包裹着一个余烬未尽的火坑。 多种材料的烧痕覆盖在其侧面。 "/>
+    <part Name="Description" Short="一层磨光的钢制外壳紧紧包裹着一个余烬未尽的火坑。多种材料的烧痕覆盖在其侧面。 "/>
   </object>
   <object Name="Electric Generator" Load="Merge">
     <part Name="Render" DisplayName="电力发电机"/>
-    <part Name="Description" Short="一个封闭的转子通过手摇柄充电，并由太阳能热能补充。 其划痕累累的金属表面以地频振动。 "/>
+    <part Name="Description" Short="一个封闭的转子通过手摇柄充电，并由太阳能热能补充。其划痕累累的金属表面以地频振动。 "/>
   </object>
   <object Name="Induction Charging Station" Load="Merge">
     <part Name="Render" DisplayName="感应充电站"/>
@@ -252,15 +252,15 @@
   </object>
   <object Name="Clockthing_QGirl" Load="Merge">
     <part Name="Render" DisplayName="巴拉瑟鲁姆钟（带有{{M|Q女孩}}{{Y|摆锤}}）"/>
-    <part Name="Description" Short="Q女孩用一个摆锤替换了这台巴拉瑟鲁姆钟的老式振荡器。 现在，时间每天从观察者那里偷走的几个小时被减少到了几分钟。 "/>
+    <part Name="Description" Short="Q女孩用一个摆锤替换了这台巴拉瑟鲁姆钟的老式振荡器。现在，时间每天从观察者那里偷走的几个小时被减少到了几分钟。 "/>
   </object>
   <object Name="Hydraulic Bubblething" Load="Merge">
     <part Name="Render" DisplayName="液压黄铜泡沫发生器"/>
-    <part Name="Description" Short="在发明的过程中，你有时需要使用一种无定形的灰色泡沫。 或者至少有一天你会需要它，因此某个机智的修补匠提前解决了这个问题，发明了黄铜泡沫发生器。 底座上刻着： ‘所有的泡沫，没有因为有一天可能需要泡沫却没有而感到遗憾’。 "/>
+    <part Name="Description" Short="在发明的过程中，你有时需要使用一种无定形的灰色泡沫。或者至少有一天你会需要它，因此某个机智的修补匠提前解决了这个问题，发明了黄铜泡沫发生器。底座上刻着： ‘所有的泡沫，没有因为有一天可能需要泡沫却没有而感到遗憾’。 "/>
   </object>
   <object Name="Gas Burner" Load="Merge">
     <part Name="Render" DisplayName="气体燃烧器"/>
-    <part Name="Description" Short="气体通过软管被推送并点燃成火焰。 露水赋予了软管接头独特的质感。 "/>
+    <part Name="Description" Short="气体通过软管被推送并点燃成火焰。露水赋予了软管接头独特的质感。 "/>
   </object>
   <object Name="Powered Telescope" Load="Merge">
     <part Name="Render" DisplayName="动力望远镜"/>
@@ -268,15 +268,15 @@
   <object Name="Rock Tumbler" Load="Merge">
     <part Name="Render" DisplayName="岩石滚筒"/>
     <part Name="ItemConvertor" Preposition="成"/>
-    <part Name="Description" Short="橡胶衬里电机桶的内部结构。 一个装满黑色碳化硅磨料的罐子位于下腔，准备进行研磨。 "/>
+    <part Name="Description" Short="橡胶衬里电机桶的内部结构。一个装满黑色碳化硅磨料的罐子位于下腔，准备进行研磨。 "/>
   </object>
   <object Name="Lathe" Load="Merge">
     <part Name="Render" DisplayName="车床"/>
-    <part Name="Description" Short="手轮和主轴转动，磨削物质，赋予世界螺旋和圆形物体。 金属粉尘积聚在下方的地面上。 "/>
+    <part Name="Description" Short="手轮和主轴转动，磨削物质，赋予世界螺旋和圆形物体。金属粉尘积聚在下方的地面上。 "/>
   </object>
   <object Name="Solar Power Station" Load="Merge">
     <part Name="Render" DisplayName="{{W|太阳能}}发电站"/>
-    <part Name="Description" Short="光伏板排列在两个插槽状的新月形结构上。 它们旋转以获得最佳范围，并将太阳能传递给真空封装的飞轮。 "/>
+    <part Name="Description" Short="光伏板排列在两个插槽状的新月形结构上。它们旋转以获得最佳范围，并将太阳能传递给真空封装的飞轮。 "/>
   </object>
   <object Name="Solar Pumping Station" Load="Merge">
     <part Name="Render" DisplayName="{{W|太阳能}}{{c|泵站}}"/>
@@ -289,7 +289,7 @@
   <object Name="Universal Charging Station" Load="Merge">
     <part Name="Render" DisplayName="通用充电站"/>
     <part Name="Container" Preposition="上"/>
-    <part Name="Description" Short="金属制成的架子、垫子、石板和托架如同铬合金蜂巢。 电力被集中转化为电池能量，供应给插入的单元。 "/>
+    <part Name="Description" Short="金属制成的架子、垫子、石板和托架如同铬合金蜂巢。电力被集中转化为电池能量，供应给插入的单元。 "/>
   </object>
   <object Name="Hydraulic Turbine" Load="Merge">
     <part Name="Render" DisplayName="{{B|液压}}涡轮机"/>
@@ -297,23 +297,23 @@
   </object>
   <object Name="Hydraulic Press" Load="Merge">
     <part Name="Render" DisplayName="液压冲压机"/>
-    <part Name="Description" Short="一块平板剪切金属沿着横梁向下推进，液压活塞随之伸出。 其平坦的底部被垃圾碎片划出了沟槽。 "/>
+    <part Name="Description" Short="一块平板剪切金属沿着横梁向下推进，液压活塞随之伸出。其平坦的底部被垃圾碎片划出了沟槽。 "/>
   </object>
   <object Name="Force Projector" Load="Merge">
     <part Name="Render" DisplayName="力场投影仪"/>
-    <part Name="Description" Short="玻璃和钢铁框架内部，力场流体如海洋般汹涌澎湃。 随后，这些流体被发电机粉碎成固态物质，并投射到空间中形成力场。 "/>
+    <part Name="Description" Short="玻璃和钢铁框架内部，力场流体如海洋般汹涌澎湃。随后，这些流体被发电机粉碎成固态物质，并投射到空间中形成力场。 "/>
   </object>
   <object Name="Fluxthing" Load="Merge">
     <part Name="Render" DisplayName="流变仪"/>
-    <part Name="Description" Short="四个法兰接头形成一个十字架，中心有一个波形图读数。 当液体和气体通过管道时，流变数据以霓虹灯的形式显示。 "/>
+    <part Name="Description" Short="四个法兰接头形成一个十字架，中心有一个波形图读数。当液体和气体通过管道时，流变数据以霓虹灯的形式显示。 "/>
   </object>
   <object Name="Electrothing" Load="Merge">
     <part Name="Render" DisplayName="电弧灯"/>
-    <part Name="Description" Short="两个铜制灯泡形成了一个火花间隙，使电流沿电离气体路径传导。 这东西对着你噼啪作响并闪烁着火花。 "/>
+    <part Name="Description" Short="两个铜制灯泡形成了一个火花间隙，使电流沿电离气体路径传导。这东西对着你噼啪作响并闪烁着火花。 "/>
   </object>
   <object Name="Unicomputer" Load="Merge">
     <part Name="Render" DisplayName="万能计算机"/>
-    <part Name="Description" Short="金属外壳内，琥珀色的符文沿着阴极射线绘制的扫描线移动。 锥形键安静地排列成行。 "/>
+    <part Name="Description" Short="金属外壳内，琥珀色的符文沿着阴极射线绘制的扫描线移动。锥形键安静地排列成行。 "/>
   </object>
   <object Name="Liquid-Cooled Unicomputer" Load="Merge">
     <part Name="Render" DisplayName="液冷单计算机"/>
@@ -345,11 +345,11 @@
   </object>
   <object Name="Industrial Fan" Load="Merge">
     <part Name="Render" DisplayName="工业风扇"/>
-    <part Name="Description" Short="巨大的翼型叶片被安置在一个布满时间痕迹的金属环内。 在遥远的过去，有人曾用它来大规模地引导气流。 "/>
+    <part Name="Description" Short="巨大的翼型叶片被安置在一个布满时间痕迹的金属环内。在遥远的过去，有人曾用它来大规模地引导气流。 "/>
   </object>
   <object Name="Glass Printer" Load="Merge">
     <part Name="Render" DisplayName="玻璃打印机"/>
-    <part Name="Description" Short="青铜框架的玻璃窗后是可编程的玻璃制造工具： 用于热加工的炉子和吹管，以及用于冷加工的油壶和轮盘。 "/>
+    <part Name="Description" Short="青铜框架的玻璃窗后是可编程的玻璃制造工具：用于热加工的炉子和吹管，以及用于冷加工的油壶和轮盘。 "/>
   </object>
   <object Name="Regen Tank" Load="Merge">
     <part Name="Render" DisplayName="再生舱"/>
@@ -357,15 +357,15 @@
   </object>
   <object Name="Psiamp Sarcophagus" Load="Merge">
     <part Name="Render" DisplayName="灵能石棺"/>
-    <part Name="Description" Short="它由异界的石灰岩制成。 这种石头采自一颗围绕昏暗恒星旋转的漂浮世界，那颗恒星微弱的光芒并未将虚空物质从岩石的珊瑚中漂白。 如今，它将沉睡者与物质世界的光线隔绝，并将其引导至心灵以太。 "/>
+    <part Name="Description" Short="它由异界的石灰岩制成。这种石头采自一颗围绕昏暗恒星旋转的漂浮世界，那颗恒星微弱的光芒并未将虚空物质从岩石的珊瑚中漂白。如今，它将沉睡者与物质世界的光线隔绝，并将其引导至心灵以太。 "/>
   </object>
   <object Name="Base Ring Gate" Load="Merge">
     <part Name="Render" DisplayName="门"/>
-    <part Name="Description" Short="水流丝带攀爬着骨白色的大理石柱，在高浮雕中蜿蜒而上。 它们沿着拱肩盘旋，穿过螺旋环，最后在拱顶石处急剧向上转弯。 这里变为彼处。 "/>
+    <part Name="Description" Short="水流丝带攀爬着骨白色的大理石柱，在高浮雕中蜿蜒而上。它们沿着拱肩盘旋，穿过螺旋环，最后在拱顶石处急剧向上转弯。这里变为彼处。 "/>
   </object>
   <object Name="Ruined Ring Gate" Load="Merge">
     <part Name="Render" DisplayName="残破的门"/>
-    <part Name="Description" Short="高浮雕的水带从破裂的大理石上剥落。 曾经封闭旅人前行之路的拱门碎片如今散落在别处的平滑地面上。 "/>
+    <part Name="Description" Short="高浮雕的水带从破裂的大理石上剥落。曾经封闭旅人前行之路的拱门碎片如今散落在别处的平滑地面上。 "/>
   </object>
   <object Name="CrematoryConveyorPad" Load="Merge">
     <part Name="Description" Short="骨灰色的灰烬粘附在扁平的黑色二橡胶凹槽上。 "/>
@@ -380,11 +380,11 @@
   </object>
   <object Name="Air Well" Load="Merge">
     <part Name="Render" DisplayName="气井"/>
-    <part Name="Description" Short="石块被雕琢成一个粗糙的穹顶，穹顶上排列着方形且间距均匀的窗户，以便空气流通。 穹顶内部温度的微小差异使空气中的露水凝结，并在下方的集水槽中积聚。 "/>
+    <part Name="Description" Short="石块被雕琢成一个粗糙的穹顶，穹顶上排列着方形且间距均匀的窗户，以便空气流通。穹顶内部温度的微小差异使空气中的露水凝结，并在下方的集水槽中积聚。 "/>
   </object>
   <object Name="Solar Still" Load="Merge">
     <part Name="Render" DisplayName="太阳能蒸馏器"/>
-    <part Name="Description" Short="盐太阳的热量蒸发了咸水。 当水再次凝结时，它被分离成纯净和不纯净的元素： 盐附着在蒸馏器上，而淡水则收集在水槽中。 "/>
+    <part Name="Description" Short="盐太阳的热量蒸发了咸水。当水再次凝结时，它被分离成纯净和不纯净的元素：盐附着在蒸馏器上，而淡水则收集在水槽中。 "/>
   </object>
   <object Name="Solar Condenser" Load="Merge">
     <part Name="Render" DisplayName="太阳能浓缩器"/>
@@ -392,7 +392,7 @@
   </object>
   <object Name="GritGateChromeBeacon" Load="Merge">
     <part Name="Render" DisplayName="铬灵信号中继器"/>
-    <part Name="Description" Short="正弦波在玻璃月上破碎，编码了聚落机械子嗣的行为原语。 电子场将它们吸入天线并送入以太。 "/>
+    <part Name="Description" Short="正弦波在玻璃月上破碎，编码了聚落机械子嗣的行为原语。电子场将它们吸入天线并送入以太。 "/>
   </object>
   <object Name="Reclamation Cist" Load="Merge">
     <part Name="Render" DisplayName="{{r|回收罐}}"/>
@@ -408,7 +408,7 @@
   </object>
   <object Name="NormCore" Load="Merge">
     <part Name="Render" DisplayName="规范核心"/>
-    <part Name="Description" Short="钻石歧管将石英加压成其ê形态，在局部区域的龙脉上结晶时空。 正常性的凝结液滴在烟道上折射出内部维度的光芒。 "/>
+    <part Name="Description" Short="钻石歧管将石英加压成其ê形态，在局部区域的龙脉上结晶时空。正常性的凝结液滴在烟道上折射出内部维度的光芒。 "/>
   </object>
   <object Name="NormCore1" Load="Merge">
     <part Name="Render" DisplayName="标准核心Mk I"/>
@@ -425,11 +425,11 @@
   </object>
   <object Name="Melted Pad" Load="Merge">
     <part Name="Render" DisplayName="蔓生泡沫垫"/>
-    <part Name="Description" Short="富勒烯边缘的纹饰熔成了明亮的白色，滴落在裂开的泡沫垫上。 裂缝中迅速长出百合幼苗，生命向外蔓延。 "/>
+    <part Name="Description" Short="富勒烯边缘的纹饰熔成了明亮的白色，滴落在裂开的泡沫垫上。裂缝中迅速长出百合幼苗，生命向外蔓延。 "/>
   </object>
   <object Name="Reshaping Nook" Load="Merge">
     <part Name="Render" DisplayName="重塑角落"/>
-    <part Name="Description" Short="特征性的玻璃拱门标志着这个角落被改造和剥离了原有用途。 一只机械爪伸出来用于焊接和塑形，在底部的滚筒中，新鲜湿润的粘土轮不断旋转，准备进行日渣发酵。 "/>
+    <part Name="Description" Short="特征性的玻璃拱门标志着这个角落被改造和剥离了原有用途。一只机械爪伸出来用于焊接和塑形，在底部的滚筒中，新鲜湿润的粘土轮不断旋转，准备进行日渣发酵。 "/>
   </object>
   <object Name="Reshaping Pad" Load="Merge">
     <part Name="Render" DisplayName="重塑垫"/>
@@ -473,7 +473,7 @@
   </object>
   <object Name="Crib" Load="Merge">
     <part Name="Render" DisplayName="摇篮"/>
-    <part Name="Description" Short="木条对孩童而言如同巨石。 羽绒枕是冰冷的草地。 这里是他们黄昏世界的边界。 "/>
+    <part Name="Description" Short="木条对孩童而言如同巨石。羽绒枕是冰冷的草地。这里是他们黄昏世界的边界。 "/>
   </object>
   <object Name="Folding Cot" Load="Merge">
     <part Name="Render" DisplayName="折叠行军床"/>
@@ -481,11 +481,11 @@
   </object>
   <object Name="Hammock" Load="Merge">
     <part Name="Render" DisplayName="吊床"/>
-    <part Name="Description" Short="盐草编织成绳网鞍，悬挂在两棵老橡树之间供人小憩。 中间下垂的部分因躺卧者的体重而格外磨损。 "/>
+    <part Name="Description" Short="盐草编织成绳网鞍，悬挂在两棵老橡树之间供人小憩。中间下垂的部分因躺卧者的体重而格外磨损。 "/>
   </object>
   <object Name="Four-Poster Bed" Load="Merge">
     <part Name="Render" DisplayName="四柱床"/>
-    <part Name="Description" Short="木材精心雕琢成柱子并装饰雕刻。 从斯维河畔的缝纫女工那里交易来的绗缝羽绒被层层叠叠，如同蛋糕般铺好，并用枕头装饰。 在这里，有钱的睡眠者找到了通往梦之谷的入口。 "/>
+    <part Name="Description" Short="木材精心雕琢成柱子并装饰雕刻。从斯维河畔的缝纫女工那里交易来的绗缝羽绒被层层叠叠，如同蛋糕般铺好，并用枕头装饰。在这里，有钱的睡眠者找到了通往梦之谷的入口。 "/>
   </object>
   <object Name="Medical Bed" Load="Merge">
     <part Name="Render" DisplayName="消化床"/>
@@ -493,11 +493,11 @@
   </object>
   <object Name="Waterbed" Load="Merge">
     <part Name="Render" DisplayName="水床"/>
-    <part Name="Description" Short="木板以山民特有的直角方式排列。 然而，代替干草垫的是一张充满黏稠水的塑料床垫，这是那些渴望湖波的筏漂者所偏爱的替代品。 "/>
+    <part Name="Description" Short="木板以山民特有的直角方式排列。然而，代替干草垫的是一张充满黏稠水的塑料床垫，这是那些渴望湖波的筏漂者所偏爱的替代品。 "/>
   </object>
   <object Name="Bedger" Load="Merge">
     <part Name="Render" DisplayName="熊形床榻"/>
-    <part Name="Description" Short="休闲历史学家将所有时代分为三个时期： 熊类生物进化或文明兴起之前的时代，熊类生物占据主导地位到文明有能力模仿它们制作沙发的时代，以及文明衰落之后的时代。 "/>
+    <part Name="Description" Short="休闲历史学家将所有时代分为三个时期：熊类生物进化或文明兴起之前的时代，熊类生物占据主导地位到文明有能力模仿它们制作沙发的时代，以及文明衰落之后的时代。 "/>
   </object>
   <object Name="Hyperbiotic Bed" Load="Merge">
     <part Name="Render" DisplayName="超生物床"/>
@@ -524,7 +524,7 @@
   </object>
   <object Name="Stool" Load="Merge">
     <part Name="Render" DisplayName="凳子"/>
-    <part Name="Description" Short="一切都在变化，没有固定之物，坐着的人必须为下一个瞬间做好准备，那时闲暇的记忆将在神经质的象征中被烧毁。 凳子遵循这些真理。 "/>
+    <part Name="Description" Short="一切都在变化，没有固定之物，坐着的人必须为下一个瞬间做好准备，那时闲暇的记忆将在神经质的象征中被烧毁。凳子遵循这些真理。 "/>
   </object>
   <object Name="Canvas Folding Chair" Load="Merge">
     <part Name="Render" DisplayName="帆布折叠椅"/>
@@ -548,7 +548,7 @@
   </object>
   <object Name="Work Chair" Load="Merge">
     <part Name="Render" DisplayName="滚轮椅"/>
-    <part Name="Description" Short="紧身黑色网布可矫正脊椎。 轮子从万向轮降下并移动。 "/>
+    <part Name="Description" Short="紧身黑色网布可矫正脊椎。轮子从万向轮降下并移动。 "/>
   </object>
   <object Name="Ergomax Chair" Load="Merge">
     <part Name="Render" DisplayName="思椅"/>
@@ -556,11 +556,11 @@
   </object>
   <object Name="Chairbear" Load="Merge">
     <part Name="Render" DisplayName="椅熊"/>
-    <part Name="Description" Short="休闲历史学家将所有时代分为三个时期： 熊类生物进化或文明兴起之前的时代，熊类生物占据主导地位到文明有能力模仿它们制作沙发的时代，以及文明衰落之后的时代。 "/>
+    <part Name="Description" Short="休闲历史学家将所有时代分为三个时期：熊类生物进化或文明兴起之前的时代，熊类生物占据主导地位到文明有能力模仿它们制作沙发的时代，以及文明衰落之后的时代。 "/>
   </object>
   <object Name="Torture Chair" Load="Merge">
     <part Name="Render" DisplayName="拷问椅"/>
-    <part Name="Description" Short="在这新的背景下，消化椅显得格外威胁。 塑料座椅上干涸的血迹斑斑，导管如同一簇蠕虫般散乱。 "/>
+    <part Name="Description" Short="在这新的背景下，消化椅显得格外威胁。塑料座椅上干涸的血迹斑斑，导管如同一簇蠕虫般散乱。 "/>
   </object>
   <object Name="Hyperbiotic Chair" Load="Merge">
     <part Name="Render" DisplayName="超生物椅"/>
@@ -573,11 +573,11 @@
   </object>
   <object Name="Ornate Chair" Load="Merge">
     <part Name="Render" DisplayName="雕花椅"/>
-    <part Name="Description" Short="坐垫的丰满度经过精心设计，适合思考者久坐；尖拱形靠背增添了趣味性，而爪球脚则暗示了这件家具内部隐藏的生命。 这是一把充满寓意的椅子。 "/>
+    <part Name="Description" Short="坐垫的丰满度经过精心设计，适合思考者久坐；尖拱形靠背增添了趣味性，而爪球脚则暗示了这件家具内部隐藏的生命。这是一把充满寓意的椅子。 "/>
   </object>
   <object Name="Ornate Bench" Load="Merge">
     <part Name="Render" DisplayName="雕花长凳"/>
-    <part Name="Description" Short="公会家具工匠们在食者之阳下明亮的工作室里密谋，将垫子拉伸到正好适合两位热恋情人的尺寸，并在直角处镶嵌了一颗令人愉悦的钻石。 爪球脚设计暗示了动感。 "/>
+    <part Name="Description" Short="公会家具工匠们在食者之阳下明亮的工作室里密谋，将垫子拉伸到正好适合两位热恋情人的尺寸，并在直角处镶嵌了一颗令人愉悦的钻石。爪球脚设计暗示了动感。 "/>
   </object>
   <object Name="Scrapasan" Load="Merge">
     <part Name="Render" DisplayName="废料篮椅"/>
@@ -585,7 +585,7 @@
   </object>
   <object Name="Starmchair" Load="Merge">
     <part Name="Render" DisplayName="星海椅"/>
-    <part Name="Description" Short="海星的触手被填充了植物物质，固定成一个凹形圆盘，完美地适应了两足生物的坐姿。 中央的触手保持颈部挺直，而底部的细刺则提供微妙的治疗刺激。 "/>
+    <part Name="Description" Short="海星的触手被填充了植物物质，固定成一个凹形圆盘，完美地适应了两足生物的坐姿。中央的触手保持颈部挺直，而底部的细刺则提供微妙的治疗刺激。 "/>
   </object>
   <object Name="Sofa" Load="Merge">
     <part Name="Render" DisplayName="沙发"/>
@@ -602,35 +602,35 @@
   </object>
   <object Name="Chest" Load="Merge">
     <part Name="Render" DisplayName="箱子"/>
-    <part Name="Description" Short="一个带有铰链盖和锁扣的木制储物箱。 表面刻有凹槽，暗示了语言的完整概率阵列及其缺失。 "/>
+    <part Name="Description" Short="一个带有铰链盖和锁扣的木制储物箱。表面刻有凹槽，暗示了语言的完整概率阵列及其缺失。 "/>
   </object>
   <object Name="ChestIsner" Load="Merge">
-    <part Name="Description" Short="一个带有铰链盖和锁扣的木制储物箱。 表面刻有划痕，暗示了语言的概率全集及其缺失。 一个敞开的锁上刻有一滴溅出的水。 "/>
+    <part Name="Description" Short="一个带有铰链盖和锁扣的木制储物箱。表面刻有划痕，暗示了语言的概率全集及其缺失。一个敞开的锁上刻有一滴溅出的水。 "/>
     <part Name="Render" DisplayName="箱子"/>
   </object>
   <object Name="Metal Chest1" Load="Merge">
-    <part Name="Description" Short="暗淡的钢表面镶有黄铜边角，上面布满了手指的痕迹。 盖子紧闭。 "/>
+    <part Name="Description" Short="暗淡的钢表面镶有黄铜边角，上面布满了手指的痕迹。盖子紧闭。 "/>
   </object>
   <object Name="Metal Chest2" Load="Merge">
-    <part Name="Description" Short="暗淡的钢表面镶有黄铜边角，上面布满了手指的痕迹。 盖子紧闭。 "/>
+    <part Name="Description" Short="暗淡的钢表面镶有黄铜边角，上面布满了手指的痕迹。盖子紧闭。 "/>
   </object>
   <object Name="Metal Chest3" Load="Merge">
-    <part Name="Description" Short="暗淡的钢表面镶有黄铜边角，上面布满了手指的痕迹。 盖子紧闭。 "/>
+    <part Name="Description" Short="暗淡的钢表面镶有黄铜边角，上面布满了手指的痕迹。盖子紧闭。 "/>
   </object>
   <object Name="Metal Chest4" Load="Merge">
-    <part Name="Description" Short="暗淡的钢表面镶有黄铜边角，上面布满了手指的痕迹。 盖子紧闭。 "/>
+    <part Name="Description" Short="暗淡的钢表面镶有黄铜边角，上面布满了手指的痕迹。盖子紧闭。 "/>
   </object>
   <object Name="Metal Chest5" Load="Merge">
-    <part Name="Description" Short="暗淡的钢表面镶有黄铜边角，上面布满了手指的痕迹。 盖子紧闭。 "/>
+    <part Name="Description" Short="暗淡的钢表面镶有黄铜边角，上面布满了手指的痕迹。盖子紧闭。 "/>
   </object>
   <object Name="Metal Chest6" Load="Merge">
-    <part Name="Description" Short="暗淡的钢表面镶有黄铜边角，上面布满了手指的痕迹。 盖子紧闭。 "/>
+    <part Name="Description" Short="暗淡的钢表面镶有黄铜边角，上面布满了手指的痕迹。盖子紧闭。 "/>
   </object>
   <object Name="Metal Chest7" Load="Merge">
-    <part Name="Description" Short="暗淡的钢表面镶有黄铜边角，上面布满了手指的痕迹。 盖子紧闭。 "/>
+    <part Name="Description" Short="暗淡的钢表面镶有黄铜边角，上面布满了手指的痕迹。盖子紧闭。 "/>
   </object>
   <object Name="Metal Chest8" Load="Merge">
-    <part Name="Description" Short="暗淡的钢表面镶有黄铜边角，上面布满了手指的痕迹。 盖子紧闭。 "/>
+    <part Name="Description" Short="暗淡的钢表面镶有黄铜边角，上面布满了手指的痕迹。盖子紧闭。 "/>
   </object>
   <object Name="FossilizedRemains" Load="Merge">
     <part Name="Render" DisplayName="化石遗骸"/>
@@ -642,7 +642,7 @@
   </object>
   <object Name="MedLocker" Load="Merge">
     <part Name="Render" DisplayName="医疗柜"/>
-    <part Name="Description" Short="暗淡的钢制表面布满了指纹。 盖子上涂有红色十字，并已锁紧。 "/>
+    <part Name="Description" Short="暗淡的钢制表面布满了指纹。盖子上涂有红色十字，并已锁紧。 "/>
   </object>
   <object Name="Locker" Load="Merge">
     <part Name="Render" DisplayName="储物柜"/>
@@ -650,7 +650,7 @@
   </object>
   <object Name="Scrapable Deposit Box 6" Load="Merge">
     <part Name="Render" DisplayName="可刮取的储物箱"/>
-    <part Name="Description" Short="金属板将铬合金箱分割成金色矩形。 内部，文物等待着它们预定的磨损，重新回归矿物形态。 "/>
+    <part Name="Description" Short="金属板将铬合金箱分割成金色矩形。内部，文物等待着它们预定的磨损，重新回归矿物形态。 "/>
   </object>
   <object Name="Weapon Rack" Load="Merge">
     <part Name="Render" DisplayName="武器架"/>
@@ -680,11 +680,11 @@
   </object>
   <object Name="SultanReliquaryW" Load="Merge">
     <part Name="Render" DisplayName="遗物匣"/>
-    <part Name="Description" Short="独眼巨人大理石板围住了一个禁制棱镜，用于存放帝国宝藏，包括生物和主权之面。 在其广阔的表面上，金色图案描绘了生命及其边界的几何序列；水流沿着世界柱像的身体流淌，然后卷回天空。 "/>
+    <part Name="Description" Short="独眼巨人大理石板围住了一个禁制棱镜，用于存放帝国宝藏，包括生物和主权之面。在其广阔的表面上，金色图案描绘了生命及其边界的几何序列；水流沿着世界柱像的身体流淌，然后卷回天空。 "/>
   </object>
   <object Name="SultanReliquaryE" Load="Merge">
     <part Name="Render" DisplayName="遗物匣"/>
-    <part Name="Description" Short="独眼巨人大理石板围住了一个禁制棱镜，用于存放帝国宝藏，包括生物和主权之面。 在其广阔的表面上，金色图案描绘了生命及其边界的几何序列；水流沿着世界柱像的身体流淌，然后卷回天空。 "/>
+    <part Name="Description" Short="独眼巨人大理石板围住了一个禁制棱镜，用于存放帝国宝藏，包括生物和主权之面。在其广阔的表面上，金色图案描绘了生命及其边界的几何序列；水流沿着世界柱像的身体流淌，然后卷回天空。 "/>
   </object>
   <object Name="Recoming Reliquary" Load="Merge">
     <part Name="Render" DisplayName="复归圣物箱"/>
@@ -724,19 +724,19 @@
   </object>
   <object Name="Techlight1" Load="Merge">
     <part Name="Render" DisplayName="弧形壁灯"/>
-    <part Name="Description" Short="铬制尖端构成了这个实用灯具的顶点。 光芒从其边缘迸发，照亮了世界。 "/>
+    <part Name="Description" Short="铬制尖端构成了这个实用灯具的顶点。光芒从其边缘迸发，照亮了世界。 "/>
   </object>
   <object Name="Techlight2" Load="Merge">
     <part Name="Render" DisplayName="弧形壁灯"/>
-    <part Name="Description" Short="铬制尖端构成了这个实用灯具的顶点。 光芒从其边缘迸发，照亮了世界。 "/>
+    <part Name="Description" Short="铬制尖端构成了这个实用灯具的顶点。光芒从其边缘迸发，照亮了世界。 "/>
   </object>
   <object Name="Techlight3" Load="Merge">
     <part Name="Render" DisplayName="弧形壁灯"/>
-    <part Name="Description" Short="铬制尖端构成了这个实用灯具的顶点。 光芒从其边缘迸发，照亮了世界。 "/>
+    <part Name="Description" Short="铬制尖端构成了这个实用灯具的顶点。光芒从其边缘迸发，照亮了世界。 "/>
   </object>
   <object Name="Full-Spectrum Techlight" Load="Merge">
     <part Name="Render" DisplayName="全光谱亮壁灯"/>
-    <part Name="Description" Short="铬制尖端构成了这个实用照明装置的顶点。 全光谱的光芒从其边缘迸发，照亮了整个世界。 "/>
+    <part Name="Description" Short="铬制尖端构成了这个实用照明装置的顶点。全光谱的光芒从其边缘迸发，照亮了整个世界。 "/>
   </object>
   <object Name="Half Candelabra" Load="Merge">
     <part Name="Render" DisplayName="烛台"/>
@@ -748,11 +748,11 @@
   </object>
   <object Name="Tomb Techlight1" Load="Merge">
     <part Name="Render" DisplayName="弧形壁灯"/>
-    <part Name="Description" Short="铬制尖点构成了这件装饰灯具的顶点。 光芒从其边缘迸发，照亮了整个世界。 "/>
+    <part Name="Description" Short="铬制尖点构成了这件装饰灯具的顶点。光芒从其边缘迸发，照亮了整个世界。 "/>
   </object>
   <object Name="Vase" Load="Merge">
     <part Name="Render" DisplayName="花瓶"/>
-    <part Name="Description" Short="一个大型储物花瓶，带有装饰性的釉面。 其风格暗示它是在峡谷居民的家庭窑中烧制的。 "/>
+    <part Name="Description" Short="一个大型储物花瓶，带有装饰性的釉面。其风格暗示它是在峡谷居民的家庭窑中烧制的。 "/>
   </object>
   <object Name="Vase Unhandled" Load="Merge">
     <part Name="Render" DisplayName="花瓶"/>
@@ -771,15 +771,15 @@
   </object>
   <object Name="Bottle" Load="Merge">
     <part Name="Render" DisplayName="玻璃瓶"/>
-    <part Name="Description" Short="一件自由吹制的玻璃容器，其形状呈月牙弧度。 这种风格暗示它源自莫格拉伊对面的焚神海沿岸，并可能由商队出口。 "/>
+    <part Name="Description" Short="一件自由吹制的玻璃容器，其形状呈月牙弧度。这种风格暗示它源自莫格拉伊对面的焚神海沿岸，并可能由商队出口。 "/>
   </object>
   <object Name="Wide Bottle" Load="Merge">
     <part Name="Render" DisplayName="宽口玻璃瓶"/>
-    <part Name="Description" Short="这瓶子按照林地覆盖的拉吉诺斯山的传统吹制而成，瓶身宽阔如碗，瓶颈纤细。 这种风格的首批匠人是否在木萨森林浓密而成熟的空气中工作？纺锤是否曾用闪耀的尘埃点缀他们的成形台和吹管？"/>
+    <part Name="Description" Short="这瓶子按照林地覆盖的拉吉诺斯山的传统吹制而成，瓶身宽阔如碗，瓶颈纤细。这种风格的首批匠人是否在木萨森林浓密而成熟的空气中工作？纺锤是否曾用闪耀的尘埃点缀他们的成形台和吹管？"/>
   </object>
   <object Name="Pitcher" Load="Merge">
     <part Name="Render" DisplayName="陶土水罐"/>
-    <part Name="Description" Short="这陶器是在晨光柔和的温暖中首次在陶轮上成型的。 探险者精心塑造了瓶口，以保存珍贵的生命之液。 "/>
+    <part Name="Description" Short="这陶器是在晨光柔和的温暖中首次在陶轮上成型的。探险者精心塑造了瓶口，以保存珍贵的生命之液。 "/>
   </object>
   <object Name="Ewer" Load="Merge">
     <part Name="Render" DisplayName="水罐"/>
@@ -803,11 +803,11 @@
   </object>
   <object Name="Recoming Water Jug" Load="Merge">
     <part Name="Render" DisplayName="初饮之器"/>
-    <part Name="Description" Short="陶土在陶轮上旋转成波浪状，烧制并上釉成仪式用器皿。 两个象形文字并排： ‘生命’和‘饮用’。 "/>
+    <part Name="Description" Short="陶土在陶轮上旋转成波浪状，烧制并上釉成仪式用器皿。两个象形文字并排： ‘生命’和‘饮用’。 "/>
   </object>
   <object Name="Melted Jug" Load="Merge">
     <part Name="Render" DisplayName="裂纹装饰器皿"/>
-    <part Name="Description" Short="上釉并高温烧制的陶土裂开了。 两个象形文字已变得无法辨认。 "/>
+    <part Name="Description" Short="上釉并高温烧制的陶土裂开了。两个象形文字已变得无法辨认。 "/>
   </object>
   <object Name="Cider Pitcher" Load="Merge">
     <part Name="Render" DisplayName="陶土水罐"/>
@@ -879,12 +879,12 @@
   </object>
   <object Name="ChavvahOven" Load="Merge">
     <part Name="Render" DisplayName="水晶烤炉"/>
-    <part Name="Description" Short="圆形的水晶烤炉中燃烧着噼啪作响的火焰，散发出温暖的气息，随之而来的还有冷却静电的味道。 奇怪的是，这里没有准备好的食材。 "/>
+    <part Name="Description" Short="圆形的水晶烤炉中燃烧着噼啪作响的火焰，散发出温暖的气息，随之而来的还有冷却静电的味道。奇怪的是，这里没有准备好的食材。 "/>
   </object>
   <object Name="Table" Load="Merge">
     <part Name="Render" DisplayName="桌子"/>
     <part Name="Container" Preposition="上"/>
-    <part Name="Description" Short="这棵活树的枝条被重新吸收并重塑成树干结节。 数百年后，峡谷木匠的油锯打破了树木的几何结构，将其平整化以供民用。 那段历史如今仍以二维的形式存在，上面撒满了灰尘，用铅笔刻下了痕迹。 "/>
+    <part Name="Description" Short="这棵活树的枝条被重新吸收并重塑成树干结节。数百年后，峡谷木匠的油锯打破了树木的几何结构，将其平整化以供民用。那段历史如今仍以二维的形式存在，上面撒满了灰尘，用铅笔刻下了痕迹。 "/>
   </object>
   <object Name="Metal Table" Load="Merge">
     <part Name="Render" DisplayName="金属桌"/>
@@ -892,18 +892,18 @@
   </object>
   <object Name="Workbench" Load="Merge">
     <part Name="Render" DisplayName="工作台"/>
-    <part Name="Description" Short="含水量适中的结节木材支撑着地面的重量，形成直角。 烧痕和盐晶装饰着凹槽。 "/>
+    <part Name="Description" Short="含水量适中的结节木材支撑着地面的重量，形成直角。烧痕和盐晶装饰着凹槽。 "/>
   </object>
   <object Name="Metal Workbench" Load="Merge">
     <part Name="Render" DisplayName="金属工作台"/>
   </object>
   <object Name="Desk" Load="Merge">
     <part Name="Render" DisplayName="书桌"/>
-    <part Name="Description" Short="木材从湿润的林地被抢救出来，削成木板，然后运送到石桥上的自由领地。 在那里，木匠们适应了干燥的空气，热切地接收了这些珍贵的木材用于自己的项目。 "/>
+    <part Name="Description" Short="木材从湿润的林地被抢救出来，削成木板，然后运送到石桥上的自由领地。在那里，木匠们适应了干燥的空气，热切地接收了这些珍贵的木材用于自己的项目。 "/>
   </object>
   <object Name="Sleek Table" Load="Merge">
     <part Name="Render" DisplayName="桌子"/>
-    <part Name="Description" Short="一个锋利的矩形似乎被平衡在一个金属杆上，下方是一个较小的矩形，形成了一个稳固的工作表面。 没有可见的焊接痕迹。 "/>
+    <part Name="Description" Short="一个锋利的矩形似乎被平衡在一个金属杆上，下方是一个较小的矩形，形成了一个稳固的工作表面。没有可见的焊接痕迹。 "/>
   </object>
   <object Name="Low Table" Load="Merge">
     <part Name="Render" DisplayName="低桌"/>
@@ -922,11 +922,11 @@
   <object Name="Book Table" Load="Merge">
     <part Name="Render" DisplayName="书桌"/>
     <part Name="Container" Preposition="上"/>
-    <part Name="Description" Short="居于地缝中的居民以谜盒的风格制作桌子。 它们的抽屉里藏着速记的想象。 "/>
+    <part Name="Description" Short="居于地缝中的居民以谜盒的风格制作桌子。它们的抽屉里藏着速记的想象。 "/>
   </object>
   <object Name="Ornate Table" Load="Merge">
     <part Name="Render" DisplayName="雕花桌"/>
-    <part Name="Description" Short="奢华的桌腿上刻有铬合金图案，逐渐收窄成爪球足。 大理石桌面上的几何瑕疵被刮除并丢入一个可能至今仍存在的铁桶中。 食者曾在此交谈并策划。 "/>
+    <part Name="Description" Short="奢华的桌腿上刻有铬合金图案，逐渐收窄成爪球足。大理石桌面上的几何瑕疵被刮除并丢入一个可能至今仍存在的铁桶中。食者曾在此交谈并策划。 "/>
   </object>
   <object Name="Alchemist Table" Load="Merge">
     <part Name="Render" DisplayName="炼金术士的桌子"/>
@@ -949,7 +949,7 @@
   </object>
   <object Name="Globe" Load="Merge">
     <part Name="Render" DisplayName="地球仪"/>
-    <part Name="Description" Short="在这个球形模型的蓝宝石表面上，沙色的形状以高浮雕的形式折叠和交织。 比例尺的对比、海洋与陆地的比例，以及创造这一奇迹所汇集的集体智慧，令人头晕目眩。 "/>
+    <part Name="Description" Short="在这个球形模型的蓝宝石表面上，沙色的形状以高浮雕的形式折叠和交织。比例尺的对比、海洋与陆地的比例，以及创造这一奇迹所汇集的集体智慧，令人头晕目眩。 "/>
   </object>
   <object Name="Orrery" Load="Merge">
     <part Name="Render" DisplayName="天球仪"/>
@@ -957,11 +957,11 @@
   </object>
   <object Name="Clockthing" Load="Merge">
     <part Name="Render" DisplayName="巴拉瑟鲁姆钟"/>
-    <part Name="Description" Short="巴拉瑟鲁姆的发明通过冠轮调节其前进，记录时间到每一刻的滴答声。 得知其用途后，水霸主们委托制作了数十个这样的钟表，以便在一天中的特定时刻精确测量他们的水库。 "/>
+    <part Name="Description" Short="巴拉瑟鲁姆的发明通过冠轮调节其前进，记录时间到每一刻的滴答声。得知其用途后，水霸主们委托制作了数十个这样的钟表，以便在一天中的特定时刻精确测量他们的水库。 "/>
   </object>
   <object Name="Bubblething" Load="Merge">
     <part Name="Render" DisplayName="黄铜泡沫机"/>
-    <part Name="Description" Short="在发明的过程中，你有时需要使用一种无定形的灰色泡沫。 或者至少有一天你会需要它，因此某个机智的修补匠提前解决了这个问题，发明了黄铜泡沫发生器。 底座上刻着： ‘所有的泡沫，没有因为有一天可能需要泡沫却没有而感到遗憾’。 "/>
+    <part Name="Description" Short="在发明的过程中，你有时需要使用一种无定形的灰色泡沫。或者至少有一天你会需要它，因此某个机智的修补匠提前解决了这个问题，发明了黄铜泡沫发生器。底座上刻着： ‘所有的泡沫，没有因为有一天可能需要泡沫却没有而感到遗憾’。 "/>
   </object>
   <object Name="Telescope" Load="Merge">
     <part Name="Render" DisplayName="望远镜"/>
@@ -977,19 +977,19 @@
   </object>
   <object Name="Ornate Potted Plant 1" Load="Merge">
     <part Name="Render" DisplayName="华丽花盆中的植物"/>
-    <part Name="Description" Short="翠绿色的植物叶片从古老的坩埚中蔓延而出，其上刻有铬合金的切口。 它们如同土壤中的近亲一样呼吸生长，但它们的生物数据被与不朽之种进行了基因重组。 即使周围的食物者逐渐腐烂，这些植物也不会死亡。 "/>
+    <part Name="Description" Short="翠绿色的植物叶片从古老的坩埚中蔓延而出，其上刻有铬合金的切口。它们如同土壤中的近亲一样呼吸生长，但它们的生物数据被与不朽之种进行了基因重组。即使周围的食物者逐渐腐烂，这些植物也不会死亡。 "/>
   </object>
   <object Name="Ornate Potted Plant 2" Load="Merge">
     <part Name="Render" DisplayName="华丽花盆中的植物"/>
-    <part Name="Description" Short="翠绿色的植物叶片从古老的坩埚中蔓延而出，其上刻有铬合金的切口。 它们如同土壤中的近亲一样呼吸生长，但它们的生物数据被与不朽之种进行了基因重组。 即使周围的食物者逐渐腐烂，这些植物也不会死亡。 "/>
+    <part Name="Description" Short="翠绿色的植物叶片从古老的坩埚中蔓延而出，其上刻有铬合金的切口。它们如同土壤中的近亲一样呼吸生长，但它们的生物数据被与不朽之种进行了基因重组。即使周围的食物者逐渐腐烂，这些植物也不会死亡。 "/>
   </object>
   <object Name="Ornate Potted Plant 3" Load="Merge">
     <part Name="Render" DisplayName="华丽花盆中的植物"/>
-    <part Name="Description" Short="翠绿色的植物叶片从古老的坩埚中蔓延而出，其上刻有铬合金的切口。 它们如同土壤中的近亲一样呼吸生长，但它们的生物数据被与不朽之种进行了基因重组。 即使周围的食物者逐渐腐烂，这些植物也不会死亡。 "/>
+    <part Name="Description" Short="翠绿色的植物叶片从古老的坩埚中蔓延而出，其上刻有铬合金的切口。它们如同土壤中的近亲一样呼吸生长，但它们的生物数据被与不朽之种进行了基因重组。即使周围的食物者逐渐腐烂，这些植物也不会死亡。 "/>
   </object>
   <object Name="Ornate Potted Plant 4" Load="Merge">
     <part Name="Render" DisplayName="华丽花盆中的植物"/>
-    <part Name="Description" Short="翠绿色的植物叶片从古老的坩埚中蔓延而出，其上刻有铬合金的切口。 它们如同土壤中的近亲一样呼吸生长，但它们的生物数据被与不朽之种进行了基因重组。 即使周围的食物者逐渐腐烂，这些植物也不会死亡。 "/>
+    <part Name="Description" Short="翠绿色的植物叶片从古老的坩埚中蔓延而出，其上刻有铬合金的切口。它们如同土壤中的近亲一样呼吸生长，但它们的生物数据被与不朽之种进行了基因重组。即使周围的食物者逐渐腐烂，这些植物也不会死亡。 "/>
   </object>
   <object Name="Chalkboard" Load="Merge">
     <part Name="Render" DisplayName="粉笔板"/>
@@ -997,11 +997,11 @@
   </object>
   <object Name="Display Breadboard" Load="Merge">
     <part Name="Render" DisplayName="展示面包板"/>
-    <part Name="Description" Short="塑料封装在颗粒状的木头中，表面布满了接触点的网格。 电容器和电感器固定在弹簧夹上，并通过一束电线连接成网络。 "/>
+    <part Name="Description" Short="塑料封装在颗粒状的木头中，表面布满了接触点的网格。电容器和电感器固定在弹簧夹上，并通过一束电线连接成网络。 "/>
   </object>
   <object Name="Sewing Machine" Load="Merge">
     <part Name="Render" DisplayName="缝纫机"/>
-    <part Name="Description" Short="在划痕累累的金属外壳内，针和线轴准备将两根线缝合成锁式缝合。 基座周围刻满了各种首字母。 "/>
+    <part Name="Description" Short="在划痕累累的金属外壳内，针和线轴准备将两根线缝合成锁式缝合。基座周围刻满了各种首字母。 "/>
   </object>
   <object Name="Mannequin" Load="Merge">
     <part Name="Render" DisplayName="人形模特"/>
@@ -1013,7 +1013,7 @@
   </object>
   <object Name="Light Sculpture" Load="Merge">
     <part Name="Render" DisplayName="光雕"/>
-    <part Name="Description" Short="参考光束中迸发出蓝色激光，重新塑造出由光车床雕刻的波前。 空气增添了一层颗粒感。 "/>
+    <part Name="Description" Short="参考光束中迸发出蓝色激光，重新塑造出由光车床雕刻的波前。空气增添了一层颗粒感。 "/>
   </object>
   <object Name="Brain Sculpture" Load="Merge">
     <part Name="Render" DisplayName="脑雕"/>
@@ -1021,35 +1021,35 @@
   </object>
   <object Name="Unfinished Sculpture" Load="Merge">
     <part Name="Render" DisplayName="未完成的雕塑"/>
-    <part Name="Description" Short="湿润的泥土、黏土、炉渣、铬和染料——这些材料沉重地勾勒出一个半成型的想法。 由于犹豫或疏忽，这一转变过程被中断了。 "/>
+    <part Name="Description" Short="湿润的泥土、黏土、炉渣、铬和染料——这些材料沉重地勾勒出一个半成型的想法。由于犹豫或疏忽，这一转变过程被中断了。 "/>
   </object>
   <object Name="Painted Column L" Load="Merge">
     <part Name="Render" DisplayName="彩绘柱"/>
-    <part Name="Description" Short="顶部绽放着大理石花朵，呈螺旋形涡卷。 柱身溅满了颜料。 "/>
+    <part Name="Description" Short="顶部绽放着大理石花朵，呈螺旋形涡卷。柱身溅满了颜料。 "/>
   </object>
   <object Name="Painting" Load="Merge">
     <part Name="Render" DisplayName="画作"/>
-    <part Name="Description" Short="珍珠般的油彩湿润了米色亚麻布，并滴到了画架上。 从画布的平面上，一个图像被压印出来。 "/>
+    <part Name="Description" Short="珍珠般的油彩湿润了米色亚麻布，并滴到了画架上。从画布的平面上，一个图像被压印出来。 "/>
   </object>
   <object Name="Mushroom Case" Load="Merge">
     <part Name="Render" DisplayName="蘑菇箱"/>
-    <part Name="Description" Short="半圆形玻璃顶覆盖了地下温室，保护着在里面繁荣生长的食尸菌。 它们构成了一个由菌褶组成的生态穹顶。 "/>
+    <part Name="Description" Short="半圆形玻璃顶覆盖了地下温室，保护着在里面繁荣生长的食尸菌。它们构成了一个由菌褶组成的生态穹顶。 "/>
   </object>
   <object Name="Harp" Load="Merge">
     <part Name="Render" DisplayName="竖琴"/>
-    <part Name="Description" Short="gnu的肠弦横跨共鸣板，玫瑰金覆盖了丰富的木制膝盖和头部。 框架形成了半个心形；这是食者们最喜爱的遗物。 "/>
+    <part Name="Description" Short="gnu的肠弦横跨共鸣板，玫瑰金覆盖了丰富的木制膝盖和头部。框架形成了半个心形；这是食者们最喜爱的遗物。 "/>
   </object>
   <object Name="Rectangular Bells" Load="Merge">
     <part Name="Render" DisplayName="矩形钟"/>
-    <part Name="Description" Short="矩形键沿倾斜的梯子排列，音高逐级升高。 框架上悬挂着一个音符槌。 "/>
+    <part Name="Description" Short="矩形键沿倾斜的梯子排列，音高逐级升高。框架上悬挂着一个音符槌。 "/>
   </object>
   <object Name="Hammered Dulcimer" Load="Merge">
     <part Name="Render" DisplayName="锤击扬琴"/>
-    <part Name="Description" Short="用牛羚肠制成的弦绷紧在梯形框架上。 音勺悬挂在木鞘中。 "/>
+    <part Name="Description" Short="用牛羚肠制成的弦绷紧在梯形框架上。音勺悬挂在木鞘中。 "/>
   </object>
   <object Name="Iron Maiden" Load="Merge">
     <part Name="Render" DisplayName="铁处女"/>
-    <part Name="Description" Short="锈迹斑斑的脊椎排列在铁棺的内部。 设计者对尘世的惩罚不满意，甚至试图剥夺永恒安眠的宁静。 "/>
+    <part Name="Description" Short="锈迹斑斑的脊椎排列在铁棺的内部。设计者对尘世的惩罚不满意，甚至试图剥夺永恒安眠的宁静。 "/>
   </object>
   <object Name="Cage" Load="Merge">
     <part Name="Render" DisplayName="笼子"/>
@@ -1079,35 +1079,35 @@
   </object>
   <object Name="EaterStatue" Load="Merge">
     <part Name="Render" DisplayName="食者雕像"/>
-    <part Name="Description" Short="石质画布上涌现出的特征汇聚成一个来自远古的形体。 头发、皮肤、眉毛、大腿： 这些细节在你心中孵化出一种陌生而熟悉的感受。 当你绕着这尊石化的肖像移动时，不禁惊叹这位食者是如何将自己刻入了你的时空之网。 "/>
+    <part Name="Description" Short="石质画布上涌现出的特征汇聚成一个来自远古的形体。头发、皮肤、眉毛、大腿：这些细节在你心中孵化出一种陌生而熟悉的感受。当你绕着这尊石化的肖像移动时，不禁惊叹这位食者是如何将自己刻入了你的时空之网。 "/>
   </object>
   <object Name="Oboroqoru Statue" Load="Merge">
     <part Name="Render" DisplayName="奥博罗库鲁雕像"/>
-    <part Name="Description" Short="这座奥博罗库鲁的石像高达二十腕尺。 这位无名的雕刻师选择将猿神刻画成盘腿而坐，每一对巨大的手臂都相互交握。 雕像被藤蔓缠绕，只有当植被威胁到遮挡奥博罗库鲁温和的面容时，看护者才会干预。 各种颜色的花朵——天蓝、黄绿、靛蓝、红宝石色——编织成花环，散落在神龛的基座上，这些微不足道的供品献给了一位看似冷漠的神祇。 "/>
+    <part Name="Description" Short="这座奥博罗库鲁的石像高达二十腕尺。这位无名的雕刻师选择将猿神刻画成盘腿而坐，每一对巨大的手臂都相互交握。雕像被藤蔓缠绕，只有当植被威胁到遮挡奥博罗库鲁温和的面容时，看护者才会干预。各种颜色的花朵——天蓝、黄绿、靛蓝、红宝石色——编织成花环，散落在神龛的基座上，这些微不足道的供品献给了一位看似冷漠的神祇。 "/>
   </object>
   <object Name="Keresh Statue" Load="Merge">
     <part Name="Render" DisplayName="鹿像"/>
-    <part Name="Description" Short="这尊巨大的角石鹿像被遗弃在贝拉边缘的一间隐秘小屋中，覆盖着一层枯萎的植被。 雕像描绘了一只威严的鹿，一只蹄子离地，人形的眼睛审视着周围的一切，仿佛对这一切感到不满。 底座上的金属铭牌历经数百年已经损坏严重，只能辨认出‘K’、‘R’、‘S’和‘H’这几个符文。 "/>
+    <part Name="Description" Short="这尊巨大的角石鹿像被遗弃在贝拉边缘的一间隐秘小屋中，覆盖着一层枯萎的植被。雕像描绘了一只威严的鹿，一只蹄子离地，人形的眼睛审视着周围的一切，仿佛对这一切感到不满。底座上的金属铭牌历经数百年已经损坏严重，只能辨认出‘K’、‘R’、‘S’和‘H’这几个符文。 "/>
   </object>
   <object Name="statue of mason" Load="Merge">
     <part Name="Render" DisplayName="尼斯罗克雕像"/>
-    <part Name="Description" Short="这里描绘了星石匠尼斯罗克，他用强健的双腿跨立大地。 他佩戴着他最喜爱的腰带，腰带上的褶皱用金线精心编织而成。 "/>
+    <part Name="Description" Short="这里描绘了星石匠尼斯罗克，他用强健的双腿跨立大地。他佩戴着他最喜爱的腰带，腰带上的褶皱用金线精心编织而成。 "/>
   </object>
   <object Name="statue of knight" Load="Merge">
     <part Name="Render" DisplayName="贝尔雕像"/>
-    <part Name="Description" Short="贝尔的雕像用抛光大理石制成，承载着巨大的重量。 他手持史诗般的盾牌，传说中曾阻挡过星辉初现时的环流（Gyre）气体云。 "/>
+    <part Name="Description" Short="贝尔的雕像用抛光大理石制成，承载着巨大的重量。他手持史诗般的盾牌，传说中曾阻挡过星辉初现时的环流（Gyre）气体云。 "/>
   </object>
   <object Name="statue of Shekhinah" Load="Merge">
     <part Name="Render" DisplayName="谢基纳雕像"/>
-    <part Name="Description" Short="在这里，谢基纳被雕琢成永恒，用宏伟的天蓝色大理石塑造。 他的身体被雕刻得完美无瑕。 金色的王冠使他成为父中之父。 "/>
+    <part Name="Description" Short="在这里，谢基纳被雕琢成永恒，用宏伟的天蓝色大理石塑造。他的身体被雕刻得完美无瑕。金色的王冠使他成为父中之父。 "/>
   </object>
   <object Name="statue of wizard" Load="Merge">
     <part Name="Render" DisplayName="大衮雕像"/>
-    <part Name="Description" Short="演说家大衮以其大胆的姿态主宰着西耳室。 他的金色冠冕在火光中闪耀着辉煌的光芒。 "/>
+    <part Name="Description" Short="演说家大衮以其大胆的姿态主宰着西耳室。他的金色冠冕在火光中闪耀着辉煌的光芒。 "/>
   </object>
   <object Name="statue of athlete" Load="Merge">
     <part Name="Render" DisplayName="卡萨克斯的雕像"/>
-    <part Name="Description" Short="这里描绘了运动员卡萨克斯正在迈步。 他的闪亮银发按照星界传统束在脑后，仿佛正穿越苍穹。 "/>
+    <part Name="Description" Short="这里描绘了运动员卡萨克斯正在迈步。他的闪亮银发按照星界传统束在脑后，仿佛正穿越苍穹。 "/>
   </object>
   <object Name="statue of scholar" Load="Merge">
     <part Name="Render" DisplayName="拉舍夫雕像"/>
@@ -1136,27 +1136,27 @@
   </object>
   <object Name="AgolgotShrine" Load="Merge">
     <part Name="Render" DisplayName="献给吉尔什·阿戈洛特的神龛"/>
-    <part Name="Description" Short="一尊可怕的头颅低垂在古老的石雕上，中央脊柱上雕刻的囊肿象征着从半神源头蔓延的疾病。 数代苔藓围绕着这头野兽的疣状腿生长。 "/>
+    <part Name="Description" Short="一尊可怕的头颅低垂在古老的石雕上，中央脊柱上雕刻的囊肿象征着从半神源头蔓延的疾病。数代苔藓围绕着这头野兽的疣状腿生长。 "/>
   </object>
   <object Name="BethsaidaShrine" Load="Merge">
     <part Name="Render" DisplayName="献给吉尔什·贝撒大的神龛"/>
-    <part Name="Description" Short="塌陷的肩膀勾勒出裂石背部的山谷，两对交缠的手臂在石匠雕刻的半神觉醒场景中以百指相接。 数代苔藓围绕着这兽物的静脉腿。 "/>
+    <part Name="Description" Short="塌陷的肩膀勾勒出裂石背部的山谷，两对交缠的手臂在石匠雕刻的半神觉醒场景中以百指相接。数代苔藓围绕着这兽物的静脉腿。 "/>
   </object>
   <object Name="RermadonShrine" Load="Merge">
     <part Name="Render" DisplayName="吉尔什·雷尔马顿神龛"/>
-    <part Name="Description" Short="一只长满尖刺的怪异鱼类坐在石雕水池中。 下方是诗人笔下拍打泡沫海水、通过玛科姆管道形成欣诺湖的鳍尾。 数代苔藓环绕其下鳍。 "/>
+    <part Name="Description" Short="一只长满尖刺的怪异鱼类坐在石雕水池中。下方是诗人笔下拍打泡沫海水、通过玛科姆管道形成欣诺湖的鳍尾。数代苔藓环绕其下鳍。 "/>
   </object>
   <object Name="ShugruithShrine" Load="Merge">
     <part Name="Render" DisplayName="向掘洞者舒格鲁斯致敬的神龛"/>
-    <part Name="Description" Short="雕刻的脊椎环绕着蜿蜒的世界吞噬者，它挖掘了被晚期穴居人居住的地底洞穴。 传说中的九十九只眼睛穿越时空，而数代苔藓则围绕着这头怪兽的环状腹部。 "/>
+    <part Name="Description" Short="雕刻的脊椎环绕着蜿蜒的世界吞噬者，它挖掘了被晚期穴居人居住的地底洞穴。传说中的九十九只眼睛穿越时空，而数代苔藓则围绕着这头怪兽的环状腹部。 "/>
   </object>
   <object Name="QasShrine" Load="Merge">
     <part Name="Render" DisplayName="献给吉尔什·卡斯的神龛"/>
-    <part Name="Description" Short="半神跪在用古老石料雕刻的宽阔后腿上。 瓷砖多边形从雕像基座倾泻而下，象征着卡斯对空间、时间、山峦和村庄的修正。 数代苔藓环绕着这头野兽的伐木蹄。 "/>
+    <part Name="Description" Short="半神跪在用古老石料雕刻的宽阔后腿上。瓷砖多边形从雕像基座倾泻而下，象征着卡斯对空间、时间、山峦和村庄的修正。数代苔藓环绕着这头野兽的伐木蹄。 "/>
   </object>
   <object Name="QonShrine" Load="Merge">
     <part Name="Render" DisplayName="吉尔什·康神龛"/>
-    <part Name="Description" Short="一尊神天鹅端坐于石雕之中，巨大的风筝尾羽卷曲成令人目眩的涡旋。 她面带空白而不可解读的表情，唤起雕刻者对她作为不确定性化身的感觉。 世代苔藓围绕着这头野兽的绒毛。 "/>
+    <part Name="Description" Short="一尊神天鹅端坐于石雕之中，巨大的风筝尾羽卷曲成令人目眩的涡旋。她面带空白而不可解读的表情，唤起雕刻者对她作为不确定性化身的感觉。世代苔藓围绕着这头野兽的绒毛。 "/>
   </object>
   <object Name="RuinedNephilimShrime" Load="Merge">
     <part Name="Render" DisplayName="残破的神龛"/>
@@ -1166,11 +1166,11 @@
   </object>
   <object Name="Eater Hologram" Load="Merge">
     <part Name="Render" DisplayName="食者全息图"/>
-    <part Name="Description" Short="铬板上燃烧的光芒爆裂成一个来自远古时代的身影。 头发、皮肤、眉毛、大腿： 这些特征在你心中孵化出一种陌生而熟悉的感觉。 当你移动时，这个身影会随视角变化而移动；你不禁好奇这位食者是如何将自己刻入你的时空之织的。 "/>
+    <part Name="Description" Short="铬板上燃烧的光芒爆裂成一个来自远古时代的身影。头发、皮肤、眉毛、大腿：这些特征在你心中孵化出一种陌生而熟悉的感觉。当你移动时，这个身影会随视角变化而移动；你不禁好奇这位食者是如何将自己刻入你的时空之织的。 "/>
   </object>
   <object Name="hologram of Shekhinah" Load="Merge">
     <part Name="Render" DisplayName="舍金纳 全息影像"/>
-    <part Name="Description" Short="荣耀的 舍金纳，银色阿多尼斯与初代父亲，以光辉的木乃伊姿态站立。 祂拥有永恒星辰般的威严，坚定而永恒，审视着为祂建造的神殿并点头表示赞许。 为了纪念祂与 卡萨菲斯肯斯 的结合，祂的显现身披蔚蓝色调，舍弃了低等植物和泥土的绿色和红褐色。 "/>
+    <part Name="Description" Short="荣耀的 舍金纳，银色阿多尼斯与初代父亲，以光辉的木乃伊姿态站立。祂拥有永恒星辰般的威严，坚定而永恒，审视着为祂建造的神殿并点头表示赞许。为了纪念祂与 卡萨菲斯肯斯 的结合，祂的显现身披蔚蓝色调，舍弃了低等植物和泥土的绿色和红褐色。 "/>
   </object>
   <object Name="Village Monument" Load="Merge">
     <part Name="Render" DisplayName="[村庄纪念碑]"/>
@@ -1526,7 +1526,7 @@
   </object>
   <object Name="Empty Urn" Load="Merge">
     <part Name="Render" DisplayName="葬礼骨灰瓮"/>
-    <part Name="Description" Short="意义几何形状镶嵌在环状行围绕着火化容器上： 星辰、三叶结、九边形和新月。 "/>
+    <part Name="Description" Short="意义几何形状镶嵌在环状行围绕着火化容器上：星辰、三叶结、九边形和新月。 "/>
   </object>
   <object Name="Urn" Load="Merge">
     <part Name="Render" DisplayName="葬礼骨灰瓮"/>
@@ -1538,11 +1538,11 @@
   </object>
   <object Name="SultanSarcophagusW" Load="Merge">
     <part Name="Render" DisplayName="帝国石棺"/>
-    <part Name="Description" Short="霓虹色的卷云在玻璃新月内翻腾，光线透过预先雕刻的苏丹形象投射出来。 一个模糊的形状因此悬浮在无星的巨型黑色岩石卧榻之上。 艺术家可能意图以此唤起黑暗平原上的闪电风暴或河流之上的百合花： 某种代表明亮而气体般游荡的意识漫游在静止躯体之上的东西。 "/>
+    <part Name="Description" Short="霓虹色的卷云在玻璃新月内翻腾，光线透过预先雕刻的苏丹形象投射出来。一个模糊的形状因此悬浮在无星的巨型黑色岩石卧榻之上。艺术家可能意图以此唤起黑暗平原上的闪电风暴或河流之上的百合花：某种代表明亮而气体般游荡的意识漫游在静止躯体之上的东西。 "/>
   </object>
   <object Name="SultanSarcophagusE" Load="Merge">
     <part Name="Render" DisplayName="帝国石棺"/>
-    <part Name="Description" Short="霓虹色的卷云在玻璃新月内翻腾，光线透过预先雕刻的苏丹形象投射出来。 一个模糊的形状因此悬浮在无星的巨型黑色岩石卧榻之上。 艺术家可能意图以此唤起黑暗平原上的闪电风暴或河流之上的百合花： 某种代表明亮而气体般游荡的意识漫游在静止躯体之上的东西。 "/>
+    <part Name="Description" Short="霓虹色的卷云在玻璃新月内翻腾，光线透过预先雕刻的苏丹形象投射出来。一个模糊的形状因此悬浮在无星的巨型黑色岩石卧榻之上。艺术家可能意图以此唤起黑暗平原上的闪电风暴或河流之上的百合花：某种代表明亮而气体般游荡的意识漫游在静止躯体之上的东西。 "/>
   </object>
   <object Name="SultanSarcophagusWPeriod1" Load="Merge">
     <part Name="Render" DisplayName="帝国石棺 - =sultan:1="/>
@@ -1576,7 +1576,7 @@
   </object>
   <object Name="Golem Mound" Load="Merge">
     <part Name="Render" DisplayName="废料与黏土堆"/>
-    <part Name="Description" Short="湿润的黏土粘附在轮子和焊接板上。 上面点缀着二极管、电路、叶片泵和磁铁。 "/>
+    <part Name="Description" Short="湿润的黏土粘附在轮子和焊接板上。上面点缀着二极管、电路、叶片泵和磁铁。 "/>
   </object>
   <object Name="VehicleGolemSupportColumn" Load="Merge">
     <part Name="Render" DisplayName="支撑梁"/>
@@ -1588,15 +1588,15 @@
   </object>
   <object Name="VehicleGolemSeat" Load="Merge">
     <part Name="Render" DisplayName="飞行员座椅"/>
-    <part Name="Description" Short="青绿色泡沫垫衬着椅背和深陷的座舱，弯曲的扶手上有调节旋钮。 整把椅子安装在一个弹射电机上，可以旋转。 "/>
+    <part Name="Description" Short="青绿色泡沫垫衬着椅背和深陷的座舱，弯曲的扶手上有调节旋钮。整把椅子安装在一个弹射电机上，可以旋转。 "/>
   </object>
   <object Name="VehicleGolemPassengerSeat" Load="Merge">
     <part Name="Render" DisplayName="乘客座椅"/>
-    <part Name="Description" Short="青绿色泡沫垫衬着靠背和深陷的座位，右侧扶手处有一个调节旋钮。 整把椅子安装在弹射电机上，可以旋转。 "/>
+    <part Name="Description" Short="青绿色泡沫垫衬着靠背和深陷的座位，右侧扶手处有一个调节旋钮。整把椅子安装在弹射电机上，可以旋转。 "/>
   </object>
   <object Name="VehicleConsole N" Load="Merge">
     <part Name="Render" DisplayName="飞行员控制台"/>
-    <part Name="Description" Short="在一个被汤露润湿的金属框架内，一个玻璃新月上绘有导航和二体对准的数据符号。 两个垂直轴上的大型和小型生物模型正在旋转，心理电扫描显示了融合状态。 "/>
+    <part Name="Description" Short="在一个被汤露润湿的金属框架内，一个玻璃新月上绘有导航和二体对准的数据符号。两个垂直轴上的大型和小型生物模型正在旋转，心理电扫描显示了融合状态。 "/>
   </object>
   <object Name="VehicleConsole S" Load="Merge">
     <part Name="Render" DisplayName="飞行员控制台"/>
@@ -1605,7 +1605,7 @@
     <part Name="Render" DisplayName="出口舱门"/>
   </object>
   <object Name="MechPilotSeat" Load="Merge">
-    <part Name="Description" Short="青绿色泡沫垫衬着椅背和深陷的座舱，弯曲的扶手上有调节旋钮。 整把椅子安装在一个弹射电机上，可以旋转。 "/>
+    <part Name="Description" Short="青绿色泡沫垫衬着椅背和深陷的座舱，弯曲的扶手上有调节旋钮。整把椅子安装在一个弹射电机上，可以旋转。 "/>
   </object>
 
   <!-- 雕像描述模板（官方 `Random Statue` 的 Short 是英文模板，我方漏覆盖） -->

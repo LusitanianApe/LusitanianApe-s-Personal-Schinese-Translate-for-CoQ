@@ -114,11 +114,53 @@ namespace Nattens.QudZhsCookbook
             BreakBeforeIndex = -1;
             if (StartIndex < 0 || StartIndex >= Span.Length) return;
 
+            // ★★ 2026-10-25（A 档）：StartIndex 落在**格式标记**上时，整块跳过标记，断点放标记之后。
+            //
+            //   为什么必须抢在下面的 CJK 判断之前：
+            //     标记是 `{{r|` / `&W` 这种**非汉字字符** ⇒ `IsCjk('{') == false`
+            //     ⇒ 原逻辑把整段交回基类 ⇒ 基类一路找到很远的英文空格
+            //     ⇒ 孤行 + 括号被劈成 `the / Spindle`（`_tools\_wrap_sim.py` 可复现）
+            int afterFmt = SkipFormatBlock(Span, StartIndex);
+            if (afterFmt > StartIndex)
+            {
+                BreakBeforeIndex = afterFmt;
+                ReplaceIfBroken = false;
+                LogBreak(StartIndex, afterFmt, Span);
+                return;
+            }
+
             int next = StartIndex + 1;
             if (next >= Span.Length) return;
 
-            // 只有「上一字或下一字是 CJK」时才走逐字断；纯英文段交还基类（保住按词断行 + 丢空格）
-            if (!IsCjk(Span[StartIndex]) && !IsCjk(Span[next]))
+            // ★★ 2026-10-25（B 档）：译注括号「能不断就不断」。
+            //
+            //   断点若落在 `（…）` 内部，就把整对括号当成一个**不可分块**：
+            //   断点推到配对的 `）` 之后 ⇒ 括号要么整体在行内，要么整体去下一行。
+            //   效果（用户 2026-10-25 要的）：
+            //       ……传说中的纺锤
+            //       （the Spindle）自这片纷乱中升起…      ← 断在括号后
+            //   或者
+            //       ……传说中的
+            //       纺锤（the Spindle）自这片…            ← 断在译名前
+            //
+            //   ⚠ 只检查「块首 = `（`」：上一轮已经把整对括号跳过，i 不会停在括号内部。
+            //   ⚠ 超长退化（> MaxParenBlock 字符）：允许内部逐字断，
+            //      否则整块塞不进一行时 ParseSpan 会直接溢出（不换行）。
+            if (IsOpenParen(Span[StartIndex]))
+            {
+                int close = FindCloseParen(Span, StartIndex);
+                if (close > StartIndex && close - StartIndex <= MaxParenBlock)
+                {
+                    BreakBeforeIndex = close + 1;
+                    ReplaceIfBroken = false;
+                    LogBreak(StartIndex, close + 1, Span);
+                    return;
+                }
+            }
+
+            // 只有「上一字或下一字是中文语境」时才走逐字断；纯英文段交还基类（保住按词断行 + 丢空格）
+            // ★ 用 IsCjkish 而不是 IsCjk：`——`/`……`/`·` 打头的中文段也要逐字断
+            if (!IsCjkish(Span[StartIndex]) && !IsCjkish(Span[next]))
             {
                 base.NextPossibleLineBreakIndex(Span, StartIndex,
                     out BreakBeforeIndex, out ReplaceIfBroken);
@@ -132,19 +174,100 @@ namespace Nattens.QudZhsCookbook
             ReplaceIfBroken = false;
 
             // 诊断：前 8 次 + 前几次「标点吞并」各记一条（§45 门禁：新句式必须留痕）
-            if (_breakHits < 8)
+            LogBreak(StartIndex, b, Span);
+        }
+
+        /// <summary>
+        /// 若 `i` 处是格式标记或色码，返回「可以断在哪里」的下标；否则返回 `i`（= 不在格式上）。
+        ///
+        /// <para>识别三种：`{{…}}`、`&X`、`^X`（与 `ColorUtility.GetNext` 同一套口径）。</para>
+        ///
+        /// <para>★★ 长标记（<see cref="MaxMarkerBlock"/> 字符以上）**不能返回 i+1** ——
+        /// 那会把 `{{` 拆到两行，标记头断掉 ⇒ 屏幕上出现字面量 `{`（2026-10-25 实测到）。
+        /// 改为**断在 `|` 之后**：保住 `{{色|` 头，内容照常逐字折；末尾 `}}` 随最后一块走
+        /// （`ParseSpan` 的 `FindLastColorCodes` 会延续颜色）。</para>
+        /// </summary>
+        private static int SkipFormatBlock(ReadOnlySpan<char> Span, int i)
+        {
+            if (i < 0 || i >= Span.Length) return i;
+            char c = Span[i];
+
+            if (c == '{' && i + 1 < Span.Length && Span[i + 1] == '{')
             {
-                _breakHits++;
-                try
+                int depth = 0, end = -1;
+                for (int j = i; j + 1 < Span.Length; j++)
                 {
-                    UnityEngine.Debug.Log("[QudZhsCookbook] 中文折行 #" + _breakHits
-                        + "：i=" + StartIndex + " 断点=" + b
-                        + (b > next ? "（含右标点 ×" + (b - next) + "）" : "")
-                        + " 片段=[" + Span.Slice(StartIndex,
-                            Math.Min(24, Span.Length - StartIndex)).ToString().Replace("\n", "⏎") + "]");
+                    if (Span[j] == '{' && Span[j + 1] == '{') { depth++; j++; continue; }
+                    if (Span[j] == '}' && Span[j + 1] == '}') { depth--; j++; if (depth <= 0) { end = j + 1; break; } }
                 }
-                catch { }
+                if (end <= i) return Span.Length;              // 未闭合 ⇒ 当作到末尾
+                if (end - i <= MaxMarkerBlock) return end;     // 短标记：整块不劈
+
+                // 长标记：断在 `|` 之后（保住 `{{色|` 头）；无 `|`（纯色标记）⇒ 整块
+                for (int k = i + 2; k < end; k++)
+                    if (Span[k] == '|') return k + 1;
+                return end;
             }
+            if (c == '&' || c == '^')
+            {
+                if (i + 1 < Span.Length && Span[i + 1] != c) return i + 2;
+                return i + 1;
+            }
+            if (c == '|' || c == '}') return i + 1;    // 标记残片
+            return i;
+        }
+
+        /// <summary>整块跳过的上限（字符数）；超过就按「断在 `|` 之后」处理。</summary>
+        private const int MaxMarkerBlock = 60;
+
+        // ────────────────────────────────────────────────────────────────
+        // B 档（2026-10-25）：译注括号不可断
+        // ────────────────────────────────────────────────────────────────
+
+        /// <summary>括号块的上限（字符数）。超过就允许内部断（否则整块塞不进一行 ⇒ 溢出）。</summary>
+        private const int MaxParenBlock = 40;
+
+        /// <summary>`（`（全角）或 `(`（半角）。</summary>
+        private static bool IsOpenParen(char c)
+        {
+            return c == '\uFF08' || c == '(';
+        }
+
+        /// <summary>
+        /// 从 `open` 处找配对的右括号，返回其下标；找不到 / 嵌套 / 超长 ⇒ -1。
+        ///
+        /// <para>只认「同形配对」：全角 `（` 找 `）`，半角 `(` 找 `)`。</para>
+        /// </summary>
+        private static int FindCloseParen(ReadOnlySpan<char> Span, int open)
+        {
+            if (open < 0 || open >= Span.Length) return -1;
+            char oc = Span[open];
+            char cc = (oc == '\uFF08') ? '\uFF09' : ')';
+            int limit = Math.Min(Span.Length, open + MaxParenBlock + 1);
+            for (int k = open + 1; k < limit; k++)
+            {
+                if (Span[k] == cc) return k;
+                if (Span[k] == oc) return -1;      // 嵌套 ⇒ 放弃（交给逐字断）
+            }
+            return -1;
+        }
+
+        /// <summary>折行诊断日志：前 8 次逐条打（含标记跳过与标点吞并）。</summary>
+        private static void LogBreak(int start, int b, ReadOnlySpan<char> Span)
+        {
+            if (_breakHits >= 8) return;
+            _breakHits++;
+            try
+            {
+                UnityEngine.Debug.Log("[QudZhsCookbook] 中文折行 #" + _breakHits
+                    + "：i=" + start + " 断点=" + b
+                    + (Span[start] == '{' || Span[start] == '&' || Span[start] == '^' ? "（跳过标记）" : "")
+                    + (b > start + 1 && Span[start] != '{' && Span[start] != '&' && Span[start] != '^'
+                        ? "（含右标点 ×" + (b - start - 1) + "）" : "")
+                    + " 片段=[" + Span.Slice(start,
+                        Math.Min(24, Span.Length - start)).ToString().Replace("\n", "⏎") + "]");
+            }
+            catch { }
         }
 
         /// <summary>
@@ -178,6 +301,33 @@ namespace Nattens.QudZhsCookbook
 
             p.NextPossibleLineBreakIndex("中文".AsSpan(), 1, out b, out r);
             sb.Append("折行 末尾@1 → b=").Append(b).Append('\n');
+
+            // ★ 2026-10-25（A 档）：格式标记必须整块跳过（否则退回基类按空格断）
+            const string MARK = "{{r|卡德（Qud）}}的丛林";
+            p.NextPossibleLineBreakIndex(MARK.AsSpan(), 0, out b, out r);
+            sb.Append("折行 标记@0 → b=").Append(b)
+              .Append("（期望 ").Append(MARK.IndexOf("的")).Append("）").Append('\n');
+
+            string longMark = "{{W|" + new string('长', 80) + "}}";
+            p.NextPossibleLineBreakIndex(longMark.AsSpan(), 0, out b, out r);
+            sb.Append("折行 长标记@0（断在 | 之后）→ b=").Append(b).Append("（期望 4）").Append('\n');
+
+            p.NextPossibleLineBreakIndex("中文&W红".AsSpan(), 2, out b, out r);
+            sb.Append("折行 色码@2 → b=").Append(b).Append("（期望 4）").Append('\n');
+
+            // ★ 2026-10-25：`——`（U+2014）打头的中文段也要逐字断（IsCjkish）
+            p.NextPossibleLineBreakIndex("——哦，趁我还没忘".AsSpan(), 0, out b, out r);
+            sb.Append("折行 破折号@0 → b=").Append(b).Append("（期望 1）").Append('\n');
+
+            // ★ 2026-10-25（B 档）：译注括号整对不可断
+            const string PAREN = "纺锤（the Spindle）自";
+            p.NextPossibleLineBreakIndex(PAREN.AsSpan(), 2, out b, out r);
+            sb.Append("折行 括号@2 → b=").Append(b)
+              .Append("（期望 ").Append(PAREN.IndexOf("自")).Append("）").Append('\n');
+
+            string longParen = "（" + new string('长', 50) + "）";
+            p.NextPossibleLineBreakIndex(longParen.AsSpan(), 0, out b, out r);
+            sb.Append("折行 长括号@0（>40 退化）→ b=").Append(b).Append("（期望 1）").Append('\n');
 
             char v1 = ZhsDescriptionBuilder.LastVisibleChar("小".AsSpan());
             char v2 = ZhsDescriptionBuilder.LastVisibleChar("{{W|小}}".AsSpan());

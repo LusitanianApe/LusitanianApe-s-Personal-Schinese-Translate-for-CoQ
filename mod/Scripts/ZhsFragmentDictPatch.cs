@@ -16,7 +16,7 @@
 //   ⇒ 治本只有一条：**把碎片表也接管**。
 //
 // 【本补丁做什么】
-//   挂 `XRL.Messages.MessageQueue.AddPlayerMessage(string, …)` 的 **Postfix**，
+//   挂 `XRL.Messages.MessageQueue.AddPlayerMessage(string, …)` 的 **Prefix**（2026-10-25 由 Postfix 改正），
 //   对**定稿文本**做一次**贪心最长匹配**替换（表见 `ZhsFragmentDictTable.cs`）。
 //   ⇒ 与 `ZhsCombatMsgPatch`（整句正则）互补：那边管"整句形态"，这边管"零散碎片"。
 //
@@ -30,6 +30,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -46,6 +47,11 @@ namespace Nattens.QudZhsCookbook
         private static bool _applied;
         private static int _hits, _scanned;
 
+        // ★ 2026-10-25：消息栏逐条明细（在此之前这条路**没有任何记录**）
+        private static string _logPath;
+        private static readonly HashSet<string> _logged = new HashSet<string>();
+        private static readonly Regex LatinWord = new Regex("[A-Za-z]{2,}", RegexOptions.Compiled);
+
         // ★ 表与"编译/替换"纯逻辑都在 `ZhsFragmentDictTable.cs`（自动生成、纯 C#）
         //   —— 放那边才能被本地 `_compilecheck`（dotnet build）覆盖到；
         //      本文件引用 `XRL.Messages.MessageQueue`，被它排除。
@@ -53,9 +59,16 @@ namespace Nattens.QudZhsCookbook
         {
             if (Disabled || Text == null || Text.Length == 0) return;
             _scanned++;
+            string Text0 = Text;                 // ★ 原始文本（记录用）
             try
             {
                 string neo = ZhsFragmentDictTable.Apply(Text);
+                if (ReferenceEquals(neo, Text) || neo == Text)
+                {
+                    // 拦到了、但碎片表没有可换的条目 ⇒ 含英文就是「疑似漏译」
+                    if (LatinWord.IsMatch(Text)) LogLine("MISS", Esc(Text), null);
+                    return;
+                }
                 if (!ReferenceEquals(neo, Text) && neo != Text)
                 {
                     _hits++;
@@ -66,11 +79,87 @@ namespace Nattens.QudZhsCookbook
                     }
                     Text = neo;
                     ZhsHookTrace.Step("FragDict.post", neo);
+                    LogLine("HIT", Esc(Text0), Esc(neo));
                 }
             }
             catch (Exception e)
             {
                 UnityEngine.Debug.LogError(Tag + "替换异常（已放行原文）：" + e);
+            }
+        }
+
+        /// <summary>写一条明细到 &lt;模组目录&gt;\ZhsFragmentDict.log（去重、跨局累计、上限 3000）。</summary>
+        private static void LogLine(string kind, string before, string after)
+        {
+            try
+            {
+                string key = kind + "\t" + before;
+                if (_logged.Contains(key)) return;
+                _logged.Add(key);
+                if (_logged.Count > 3000) return;
+                if (_logPath == null)
+                {
+                    string dir = ZhsFileUtil.WriteDir;
+                    if (dir == null) return;
+                    _logPath = Path.Combine(dir, "ZhsFragmentDict.log");
+                }
+                File.AppendAllText(_logPath,
+                    kind + "\t" + (before ?? "").Replace('\t', ' ')
+                         + "\t" + (after ?? "-").Replace('\t', ' ') + "\n");
+            }
+            catch { }
+        }
+
+        // ── RTF 总闸：现代界面回流老通道的唯一入口 ────────────────────
+        //
+        //   Qud.UI.RTF.FormatToRTF(string s, string opacity, int blockWrap, bool stripFormatting)
+        //     · 输入 s 还是 `{{W|…}}` 原始标记 ⇒ 碎片表能匹配
+        //     · 输出已是 `<color=...>` 富文本 ⇒ 那时再改就匹配不上了
+        //   ⇒ 必须 Prefix 改 __0（不是 Postfix 改 __result）
+        private static void PatchRTF()
+        {
+            try
+            {
+                Type t = null;
+                foreach (Assembly a in AppDomain.CurrentDomain.GetAssemblies())
+                {
+                    t = a.GetType("Qud.UI.RTF", false);
+                    if (t != null) break;
+                }
+                if (t == null) { UnityEngine.Debug.LogWarning(Tag + "找不到 Qud.UI.RTF"); return; }
+                MethodInfo m = t.GetMethod("FormatToRTF", BindingFlags.Public | BindingFlags.Static,
+                    null,
+                    new Type[] { typeof(string), typeof(string), typeof(int), typeof(bool) },
+                    null);
+                if (m == null) { UnityEngine.Debug.LogWarning(Tag + "找不到 FormatToRTF(string,string,int,bool)"); return; }
+                new Harmony("nattens.qudzheookbook.fragdict.rtf").Patch(m,
+                    prefix: new HarmonyMethod(typeof(ZhsFragmentDictPatch).GetMethod(
+                        "PreRTF", BindingFlags.Static | BindingFlags.NonPublic)));
+                UnityEngine.Debug.Log(Tag + "已挂 RTF.FormatToRTF（Prefix）");
+            }
+            catch (Exception e)
+            {
+                UnityEngine.Debug.LogError(Tag + "挂 FormatToRTF 失败：" + e.Message);
+            }
+        }
+
+        private static void PreRTF(ref string __0)
+        {
+            if (Disabled || string.IsNullOrEmpty(__0)) return;
+            try
+            {
+                string neo = ZhsFragmentDictTable.Apply(__0);
+                if (ReferenceEquals(neo, __0) || neo == __0)
+                {
+                    if (LatinWord.IsMatch(__0)) LogLine("MISS-RTF", Esc(__0), null);
+                    return;
+                }
+                LogLine("HIT-RTF", Esc(__0), Esc(neo));
+                __0 = neo;
+            }
+            catch (Exception e)
+            {
+                UnityEngine.Debug.LogError(Tag + "RTF 替换异常（已放行原文）：" + e);
             }
         }
 
@@ -114,8 +203,11 @@ namespace Nattens.QudZhsCookbook
                 var hm = new HarmonyMethod(typeof(ZhsFragmentDictPatch)
                     .GetMethod(nameof(Postfix), BindingFlags.Static | BindingFlags.NonPublic));
                 var h = new Harmony("nattens.qudzheookbook.fragdict");
-                h.Patch(mi, postfix: hm);
-                UnityEngine.Debug.Log(Tag + "已挂 1 个出口（MessageQueue.AddPlayerMessage）· 表 "
+                // ★ 2026-10-25 修：原来挂 Postfix（消息已入队、改 __0 无效，F16 同族）
+                //   改 Prefix：在 AddPlayerMessage 执行**之前**把碎片换掉
+                h.Patch(mi, prefix: hm);
+                PatchRTF();
+                UnityEngine.Debug.Log(Tag + "已挂 2 个出口（AddPlayerMessage · FormatToRTF，均 Prefix）· 表 "
                     + ZhsFragmentDictTable.Rules.Count + " 条");
                 UnityEngine.Debug.Log(Tag + "自检：\n" + ZhsFragmentDictTable.SelfCheck());
             }

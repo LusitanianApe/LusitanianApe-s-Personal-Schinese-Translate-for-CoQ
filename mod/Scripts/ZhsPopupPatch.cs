@@ -508,6 +508,14 @@ namespace Nattens.QudZhsCookbook
         internal static readonly (System.Text.RegularExpressions.Regex Rx, string Zh)[]
             REASM =
         {
+            // ── 物品改名 / 选色（`ItemNaming::NameItem` → `Popup.ShowColorPicker`）──
+            //   反编译实证：整句拼好后作为**第 3 参 `Intro`** 传进去。
+            //   `You select the name 'X' for Y. Choose a color for it.`
+            //   `$1` 是玩家自建名（原样保留，§5），`$2` 是物品名，`$3` 是 them（它）。
+            (new System.Text.RegularExpressions.Regex(
+                @"^You select the name '(.+)' for (.+?)\. Choose a color for (.+?)\.$"),
+             "你为{1}取名为「{0}」。请为{2}选择一种颜色。"),
+
             // ── 爵阶提升（`Reputation::SetFactionRank`）──
             //    `You are promoted to the rank of 旅友.` ⇒ `你被提升为旅友。`
             //    `You are promoted to the meyvn of 明者（meyvn）.` ⇒ `你被提升为明者（meyvn）。`
@@ -875,19 +883,12 @@ namespace Nattens.QudZhsCookbook
             (new System.Text.RegularExpressions.Regex(
                 @"^Your (.+?) is increased by \{\{G\|1\}\}!$"),
              "你的{0}提升了 {{G|1}}！"),
-            //   ★ 这两条**不锚 `^`/`$`**：`text` 前缀是运行时拼的（含当前属性值），
-            //     且整串含**真换行**。实测「锚 `^`+`$` + 逐段都对」仍不匹配
-            //     ⇒ 改用「不锚定 + `[\s\S]*?` 吞掉换行」的写法（稳定）。
-            (new System.Text.RegularExpressions.Regex(
-                @"It will cost \{\{C\|1\}\} attribute point to increase ([\s\S]*?) by 1\.[\s\S]*?Do you wish to increase this attribute\?",
-                System.Text.RegularExpressions.RegexOptions.Compiled),
-             "提升{0}需要花费 {{C|1}} 点属性点。\n要提升该属性吗？"),
-            (new System.Text.RegularExpressions.Regex(
-                @"You have increased your (.+?) to \{\{C\|(\d+)\}\}!$"),
-             "你把{0}提升到了 {{C|{1}}}！"),
-            (new System.Text.RegularExpressions.Regex(
-                @"You have no attribute points to raise this attribute\."),
-             "你没有属性点可用来提升该属性。"),
+            //   ★ 2026-10-29：下面三条「属性提升」规则**已删除** —— 它们与
+            //     `ZhsStatPopupPatch`（精确 R2/R4/R5 + `STAT` 属性名映射）重叠，
+            //     且这里用 `[\s\S]*?` 宽松匹配、`{0}` 原样保留英文属性名。
+            //     实机证据（Player.log 5627/5628）：StatPopup 先改对「提升 1 点智力…」，
+            //     本补丁又用**原文**重写成「提升Intelligence…」并覆盖显示。
+            //     ⇒ 属性弹窗统一交给 `ZhsStatPopupPatch`，本表只管 TrainingBook 两条。
 
             // ── ★★ 2.16.101：`NavigationBonus::HandleEvent` 的**裸词**（方案第 3 步）──
             //   【为什么「裸词」不能单独翻，只能连句式一起处理】
@@ -1385,6 +1386,11 @@ namespace Nattens.QudZhsCookbook
                             //   —— 该出口**一直不在白名单**，所以标题永远英文。
                             //   签名 `PickGameObject(string Title, IList<GameObject> …)` ⇒ 首参是 string ✓
                             && m.Name != "PickGameObject"
+                            // ★ 2026-10-29：同步版 `ShowColorPicker` 一直不在白名单
+                            //   （只挂了 Async）⇒ `ItemNaming::NameItem` 的
+                            //   `You select the name '…' for …. Choose a color for it.`
+                            //   整句英文。正文在**第 3 参 `Intro`**，由 ColorIntroPrefix 处理。
+                            && m.Name != "ShowColorPicker"
                             && m.Name != "ShowYesNoCancelAsync" && m.Name != "ShowYesNoAsync"
                             && m.Name != "AskStringAsync" && m.Name != "AskNumberAsync"
                             && m.Name != "PickOptionAsync" && m.Name != "ShowAsync"
@@ -1405,6 +1411,14 @@ namespace Nattens.QudZhsCookbook
                                 && preOptions != null)
                                 use = preOptions;
                             h.Patch(m, prefix: new HarmonyMethod(use));
+                            // `ShowColorPicker` / `ShowColorPickerAsync`：正文在第 3 参
+                            if (m.Name == "ShowColorPicker" || m.Name == "ShowColorPickerAsync")
+                            {
+                                MethodInfo preColor = typeof(ZhsPopupPatch).GetMethod(
+                                    "ColorIntroPrefix", BindingFlags.NonPublic | BindingFlags.Static);
+                                if (preColor != null)
+                                    h.Patch(m, prefix: new HarmonyMethod(preColor));
+                            }
                             n++;
                         }
                         catch { }
@@ -1550,6 +1564,28 @@ namespace Nattens.QudZhsCookbook
             return sb.ToString();
         }
 
+        /// <summary>
+        /// `Popup.ShowColorPicker(string Title, int Spacing, string Intro, …)` 的 Prefix。
+        /// 改名/选色的整句在**第 3 参 `Intro`**（不是首参 Title）⇒ 单独一个入口。
+        /// 证据：`XRL.World.Capabilities.ItemNaming::NameItem` 第 98 行
+        ///       `Popup.ShowColorPicker("", 0, "You select the name '" + … + ".", …)`。
+        /// </summary>
+        private static void ColorIntroPrefix(object[] __args)
+        {
+            try
+            {
+                if (ZhsPopupText.Disabled || __args == null || __args.Length < 3) return;
+                string s = __args[2] as string;
+                if (string.IsNullOrEmpty(s)) return;
+                string zh = ZhsPopupText.Tr(s);
+                if (string.IsNullOrEmpty(zh) || zh == s) zh = Reassemble(s);
+                if (string.IsNullOrEmpty(zh) || zh == s) return;
+                __args[2] = zh;
+                ZhsHookTrace.Step("Popup.colorIntro", zh);
+            }
+            catch { }
+        }
+
         private static void Arg0Prefix(object[] __args)
         {
             try
@@ -1620,6 +1656,67 @@ namespace Nattens.QudZhsCookbook
             catch (Exception e)
             {
                 UnityEngine.Debug.LogError(Tag + "Arg0Prefix 失败：" + e);
+            }
+
+            // ══════════════════════════════════════════════════════════════
+            // ★ 2026-10-25（补丁收拢 · 阶段 2 示范）：半中半英弹窗的**代词收口**
+            //
+            //   【为什么需要】popup 与 message log 是**两条独立通道**，不是串联：
+            //       `IBaseJournalEntry.DisplayMessage`：`if (NotifPrompt) Popup.Show(…); return;`
+            //                                           `MessageQueue.AddPlayerMessage(…)`
+            //     ⇒ 消息栏多一层碎片字典（`ZhsFragmentDictPatch`，挂 AddPlayerMessage）
+            //     ⇒ 同一个 `You`：进消息栏会被译，进弹窗就漏。
+            //
+            //   【规则故意收窄】只动「文本里**已有中文** 且 含独立英文 You/Your」：
+            //       · 纯英文弹窗一条不动（避免把英文界面/专名改坏）
+            //       · `You're` / `You've` 这类缩写不动（`(?!')`）
+            // ══════════════════════════════════════════════════════════════
+            try
+            {
+                string fin = __args[0] as string;
+                if (fin != null)
+                {
+                    string fixedUp = ZhsPopupPronoun.Fix(fin);
+                    if (!ReferenceEquals(fixedUp, fin)) __args[0] = fixedUp;
+                }
+            }
+            catch { }
+        }
+
+        /// <summary>
+        /// 半中半英弹窗的代词收口（窄规则）。
+        /// 独立成类是为了**将来接进统一 pipeline**：它只是 §五「收口层」的一个消费者。
+        /// </summary>
+        internal static class ZhsPopupPronoun
+        {
+            private static readonly System.Text.RegularExpressions.Regex ReYour =
+                new System.Text.RegularExpressions.Regex(@"\bYour\b(?!')");
+            private static readonly System.Text.RegularExpressions.Regex ReYour2 =
+                new System.Text.RegularExpressions.Regex(@"\byour\b(?!')");
+            private static readonly System.Text.RegularExpressions.Regex ReYou =
+                new System.Text.RegularExpressions.Regex(@"\bYou\b(?!')");
+            private static readonly System.Text.RegularExpressions.Regex ReYou2 =
+                new System.Text.RegularExpressions.Regex(@"\byou\b(?!')");
+
+            internal static string Fix(string s)
+            {
+                if (string.IsNullOrEmpty(s)) return s;
+                if (!HasCjk(s)) return s;                 // 纯英文 ⇒ 不动
+                if (s.IndexOf("You", StringComparison.Ordinal) < 0
+                    && s.IndexOf("you", StringComparison.Ordinal) < 0) return s;
+
+                string r = ReYour.Replace(s, "你的");
+                r = ReYour2.Replace(r, "你的");
+                r = ReYou.Replace(r, "你");
+                r = ReYou2.Replace(r, "你");
+                return r;
+            }
+
+            private static bool HasCjk(string s)
+            {
+                foreach (char c in s)
+                    if (ZhsChineseProvider.IsCjk(c)) return true;
+                return false;
             }
         }
 
