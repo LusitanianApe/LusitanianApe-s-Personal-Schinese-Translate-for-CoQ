@@ -89,10 +89,10 @@
     <page>屠宰!</page>
   </book>
   <book ID="TemplarDomesticant" Title="{{W|圣殿骑士驯从记}}">
-    <page>我做得好吗，新神父？</page>
-    <page>新爸爸！看！</page>
-    <page>新神父，你骄傲吗？</page>
-    <page>新爸爸！</page>
+    <page>我做得好吗，新父？</page>
+    <page>新父！看！</page>
+    <page>新父，你骄傲吗？</page>
+    <page>新父！</page>
   </book>
   <book ID="Preacher1" Title="{{W|布道一：论银色父亲的主权}}">
     <page>孩子们，让我们为我们银色父亲的主权而欢欣鼓舞。</page>

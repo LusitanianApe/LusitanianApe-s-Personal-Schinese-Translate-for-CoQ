@@ -914,7 +914,7 @@ namespace Nattens.QudZhsCookbook
     ///   ⇒ 口诀：**越靠右 = 改动越轻**；「动到 C#」就往前挪一位。
     /// ⚠ 两处必须一起改（manifest.json + 本常量），见上。
     /// </summary>
-    internal const string ModVersion = "1.0.0.1";
+    internal const string ModVersion = "1.0.0.2";
 
     /// <summary>把版本号写进消息栏（存档可见，便于离线核对）。</summary>
         private const string VersionStampName = "_zhs_last_run.txt";

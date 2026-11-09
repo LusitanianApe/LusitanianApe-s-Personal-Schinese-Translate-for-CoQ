@@ -2351,7 +2351,7 @@
   <string Context="Cybernetics Compute Power Rules Text" ID="Compute power on the local lattice increases this item's effectiveness.">本地晶格上的算力可提升此物的效能。</string>
   <string Context="Cybernetics Debug Wish 'implant'" ID="No blueprint by the name '=name=' could be found.">找不到名为「=name=」的蓝图。</string>
   <string Context="Cybernetics Debug Wish 'implant'" ID="No body part by the name '=slot=' could be found.">找不到名为「=slot=」的身体部位。</string>
-  <string Context="Cybernetics RandomCyberImplant" ID="{{implanted|implanted}}">{{implanted|已装入}}</string>
+  <string Context="Cybernetics RandomCyberImplant" ID="{{implanted|implanted}}">{{implanted|具植入物}}</string>
   <string Context="Cybernetics Chargen LP cost" ID="{{rules|=blueprint.intpart:CyberneticsBaseItem:Cost=}}">{{rules|=blueprint.intpart:CyberneticsBaseItem:Cost=}}</string>
   <string Context="CyberneticsSocialCoprocessor GetCyberneticsBehaviorDescriptionEvent Description" ID="Whenever you perform the water ritual with a new creature, you gain an extra =repBonus= reputation. If you install this implant after you treat with a creature for the first time, you gain =repBonus= reputation the next time you treat with them.&#10;Reputation costs in the water ritual are reduced by =ritualCostReduction=%.&#10;You may Proselytize =proselytizeLimitBonus.things:additional creature=.&#10;Compute power on the local lattice increases this implant's effectiveness.">每当你与一个新生物举行水仪式，都会额外获得 =repBonus= 点声望。若你在首次与某生物结交之后才装入此义体，则下次与之结交时会获得 =repBonus= 点声望。
 水仪式中的声望消耗降低 =ritualCostReduction=%。
