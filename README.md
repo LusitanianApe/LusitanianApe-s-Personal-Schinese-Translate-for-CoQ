@@ -11,7 +11,7 @@
 
 ## 模组源码（`mod/`）
 
-当前 `1.0.0.1`，与创意工坊包**逐字节一致**。整份拷到
+当前 `1.0.0.2`，与创意工坊包**逐字节一致**。整份拷到
 `%USERPROFILE%\AppData\LocalLow\Freehold Games\CavesOfQud\Mods\` 即可使用；
 安装说明、已知问题与许可见 [`mod/README.md`](mod/README.md)。
 

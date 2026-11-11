@@ -17,7 +17,7 @@
 |---|---|
 | 名称 | L什么什么什么的个人汉化（`QudZhsCookbook`） |
 | 模组 ID | `LusitanianApe_QudZhsCookbook` |
-| 适配游戏 | Caves of Qud（卡德洞窟）**212.31** |
+| 适配游戏 | Caves of Qud（卡德洞窟）**212.32** |
 | 性质 | **非官方**同人汉化模组，与 Freehold Games 无关 |
 | 做法 | **不改游戏本体**：数据文件以 `Load="Merge"` 增量覆盖；硬编码文本靠 Harmony 在显示出口改写 |
 | 作者 | LusitanianApe（QQ 群 806934700） |
